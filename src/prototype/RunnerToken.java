@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RunnerToken {
+	//TODO Javadoc for everything
 	static final String className = RunnerToken.class.getSimpleName();
 	private static String[] arg;
 	String pathOfResult = "result/";
@@ -34,6 +35,10 @@ public class RunnerToken {
 		task1Processing.saveAllCleanTextsDefault(pos);
 		task1Processing.tokenizeAllCleanTexts();
 		task1Processing.saveAllTokensOfAllTexts();
+		task1Processing.sortAlphaAllTokens();
+		task1Processing.saveAllTokensSorted();
+		task1Processing.getFirstKHighestCountsPerTextMixed(2);
+		
 		
 	}
 

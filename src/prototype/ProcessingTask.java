@@ -40,7 +40,10 @@ public class ProcessingTask {
 	}
 
 	/**
-	 * Removes every non letters characters.
+	 * Removes every characters which is not letter from all given texts and initializes the field <cleanText> in class Text.
+	 * @see Text#Text(java.io.File, String)
+	 * Example: <hello      world.> -> <hello world>
+	 * 
 	 */
 	public void cleanAllTextsOnlyLetters() {
 
@@ -50,6 +53,11 @@ public class ProcessingTask {
 
 	}
 
+	/**
+	 * Prints all given texts in "clean" version. This means, that all non-letters are removed.
+	 * Attention: Before you run this, be sure that all texts have a "clean" version already.
+	 *It is recommanded that you run this method before: {@link #cleanAllTextsOnlyLetters() cleanAllTextsOnlyLetters}
+	 */
 	public void printAllCleanTexts() {
 		for (Text text : listOfTexts) {
 			System.out.println(text.getCleanText());
@@ -58,17 +66,16 @@ public class ProcessingTask {
 
 	}
 
-
 	public void saveAllTextsDefault(Integer pos) {
 		for (Text text : listOfTexts) {
-			text.saveText(defaultPathToSave);
+			text.saveText(defaultPathToSave + text.getTextNameWithoutSuffix() + "/");
 		}
 
 	}
 
 	public void saveAllCleanTextsDefault(Integer pos) {
 		for (Text text : listOfTexts) {
-			text.saveCleanText(defaultPathToSave);
+			text.saveCleanText(defaultPathToSave + text.getTextNameWithoutSuffix() + "/");
 		}
 
 	}
@@ -81,9 +88,35 @@ public class ProcessingTask {
 
 	public void saveAllTokensOfAllTexts() {
 		for (Text text : listOfTexts) {
-			text.saveTokens(defaultPathToSave);
+			text.saveTokens(defaultPathToSave + text.getTextNameWithoutSuffix() + "/");
 		}
-		
+
+	}
+
+	public void sortAlphaAllTokens() {
+		for (Text text : listOfTexts) {
+			text.sortAllTokens();
+		}
+
+	}
+
+	public void saveAllTokensSorted() {
+		for (Text text : listOfTexts) {
+			text.saveAllSortedTokens(defaultPathToSave + text.getTextNameWithoutSuffix() + "/");
+		}
+
+	}
+
+	public ArrayList<TupelIS> getFirstKHighestCountsPerTextMixed(Integer k) {
+		ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
+		for (Text text : listOfTexts) {
+			arrayOfTokenTupels = text.getFirstKHighestTokensMixed(k);
+		}
+		for (TupelIS tupelIS : arrayOfTokenTupels) {
+			System.out.println(tupelIS.key +" "+ tupelIS.Value);
+		}
+
+		return null;
 	}
 
 }
