@@ -1,4 +1,4 @@
-package humancomp;
+package humancomp.task1.namingGame;
 
 import java.util.ArrayList;
 
