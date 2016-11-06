@@ -6,12 +6,12 @@ import java.util.Map.Entry;
 import java.util.Random;
 import java.util.TreeMap;
 
-public class Agents {
+public class AgentsMultiObjects {
 
 	Map<String, String> wordPool;
 	Random randome = new Random();
 
-	public Agents() {
+	public AgentsMultiObjects() {
 		super();
 		wordPool = new TreeMap<>();
 	}
