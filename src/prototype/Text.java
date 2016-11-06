@@ -161,10 +161,11 @@ public class Text {
 		Boolean isLowerCase = false;
 		Boolean isUpperCase = false;
 		Boolean isNumber = false;
-		if (('a' <= token.charAt(0) && token.charAt(0) <= 'z') || ('ÃŸ' <= token.charAt(0) && token.charAt(0) <= 'Ã¼')) {
+		//TODO CHECK THIS AT HOME
+		if (('a' <= token.charAt(0) && token.charAt(0) <= 'z') || ('Ä' <= token.charAt(0) && token.charAt(0) <= 'Ä')) {
 			isLowerCase = true;
 		}
-		if (('A' <= token.charAt(0) && token.charAt(0) <= 'Z') || ('Ã„' <= token.charAt(0) && token.charAt(0) <= 'Ãœ')) {
+		if (('A' <= token.charAt(0) && token.charAt(0) <= 'Z') || ('Ä' <= token.charAt(0) && token.charAt(0) <= 'Ä')) {
 			isUpperCase = true;
 		}
 		if (('0' <= token.charAt(0) && token.charAt(0) <= '9')) {
