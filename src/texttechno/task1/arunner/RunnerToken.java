@@ -1,10 +1,15 @@
-package texttechno.task1.prototype;
+package texttechno.task1.arunner;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import texttechno.task1.checker.CheckGivenArguments;
+import texttechno.task1.prototype.types.Text;
+import xgeneral.modules.Encoding;
+import xgeneral.modules.SystemMessage;
 
 public class RunnerToken {
 	//TODO Javadoc for everything

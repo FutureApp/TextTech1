@@ -1,4 +1,4 @@
-package texttechno.task1.prototype;
+package texttechno.task1.prototype.types;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +11,8 @@ import java.util.NavigableMap;
 import java.util.TreeMap;
 
 import org.apache.commons.io.FileUtils;
+
+import xgeneral.modules.SystemMessage;
 
 public class Text {
 

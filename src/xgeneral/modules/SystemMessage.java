@@ -1,4 +1,4 @@
-package texttechno.task1.prototype;
+package xgeneral.modules;
 
 public class SystemMessage {
 	

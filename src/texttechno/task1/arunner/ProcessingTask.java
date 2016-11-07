@@ -1,6 +1,9 @@
-package texttechno.task1.prototype;
+package texttechno.task1.arunner;
 
 import java.util.ArrayList;
+
+import texttechno.task1.prototype.types.Text;
+import texttechno.task1.prototype.types.TupelIS;
 
 public class ProcessingTask {
 	ArrayList<Text> listOfTexts;

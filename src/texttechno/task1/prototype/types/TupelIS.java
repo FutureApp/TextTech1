@@ -1,8 +1,8 @@
-package texttechno.task1.prototype;
+package texttechno.task1.prototype.types;
 
 public class TupelIS {
-	Integer key;
-	String Value;
+	public Integer key;
+	public String Value;
 	public TupelIS(Integer key, String value) {
 		super();
 		this.key = key;

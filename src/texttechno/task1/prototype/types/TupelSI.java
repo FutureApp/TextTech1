@@ -1,4 +1,4 @@
-package texttechno.task1.prototype;
+package texttechno.task1.prototype.types;
 
 public class TupelSI {
 	String key;
