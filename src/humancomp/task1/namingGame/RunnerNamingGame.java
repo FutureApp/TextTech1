@@ -6,18 +6,15 @@ import javax.sound.midi.Synthesizer;
 
 public class RunnerNamingGame {
 
-		Integer numberOfAgents = 1000;
-		Integer numberOfRounds = 100000;
-		Integer numberOfRepeats = 3000;
+		static Integer numberOfAgents = 1000;
+		static Integer numberOfRounds = 100000;
+		static Integer numberOfRepeats = 3000;
 
 	public static void main(String[] args) {
 
-		ArrayList<String> hello = new ArrayList<>();
-		hello.add("hey");
-		AgentsOneObject agent = new AgentsOneObject(hello);
-		System.out.println(agent.saySomething().getMessage());
-		System.out.println(agent.doYouKnow("hey"));
-		System.out.println(agent.getAllKnowingWords());
+		
+		NamingGame namingGame = new NamingGame(numberOfAgents, numberOfRounds, numberOfRepeats);
+		namingGame.play();
 	
 	}
 }
