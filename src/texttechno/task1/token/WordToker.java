@@ -1,4 +1,4 @@
-package token;
+package texttechno.task1.token;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package prototype;
+package texttechno.task1.prototype;
 
 public class TupelIS {
 	Integer key;

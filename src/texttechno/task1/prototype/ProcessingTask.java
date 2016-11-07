@@ -1,4 +1,4 @@
-package prototype;
+package texttechno.task1.prototype;
 
 import java.util.ArrayList;
 

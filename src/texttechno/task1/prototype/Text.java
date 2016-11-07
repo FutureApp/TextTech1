@@ -1,4 +1,4 @@
-package prototype;
+package texttechno.task1.prototype;
 
 import java.io.File;
 import java.io.IOException;
@@ -162,10 +162,10 @@ public class Text {
 		Boolean isUpperCase = false;
 		Boolean isNumber = false;
 		//TODO CHECK THIS AT HOME
-		if (('a' <= token.charAt(0) && token.charAt(0) <= 'z') || ('Ä' <= token.charAt(0) && token.charAt(0) <= 'Ä')) {
+		if (('a' <= token.charAt(0) && token.charAt(0) <= 'z') || ('ï¿½' <= token.charAt(0) && token.charAt(0) <= 'ï¿½')) {
 			isLowerCase = true;
 		}
-		if (('A' <= token.charAt(0) && token.charAt(0) <= 'Z') || ('Ä' <= token.charAt(0) && token.charAt(0) <= 'Ä')) {
+		if (('A' <= token.charAt(0) && token.charAt(0) <= 'Z') || ('ï¿½' <= token.charAt(0) && token.charAt(0) <= 'ï¿½')) {
 			isUpperCase = true;
 		}
 		if (('0' <= token.charAt(0) && token.charAt(0) <= '9')) {

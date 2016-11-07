@@ -3,7 +3,7 @@ package humancomp.task1.namingGame;
 import java.util.ArrayList;
 import java.util.Random;
 
-import prototype.SystemMessage;
+import texttechno.task1.prototype.SystemMessage;
 
 public class NamingGame {
 	Integer numberOfAgents;
