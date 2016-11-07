@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import texttechno.task1.checker.CheckGivenArguments;
+import texttechno.task1.process.ProcessingTask;
 import texttechno.task1.prototype.types.Text;
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
