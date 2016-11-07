@@ -8,11 +8,12 @@
 	
 	import org.apache.commons.io.FileUtils;
 	
-	public class RunnerToken {
+	public class RunnerTokenDEAD {
 		
 		static String encoding = "iso-8859-1";
-		static File geothe = new File("Task1/Goethe-Wahlverwandtschaften-clear.txt");
-		static File schiller = new File("Task1/Schiller-Die-Raeuber-clear.txt");
+		static String baseURL = "TextTechno/Task1/Ressources";
+		static File geothe = new File(baseURL+"/Goethe-Wahlverwandtschaften-clear.txt");
+		static File schiller = new File(baseURL+"/Schiller-Die-Raeuber-clear.txt");
 		static File[] fileListOfTexts = { geothe, schiller };
 		static ArrayList<String> listOfTexts = new ArrayList<>();
 		static ArrayList<String> listOfCleanTexts = new ArrayList<>();
@@ -42,7 +43,7 @@
 				for (String token : tokens) {
 					if (!token.equals(" ")) {
 	
-						FileUtils.write(new File("Task1/Result/geotheToken.txt"), token + System.lineSeparator(), encoding,
+						FileUtils.write(new File(baseURL+"/Result/geotheToken.txt"), token + System.lineSeparator(), encoding,
 								true);
 						if (tokenMapCount.containsKey(token)) {
 							tokenMapCount.put(token, tokenMapCount.get(token) + 1);
@@ -66,7 +67,7 @@
 		}
 	
 		private static void printResult() throws IOException {
-			FileUtils.write(new File("Task1/Result/geothe.txt"), listOfCleanTexts.get(0), encoding, false);
+			FileUtils.write(new File(baseURL+"/Result/geothe.txt"), listOfCleanTexts.get(0), encoding, false);
 		}
 	
 	}
