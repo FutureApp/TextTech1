@@ -35,24 +35,16 @@ public class Task1_1 {
 		ProcessingTask task1Processing = new ProcessingTask(listOfTexts,locationToSave, usedEncoding);
 		System.out.println();
 		System.out.println("Analyse beginnt!");
+		
 		task1Processing.beginnProcessing();
-//		task1Processing.printEveryOriText();
-//		task1Processing.printNameOfAllTexts();
 		task1Processing.printAllAbsolutPathsOfTexts();
 		task1Processing.cleanAllTextsOnlyLetters();
-//		task1Processing.printAllCleanTexts();
 		task1Processing.saveAllTextsDefault(pos);
 		task1Processing.saveAllCleanTextsDefault(pos);
 		task1Processing.tokenizeAllCleanTexts();
 		task1Processing.saveAllTokensOfAllTexts();
 		task1Processing.sortAlphaAllTokens();
 		task1Processing.saveAllTokensSorted();
-//		saver.saveTupelIS(task1Processing.getFirstKHighestCountsPerTextMixed(numberOfTopK), pathOfTaskResults,
-//				"MixedTop" + numberOfTopK);
-//		saver.saveTupelIS(task1Processing.getFirstKHighestCountsPerTextUpper(numberOfTopK), pathOfTaskResults,
-//				"UpperTop" + numberOfTopK);
-//		saver.saveTupelIS(task1Processing.getFirstKHighestCountsPerTextLower(numberOfTopK), pathOfTaskResults,
-//				"LowerTop" + numberOfTopK);
 		task1Processing.saveFirstKHighestCountsPerTextLower(20);
 		task1Processing.saveFirstKHighestCountsPerTextUpper(20);
 		task1Processing.saveFirstKHighestCountsPerTextMixed(20);
