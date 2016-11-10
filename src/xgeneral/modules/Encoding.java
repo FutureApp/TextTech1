@@ -3,15 +3,6 @@ package xgeneral.modules;
 public class Encoding {
 
 	private static  String defaultEncoding="iso-8859-1";
-
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public static Boolean isEncodingSupported(String encoding) {
 		Boolean isSupported = false;
