@@ -3,7 +3,9 @@ package texttechno.task1.calculators;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+
 /**
+ * Engine to calc the TTR of a given input.
  * 
  * @author Michael Czaja
  *
@@ -29,18 +31,14 @@ public class TTRCalculator {
 	public TTRCalculator() {
 		super();
 	}
-	
-
 
 	public Map<String, Integer> getTokenMapCount() {
 		return tokenMapCount;
 	}
 
-
 	public void setTokenMapCount(Map<String, Integer> tokenMapCount) {
 		this.tokenMapCount = tokenMapCount;
 	}
-
 
 	/**
 	 * Calculates the TTR on given Map. This TTR-calculation shift ever
@@ -59,13 +57,12 @@ public class TTRCalculator {
 			uniqueTokenSet.add(key.toLowerCase());
 		}
 
-		
 		TTR = (uniqueTokenSet.size() / (float) tokens);
 		// Saves every value to look up if results of last calc. are needed.
-		uniqueTokensLastCalc=uniqueTokenSet.size();
-		tokensLastCalc=tokens;
-		TTRLastCalc=TTR;
-		
+		uniqueTokensLastCalc = uniqueTokenSet.size();
+		tokensLastCalc = tokens;
+		TTRLastCalc = TTR;
+
 		return TTR;
 	}
 
@@ -88,11 +85,10 @@ public class TTRCalculator {
 
 		TTR = (uniqueTokenSet.size() / (float) tokens);
 		// Saves every value to look up if results of last calc are needed.
-		uniqueTokensLastCalc=uniqueTokenSet.size();
-		tokensLastCalc=tokens;
-		TTRLastCalc=TTR;
-		
-		
+		uniqueTokensLastCalc = uniqueTokenSet.size();
+		tokensLastCalc = tokens;
+		TTRLastCalc = TTR;
+
 		return TTR;
 	}
 
@@ -107,6 +103,5 @@ public class TTRCalculator {
 	public Float getTTRLastCalc() {
 		return TTRLastCalc;
 	}
-	
-	
+
 }

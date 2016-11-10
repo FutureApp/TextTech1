@@ -69,8 +69,8 @@ public class ProcessingTask {
 	}
 
 	/**
-	 * Removes every characters which is not letter from all given texts and
-	 * initializes the field <cleanText> in class Text.
+	 * Removes every characters which is not a letter. Has Impacts on all texts
+	 * which should be analyzed.
 	 * 
 	 * @see Text#Text(java.io.File, String) Example: <hello world.> -> <hello
 	 *      world>
@@ -85,10 +85,10 @@ public class ProcessingTask {
 	}
 
 	/**
-	 * Prints all given texts in "clean" version. This means, that all
-	 * non-letters are removed. Attention: Before you run this, be sure that all
-	 * texts have a "clean" version already. It is recommanded that you run this
-	 * method before: {@link #cleanAllTextsOnlyLetters()
+	 * Prints all given texts in "clean" version. (This means, that all
+	 * non-letters are removed). Attention: Before you run this, be sure that
+	 * all texts have a "clean" version already. It is recommended that you run
+	 * this method before: {@link #cleanAllTextsOnlyLetters()
 	 * cleanAllTextsOnlyLetters}
 	 */
 	public void printAllCleanTexts() {
@@ -126,6 +126,10 @@ public class ProcessingTask {
 
 	}
 
+	/**
+	 * Creates the sorted list of tokens in the text data-struc. Has Impacts on
+	 * all texts.
+	 */
 	public void sortAlphaAllTokens() {
 		for (Text text : listOfTexts) {
 			text.sortAllTokens();
@@ -140,11 +144,12 @@ public class ProcessingTask {
 	}
 
 	/**
-	 * Returns the top k keyword with corresponding count. This method uses the mixed map of counts.
+	 * Returns the top k keyword with corresponding count. This method uses the
+	 * mixed map of counts.
+	 * 
 	 * @param k
-	 * Number of values which should be calc.
-	 * @return
-	 * Tuples of top k words with there counts.
+	 *            Number of values which should be calc.
+	 * @return Tuples of top k words with there counts.
 	 */
 	public ArrayList<TupelIS> getFirstKHighestCountsPerTextMixed(Integer k) {
 		ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
@@ -157,12 +162,14 @@ public class ProcessingTask {
 
 		return arrayOfTokenTupels;
 	}
+
 	/**
-	 * Returns the top k keyword with corresponding count. This method uses the lower map of counts.
+	 * Returns the top k keyword with corresponding count. This method uses the
+	 * lower map of counts.
+	 * 
 	 * @param k
-	 * Number of values which should be calc.
-	 * @return
-	 * Tuples of top k words with there counts.
+	 *            Number of values which should be calc.
+	 * @return Tuples of top k words with there counts.
 	 */
 	public ArrayList<TupelIS> getFirstKHighestCountsPerTextLower(Integer k) {
 		ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
@@ -175,6 +182,15 @@ public class ProcessingTask {
 
 		return arrayOfTokenTupels;
 	}
+
+	/**
+	 * Saves the k top words for a text. Impacts on all texts. Calling this will
+	 * calc the top k first. When this method will save the results of the
+	 * 'fresh' run.
+	 * 
+	 * @param k
+	 *            Top k value.
+	 */
 	public void saveFirstKHighestCountsPerTextLower(Integer k) {
 		for (Text text : listOfTexts) {
 			ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
@@ -185,6 +201,14 @@ public class ProcessingTask {
 
 	}
 
+	/**
+	 * Saves the k top words for a text. Only list of words which starts with a
+	 * upper character. Impacts on all texts. Calling this will calc the top k
+	 * first. When this method will save the results of the 'fresh' run.
+	 * 
+	 * @param k
+	 *            Top k value.
+	 */
 	public void saveFirstKHighestCountsPerTextUpper(Integer k) {
 		for (Text text : listOfTexts) {
 			ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
@@ -195,6 +219,14 @@ public class ProcessingTask {
 
 	}
 
+	/**
+	 * Saves the k top words for a text. Non case-sensitive. Impacts on all
+	 * texts. * Calling this will calc the top k first. When this method will
+	 * save the results of the 'fresh' run.
+	 * 
+	 * @param k
+	 *            Top k value.
+	 */
 	public void saveFirstKHighestCountsPerTextMixed(Integer k) {
 		for (Text text : listOfTexts) {
 			ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
@@ -204,12 +236,14 @@ public class ProcessingTask {
 		}
 
 	}
+
 	/**
-	 * Returns the top k keyword with corresponding count. This method uses the upper map of counts.
+	 * Returns the top k keyword with corresponding count. This method uses the
+	 * upper map of counts.
+	 * 
 	 * @param k
-	 * Number of values which should be calc.
-	 * @return
-	 * Tuples of top k words with there counts.
+	 *            Number of values which should be calc.
+	 * @return Tuples of top k words with there counts.
 	 */
 	public ArrayList<TupelIS> getFirstKHighestCountsPerTextUpper(Integer k) {
 		ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
@@ -223,6 +257,9 @@ public class ProcessingTask {
 		return arrayOfTokenTupels;
 	}
 
+	/**
+	 * Saves the TTR-Value for all texts. Value is based on the last TTR-Calc.
+	 */
 	public void saveTTRPerText() {
 
 		for (Text text : listOfTexts) {
@@ -240,8 +277,14 @@ public class ProcessingTask {
 			text.calculateTTR(text.getTokensSortedMixedCase());
 		}
 	}
+
 	/**
-	 * Calcs every MATTR for all texts and saves them in the result dir.
+	 * Calcs every MATTR for all texts and saves them in the result dir.Calling
+	 * this will trigger a new clac of the MATTR. When this method will save the results of
+	 * the 'fresh' run.
+	 * 
+	 * @param windowSize
+	 *            Windowssize which should be used for calc.
 	 */
 	public void saveMATTRPerText(Integer windowSize) {
 		for (Text text : listOfTexts) {
