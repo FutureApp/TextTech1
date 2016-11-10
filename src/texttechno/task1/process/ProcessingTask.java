@@ -8,12 +8,27 @@ import texttechno.task1.prototype.types.Text;
 import texttechno.task1.prototype.types.TupelIS;
 import xgeneral.modules.SaveResults;
 
+/**
+ * Is the processing engine.
+ * 
+ * @author Michael Czaja
+ *
+ */
 public class ProcessingTask {
 	ArrayList<Text> listOfTexts;
 	String defaultPathToSave;
 	private SaveResults saver;
 	String encoding;
 
+	/**
+	 * 
+	 * @param listOfTexts
+	 *            All texts which need to be analyzed.
+	 * @param defaultPathToSave
+	 *            Sets the output dir of the results.
+	 * @param usedEncoding
+	 *            Sets the encoding type.
+	 */
 	public ProcessingTask(ArrayList<Text> listOfTexts, String defaultPathToSave, String usedEncoding) {
 		this.listOfTexts = listOfTexts;
 		this.defaultPathToSave = defaultPathToSave;
@@ -21,6 +36,9 @@ public class ProcessingTask {
 		saver = new SaveResults(encoding);
 	}
 
+	/**
+	 * Starts the Processing. Loads Texts.
+	 */
 	public void beginnProcessing() {
 
 		for (Text text : listOfTexts) {
@@ -121,6 +139,13 @@ public class ProcessingTask {
 		}
 	}
 
+	/**
+	 * Returns the top k keyword with corresponding count. This method uses the mixed map of counts.
+	 * @param k
+	 * Number of values which should be calc.
+	 * @return
+	 * Tuples of top k words with there counts.
+	 */
 	public ArrayList<TupelIS> getFirstKHighestCountsPerTextMixed(Integer k) {
 		ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
 		for (Text text : listOfTexts) {
@@ -132,7 +157,13 @@ public class ProcessingTask {
 
 		return arrayOfTokenTupels;
 	}
-
+	/**
+	 * Returns the top k keyword with corresponding count. This method uses the lower map of counts.
+	 * @param k
+	 * Number of values which should be calc.
+	 * @return
+	 * Tuples of top k words with there counts.
+	 */
 	public ArrayList<TupelIS> getFirstKHighestCountsPerTextLower(Integer k) {
 		ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
 		for (Text text : listOfTexts) {
@@ -144,32 +175,42 @@ public class ProcessingTask {
 
 		return arrayOfTokenTupels;
 	}
-
 	public void saveFirstKHighestCountsPerTextLower(Integer k) {
 		for (Text text : listOfTexts) {
 			ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
 			arrayOfTokenTupels = text.getFirstKHighestTokensLower(k);
-			saver.saveTupelIS(arrayOfTokenTupels, defaultPathToSave+"/Result_"+text.getTextNameWithoutSuffix(), "LowerTop" + k);
+			saver.saveTupelIS(arrayOfTokenTupels, defaultPathToSave + "/Result_" + text.getTextNameWithoutSuffix(),
+					"LowerTop" + k);
 		}
-		
+
 	}
+
 	public void saveFirstKHighestCountsPerTextUpper(Integer k) {
 		for (Text text : listOfTexts) {
 			ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
 			arrayOfTokenTupels = text.getFirstKHighestTokensUpper(k);
-			saver.saveTupelIS(arrayOfTokenTupels, defaultPathToSave+"/Result_"+text.getTextNameWithoutSuffix(), "UpperTop" + k);
+			saver.saveTupelIS(arrayOfTokenTupels, defaultPathToSave + "/Result_" + text.getTextNameWithoutSuffix(),
+					"UpperTop" + k);
 		}
-		
+
 	}
+
 	public void saveFirstKHighestCountsPerTextMixed(Integer k) {
 		for (Text text : listOfTexts) {
 			ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
 			arrayOfTokenTupels = text.getFirstKHighestTokensMixed(k);
-			saver.saveTupelIS(arrayOfTokenTupels, defaultPathToSave+"/Result_"+text.getTextNameWithoutSuffix(), "MixedTop" + k);
+			saver.saveTupelIS(arrayOfTokenTupels, defaultPathToSave + "/Result_" + text.getTextNameWithoutSuffix(),
+					"MixedTop" + k);
 		}
-		
-	}
 
+	}
+	/**
+	 * Returns the top k keyword with corresponding count. This method uses the upper map of counts.
+	 * @param k
+	 * Number of values which should be calc.
+	 * @return
+	 * Tuples of top k words with there counts.
+	 */
 	public ArrayList<TupelIS> getFirstKHighestCountsPerTextUpper(Integer k) {
 		ArrayList<TupelIS> arrayOfTokenTupels = new ArrayList<>();
 		for (Text text : listOfTexts) {
@@ -183,27 +224,32 @@ public class ProcessingTask {
 	}
 
 	public void saveTTRPerText() {
-		
+
 		for (Text text : listOfTexts) {
 			TTRCalculator ttr = text.getTTRCalculator();
-			saver.saveTTR(ttr, defaultPathToSave+"/Result_"+text.getTextNameWithoutSuffix(), "TTR-Value");
+			saver.saveTTR(ttr, defaultPathToSave + "/Result_" + text.getTextNameWithoutSuffix(), "TTR-Value");
 		}
-		
+
 	}
 
+	/**
+	 * Calcs every TTR for all texts.
+	 */
 	public void calculateTTRPerText() {
 		for (Text text : listOfTexts) {
 			text.calculateTTR(text.getTokensSortedMixedCase());
 		}
 	}
-
+	/**
+	 * Calcs every MATTR for all texts and saves them in the result dir.
+	 */
 	public void saveMATTRPerText(Integer windowSize) {
 		for (Text text : listOfTexts) {
 			MATTRCalculator MAttr = new MATTRCalculator(text.getTextTokens(), windowSize);
 			MAttr.calcMATTR();
-			saver.saveMATTR(MAttr, defaultPathToSave+"/Result_"+text.getTextNameWithoutSuffix(), "MATTR-Value");
+			saver.saveMATTR(MAttr, defaultPathToSave + "/Result_" + text.getTextNameWithoutSuffix(), "MATTR-Value");
 		}
-		
+
 	}
 
 }

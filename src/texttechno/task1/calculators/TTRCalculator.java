@@ -3,7 +3,11 @@ package texttechno.task1.calculators;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
-
+/**
+ * 
+ * @author Michael Czaja
+ *
+ */
 public class TTRCalculator {
 
 	Map<String, Integer> tokenMapCount;

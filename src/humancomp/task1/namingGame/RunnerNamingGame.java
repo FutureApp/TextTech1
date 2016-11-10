@@ -11,10 +11,7 @@ public class RunnerNamingGame {
 		static Integer numberOfRepeats = 3000;
 
 	public static void main(String[] args) {
-
-		
 		NamingGame namingGame = new NamingGame(numberOfAgents, numberOfRounds, numberOfRepeats);
 		namingGame.play();
-	
 	}
 }

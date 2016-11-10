@@ -1,5 +1,10 @@
 package xgeneral.modules;
 
+/**
+ * The messaging System.
+ * @author Michael Czaja
+ *
+ */
 public class SystemMessage {
 	
 	public static void eMessage(String textOfMessage){
@@ -22,7 +27,5 @@ public class SystemMessage {
 	public static void messageForArgument(String arg[], Integer pos ,String message){
 			wMessage("Argument "+ (pos+1)+" <"+arg[pos]+">");
 			wMessage(message);
-			
 	}
-	
 }

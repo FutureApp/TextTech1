@@ -9,7 +9,11 @@ import org.apache.commons.io.FileUtils;
 import texttechno.task1.calculators.MATTRCalculator;
 import texttechno.task1.calculators.TTRCalculator;
 import texttechno.task1.prototype.types.TupelIS;
-
+/**
+ * Writes given results in different type into specific files.
+ * @author Michael Czaja
+ *
+ */
 public class SaveResults {
 	public String encoding = "UTF-8";
 

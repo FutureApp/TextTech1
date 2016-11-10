@@ -36,6 +36,7 @@ public class Task1_1 {
 		System.out.println();
 		System.out.println("Analyse beginnt!");
 		
+		//Starts the processing
 		task1Processing.beginnProcessing();
 		task1Processing.printAllAbsolutPathsOfTexts();
 		task1Processing.cleanAllTextsOnlyLetters();
@@ -68,13 +69,14 @@ public class Task1_1 {
 		if (arg.length == 0) {
 			printUsage();
 			argumentsCorrect = false;
+			System.exit(1);
 		} else {
 			if (arg.length >= 2) {
 				checkAndSetEncoding();
 				checkAndCreateListOfFiles();
-
 			} else if (arg.length == 1 || arg[0].equals("help")) {
 				printUsage();
+				System.exit(1);
 			}
 		}
 
@@ -129,7 +131,7 @@ public class Task1_1 {
 
 		String systemCommand = "java -jar ";
 		String classNameJAR = className + ".jar ";
-		String commonCMDCommand = systemCommand + classNameJAR;
+		String commonCMDCommand = systemCommand + classNameJAR +"enconding file1 file2 ...";
 
 		String suffix = "Pleas try again.";
 
@@ -138,6 +140,7 @@ public class Task1_1 {
 		System.out.println(commonCMDCommand + " ");
 		System.out.println();
 		System.out.println(suffix);
+		System.exit(1);
 	}
 
 }

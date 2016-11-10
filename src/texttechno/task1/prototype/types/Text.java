@@ -15,6 +15,12 @@ import org.apache.commons.io.FileUtils;
 import texttechno.task1.calculators.TTRCalculator;
 import xgeneral.modules.SystemMessage;
 
+/**
+ * Represents the main datastructure for task1
+ * 
+ * @author Michael Czaja
+ *
+ */
 public class Text {
 
 	File location;
@@ -30,6 +36,7 @@ public class Text {
 	NavigableMap<Integer, String> countOfTokensSortedUpperCase = new TreeMap<>();
 
 	Map<String, Integer> tokensOfNumbers = new TreeMap<>();
+
 	public Map<String, Integer> getTokensSortedMixedCase() {
 		return tokensSortedMixedCase;
 	}
@@ -60,9 +67,12 @@ public class Text {
 	List<String> textTokens;
 
 	/**
+	 * Constructor for main datatype.
 	 * 
 	 * @param textFile
+	 *            File which should be a text
 	 * @param enconding
+	 *            Sets the enconding type which should be used
 	 */
 	public Text(File textFile, String enconding) {
 		super();
@@ -103,6 +113,9 @@ public class Text {
 		return location.getAbsolutePath();
 	}
 
+	/**
+	 * Removes every non letter in the text.
+	 */
 	public void removeNonLetters() {
 
 		cleanText = text.replaceAll("[^a-zA-Zäöüß\\d]", " ").replace("\\n", " ").replace("\\d", " ")
@@ -128,7 +141,7 @@ public class Text {
 	private void save(File file, String content) {
 		try {
 			FileUtils.write(file, content, enconding, false);
-//			System.out.println(file.getAbsolutePath());
+			// System.out.println(file.getAbsolutePath());
 		} catch (IOException e) {
 			e.printStackTrace();
 			SystemMessage.eMessage("Couldn't write to file <" + file.getAbsolutePath() + ">");
@@ -146,11 +159,17 @@ public class Text {
 
 	}
 
+	/**
+	 * Splits the text into tokens aka wordlist.
+	 */
 	public void tokenizeText() {
 		String[] tokens = text.split(" ");
 		textTokens = Arrays.asList(tokens);
 	}
 
+	/**
+	 * Splits the clean version of the text into tokens aka wordlist.
+	 */
 	public void tokenizeCleanText() {
 		String[] tokens = cleanText.split(" ");
 		textTokens = Arrays.asList(tokens);
@@ -166,18 +185,22 @@ public class Text {
 	}
 
 	public void sortAllTokens() {
-
 		for (String token : textTokens) {
 			insertTokenIntoSpecificMaps(token);
 
 		}
 	}
 
+	/**
+	 * Decides in which map a given token ~ word should be inserted.
+	 * 
+	 * @param token
+	 */
 	private void insertTokenIntoSpecificMaps(String token) {
 		Boolean isLowerCase = false;
 		Boolean isUpperCase = false;
 		Boolean isNumber = false;
-		// TODO CHECK THIS AT HOME
+		// Rule how to decide in which map a word should be inserted
 		if (('a' <= token.charAt(0) && token.charAt(0) <= 'z') || ('Ä' <= token.charAt(0) && token.charAt(0) <= 'Ü')) {
 			isLowerCase = true;
 		}
@@ -196,6 +219,7 @@ public class Text {
 			SystemMessage.wMessage("Token <" + token + "> matches upper and lower case. This token will be ignored.");
 			System.exit(0);
 		} else {
+			// Does the action of insertion
 			putToMixedCaseMap(token);
 			if (isLowerCase)
 				putToLowerCaseMap(token);
@@ -307,13 +331,13 @@ public class Text {
 
 		IterateOverTokenList: for (Entry<Integer, String> mapEntry : countOfTokensSortedMixedCase.descendingMap()
 				.entrySet()) {
-
 			Integer countID = mapEntry.getKey();
 			String tokens = mapEntry.getValue();
 			String[] token = tokens.split("[|]");
 
 			for (int i = 0; i < token.length; i++) {
 				if (inserted < k) {
+					// Creates a tupel for every word map count.
 					TupelIS tup = new TupelIS(countID, token[i]);
 					kTop.add(tup);
 					inserted++;
@@ -326,6 +350,10 @@ public class Text {
 
 	}
 
+	/**
+	 * Swaps the order of keys and values. The results will be inserted into the
+	 * countOfTokensSortedMixedCase field.
+	 */
 	private void initialiseMixedTokenSortByValue() {
 		for (Entry<String, Integer> mapEntry : tokensSortedMixedCase.entrySet()) {
 			String token = mapEntry.getKey();
@@ -341,6 +369,10 @@ public class Text {
 		}
 	}
 
+	/**
+	 * Swaps the order of keys and values. The results will be inserted into the
+	 * countOfTokensSortedLowerCase field.
+	 */
 	private void initialiseLowerTokenSortByValue() {
 		for (Entry<String, Integer> mapEntry : tokensSortedLowerCase.entrySet()) {
 			String token = mapEntry.getKey();
@@ -356,6 +388,10 @@ public class Text {
 		}
 	}
 
+	/**
+	 * Swaps the order of keys and values. The results will be inserted into the
+	 * countOfTokensSortedUpperCase field.
+	 */
 	private void initialiseUpperTokenSortByValue() {
 		for (Entry<String, Integer> mapEntry : tokensSortedUpperCase.entrySet()) {
 			String token = mapEntry.getKey();
@@ -421,11 +457,25 @@ public class Text {
 		return kTop;
 	}
 
+	/**
+	 * Calcs the TTR for a the text
+	 * 
+	 * @param tokenMapCount
+	 *            Sets the Map on which the ttr should be calced.
+	 * @return Retruns the TTR of the Map. In long term ~ TTR of text.
+	 */
 	public Float calculateTTR(Map<String, Integer> tokenMapCount) {
 		TTRCalc.setTokenMapCount(tokenMapCount);
 		return TTRCalc.getTTRIgnoreCase();
 	}
 
+	/**
+	 * Returns the TTR of the last calc. Be sure to use calculateTTR to get the
+	 * proper results.
+	 * 
+	 * @return
+	 * Returns the value of the last ttr calc.
+	 */
 	public TTRCalculator getTTRCalculator() {
 		return TTRCalc;
 	}
