@@ -1,4 +1,4 @@
-package texttechno.task1.checker;
+package texttechno.task1.arunner;
 
 import java.io.File;
 

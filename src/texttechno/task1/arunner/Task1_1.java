@@ -6,10 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import texttechno.task1.checker.CheckGivenArguments;
-import texttechno.task1.process.ProcessingTask;
-import texttechno.task1.prototype.types.Text;
-import texttechno.task1.prototype.types.TupelIS;
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SaveResults;
 import xgeneral.modules.SystemMessage;

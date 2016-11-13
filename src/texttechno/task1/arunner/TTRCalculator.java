@@ -1,4 +1,4 @@
-package texttechno.task1.calculators;
+package texttechno.task1.arunner;
 
 import java.util.HashSet;
 import java.util.Map;

@@ -1,11 +1,7 @@
-package texttechno.task1.process;
+package texttechno.task1.arunner;
 
 import java.util.ArrayList;
 
-import texttechno.task1.calculators.MATTRCalculator;
-import texttechno.task1.calculators.TTRCalculator;
-import texttechno.task1.prototype.types.Text;
-import texttechno.task1.prototype.types.TupelIS;
 import xgeneral.modules.SaveResults;
 
 /**

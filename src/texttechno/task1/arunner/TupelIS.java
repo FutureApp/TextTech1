@@ -1,4 +1,4 @@
-package texttechno.task1.prototype.types;
+package texttechno.task1.arunner;
 
 /**
  * Datastrutuce to handle top k key map count

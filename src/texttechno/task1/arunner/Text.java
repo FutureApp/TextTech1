@@ -1,4 +1,4 @@
-package texttechno.task1.prototype.types;
+package texttechno.task1.arunner;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +12,6 @@ import java.util.TreeMap;
 
 import org.apache.commons.io.FileUtils;
 
-import texttechno.task1.calculators.TTRCalculator;
 import xgeneral.modules.SystemMessage;
 
 /**
