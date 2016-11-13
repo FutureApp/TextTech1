@@ -1,4 +1,4 @@
-package texttechno.task1.arunner;
+package texttechno.task1.GeneralAndTTR_MTTR;
 
 /**
  * Datastrutuce to handle top k key map count

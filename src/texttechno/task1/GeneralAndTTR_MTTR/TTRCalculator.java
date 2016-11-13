@@ -1,4 +1,4 @@
-package texttechno.task1.arunner;
+package texttechno.task1.GeneralAndTTR_MTTR;
 
 import java.util.HashSet;
 import java.util.Map;

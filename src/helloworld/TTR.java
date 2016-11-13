@@ -3,7 +3,7 @@ package helloworld;
 import java.util.ArrayList;
 import java.util.List;
 
-import texttechno.task1.arunner.MATTRCalculator;
+import texttechno.task1.GeneralAndTTR_MTTR.MATTRCalculator;
 
 public class TTR {
 

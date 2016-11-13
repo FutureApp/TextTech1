@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 import org.apache.commons.io.FileUtils;
 
-import texttechno.task1.arunner.MATTRCalculator;
-import texttechno.task1.arunner.TTRCalculator;
-import texttechno.task1.arunner.TupelIS;
+import texttechno.task1.GeneralAndTTR_MTTR.MATTRCalculator;
+import texttechno.task1.GeneralAndTTR_MTTR.TTRCalculator;
+import texttechno.task1.GeneralAndTTR_MTTR.TupelIS;
 /**
  * Writes given results in different type into specific files.
  * @author Michael Czaja

@@ -1,4 +1,4 @@
-package humancomp.task1.namingGame;
+package humancomp.task1.naminggame;
 
 public class SingleMessage {
 
