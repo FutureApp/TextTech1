@@ -2,12 +2,22 @@ package humancomp.task1.naminggame;
 
 public class RunnerNamingGame {
 
-		static Integer numberOfAgents = 1000;
-		static Integer numberOfRounds = 3000;
-		static Integer numberOfStagesPerRound = 100000;
-
 	public static void main(String[] args) {
-		NamingGameSingleObject namingGame = new NamingGameSingleObject(numberOfAgents, numberOfRounds, numberOfStagesPerRound);
-		namingGame.play();
+
+		String[] arg = args;
+//		Integer numAgents = Integer.parseInt(arg[0]);
+//		Integer numRound= Integer.parseInt(arg[1]);
+//		Integer numStagesPerRound =Integer.parseInt(arg[2]);
+		
+		Integer numAgents = 1000;
+		Integer numRound = 10;
+		Integer numStagesPerRound = 100000;
+		
+		NamingGame game = new NamingGame(numAgents, numRound, numStagesPerRound);
+		game.startGaming();
+		
+		
+		
 	}
+
 }
