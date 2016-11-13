@@ -1,17 +1,13 @@
 package humancomp.task1.naminggame;
 
-import java.util.ArrayList;
-
-import javax.sound.midi.Synthesizer;
-
 public class RunnerNamingGame {
 
 		static Integer numberOfAgents = 1000;
-		static Integer numberOfRounds = 100000;
-		static Integer numberOfRepeats = 3000;
+		static Integer numberOfRounds = 3000;
+		static Integer numberOfStagesPerRound = 100000;
 
 	public static void main(String[] args) {
-		NamingGame namingGame = new NamingGame(numberOfAgents, numberOfRounds, numberOfRepeats);
+		NamingGameSingleObject namingGame = new NamingGameSingleObject(numberOfAgents, numberOfRounds, numberOfStagesPerRound);
 		namingGame.play();
 	}
 }

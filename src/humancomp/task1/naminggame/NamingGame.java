@@ -16,6 +16,11 @@ public class NamingGame {
 	Integer currentNumberOfRepeats = 1;
 
 	Integer communications = 1;
+	
+	ArrayList<String> diffrentNamePerRound = new ArrayList<>();
+	ArrayList<Integer> diffrentSuccCouterPerRound = new ArrayList<>();
+	private int successCouter;
+	private int norSuccessCounter;
 
 	public NamingGame(Integer numberOfAgents, Integer numberOfRounds, Integer numberOfRepeats) {
 		super();
@@ -54,6 +59,8 @@ public class NamingGame {
 
 	public void initGame() {
 		createListOfAgents();
+		successCouter = 0;
+		norSuccessCounter = 0;
 	}
 
 	private void createListOfAgents() {
@@ -65,26 +72,26 @@ public class NamingGame {
 
 	}
 
-	public void commicateBetweenTwoAgents() {
+	public Boolean commicateBetweenTwoAgents() {
 		Integer firstAgentIndex = randome.nextInt(listOfAgents.size());
 		Integer secondAgentIndex = randome.nextInt(listOfAgents.size());
 		while (firstAgentIndex == secondAgentIndex) {
 			secondAgentIndex = randome.nextInt(listOfAgents.size());
 		}
-
 		AgentsOneObject firstAgent = listOfAgents.get(firstAgentIndex);
 		AgentsOneObject secondAgent = listOfAgents.get(secondAgentIndex);
-
-		Boolean secondAgentKnowsWord = secondAgent.doYouKnow(firstAgent.saySomething().getMessage());
-//		System.out.println("ComSuccessful - AgentsNumber - currentRounds - currentRepeats");
-//		System.out.println(secondAgentKnowsWord +" "+ communications+"/"+numberOfRounds+" "+currentNumberOfRepeats+"/"+numberOfRepeats);
-		communications++;
-
+		return secondAgent.doYouKnow(firstAgent.saySomething().getMessage()); 
 	}
 
 	public void playOneRound() {
+		
 		while (communications <= numberOfRounds) {
-			commicateBetweenTwoAgents();
+			Boolean resultOfCom = commicateBetweenTwoAgents();
+
+			if(resultOfCom) 	successCouter++;
+			else       	    	norSuccessCounter++;
+			
+			communications++;
 		}
 		currentNumberOfRepeats++;
 
@@ -95,6 +102,7 @@ public class NamingGame {
 		while(currentNumberOfRepeats<=numberOfRepeats){
 			System.out.println(currentNumberOfRepeats +" >"+ numberOfRepeats);
 			playOneRound();
+			System.out.println(successCouter +" /"+norSuccessCounter);
 			resetGame();
 		}
 	}
