@@ -11,15 +11,13 @@ public class SingleObjectAgents {
 
 	Integer ID;
 	ArrayList<Integer> wordPool;
-	ArrayList<Integer> prevSet;
-	ArrayList<Integer> removeMents;
+	ArrayList<Integer> beforeList;
 	Random random;
 
 	public SingleObjectAgents(Integer ID) {
 		super();
 		wordPool = new ArrayList<>();
-		prevSet = new ArrayList<>();
-		removeMents =new ArrayList<>();
+		beforeList = new ArrayList<>();
 		random = new Random();
 		this.ID = ID;
 	}
@@ -36,32 +34,32 @@ public class SingleObjectAgents {
 	}
 
 	private Integer createNewWord() {
+		
 		return random.nextInt();
 	}
 
 	public Boolean doYouKnow(Integer word) {
-	Boolean wordPoolContainsWord = false;
-	
-	if(wordPool.contains(word)){
-		wordPoolContainsWord = true;
-		prevSet.clear();
-		prevSet.addAll(wordPool);
-		wordPool.clear();
-		wordPool.add(word);
-		removeMents = prevSet;
-		removeMents.remove(word);
-		
-	}
-	else{
-		wordPoolContainsWord = false;
-		wordPool.add(word);
-		
-	}
-	return wordPoolContainsWord;
+		Boolean wordPoolContainsWord = false;
+
+		if (wordPool.contains(word)) {
+			wordPoolContainsWord = true;
+			beforeList.clear();
+			beforeList.addAll(wordPool);
+			wordPool.clear();
+			wordPool.add(word);
+
+		} else {
+			wordPoolContainsWord = false;
+			beforeList.clear();
+			beforeList.addAll(wordPool);
+			wordPool.add(word);
+
+		}
+		return wordPoolContainsWord;
 	}
 
-	public ArrayList<Integer> getLastRemovements() {
-		return removeMents;
+	public ArrayList<Integer> getBeforeList() {
+		return beforeList;
 	}
 
 }
