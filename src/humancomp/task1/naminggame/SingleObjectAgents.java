@@ -34,28 +34,20 @@ public class SingleObjectAgents {
 	}
 
 	private Integer createNewWord() {
-		
 		return random.nextInt();
 	}
 
-	public Boolean doYouKnow(Integer word) {
-		Boolean wordPoolContainsWord = false;
+	public ArrayList<Integer> doYouKnow(Integer word) {
+		ArrayList<Integer> listDroped = new ArrayList<>();
 
 		if (wordPool.contains(word)) {
-			wordPoolContainsWord = true;
-			beforeList.clear();
-			beforeList.addAll(wordPool);
+			listDroped.addAll(wordPool);
 			wordPool.clear();
 			wordPool.add(word);
-
 		} else {
-			wordPoolContainsWord = false;
-			beforeList.clear();
-			beforeList.addAll(wordPool);
 			wordPool.add(word);
-
 		}
-		return wordPoolContainsWord;
+		return listDroped;
 	}
 
 	public ArrayList<Integer> getBeforeList() {

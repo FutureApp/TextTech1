@@ -4,126 +4,189 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import javax.security.auth.callback.LanguageCallback;
-
 import java.util.Random;
 
 public class Round {
 
 	Integer numOfAgents;
 	Integer numOfStages;
-	Integer successfullComps;
+	Integer roundID;
 	Map<Integer, Integer> globalWords;
 	Random randome = new Random();
-	
-	Integer myGlobalWords =0;
-	Integer myGlobalUWords=0;
-	Integer round = 0;
+	TupleRound tRound = new TupleRound();
 
-	public Round(Integer numOfAgents, Integer numOfStages) {
+	int globalCountsWord = 0, globalUniqueCountsWord = 0;
+	int goodCommunicatioons, badCommunications, maxCommunications;
+
+	/**
+	 * Inits. a Round
+	 * 
+	 * @param numOfAgents
+	 *            Contains number of agents you want to play with.
+	 * @param numOfStages
+	 *            Pass number of stages per round.
+	 * @param roundID
+	 *            Pass an ID for the round.
+	 */
+	public Round(Integer numOfAgents, Integer numOfStages, Integer roundID) {
 		super();
 		this.numOfAgents = numOfAgents;
 		this.numOfStages = numOfStages;
 		this.globalWords = new HashMap<Integer, Integer>();
-		this.successfullComps = 0;
+		this.roundID = roundID;
+		this.goodCommunicatioons = 0;
+		this.badCommunications = 0;
+		this.maxCommunications = numOfStages;
 	}
 
+	/**
+	 * Starts the stages of the naming game. The stages are played iterativ.
+	 * stage 1 > stage 2 >... >Stage n.
+	 */
 	public void startStages() {
+		// generates list of agents to play with.
 		ArrayList<SingleObjectAgents> listOfAgents = new ArrayList<>();
 		for (int i = 0; i < numOfAgents; i++) {
 			listOfAgents.add(new SingleObjectAgents(i));
 		}
 
+		// play stages step by step till finish
 		for (int i = 0; i < numOfStages; i++) {
 			Integer fAgentIndex = randome.nextInt(listOfAgents.size());
 			Integer sAgentIndex = randome.nextInt(listOfAgents.size());
 			while (fAgentIndex == sAgentIndex)
 				sAgentIndex = randome.nextInt(listOfAgents.size());
 
+			// select 2 agents randomly.
 			SingleObjectAgents fAgent = listOfAgents.get(fAgentIndex);
 			SingleObjectAgents sAgent = listOfAgents.get(sAgentIndex);
 			// communications between agents starts
 			Integer word = fAgent.saySomething();
-			Boolean wasKnowing = sAgent.doYouKnow(word);
-			if (wasKnowing)
-				successfullComps++;
-			System.out.print(i + " " + fAgent.ID + ": " + word + "  ");
-			System.out.print(sAgent.ID + ": " + wasKnowing + " ");
-
-			ArrayList<SingleObjectAgents> smallListOfAgents = new ArrayList<>();
-			smallListOfAgents.add(fAgent);
-			smallListOfAgents.add(sAgent);
-			updateWordsInSystem(smallListOfAgents);
+			insertIntoGlobalList(word);
+			ArrayList<Integer> dropedWordsByAgentTwo = sAgent.doYouKnow(word);
+			updateGlobalWordList(dropedWordsByAgentTwo);
 			calcGlobalWords();
-			// System.out.println("GW: " + globalCountWords);
-			round++;
+			// printCalcs(roundID, i);
+			saveStage();
 		}
-
-		checkResults(listOfAgents);
+		checkResults(globalCountsWord, globalUniqueCountsWord, listOfAgents);
 	}
 
-	private void checkResults(ArrayList<SingleObjectAgents> listOfAgents) {
+	private void saveStage() {
+		TupleStage tStage = new TupleStage(globalCountsWord, globalUniqueCountsWord, goodCommunicatioons,
+				badCommunications, maxCommunications);
+		tRound.add(tStage);
+	}
 
-		Integer unWords = 0;
-		Integer words = 0;
+	/**
+	 * Checks if the the current values of words and unique words are matching
+	 * with a the clac of these values on the hard way-> Go throw every agent.
+	 * This is very expansive.
+	 * 
+	 * @param globalWord
+	 *            Best if this value represent the current count of words in the
+	 *            system.
+	 * @param globalUniqueWord
+	 *            Best if this value represent the current count of unique words
+	 *            in the system.
+	 * @param listOfAgents
+	 *            List of involved agents.
+	 */
+	private void checkResults(int globalWord, int globalUniqueWord, ArrayList<SingleObjectAgents> listOfAgents) {
+		int localCountsWords = 0, localUniqueCountsWord = 0;
+
+		// Calcs the (true) values of global words and unique words on the hard
+		// way.
 		HashMap<Integer, Integer> counts = new HashMap<>();
-
 		for (SingleObjectAgents singleObjectAgents : listOfAgents) {
 			ArrayList<Integer> wordsList = singleObjectAgents.getWordPool();
 			for (Integer integer : wordsList) {
-				if (counts.containsKey(integer)) {
-					words++;
-				} else {
-					counts.put(integer, 1);
-					unWords++;
-					words++;
+				localCountsWords++;
+				if (!counts.containsKey(integer)) {
+					counts.put(integer, 0);
 				}
 			}
-
+		}
+		localUniqueCountsWord = counts.size();
+		// If values of the calcs doesn't match, stop the further clacs and show
+		// error message.
+		if (!(localCountsWords == globalWord) || !(localUniqueCountsWord == globalUniqueCountsWord)) {
+			System.out.println();
+			System.out.println("-------------------------");
+			System.out.println("localCoutsWords == globalWord");
+			System.out.println(localCountsWords + "==" + globalWord);
+			System.out.println("localUniqueCountsWord == globalUniqueWord");
+			System.out.println(localUniqueCountsWord + "==" + globalUniqueWord);
+			System.err.println("*************");
+			System.exit(1);
 		}
 
-		System.out.println("GLOBAL WORDS: "+words);
-		System.out.println("U GLOBAL WORDS: "+unWords);
 	}
 
-	private void calcGlobalWords() {
-		Integer globalCountsWord = 0;
-		Integer globalUniqueCountsWord = 0;
+	/**
+	 * Prints the current status/values of GW(Count over all words) and
+	 * UGW(Count over all unique words)
+	 * 
+	 * @param roundID
+	 *            The ID of the given round.
+	 * @param curStage
+	 *            The stage of the current stage in the current round.
+	 */
+	@SuppressWarnings("unused")
+	private void printCalcs(Integer roundID, Integer curStage) {
+		System.out.println(
+				roundID + "-" + curStage + 1 + " " + "GW:" + globalCountsWord + " " + "UGW:" + globalUniqueCountsWord);
+	}
 
+	/**
+	 * Removes all counts of given keys. If a key contains now the value 0, when
+	 * the key will be removed from the list.
+	 * 
+	 * @param beforeList
+	 *            List for the procedure.
+	 */
+	private void updateGlobalWordList(ArrayList<Integer> beforeList) {
+		for (Integer wordRemoved : beforeList) {
+			if ((globalWords.get(wordRemoved) - 1) <= 0) {
+				globalWords.remove(wordRemoved);
+			} else
+				globalWords.put(wordRemoved, (globalWords.get(wordRemoved) - 1));
+		}
+
+	}
+
+	/**
+	 * Inserts one word to the list of global words. If key exits,then
+	 * (key,value+1) If the key doesn't exit then insert (key,2). Word is new
+	 * for first agent and second agent, so the word will be append in both
+	 * agent lists (logical implicit).
+	 * 
+	 * @param word
+	 *            Specific word to be insert into the global list.
+	 */
+	private void insertIntoGlobalList(Integer word) {
+		if (globalWords.containsKey(word))
+			globalWords.put(word, globalWords.get(word) + 1);
+		else
+			globalWords.put(word, 2);
+	}
+
+	/**
+	 * Calcs. the values for GW and UGW.
+	 * 
+	 * @see printCalcs
+	 */
+	private void calcGlobalWords() {
+		globalCountsWord = 0;
+		globalUniqueCountsWord = 0;
 		for (Entry<Integer, Integer> entry : globalWords.entrySet()) {
 			globalUniqueCountsWord++;
 			globalCountsWord += entry.getValue();
 			// System.out.println(entry.getKey()+" "+entry.getValue());
 		}
-		System.out.print(" GW: " + globalCountsWord);
-		System.out.print(" GUW: " + globalUniqueCountsWord);
-		System.out.println();
-
 	}
 
-	private void updateWordsInSystem(ArrayList<SingleObjectAgents> smallListOfAgents) {
-		
-		
-		for (SingleObjectAgents agent : smallListOfAgents) {
-			ArrayList<Integer> agentPrevList = agent.getBeforeList();
-			ArrayList<Integer> agentActualList = agent.getWordPool();
-			for (Integer word : agentActualList) {
-				if (globalWords.containsKey(word)) {
-					globalWords.put(word, (globalWords.get(word) + 1));
-				} else {
-					globalWords.put(word, 1);
-				}
-			}
-
-			for (Integer word : agentPrevList) {
-				if (globalWords.containsKey(word)) {
-					globalWords.put(word, (globalWords.get(word) - 1));
-				} else {
-					System.err.println("Word should exits");
-				}
-			}
-		}
+	public TupleRound getPlayedStages() {
+		return tRound;
 	}
-
 }
