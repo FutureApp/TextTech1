@@ -10,6 +10,12 @@ public class TupleNamingGame {
 		this.allRounds = allRounds;
 	}
 	
+	public TupleNamingGame() {
+		this.allRounds = new ArrayList<>();
+	}
+	
+	public void add(TupleRound tRound) {allRounds.add(tRound);}
+
 	public float getAVGofGlobalWordsInTheSystem(Integer stage) {
 		int wordsOfStage = 0;
 		for (TupleRound rounds : allRounds) {
