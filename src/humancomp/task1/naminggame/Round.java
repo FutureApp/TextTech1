@@ -64,7 +64,7 @@ public class Round {
 			Integer word = fAgent.saySomething();
 			insertIntoGlobalList(word);
 			ArrayList<Integer> dropedWordsByAgentTwo = sAgent.doYouKnow(word);
-			updateGlobalWordList(dropedWordsByAgentTwo);
+			updateGlobalInformations(dropedWordsByAgentTwo);
 			calcGlobalWords();
 			// printCalcs(roundID, i);
 			saveStage();
@@ -145,7 +145,12 @@ public class Round {
 	 * @param beforeList
 	 *            List for the procedure.
 	 */
-	private void updateGlobalWordList(ArrayList<Integer> beforeList) {
+	private void updateGlobalInformations(ArrayList<Integer> beforeList) {
+		// If array contains one ore more items, communications need to
+		// successfull.If empty, second agents consumes the word.
+		if (beforeList.size() >= 1) goodCommunicatioons++;
+		else badCommunications++;
+
 		for (Integer wordRemoved : beforeList) {
 			if ((globalWords.get(wordRemoved) - 1) <= 0) {
 				globalWords.remove(wordRemoved);

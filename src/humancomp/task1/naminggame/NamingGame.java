@@ -1,9 +1,9 @@
 package humancomp.task1.naminggame;
 
 public class NamingGame {
-	Integer numAgents,numRounds,numStages;
+	Integer numAgents, numRounds, numStages;
 	TupleNamingGame tNamingGame;
-	
+
 	public NamingGame(Integer numAgents, Integer numRounds, Integer numStages) {
 		super();
 		this.numAgents = numAgents;
@@ -21,6 +21,19 @@ public class NamingGame {
 			round.startStages();
 			TupleRound tRound = round.getPlayedStages();
 			tNamingGame.add(tRound);
+		}
+
+		for (int i = 0; i < numStages; i++) {
+			int stageNumber = i+1;
+			float avgTotalWords = tNamingGame.getAVGofGlobalWordsInTheSystem(i);
+			float avgTotalUWords = tNamingGame.getAVGofGlobalUWordsInTheSystem(i);
+			float successfull =tNamingGame.getAVGofSuccessfullComunications(i);
+			float uncessfull =tNamingGame.getAVGofNonSuccessfullComunications(i);
+			System.out.println(stageNumber+ " "+avgTotalWords);
+			System.out.println(stageNumber+ " "+avgTotalUWords);
+			System.out.println(stageNumber+ " "+successfull);
+			System.out.println(stageNumber+ " "+uncessfull);
+			
 		}
 	}
 }

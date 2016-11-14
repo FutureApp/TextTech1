@@ -39,5 +39,13 @@ public class TupleNamingGame {
 		}
 		return (float)wordsOfStage/(float)allRounds.size();
 	}
+
+	public float getAVGofNonSuccessfullComunications(int stage) {
+		int wordsOfStage = 0;
+		for (TupleRound rounds : allRounds) {
+			wordsOfStage += rounds.getStageTuples().get(stage).getNonSuccessfullCons();
+		}
+		return (float)wordsOfStage/(float)allRounds.size();
+	}
 	
 }
