@@ -2,14 +2,14 @@ package humancomp.task1.naminggame;
 
 public class NamingGame {
 	Integer numAgents, numRounds, numStages;
-	TupleNamingGame tNamingGame;
+	TupleNamingGameSmallSize tNamingGame;
 
 	public NamingGame(Integer numAgents, Integer numRounds, Integer numStages) {
 		super();
 		this.numAgents = numAgents;
 		this.numRounds = numRounds;
 		this.numStages = numStages;
-		tNamingGame = new TupleNamingGame();
+		tNamingGame = new TupleNamingGameSmallSize();
 	}
 
 	public void startGaming() {

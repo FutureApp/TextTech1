@@ -148,8 +148,9 @@ public class Round {
 	private void updateGlobalInformations(ArrayList<Integer> beforeList) {
 		// If array contains one ore more items, communications need to
 		// successfull.If empty, second agents consumes the word.
-		if (beforeList.size() >= 1) goodCommunicatioons++;
-		else badCommunications++;
+		if (beforeList.size() == 0) badCommunications++;
+		else if(beforeList.size() == 1) goodCommunicatioons++;
+		else if(beforeList.size() > 1) goodCommunicatioons++;
 
 		for (Integer wordRemoved : beforeList) {
 			if ((globalWords.get(wordRemoved) - 1) <= 0) {

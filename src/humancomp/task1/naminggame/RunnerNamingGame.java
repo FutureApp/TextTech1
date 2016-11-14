@@ -10,8 +10,8 @@ public class RunnerNamingGame {
 //		Integer numStagesPerRound =Integer.parseInt(arg[2]);
 		
 		Integer numAgents = 1000;
-		Integer numRound = 10;
-		Integer numStagesPerRound = 1;
+		Integer numRound = 3000;
+		Integer numStagesPerRound = 100000;
 		
 		NamingGame game = new NamingGame(numAgents, numRound, numStagesPerRound);
 		game.startGaming();

@@ -2,15 +2,15 @@ package humancomp.task1.naminggame;
 
 import java.util.ArrayList;
 
-public class TupleNamingGame {
+public class TupleNamingGameSmallSize {
 	ArrayList<TupleRound> allRounds;
 
-	public TupleNamingGame(ArrayList<TupleRound> allRounds) {
+	public TupleNamingGameSmallSize(ArrayList<TupleRound> allRounds) {
 		super();
 		this.allRounds = allRounds;
 	}
 	
-	public TupleNamingGame() {
+	public TupleNamingGameSmallSize() {
 		this.allRounds = new ArrayList<>();
 	}
 	
