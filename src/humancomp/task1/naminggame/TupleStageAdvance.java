@@ -1,73 +1,75 @@
 package humancomp.task1.naminggame;
 
 public class TupleStageAdvance {
-	private float totalNumberOfWords;
-	private float totalNumberOfUWords;
-	private float successfullCons;
-	private float nonSuccessfullCons;
-	private float maxNumOfCommunications;
+	private int stageID;
+	private double totalNumberOfWords;
+	private double totalNumberOfUWords;
+	private double successfullComs;
+	private double nonSuccessfullComs;
 
-	public TupleStageAdvance(float totalNumberOfWords, float totalNumberOfUWords, float goodCommunicatioons, float badCommunications) {
+	public TupleStageAdvance(int stageID, double totalNumberOfWords, double totalNumberOfUWords,
+			double goodCommunicatioons, double badCommunications) {
 		super();
+		this.stageID = stageID;
 		this.totalNumberOfWords = totalNumberOfWords;
 		this.totalNumberOfUWords = totalNumberOfUWords;
-		this.successfullCons = goodCommunicatioons;
-		this.nonSuccessfullCons = badCommunications;
-		this.maxNumOfCommunications = -1;
+		this.successfullComs = goodCommunicatioons;
+		this.nonSuccessfullComs = badCommunications;
 	}
 
-	public TupleStageAdvance(float globalCountsWord, float globalUniqueCountsWord, float goodCommunicatioons, float badCommunications,
-			float maxCommunications) {
-		this.totalNumberOfWords = globalCountsWord;
-		this.totalNumberOfUWords = globalUniqueCountsWord;
-		this.successfullCons = goodCommunicatioons;
-		this.nonSuccessfullCons = badCommunications;
-		this.maxNumOfCommunications = maxCommunications;
+	public void updateBy(TupleStage ts, Integer rounds) {
+		if(stageID!= ts.getStageID()) {
+			System.err.println("Mixed up stages");
+			System.exit(1);
+		}
+		stageID = ts.getStageID();
+		totalNumberOfWords += ts.getTotalNumberOfWords() / ((double) rounds);
+		totalNumberOfUWords += ts.getTotalNumberOfUWords() / ((double) rounds);
+		successfullComs += ts.getSuccessfullComs() / ((double) rounds);
+		nonSuccessfullComs += ts.getNonSuccessfullComs() / ((double) rounds);
 
 	}
 
-	public float getTotalNumberOfWords() {
+	public void showInformations() {
+		System.out.printf("(%d|%f|%f|%f|%f)", stageID, totalNumberOfWords, totalNumberOfUWords, successfullComs,
+				nonSuccessfullComs);
+		System.out.println();
+	}
+
+	public double getTotalNumberOfWords() {
 		return totalNumberOfWords;
 	}
 
-	public float getTotalNumberOfUWords() {
+	public double getTotalNumberOfUWords() {
 		return totalNumberOfUWords;
 	}
 
-	public float getSuccessfullComs() {
-		return successfullCons;
+	public double getSuccessfullComs() {
+		return successfullComs;
 	}
 
-	public float getNonSuccessfullCons() {
-		return nonSuccessfullCons;
+	public double getNonSuccessfullCons() {
+		return nonSuccessfullComs;
 	}
 
-	public float getMaxNumOfCommunications() {
-		return maxNumOfCommunications;
+	public double getSuccessfullCons() {
+		return successfullComs;
 	}
 
-	public float getSuccessfullCons() {
-		return successfullCons;
+	public void setSuccessfullCons(double successfullCons) {
+		this.successfullComs = successfullCons;
 	}
 
-	public void setSuccessfullCons(float successfullCons) {
-		this.successfullCons = successfullCons;
-	}
-
-	public void setTotalNumberOfWords(float totalNumberOfWords) {
+	public void setTotalNumberOfWords(double totalNumberOfWords) {
 		this.totalNumberOfWords = totalNumberOfWords;
 	}
 
-	public void setTotalNumberOfUWords(float totalNumberOfUWords) {
+	public void setTotalNumberOfUWords(double totalNumberOfUWords) {
 		this.totalNumberOfUWords = totalNumberOfUWords;
 	}
 
-	public void setNonSuccessfullCons(float nonSuccessfullCons) {
-		this.nonSuccessfullCons = nonSuccessfullCons;
-	}
-
-	public void setMaxNumOfCommunications(float maxNumOfCommunications) {
-		this.maxNumOfCommunications = maxNumOfCommunications;
+	public void setNonSuccessfullCons(double nonSuccessfullCons) {
+		this.nonSuccessfullComs = nonSuccessfullCons;
 	}
 
 }

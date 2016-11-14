@@ -3,6 +3,7 @@ package humancomp.task1.naminggame;
 public class NamingGame {
 	Integer numAgents, numRounds, numStages;
 	TupleNamingGameSmallSize tNamingGame;
+	TupleNamingGameMediumSize tNamingGameMedium;
 
 	public NamingGame(Integer numAgents, Integer numRounds, Integer numStages) {
 		super();
@@ -10,6 +11,7 @@ public class NamingGame {
 		this.numRounds = numRounds;
 		this.numStages = numStages;
 		tNamingGame = new TupleNamingGameSmallSize();
+		this.tNamingGameMedium = new TupleNamingGameMediumSize(numRounds, numStages);
 	}
 
 	public void startGaming() {
@@ -20,20 +22,22 @@ public class NamingGame {
 			Round round = new Round(numAgents, numStages, i);
 			round.startStages();
 			TupleRound tRound = round.getPlayedStages();
-			tNamingGame.add(tRound);
+//			tNamingGame.add(tRound); // OLD
+			tNamingGameMedium.updateNamingGameStages(tRound);
 		}
+		tNamingGameMedium.showNamingGamingStages();
 
-		for (int i = 0; i < numStages; i++) {
-			int stageNumber = i+1;
-			float avgTotalWords = tNamingGame.getAVGofGlobalWordsInTheSystem(i);
-			float avgTotalUWords = tNamingGame.getAVGofGlobalUWordsInTheSystem(i);
-			float successfull =tNamingGame.getAVGofSuccessfullComunications(i);
-			float uncessfull =tNamingGame.getAVGofNonSuccessfullComunications(i);
-			System.out.println(stageNumber+ " "+avgTotalWords);
-			System.out.println(stageNumber+ " "+avgTotalUWords);
-			System.out.println(stageNumber+ " "+successfull);
-			System.out.println(stageNumber+ " "+uncessfull);
-			
-		}
+//		for (int i = 0; i < numStages; i++) {
+//			int stageNumber = i+1;
+//			float avgTotalWords = tNamingGame.getAVGofGlobalWordsInTheSystem(i);
+//			float avgTotalUWords = tNamingGame.getAVGofGlobalUWordsInTheSystem(i);
+//			float successfull =tNamingGame.getAVGofSuccessfullComunications(i);
+//			float uncessfull =tNamingGame.getAVGofNonSuccessfullComunications(i);
+//			System.out.println(stageNumber+ " "+avgTotalWords);
+//			System.out.println(stageNumber+ " "+avgTotalUWords);
+//			System.out.println(stageNumber+ " "+successfull);
+//			System.out.println(stageNumber+ " "+uncessfull);
+//			
+//		}
 	}
 }

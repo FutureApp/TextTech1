@@ -8,15 +8,13 @@ import texttechno.task1.GeneralAndTTR_MTTR.MATTRCalculator;
 public class TTR {
 
 	public static void main(String[] args) {
-		List<String> list = new ArrayList<>();
-		list.add("1");
-		list.add("1");
-		list.add("1");
-		list.add("1");
-		list.add("1");
+
+		int a = 5;
+		float r = 10.5F;
 		
-		MATTRCalculator calc = new MATTRCalculator(list, 5);
-		calc.calcMATTR();
+		System.out.println(a/(float)r);
+		System.out.printf("%f",r);
+		
 	}
 
 }

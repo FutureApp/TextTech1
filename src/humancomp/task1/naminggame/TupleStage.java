@@ -1,14 +1,16 @@
 package humancomp.task1.naminggame;
 
 public class TupleStage {
+	private int stageID;
 	private int totalNumberOfWords;
 	private int totalNumberOfUWords;
 	private int successfullCons;
 	private int nonSuccessfullCons;
 	private int maxNumOfCommunications;
 
-	public TupleStage(int totalNumberOfWords, int totalNumberOfUWords, int goodCommunicatioons, int badCommunications) {
+	public TupleStage(int stageID, int totalNumberOfWords, int totalNumberOfUWords, int goodCommunicatioons, int badCommunications) {
 		super();
+		this.stageID=stageID;
 		this.totalNumberOfWords = totalNumberOfWords;
 		this.totalNumberOfUWords = totalNumberOfUWords;
 		this.successfullCons = goodCommunicatioons;
@@ -16,15 +18,6 @@ public class TupleStage {
 		this.maxNumOfCommunications = -1;
 	}
 
-	public TupleStage(int globalCountsWord, int globalUniqueCountsWord, int goodCommunicatioons, int badCommunications,
-			int maxCommunications) {
-		this.totalNumberOfWords = globalCountsWord;
-		this.totalNumberOfUWords = globalUniqueCountsWord;
-		this.successfullCons = goodCommunicatioons;
-		this.nonSuccessfullCons = badCommunications;
-		this.maxNumOfCommunications = maxCommunications;
-
-	}
 
 	public int getTotalNumberOfWords() {
 		return totalNumberOfWords;
@@ -38,7 +31,7 @@ public class TupleStage {
 		return successfullCons;
 	}
 
-	public int getNonSuccessfullCons() {
+	public int getNonSuccessfullComs() {
 		return nonSuccessfullCons;
 	}
 
@@ -46,9 +39,6 @@ public class TupleStage {
 		return maxNumOfCommunications;
 	}
 
-	public int getSuccessfullCons() {
-		return successfullCons;
-	}
 
 	public void setSuccessfullCons(int successfullCons) {
 		this.successfullCons = successfullCons;
@@ -68,6 +58,10 @@ public class TupleStage {
 
 	public void setMaxNumOfCommunications(int maxNumOfCommunications) {
 		this.maxNumOfCommunications = maxNumOfCommunications;
+	}
+
+	public int getStageID() {
+		return stageID;
 	}
 
 }

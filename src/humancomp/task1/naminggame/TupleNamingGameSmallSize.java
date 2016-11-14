@@ -43,7 +43,7 @@ public class TupleNamingGameSmallSize {
 	public float getAVGofNonSuccessfullComunications(int stage) {
 		int wordsOfStage = 0;
 		for (TupleRound rounds : allRounds) {
-			wordsOfStage += rounds.getStageTuples().get(stage).getNonSuccessfullCons();
+			wordsOfStage += rounds.getStageTuples().get(stage).getNonSuccessfullComs();
 		}
 		return (float)wordsOfStage/(float)allRounds.size();
 	}

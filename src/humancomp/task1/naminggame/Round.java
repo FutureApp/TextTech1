@@ -10,6 +10,7 @@ public class Round {
 
 	Integer numOfAgents;
 	Integer numOfStages;
+	Integer curStage;
 	Integer roundID;
 	Map<Integer, Integer> globalWords;
 	Random randome = new Random();
@@ -30,6 +31,7 @@ public class Round {
 	 */
 	public Round(Integer numOfAgents, Integer numOfStages, Integer roundID) {
 		super();
+		this.curStage=0;
 		this.numOfAgents = numOfAgents;
 		this.numOfStages = numOfStages;
 		this.globalWords = new HashMap<Integer, Integer>();
@@ -52,6 +54,7 @@ public class Round {
 
 		// play stages step by step till finish
 		for (int i = 0; i < numOfStages; i++) {
+			curStage++;
 			Integer fAgentIndex = randome.nextInt(listOfAgents.size());
 			Integer sAgentIndex = randome.nextInt(listOfAgents.size());
 			while (fAgentIndex == sAgentIndex)
@@ -73,8 +76,8 @@ public class Round {
 	}
 
 	private void saveStage() {
-		TupleStage tStage = new TupleStage(globalCountsWord, globalUniqueCountsWord, goodCommunicatioons,
-				badCommunications, maxCommunications);
+		TupleStage tStage = new TupleStage(curStage,globalCountsWord, globalUniqueCountsWord, goodCommunicatioons,
+				badCommunications);
 		tRound.add(tStage);
 	}
 
