@@ -8,7 +8,6 @@ import org.apache.commons.io.FileUtils;
 @SuppressWarnings("deprecation")
 public class NamingGame {
 	Integer numAgents, numRounds, numStages;
-	TupleNamingGameSmallSize tNamingGame;
 	TupleNamingGameMediumSize tNamingGameMedium;
 	Boolean isPrinting = false;
 
@@ -18,11 +17,11 @@ public class NamingGame {
 		this.numRounds = numRounds;
 		this.numStages = numStages;
 		this.tNamingGameMedium = new TupleNamingGameMediumSize(numRounds, numStages);
-//		tNamingGame = new TupleNamingGameSmallSize();
 	}
 
 	public void startGaming() {
 
+		// Will play all round which given stage range.
 		for (int i = 1; i <= numRounds; i++) {
 			System.out.printf("(%d,%d)", i, numRounds);
 			System.out.println();
@@ -30,10 +29,9 @@ public class NamingGame {
 			round.startStages();
 			TupleRound tRound = round.getPlayedStages();
 			tNamingGameMedium.updateNamingGameStages(tRound);
-//			tNamingGame.add(tRound); // OLD
 		}
-
-		tNamingGameMedium.showNamingGamingStages();
+		
+		// Save the results of the naming game.
 		isPrinting = true;
 		File resultFile = new File("Results/NamingGame/results.txt");
 		startPrintingAnimation(resultFile);
@@ -41,6 +39,13 @@ public class NamingGame {
 		isPrinting = false;
 	}
 
+	/**
+	 * Saves the particular round.
+	 * @param file
+	 * Location where the results should be saved.
+	 * @param tNamingGameMedium2
+	 * The game which contain the results.
+	 */
 	private void saveResults(File file, TupleNamingGameMediumSize tNamingGameMedium2) {
 		FileUtils.deleteQuietly(file);
 		for (TupleStageAdvance stage : tNamingGameMedium2.getAllTuples()) {

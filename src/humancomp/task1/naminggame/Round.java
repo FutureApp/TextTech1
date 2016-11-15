@@ -204,10 +204,10 @@ public class Round {
 	}
 
 	/**
-	 * Returns all played stages in ths round. In other word the Tuple of the
+	 * Returns all played stages in this round. In other word the Tuple of the
 	 * round.
 	 * 
-	 * @return Tuple of the round.
+	 * @return Tuple of stages of the particular round.
 	 */
 	public TupleRound getPlayedStages() {
 		return tRound;

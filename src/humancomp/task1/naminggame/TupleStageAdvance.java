@@ -1,7 +1,5 @@
 package humancomp.task1.naminggame;
 
-import java.util.Formatter;
-
 public class TupleStageAdvance {
 	private int stageID;
 	private double totalNumberOfWords;
