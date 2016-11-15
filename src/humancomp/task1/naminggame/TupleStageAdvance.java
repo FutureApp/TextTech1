@@ -1,5 +1,7 @@
 package humancomp.task1.naminggame;
 
+import java.util.Formatter;
+
 public class TupleStageAdvance {
 	private int stageID;
 	private double totalNumberOfWords;
@@ -36,6 +38,11 @@ public class TupleStageAdvance {
 		System.out.println();
 	}
 
+	public String returnInformationAsString() {
+		String result = String.format("(%d|%f|%f|%f|%f)", stageID, totalNumberOfWords, totalNumberOfUWords, successfullComs,
+				nonSuccessfullComs);
+		return result;
+	}
 	public double getTotalNumberOfWords() {
 		return totalNumberOfWords;
 	}

@@ -71,10 +71,13 @@ public class Round {
 			calcGlobalWords();
 			// printCalcs(roundID, i);
 			saveStage();
+			checkResults(globalCountsWord, globalUniqueCountsWord, listOfAgents);
 		}
-		checkResults(globalCountsWord, globalUniqueCountsWord, listOfAgents);
 	}
 
+	/**
+	 * Save the status for a stage. The status tuple will be added to the round tuple as one item.
+	 */
 	private void saveStage() {
 		TupleStage tStage = new TupleStage(curStage,globalCountsWord, globalUniqueCountsWord, goodCommunicatioons,
 				badCommunications);
@@ -84,7 +87,7 @@ public class Round {
 	/**
 	 * Checks if the the current values of words and unique words are matching
 	 * with a the clac of these values on the hard way-> Go throw every agent.
-	 * This is very expansive.
+	 * This is very time expansive.
 	 * 
 	 * @param globalWord
 	 *            Best if this value represent the current count of words in the
@@ -194,7 +197,11 @@ public class Round {
 			// System.out.println(entry.getKey()+" "+entry.getValue());
 		}
 	}
-
+/**
+ * Returns all played stages in ths round. In other word the Tuple of the round.
+ * @return
+ * Tuple of the round.
+ */
 	public TupleRound getPlayedStages() {
 		return tRound;
 	}

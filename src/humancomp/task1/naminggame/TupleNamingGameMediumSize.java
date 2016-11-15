@@ -31,5 +31,8 @@ public class TupleNamingGameMediumSize {
 			tsa.showInformations();
 		}
 	}
+	public ArrayList<TupleStageAdvance> getAllTuples() {
+		return namingGameStages;
+	}
 	
 }

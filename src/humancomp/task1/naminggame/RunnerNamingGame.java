@@ -4,14 +4,16 @@ public class RunnerNamingGame {
 
 	public static void main(String[] args) {
 
-		String[] arg = args;
-//		Integer numAgents = Integer.parseInt(arg[0]);
-//		Integer numRound= Integer.parseInt(arg[1]);
-//		Integer numStagesPerRound =Integer.parseInt(arg[2]);
-		
 		Integer numAgents = 1000;
-		Integer numRound = 300;
-		Integer numStagesPerRound = 1000000;
+		Integer numRound = 100;
+		Integer numStagesPerRound = 100000;
+		String[] arg = args;
+		if(args.length==3){
+		 numAgents = Integer.parseInt(arg[0]);
+		 numRound= Integer.parseInt(arg[1]);
+		 numStagesPerRound =Integer.parseInt(arg[2]);
+		}
+		
 		
 		NamingGame game = new NamingGame(numAgents, numRound, numStagesPerRound);
 		game.startGaming();
