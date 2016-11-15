@@ -2,6 +2,7 @@ package humancomp.task1.naminggame;
 
 import java.util.ArrayList;
 
+@Deprecated
 public class TupleNamingGameSmallSize {
 	ArrayList<TupleRound> allRounds;
 

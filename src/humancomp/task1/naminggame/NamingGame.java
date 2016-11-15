@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
+@SuppressWarnings("deprecation")
 public class NamingGame {
 	Integer numAgents, numRounds, numStages;
 	TupleNamingGameSmallSize tNamingGame;
@@ -16,8 +17,8 @@ public class NamingGame {
 		this.numAgents = numAgents;
 		this.numRounds = numRounds;
 		this.numStages = numStages;
-		tNamingGame = new TupleNamingGameSmallSize();
 		this.tNamingGameMedium = new TupleNamingGameMediumSize(numRounds, numStages);
+//		tNamingGame = new TupleNamingGameSmallSize();
 	}
 
 	public void startGaming() {
@@ -28,29 +29,14 @@ public class NamingGame {
 			Round round = new Round(numAgents, numStages, i);
 			round.startStages();
 			TupleRound tRound = round.getPlayedStages();
-			tNamingGame.add(tRound); // OLD
 			tNamingGameMedium.updateNamingGameStages(tRound);
+//			tNamingGame.add(tRound); // OLD
 		}
 
 		tNamingGameMedium.showNamingGamingStages();
-
-		// for (int i = 0; i < numStages; i++) {
-		// int stageNumber = i+1;
-		// float avgTotalWords = tNamingGame.getAVGofGlobalWordsInTheSystem(i);
-		// float avgTotalUWords =
-		// tNamingGame.getAVGofGlobalUWordsInTheSystem(i);
-		// float successfull =tNamingGame.getAVGofSuccessfullComunications(i);
-		// float uncessfull =tNamingGame.getAVGofNonSuccessfullComunications(i);
-		// System.out.println(stageNumber+ " "+avgTotalWords);
-		// System.out.println(stageNumber+ " "+avgTotalUWords);
-		// System.out.println(stageNumber+ " "+successfull);
-		// System.out.println(stageNumber+ " "+uncessfull);
-		//
-		// }
 		isPrinting = true;
 		File resultFile = new File("Results/NamingGame/results.txt");
 		startPrintingAnimation(resultFile);
-		oldSavve(new File("Results/NamingGame/oldOne.txt"), tNamingGame);
 		saveResults(resultFile, tNamingGameMedium);
 		isPrinting = false;
 	}
@@ -62,14 +48,13 @@ public class NamingGame {
 			try {
 				FileUtils.write(file, result + System.lineSeparator(), "UTF-8", true);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 		}
-
 	}
 
+	@SuppressWarnings("unused")
+	@Deprecated
 	private void oldSavve(File file, TupleNamingGameSmallSize tNamingGame2) {
 		FileUtils.deleteQuietly(file);
 		for (int i = 0; i < numStages; i++) {

@@ -6,7 +6,6 @@ public class TupleNamingGameMediumSize {
 
 	Integer rounds,stagesPerRound;
 	ArrayList<TupleStageAdvance> namingGameStages;
-	
 	public TupleNamingGameMediumSize(Integer rounds, Integer stagesPerRound) {
 		super();
 		this.rounds = rounds;

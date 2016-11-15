@@ -31,7 +31,7 @@ public class Round {
 	 */
 	public Round(Integer numOfAgents, Integer numOfStages, Integer roundID) {
 		super();
-		this.curStage=0;
+		this.curStage = 0;
 		this.numOfAgents = numOfAgents;
 		this.numOfStages = numOfStages;
 		this.globalWords = new HashMap<Integer, Integer>();
@@ -46,7 +46,7 @@ public class Round {
 	 * stage 1 > stage 2 >... >Stage n.
 	 */
 	public void startStages() {
-		// generates list of agents to play with.
+		// generates list of agents. This agent are playing the game at least.
 		ArrayList<SingleObjectAgents> listOfAgents = new ArrayList<>();
 		for (int i = 0; i < numOfAgents; i++) {
 			listOfAgents.add(new SingleObjectAgents(i));
@@ -71,15 +71,16 @@ public class Round {
 			calcGlobalWords();
 			// printCalcs(roundID, i);
 			saveStage();
-			checkResults(globalCountsWord, globalUniqueCountsWord, listOfAgents);
 		}
+		// checkResults(globalCountsWord, globalUniqueCountsWord, listOfAgents);
 	}
 
 	/**
-	 * Save the status for a stage. The status tuple will be added to the round tuple as one item.
+	 * Save the status for a stage. The status tuple will be added to the round
+	 * tuple as one item.
 	 */
 	private void saveStage() {
-		TupleStage tStage = new TupleStage(curStage,globalCountsWord, globalUniqueCountsWord, goodCommunicatioons,
+		TupleStage tStage = new TupleStage(curStage, globalCountsWord, globalUniqueCountsWord, goodCommunicatioons,
 				badCommunications);
 		tRound.add(tStage);
 	}
@@ -98,6 +99,7 @@ public class Round {
 	 * @param listOfAgents
 	 *            List of involved agents.
 	 */
+	@SuppressWarnings("unused")
 	private void checkResults(int globalWord, int globalUniqueWord, ArrayList<SingleObjectAgents> listOfAgents) {
 		int localCountsWords = 0, localUniqueCountsWord = 0;
 
@@ -154,9 +156,12 @@ public class Round {
 	private void updateGlobalInformations(ArrayList<Integer> beforeList) {
 		// If array contains one ore more items, communications need to
 		// successfull.If empty, second agents consumes the word.
-		if (beforeList.size() == 0) badCommunications++;
-		else if(beforeList.size() == 1) goodCommunicatioons++;
-		else if(beforeList.size() > 1) goodCommunicatioons++;
+		if (beforeList.size() == 0)
+			badCommunications++;
+		else if (beforeList.size() == 1)
+			goodCommunicatioons++;
+		else if (beforeList.size() > 1)
+			goodCommunicatioons++;
 
 		for (Integer wordRemoved : beforeList) {
 			if ((globalWords.get(wordRemoved) - 1) <= 0) {
@@ -197,11 +202,13 @@ public class Round {
 			// System.out.println(entry.getKey()+" "+entry.getValue());
 		}
 	}
-/**
- * Returns all played stages in ths round. In other word the Tuple of the round.
- * @return
- * Tuple of the round.
- */
+
+	/**
+	 * Returns all played stages in ths round. In other word the Tuple of the
+	 * round.
+	 * 
+	 * @return Tuple of the round.
+	 */
 	public TupleRound getPlayedStages() {
 		return tRound;
 	}
