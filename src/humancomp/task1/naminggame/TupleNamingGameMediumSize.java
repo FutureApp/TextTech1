@@ -13,9 +13,9 @@ public class TupleNamingGameMediumSize {
 	 * game with a huge amount of agents,round and stages.
 	 * 
 	 * @param rounds
-	 *            Represents the number of round which will be played. This value
-	 *            is important to calc. the AVG. All given vales of stages will
-	 *            be divided by this number.
+	 *            Represents the number of round which will be played. This
+	 *            value is important to calc. the AVG. All given vales of stages
+	 *            will be divided by this number.
 	 * @param stagesPerRound
 	 *            Represents the number of stages which are played each round.
 	 */
@@ -24,8 +24,8 @@ public class TupleNamingGameMediumSize {
 		this.rounds = rounds;
 		this.stagesPerRound = stagesPerRound;
 		this.namingGameStages = new ArrayList<>();
-		for (int i = 0; i < stagesPerRound; i++) {
-			namingGameStages.add(new TupleStageAdvance(i + 1, 0, 0, 0, 0));
+		for (int i = 1; i <= stagesPerRound; i++) {
+			namingGameStages.add(new TupleStageAdvance(i, rounds, 0, 0, 0, 0));
 		}
 	}
 

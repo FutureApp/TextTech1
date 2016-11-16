@@ -23,17 +23,17 @@ public class NamingGame {
 
 		// Will play all round which given stage range.
 		for (int i = 1; i <= numRounds; i++) {
-			System.out.printf("(%d,%d)", i, numRounds);
+			System.out.printf("(%d,%d) curRound/maxRounds", i, numRounds);
 			System.out.println();
 			Round round = new Round(numAgents, numStages, i);
 			round.startStages();
 			TupleRound tRound = round.getPlayedStages();
 			tNamingGameMedium.updateNamingGameStages(tRound);
 		}
-		
+
 		// Save the results of the naming game.
 		isPrinting = true;
-		File resultFile = new File("Results/NamingGame/results.txt");
+		File resultFile = new File("Results/NamingGame/results.csv");
 		startPrintingAnimation(resultFile);
 		saveResults(resultFile, tNamingGameMedium);
 		isPrinting = false;
@@ -41,20 +41,24 @@ public class NamingGame {
 
 	/**
 	 * Saves the particular round.
+	 * 
 	 * @param file
-	 * Location where the results should be saved.
+	 *            Location where the results should be saved.
 	 * @param tNamingGameMedium2
-	 * The game which contain the results.
+	 *            The game which contain the results.
 	 */
 	private void saveResults(File file, TupleNamingGameMediumSize tNamingGameMedium2) {
 		FileUtils.deleteQuietly(file);
-		for (TupleStageAdvance stage : tNamingGameMedium2.getAllTuples()) {
-			String result = stage.returnInformationAsString();
-			try {
+		try {
+			String header = "StageID AVGwords AVGuwords successful notSuccessful";
+			FileUtils.write(file, header + System.lineSeparator(), "UTF-8", true);
+			for (TupleStageAdvance stage : tNamingGameMedium2.getAllTuples()) {
+				String result = stage.returnInformationAsString().replace("(", "").replace(")", "")
+						.replace("|", " ");
 				FileUtils.write(file, result + System.lineSeparator(), "UTF-8", true);
-			} catch (IOException e) {
-				e.printStackTrace();
 			}
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
 	}
 
@@ -74,6 +78,7 @@ public class NamingGame {
 
 	/**
 	 * Starts the animation of the writing process.
+	 * 
 	 * @param resultFile
 	 *            The absolute path of this file will be printed at least.
 	 *            Normally this should be the dir or file where the results are
