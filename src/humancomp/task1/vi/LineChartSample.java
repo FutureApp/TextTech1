@@ -31,22 +31,22 @@ public class LineChartSample extends Application {
     Integer resolutionY=600;
 
 	@Override public void start(Stage stage) throws IOException, InterruptedException {
-        stage.setTitle("Programm Results - Total number of words in the system");
+        stage.setTitle("Programm Results - Total number of diffrent words in the system");
 //        File dataFile = new File("Results/NamingGame/results1000A3000R100000S.csv");
         List<String> measure = FileUtils.readLines(dataFile, "UTF-8");
         //defining the axes
         final NumberAxis xAxis = new NumberAxis("Stages [#ID]",0,measure.size(),20000);
-        final NumberAxis yAxis = new NumberAxis("Words[#]",0d,15000d,1000d);
+        final NumberAxis yAxis = new NumberAxis("Unique Words[#]",0d,1000,100);
         final LineChart<Number,Number> lineChart = 
                 new LineChart<Number,Number>(xAxis,yAxis);
-        lineChart.setTitle("Successful Counts / Stages");
+        lineChart.setTitle("Programm Results - Total number of diffrent words in the system");
         //defining a series
         XYChart.Series series = new XYChart.Series();
         series.setName("1000 Agents -- 3000 Rounds -- 100000 Stages");
         //populating the series with data
         for (int i = 1; i < measure.size(); i++) {
         	String[] data = measure.get(i).split(" ");
-        	float item = Float.parseFloat(data[1]);
+        	float item = Float.parseFloat(data[2]);
 //        	float item = itemA/
 //        			(measure.size()-1);
         	if(i%1000 == 0){
@@ -69,7 +69,7 @@ public class LineChartSample extends Application {
         lineChart.getStylesheets().add("file:////"+ab);
         WritableImage snapshot = lineChart.snapshot(new SnapshotParameters(), wi);
 
-        File output = new File("results_WordsAVG.png");
+        File output = new File("results_UWordsAVG.png");
         try {
 			ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", output);
 		} catch (IOException e) {
