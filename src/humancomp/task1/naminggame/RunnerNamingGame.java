@@ -5,8 +5,8 @@ public class RunnerNamingGame {
 	public static void main(String[] args) {
 
 		Integer numAgents = 1000;
-		Integer numRound = 1003;
-		Integer numStagesPerRound = 100000;
+		Integer numRound = 3000;
+		Integer numStagesPerRound = 1000000;
 		String[] arg = args;
 //
 //		if (args.length <= 2)

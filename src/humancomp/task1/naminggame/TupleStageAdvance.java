@@ -1,5 +1,8 @@
 package humancomp.task1.naminggame;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class TupleStageAdvance {
 	private int stageID;
 	private double totalNumberOfWords;
@@ -7,6 +10,7 @@ public class TupleStageAdvance {
 	private double successfullComs;
 	private double nonSuccessfullComs;
 	private int rounds;
+	
 
 	public TupleStageAdvance(int stageID, int rounds, double totalNumberOfWords, double totalNumberOfUWords,
 			double goodCommunicatioons, double badCommunications) {
@@ -57,29 +61,34 @@ public class TupleStageAdvance {
 	}
 
 	public String returnInformationAsString() {
-		String result = String.format("(%d|%f|%f|%f|%f)", stageID, getTotalNumberOfWords(), getTotalNumberOfUWords(),
-				getSuccessfullComs(), getNonSuccessfullCons());
+		String result = String.format("(%d|%s|%s|%s|%s)", stageID, getTotalNumberOfWords().toPlainString(),
+				getTotalNumberOfUWords().toPlainString(), getSuccessfullComs().toPlainString(),
+				getNonSuccessfullCons().toPlainString());
 		return result;
 	}
 
-	public double getTotalNumberOfWords() {
-		return (double)totalNumberOfWords / ((double) rounds);
+	public BigDecimal getTotalNumberOfWords() {
+		BigDecimal bigTotalNumberOfWords = BigDecimal.valueOf(totalNumberOfWords);
+		BigDecimal bigRounds = BigDecimal.valueOf(rounds);
+		return bigTotalNumberOfWords.divide(bigRounds,2,RoundingMode.HALF_UP);
 	}
 
-	public double getTotalNumberOfUWords() {
-		return (double)totalNumberOfUWords / ((double) rounds);
+	public BigDecimal getTotalNumberOfUWords() {
+		BigDecimal bigTotalNumberOfUWords = BigDecimal.valueOf(totalNumberOfUWords);
+		BigDecimal bigRounds = BigDecimal.valueOf(rounds);
+		return bigTotalNumberOfUWords.divide(bigRounds,2,RoundingMode.HALF_UP);
 	}
 
-	public double getSuccessfullComs() {
-		return (double)successfullComs / ((double) rounds);
+	public BigDecimal getSuccessfullComs() {
+		BigDecimal bigTotalNumberOfSuccs = BigDecimal.valueOf(successfullComs);
+		BigDecimal bigRounds = BigDecimal.valueOf(rounds);
+		return bigTotalNumberOfSuccs.divide(bigRounds,2,RoundingMode.HALF_UP);
 	}
 
-	public double getNonSuccessfullCons() {
-		return (double)nonSuccessfullComs / ((double) rounds);
-	}
-
-	public double getSuccessfullCons() {
-		return (double)successfullComs / ((double) rounds);
+	public BigDecimal getNonSuccessfullCons() {
+		BigDecimal bignonSuccessfullComs = BigDecimal.valueOf(nonSuccessfullComs);
+		BigDecimal bigRounds = BigDecimal.valueOf(rounds);
+		return bignonSuccessfullComs.divide(bigRounds,2,RoundingMode.HALF_UP);
 	}
 
 	public void setSuccessfullCons(double successfullCons) {

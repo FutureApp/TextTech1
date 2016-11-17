@@ -1,0 +1,18 @@
+.series0 {
+    -fx-stroke-width: 2px;
+    -fx-effect: null;
+     -fx-background-radius: 0
+}
+
+.series0.chart-line-symbol {
+    -fx-background-color: transparent;
+}
+
+.series1 {
+    -fx-stroke-width: 1;
+    -fx-stroke: red;
+}
+
+.series1.chart-line-symbol {
+    -fx-shape: "M0,0";
+}
