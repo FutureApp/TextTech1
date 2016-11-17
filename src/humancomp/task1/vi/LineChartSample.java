@@ -19,22 +19,24 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.image.WritableImage;
 import javafx.stage.Stage;
  
- 
+ /**
+  * 
+  * @author http://docs.oracle.com/javafx/2/charts/line-chart.htm
+  * Modified by Michael Czaja
+  *
+  */
 public class LineChartSample extends Application {
- 
-    Integer resolutionX=1200;
-    Integer resolutionY=800;
+    private static File dataFile;
+	Integer resolutionX=800;
+    Integer resolutionY=600;
 
 	@Override public void start(Stage stage) throws IOException, InterruptedException {
-        stage.setTitle("Programm Results - Successful Count");
-        File dataFile = new File("Results/NamingGame/results1000A3000R100000S.csv");
+        stage.setTitle("Programm Results - Total number of words in the system");
+//        File dataFile = new File("Results/NamingGame/results1000A3000R100000S.csv");
         List<String> measure = FileUtils.readLines(dataFile, "UTF-8");
         //defining the axes
-        final NumberAxis xAxis = new NumberAxis("Stages [#ID]",0,measure.size(),10000);
-        final NumberAxis yAxis = new NumberAxis("Successful communications [#]",0,1,0.10);
-        //creating the chart
-        
-        
+        final NumberAxis xAxis = new NumberAxis("Stages [#ID]",0,measure.size(),20000);
+        final NumberAxis yAxis = new NumberAxis("Words[#]",0d,15000d,1000d);
         final LineChart<Number,Number> lineChart = 
                 new LineChart<Number,Number>(xAxis,yAxis);
         lineChart.setTitle("Successful Counts / Stages");
@@ -44,11 +46,9 @@ public class LineChartSample extends Application {
         //populating the series with data
         for (int i = 1; i < measure.size(); i++) {
         	String[] data = measure.get(i).split(" ");
-        	float itemA = Float.parseFloat(data[3]);
-        	float itemB = Float.parseFloat(data[4]);
-        	float item = itemA/
-//        			itemB;
-        			(measure.size()-1);
+        	float item = Float.parseFloat(data[1]);
+//        	float item = itemA/
+//        			(measure.size()-1);
         	if(i%1000 == 0){
         		System.out.println(i+"/"+measure.size());
         	}
@@ -62,14 +62,14 @@ public class LineChartSample extends Application {
         stage.show();
         
     }
- 
     private void saveResultsAsPNG(LineChart<Number, Number> lineChart) {
+    	String ab = "C:/Users/admin/git/TextTech1/HumanComp/Task1/MetaData/lineGraph.css";
     	SnapshotParameters parameters = new SnapshotParameters();
         WritableImage wi = new WritableImage(resolutionX, resolutionY);
-        lineChart.getStylesheets().add("file:HumanComp/Task1/MetaData/shit.css");
+        lineChart.getStylesheets().add("file:////"+ab);
         WritableImage snapshot = lineChart.snapshot(new SnapshotParameters(), wi);
 
-        File output = new File("results_sucAVG.png");
+        File output = new File("results_WordsAVG.png");
         try {
 			ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", output);
 		} catch (IOException e) {
@@ -77,8 +77,8 @@ public class LineChartSample extends Application {
 			e.printStackTrace();
 		}
 	}
-
 	public static void main(String[] args) {
+		 dataFile = new File(args[0]);
         launch(args);
        
     }
