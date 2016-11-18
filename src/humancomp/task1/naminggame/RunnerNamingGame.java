@@ -8,14 +8,15 @@ public class RunnerNamingGame {
 		Integer numRound = 3000;
 		Integer numStagesPerRound = 1000000;
 		String[] arg = args;
-//
-//		if (args.length <= 2)
-//			printHelp();
-//		if (args.length == 3) {
-//			numAgents = Integer.parseInt(arg[0]);
-//			numRound = Integer.parseInt(arg[1]);
-//			numStagesPerRound = Integer.parseInt(arg[2]);
-//		}
+
+		
+		if (args.length <= 2)
+			printHelp();
+		if (args.length == 3) {
+			numAgents = Integer.parseInt(arg[0]);
+			numRound = Integer.parseInt(arg[1]);
+			numStagesPerRound = Integer.parseInt(arg[2]);
+		}
 
 		NamingGame game = new NamingGame(numAgents, numRound, numStagesPerRound);
 		game.startGaming();
