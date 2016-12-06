@@ -13,9 +13,8 @@ public class Task2Runner {
 		arg = args;
 		checkInput();
 		validateInputAndSetProps();
-		
-		
-
+		Comparator comp = new Comparator(prop.getFile01(),prop.getFile02());
+		System.out.println("---"+comp.getMatchInPro());
 	}
 
 	/**
