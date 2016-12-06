@@ -73,7 +73,6 @@ public class LineChartSample extends Application {
         try {
 			ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", output);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

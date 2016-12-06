@@ -101,7 +101,6 @@ public class NamingGame {
 							Thread.sleep(100);
 						}
 					} catch (IOException | InterruptedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}

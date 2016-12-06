@@ -36,7 +36,6 @@ public class SaveResults {
 				String content = key + " " + tupelIS.getValue();
 				FileUtils.write(saveFile, content + System.lineSeparator(), encoding, true);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
