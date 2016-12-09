@@ -2,22 +2,13 @@ package texttechno.task2.Compare;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
-import javax.swing.plaf.synth.SynthSpinnerUI;
-
-import java.util.TreeMap;
-
-import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
 import xgeneral.modules.UtilsStrings_SingleTone;
 
@@ -35,151 +26,63 @@ public class Comparator {
 	private String annotator01;
 	private String annotator02;
 	private Float matchInPro;
-	private Float matchInCapa;
-	private String encoding = Encoding.getDefaultEncoding();
+	private Float matchInKappa;
 	private Integer contentCounter;
 
+	/**
+	 * Constructor of this class.
+	 * 
+	 * @param file01
+	 *            File with aggregations of annotations. The format of the file
+	 *            is given throw
+	 * @param file02
+	 */
 	public Comparator(File file01, File file02) {
 		super();
 		this.file01 = file01;
 		this.file02 = file02;
-		this.matchInCapa = null;
+		this.matchInKappa = null;
 		this.matchInPro = null;
 		this.annotator01 = null;
 		this.annotator02 = null;
 	}
 
-	private void calcMatchInPro() {
-		if(matrix== null) generateMatrix();
-		Integer diaSumm = 0;
-		for (int i = 0; i < matrix.size(); i++) {
-				diaSumm = diaSumm + matrix.get(i).get(i);
+	/**
+	 * Abstracts the author informations
+	 * 
+	 * @param authorIndex
+	 *            Which file is given. Assignment to the file.
+	 * @param line
+	 *            Line which contains name of the author.
+	 * @return An empty string. All informations are abstracted and the line has
+	 *         no value anymore.
+	 */
+	private String abstractAuthor(int authorIndex, String line) {
+		String whichFile = "";
+		switch (authorIndex) {
+		case 1:
+			whichFile = file01.getAbsolutePath();
+			if (line.length() > 1)
+				annotator01 = line.substring(1);
+			break;
+		case 2:
+			whichFile = file02.getAbsolutePath();
+			if (line.length() > 1)
+				annotator02 = line.substring(1);
+			break;
+		default:
+			break;
 		}
-		matchInPro=(float)diaSumm/(float)contentCounter;
-	}
-
-	private void generateMatrix() {
-		ArrayList<ArrayList<String>> matrix = new ArrayList<>();
-		List<String> contentF1 = abstractContent(1, file01);
-		List<String> contentF2 = abstractContent(2, file02);
-
-		
-		checkIfContentCouldMatch(contentF1, contentF2);
-		contentCounter=contentF1.size();
-		createMatrixIndex();
-		createMatrixSchema();
-		populateMatrix(contentF1, contentF2);
-		printMatrix();
-	}
-
-	public void printMatrix() {
-		Integer space = 9;
-		String header = stringUtils.getXWhiteSpaces(space);
-		for (String string : indexHolder) {
-			header = header + stringUtils.fillLeftWithWhiteSpaces("A1-"+string, space);
+		// Will print a warning-message if the author-field starts with '-' not
+		// with '_'
+		if (line.startsWith("-")) {
+			SystemMessage.wMessage(
+					"The formate of a file is corrupted. " + "The line with the name of the author starts with '-'");
+			SystemMessage.wMessage("See file: " + whichFile);
+			SystemMessage.wMessage("See line: " + line);
 		}
-		header=header+stringUtils.fillLeftWithWhiteSpaces("SUM", space);
-		System.out.println(header);
-		for (int i = 0; i < matrix.size(); i++) {
-			String leftSide = stringUtils.fillRightWithWhiteSpaces("A2-"+indexHolder.get(i), space);
-			System.out.print(leftSide);
-			for (int j = 0; j < matrix.size(); j++) {
-				String number = stringUtils.fillLeftWithWhiteSpaces(matrix.get(i).get(j)+"", space);
-				System.out.print(number);
-			}
-			Integer rowSum = 0;
-			for (int x = 0; x < matrix.size(); x++) {
-				rowSum = rowSum + matrix.get(i).get(x);
-			}
-			System.out.print(stringUtils.fillLeftWithWhiteSpaces(rowSum+"", space));
-			System.out.println();
-		}
-		System.out.println();
-		System.out.print(stringUtils.fillRightWithWhiteSpaces("SUM", space));
-		
-		for (int i = 0; i < matrix.size(); i++) {
-			Integer col = 0;
-			for (int j = 0; j < matrix.size(); j++) {
-				col = col+ matrix.get(i).get(j);
-			}
-			System.out.print(stringUtils.fillLeftWithWhiteSpaces(col+"", space));
-		}
-		System.out.print(stringUtils.fillLeftWithWhiteSpaces(contentCounter+"", space));
-		System.out.println();
-	
-	}
-
-	private void createMatrixSchema() {
-		matrix = new ArrayList<>();
-		for (int i = 0; i < diffrentCategories; i++) {
-			ArrayList<Integer> Axis = new ArrayList<>();
-			for (int j = 0; j < diffrentCategories; j++) {
-				Axis.add(0);
-			}
-			matrix.add(Axis);
-		}
-	}
-
-	private void populateMatrix(List<String> contentF1, List<String> contentF2) {
-		for (int i = 0; i < contentF1.size(); i++) {
-			String[] splittedCon1 = contentF1.get(i).split(" ");
-			String[] splittedCon2 = contentF2.get(i).split(" ");
-			String wordIndexCon1 = splittedCon1[0];
-			String annotationCon1 = splittedCon1[1];
-			String wordIndexCon2 = splittedCon2[0];
-			String annotationCon2 = splittedCon2[1];
-			if (checkIfIndexMatches(wordIndexCon1, wordIndexCon2)) {
-				updateMatrix(annotationCon1, annotationCon2);
-			}
-		}
-	}
-
-	private void updateMatrix(String annotationCon1, String annotationCon2) {
-		Integer posX = matrixIndex.get(annotationCon1);
-		Integer posY = matrixIndex.get(annotationCon2);
-		Integer valueInMatrix = matrix.get(posX).get(posY);
-		Integer updatedValue= valueInMatrix+1;
-		matrix.get(posX).set(posY, updatedValue);
-	}
-
-	private boolean checkIfIndexMatches(String wordIndexCon1, String wordIndexCon2) {
-		Boolean isSame = false;
-		if (wordIndexCon1.equals(wordIndexCon2))
-			isSame = true;
-		else {
-			SystemMessage.eMessage("At least one word indcie doesn't match");
-			SystemMessage.eMessage("File 01 <" + file01.getAbsolutePath() + "> returns <" + wordIndexCon1 + ">");
-			SystemMessage.eMessage("File 02 <" + file02.getAbsolutePath() + "> returns <" + wordIndexCon2 + ">");
-			SystemMessage.eMessage(
-					"This means: Both files serve diffrent word-indicies at the same index-line at the file.");
-			SystemMessage.eMessage("Porperly the files containing annotations for diffrent source-textes.");
-			SystemMessage.eMessage("Processing futher is nonsense.");
-			SystemMessage.eMessage("Program will terminate");
-			System.exit(1);
-		}
-		return isSame;
-	}
-
-	private void checkIfContentCouldMatch(List<String> contentF1, List<String> contentF2) {
-		if (contentF1.size() != contentF2.size()) {
-			SystemMessage.eMessage("The ammount of annotations doesn't match.");
-			SystemMessage
-					.eMessage("File <" + file01.getAbsolutePath() + "> contains " + contentF1.size() + " annotations");
-			SystemMessage
-					.eMessage("File <" + file02.getAbsolutePath() + "> contains " + contentF2.size() + " annotations");
-			SystemMessage.eMessage("To compare both is nonsense!");
-			System.exit(1);
-		}
-	}
-
-	private void createMatrixIndex() {
-		Collections.sort(indexHolder);
-		for (String string : indexHolder) {
-			if (!matrixIndex.containsKey(string)) {
-				matrixIndex.put(string, diffrentCategories);
-				diffrentCategories++;
-			}
-		}
+		// Returns an empty string. No need for the matrix.
+		return "";
 	}
 
 	/**
@@ -255,72 +158,263 @@ public class Comparator {
 	}
 
 	/**
-	 * Looks up if the category exits. If the category doesn't exit then calc
-	 * new index and insert the category and the index to the indexHolder.
+	 * Method will add the given to the index holder. If the value already
+	 * exists then nothing will be done. This information will be need by
+	 * createMatrixIndex().
 	 * 
+	 * @see texttechno.task2.Compare#createMatrixIndex()
 	 * @param annotationCategory
-	 *            The category which should be added to index if not already
-	 *            added.
+	 *            Category which should be added to the index
 	 */
-
 	private void addToIndexHolder(String annotationCategory) {
 		if (!indexHolder.contains(annotationCategory))
 			indexHolder.add(annotationCategory);
 	}
 
 	/**
-	 * Abstracts the author informations
-	 * 
-	 * @param authorIndex
-	 *            Which file is given. Assignment to the file.
-	 * @param line
-	 *            Line which contains name of the author.
-	 * @return An empty string. All informations are abstracted and the line has
-	 *         no value anymore.
+	 * Calculates the correlation by kappa-calculation.
 	 */
-	private String abstractAuthor(int authorIndex, String line) {
-		String whichFile = "";
-		switch (authorIndex) {
-		case 1:
-			whichFile = file01.getAbsolutePath();
-			if (line.length() > 1)
-				annotator01 = line.substring(1);
-			break;
-		case 2:
-			whichFile = file02.getAbsolutePath();
-			if (line.length() > 1)
-				annotator02 = line.substring(1);
-			break;
-		default:
-			break;
-		}
-		// Prints a warning-message if the author-field starts with '-'
-		if (line.startsWith("-")) {
-			SystemMessage.wMessage(
-					"The formate of a file is corrupted. " + "The line with the name of the author starts with '-'");
-			SystemMessage.wMessage("See file: " + whichFile);
-			SystemMessage.wMessage("See line: " + line);
-		}
-		// Returns an empty string. This line has no meaning for the matrix.
-		return "";
-	}
-
-	private void calcMatchInCapa() {
+	private void calcMatchInKappa() {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * Calculates the overall matching between to given annotations of the same
+	 * text. This will start the generation of matrix if the matrix doesn't
+	 * exists.
+	 */
+	private void calcMatchInPro() {
+		if (matrix == null)
+			generateMatrix();
+		Integer diaSumm = 0;
+		for (int i = 0; i < matrix.size(); i++) {
+			diaSumm = diaSumm + matrix.get(i).get(i);
+		}
+		matchInPro = (float) diaSumm / (float) contentCounter;
+	}
+
+	/**
+	 * Checks if the amount of given annotations are matching. If the amount
+	 * differs, the annotation are for different texts, probably. This fault
+	 * will stop the execution.
+	 * 
+	 * @param contentF1
+	 *            Annotations which are aggregated from text 01.
+	 * @param contentF2
+	 *            Annotations which are aggregated from text 02.
+	 */
+	private void checkIfContentCouldMatch(List<String> contentF1, List<String> contentF2) {
+		if (contentF1.size() != contentF2.size()) {
+			SystemMessage.eMessage("The ammount of annotations doesn't match.");
+			SystemMessage
+					.eMessage("File <" + file01.getAbsolutePath() + "> contains " + contentF1.size() + " annotations");
+			SystemMessage
+					.eMessage("File <" + file02.getAbsolutePath() + "> contains " + contentF2.size() + " annotations");
+			SystemMessage.eMessage("To compare both is nonsense!");
+			System.exit(1);
+		}
+	}
+
+	/**
+	 * Checks if the indices of words are matching. If the don't match then it
+	 * makes no sense do compare them because they the annotations relating to
+	 * different words. If this is happening, the execution of the program will
+	 * be stopped.
+	 * 
+	 * @param wordIndexCon1
+	 *            Index of word from text 01
+	 * @param wordIndexCon2
+	 *            Index of word from text 02
+	 * @return Returns true if the indices are matching.
+	 */
+	private boolean checkIfIndexMatches(String wordIndexCon1, String wordIndexCon2) {
+		Boolean isSame = false;
+		if (wordIndexCon1.equals(wordIndexCon2))
+			isSame = true;
+		else {
+			SystemMessage.eMessage("At least one word indcie doesn't match");
+			SystemMessage.eMessage("File 01 <" + file01.getAbsolutePath() + "> returns <" + wordIndexCon1 + ">");
+			SystemMessage.eMessage("File 02 <" + file02.getAbsolutePath() + "> returns <" + wordIndexCon2 + ">");
+			SystemMessage.eMessage(
+					"This means: Both files serve diffrent word-indicies at the same index-line at the file.");
+			SystemMessage.eMessage("Porperly the files containing annotations for diffrent source-textes.");
+			SystemMessage.eMessage("Processing futher is nonsense.");
+			SystemMessage.eMessage("Program will terminate");
+			System.exit(1);
+		}
+		return isSame;
+	}
+
+	/**
+	 * Create the index for the matrix. Calculates for each annotation
+	 * category's a index.
+	 */
+	private void createMatrixIndex() {
+		Collections.sort(indexHolder);
+		for (String string : indexHolder) {
+			if (!matrixIndex.containsKey(string)) {
+				matrixIndex.put(string, diffrentCategories);
+				diffrentCategories++;
+			}
+		}
+	}
+
+	/**
+	 * The create the skeleton of the matrix alias the schema of the matrix.
+	 */
+	private void createMatrixSchema() {
+		matrix = new ArrayList<>();
+		for (int i = 0; i < diffrentCategories; i++) {
+			ArrayList<Integer> Axis = new ArrayList<>();
+			for (int j = 0; j < diffrentCategories; j++) {
+				Axis.add(0);
+			}
+			matrix.add(Axis);
+		}
+	}
+
+	/**
+	 * Generates the matrix.
+	 */
+	private void generateMatrix() {
+		matrix = new ArrayList<>();
+		List<String> contentF1 = abstractContent(1, file01);
+		List<String> contentF2 = abstractContent(2, file02);
+
+		checkIfContentCouldMatch(contentF1, contentF2);
+		contentCounter = contentF1.size();
+		createMatrixIndex();
+		createMatrixSchema();
+		populateMatrix(contentF1, contentF2);
+		printMatrix();
+	}
+
+	/**
+	 * * This will return the correlation between to sets of annotations. If the
+	 * value doesn't exists then the method will trigger the calc first. Calc is
+	 * based on kappa-
+	 * 
+	 * @return Returns value of correlation
+	 */
+	public Float getMatchInKappa() {
+		if (matchInKappa == null)
+			calcMatchInKappa();
+		return matchInKappa;
+	}
+
+	/**
+	 * This will return the correlation between to sets of annotations. If the
+	 * value doesn't exists then the method will trigger the calc first.
+	 * 
+	 * @return Value of correlation in percent.
+	 */
 	public Float getMatchInPro() {
 		if (matchInPro == null)
 			calcMatchInPro();
-		
 		return matchInPro;
 	}
 
-	public Float getMatchInCapa() {
-		if (matchInCapa == null)
-			calcMatchInCapa();
-		return matchInCapa;
+	/**
+	 * Will convert the matrix into a string.
+	 * 
+	 * @return Returns the matrix in string representation.
+	 */
+	public String getMatrixAsString() {
+		String matrixAsString = "";
+		return matrixAsString;
+	}
+
+	/**
+	 * This method is for populating the matrix with informations.
+	 * 
+	 * @param contentF1
+	 *            Aggregation of annotations from text 01.
+	 * @param contentF2
+	 *            Aggregation of annotations from text 02.
+	 */
+	private void populateMatrix(List<String> contentF1, List<String> contentF2) {
+		for (int i = 0; i < contentF1.size(); i++) {
+			String[] splittedCon1 = contentF1.get(i).split(" ");
+			String[] splittedCon2 = contentF2.get(i).split(" ");
+			String wordIndexCon1 = splittedCon1[0];
+			String annotationCon1 = splittedCon1[1];
+			String wordIndexCon2 = splittedCon2[0];
+			String annotationCon2 = splittedCon2[1];
+			if (checkIfIndexMatches(wordIndexCon1, wordIndexCon2)) {
+				updateMatrix(annotationCon1, annotationCon2);
+			}
+		}
+	}
+
+	/**
+	 * This will print the populated matrix.
+	 */
+	public void printMatrix() {
+		Integer space = 9;
+		String header = stringUtils.getXWhiteSpaces(space);
+		for (String string : indexHolder) {
+			header = header + stringUtils.fillLeftWithWhiteSpaces("A1-" + string, space);
+		}
+		header = header + stringUtils.fillLeftWithWhiteSpaces("SUM", space);
+		System.out.println(header);
+		for (int i = 0; i < matrix.size(); i++) {
+			String leftSide = stringUtils.fillRightWithWhiteSpaces("A2-" + indexHolder.get(i), space);
+			System.out.print(leftSide);
+			for (int j = 0; j < matrix.size(); j++) {
+				String number = stringUtils.fillLeftWithWhiteSpaces(matrix.get(i).get(j) + "", space);
+				System.out.print(number);
+			}
+			Integer rowSum = 0;
+			System.out.print("|");
+			for (int x = 0; x < matrix.size(); x++) {
+				rowSum = rowSum + matrix.get(i).get(x);
+			}
+			System.out.print(stringUtils.fillLeftWithWhiteSpaces(rowSum + "", space));
+			System.out.println();
+		}
+		for (int i = 0; i < (diffrentCategories * (space+2)); i++) {
+			System.out.print("_");
+		}
+		
+		System.out.println();
+		System.out.print(stringUtils.fillRightWithWhiteSpaces("SUM", space));
+		for (int y = 0; y < matrix.size(); y++) {
+			Integer col = 0;
+			for (int x = 0; x < matrix.size(); x++) {
+				int fieldValue = matrix.get(x).get(y);
+				col += fieldValue;
+			}
+			System.out.print(stringUtils.fillLeftWithWhiteSpaces(col + "", space));
+		}
+		System.out.print(stringUtils.fillLeftWithWhiteSpaces(contentCounter + "", space));
+		System.out.println();
+	}
+
+	/**
+	 * This method will update an value in the matrix. This will be done by
+	 * increment the existing value. X and Y pos of the value in the matrix is
+	 * given by the category's of the annotations.
+	 * 
+	 * @param annotationCon1
+	 *            Category of annotation(text01)
+	 * @param annotationCon2
+	 *            Category of annotation(text02)
+	 */
+	private void updateMatrix(String annotationCon1, String annotationCon2) {
+		Integer posX = matrixIndex.get(annotationCon1);
+		Integer posY = matrixIndex.get(annotationCon2);
+		Integer valueInMatrix = matrix.get(posX).get(posY);
+		Integer updatedValue = valueInMatrix + 1;
+		matrix.get(posX).set(posY, updatedValue);
+	}
+
+	public String getAnnotator01() {
+		return annotator01;
+	}
+
+	public String getAnnotator02() {
+		return annotator02;
 	}
 
 }

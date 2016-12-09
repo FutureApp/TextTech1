@@ -11,8 +11,6 @@ public class Properties_SingleTone {
 	private File file01;
 	private File file02;
 	
-	
-	
     private Properties_SingleTone() { 
     } 
          

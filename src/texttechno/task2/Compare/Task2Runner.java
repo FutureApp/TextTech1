@@ -9,6 +9,14 @@ public class Task2Runner {
 	static String[] arg;
 	static Properties_SingleTone prop = Properties_SingleTone.getInstance();
 
+	/**
+	 * Entry-point for the applications.
+	 * @param args
+	 * Requires exactly 3 arguments. 
+	 * 1 Argument: operations{pro|capa|both}
+	 * 2 Argument: Path to first text(Webanno tsv format)
+	 * 3 Argument: Path to second text(Webanno tsv format)
+	 */
 	public static void main(String[] args) {
 		arg = args;
 		checkInput();
@@ -72,7 +80,7 @@ public class Task2Runner {
 	}
 
 	/**
-	 * Prints the usage
+	 * Prints usage
 	 */
 	private static void help() {
 		System.out.println("---------- Usage ----------");

@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>TextTechno/02Task/sources/TT1-WS-2016-2017-A2(2).pdf</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Downloads/TT1-WS-2016-2017-A2(2).pdf</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

@@ -163,7 +163,7 @@
 8-15	Samsa	NE	
 8-16	war	VAFIN	
 8-17	Reisender	NN	
-8-18	-	$(	
+8-18	-	NN	
 8-19	hing	VVFIN	
 8-20	das	ART	
 8-21	Bild	NN	
