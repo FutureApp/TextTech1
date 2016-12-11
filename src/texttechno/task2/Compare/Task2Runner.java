@@ -22,7 +22,10 @@ public class Task2Runner {
 		checkInput();
 		validateInputAndSetProps();
 		Comparator comp = new Comparator(prop.getFile01(),prop.getFile02());
-		System.out.println("---"+comp.getMatchInPro());
+		comp.printMatrix();
+		System.out.println("---% "+comp.getMatchInPro());
+		System.out.println("---KAPPA "+comp.getMatchInKappa());
+		System.out.println("---KAPAFACTOR "+comp.getKappaFactor());
 	}
 
 	/**

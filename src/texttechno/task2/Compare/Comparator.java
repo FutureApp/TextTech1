@@ -29,6 +29,10 @@ public class Comparator {
 	private Float matchInKappa;
 	private Integer contentCounter;
 
+	private ArrayList<Integer> y_axis_Sum;
+	private ArrayList<Integer> x_axis_Sum;
+	private Float kappaFactor;
+
 	/**
 	 * Constructor of this class.
 	 * 
@@ -175,8 +179,35 @@ public class Comparator {
 	 * Calculates the correlation by kappa-calculation.
 	 */
 	private void calcMatchInKappa() {
-		// TODO Auto-generated method stub
+		if (matrix == null)
+			generateMatrix();
+		y_axis_Sum = new ArrayList<>();
+		x_axis_Sum = new ArrayList<>();
 
+		/*
+		 * Generate the sum for each row and column
+		 */
+		for (int i = 0; i < matrix.size(); i++) {
+			Integer sumYAxis = 0;
+			Integer sumXAxis = 0;
+			for (int j = 0; j < matrix.size(); j++) {
+				sumYAxis = sumYAxis + matrix.get(i).get(j);
+				sumXAxis = sumXAxis + matrix.get(j).get(i);
+			}
+			y_axis_Sum.add(sumYAxis);
+			x_axis_Sum.add(sumXAxis);
+		}
+
+		float tempKappaFactor = 0F;
+		for (int i = 0; i < matrix.size(); i++) {
+			tempKappaFactor = tempKappaFactor
+					+ (x_axis_Sum.get(i) * y_axis_Sum.get(i) / ((float) contentCounter * (float) contentCounter));
+		}
+		kappaFactor = (float) tempKappaFactor;
+
+		System.out.println("x -- " + x_axis_Sum);
+		System.out.println("y -- " + y_axis_Sum);
+		matchInKappa = ((getMatchInPro() - kappaFactor) / (1 - kappaFactor));
 	}
 
 	/**
@@ -191,6 +222,8 @@ public class Comparator {
 		for (int i = 0; i < matrix.size(); i++) {
 			diaSumm = diaSumm + matrix.get(i).get(i);
 		}
+		System.out.println("DIA = "+diaSumm);
+		System.out.println("cCounter = "  +contentCounter);
 		matchInPro = (float) diaSumm / (float) contentCounter;
 	}
 
@@ -287,7 +320,7 @@ public class Comparator {
 		createMatrixIndex();
 		createMatrixSchema();
 		populateMatrix(contentF1, contentF2);
-		printMatrix();
+
 	}
 
 	/**
@@ -351,6 +384,8 @@ public class Comparator {
 	 * This will print the populated matrix.
 	 */
 	public void printMatrix() {
+		if (matrix == null)
+			generateMatrix();
 		Integer space = 9;
 		String header = stringUtils.getXWhiteSpaces(space);
 		for (String string : indexHolder) {
@@ -373,10 +408,10 @@ public class Comparator {
 			System.out.print(stringUtils.fillLeftWithWhiteSpaces(rowSum + "", space));
 			System.out.println();
 		}
-		for (int i = 0; i < (diffrentCategories * (space+2)); i++) {
+		for (int i = 0; i < (diffrentCategories * (space + 2)); i++) {
 			System.out.print("_");
 		}
-		
+
 		System.out.println();
 		System.out.print(stringUtils.fillRightWithWhiteSpaces("SUM", space));
 		for (int y = 0; y < matrix.size(); y++) {
@@ -415,6 +450,10 @@ public class Comparator {
 
 	public String getAnnotator02() {
 		return annotator02;
+	}
+
+	public Float getKappaFactor() {
+		return kappaFactor;
 	}
 
 }
