@@ -31,9 +31,7 @@ public class Task2Runner {
 		getInformationAsRequired(comp);
 		saveAllInformatios(comp);
 		
-		System.out.println();
-		System.out.println(
-				"Finish! Results located under: <./result/task2_result.txt>");
+		
 	}
 
 	/**
@@ -60,6 +58,9 @@ public class Task2Runner {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println();
+		System.out.println(
+				"Finish! Results located under: <"+resultFile.getAbsolutePath()+">");
 	}
 
 	/**
