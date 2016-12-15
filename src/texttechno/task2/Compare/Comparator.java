@@ -204,9 +204,6 @@ public class Comparator {
 					+ (x_axis_Sum.get(i) * y_axis_Sum.get(i) / ((float) contentCounter * (float) contentCounter));
 		}
 		kappaFactor = (float) tempKappaFactor;
-
-		System.out.println("x -- " + x_axis_Sum);
-		System.out.println("y -- " + y_axis_Sum);
 		matchInKappa = ((getMatchInPro() - kappaFactor) / (1 - kappaFactor));
 	}
 
@@ -222,8 +219,6 @@ public class Comparator {
 		for (int i = 0; i < matrix.size(); i++) {
 			diaSumm = diaSumm + matrix.get(i).get(i);
 		}
-		System.out.println("DIA = "+diaSumm);
-		System.out.println("cCounter = "  +contentCounter);
 		matchInPro = (float) diaSumm / (float) contentCounter;
 	}
 
@@ -355,6 +350,51 @@ public class Comparator {
 	 */
 	public String getMatrixAsString() {
 		String matrixAsString = "";
+		if (matrix == null)
+			generateMatrix();
+
+		Integer space = 9;
+		String header = stringUtils.getXWhiteSpaces(space);
+		for (String string : indexHolder) {
+			header = header + stringUtils.fillLeftWithWhiteSpaces("A1-" + string, space);
+		}
+		header = header + stringUtils.fillLeftWithWhiteSpaces("SUM", space);
+		header = header + System.lineSeparator();
+
+		String content = "";
+		for (int i = 0; i < matrix.size(); i++) {
+			String leftSide = stringUtils.fillRightWithWhiteSpaces("A2-" + indexHolder.get(i), space);
+			content = content + leftSide;
+			for (int j = 0; j < matrix.size(); j++) {
+				String number = stringUtils.fillLeftWithWhiteSpaces(matrix.get(i).get(j) + "", space);
+				content = content + number;
+			}
+			Integer rowSum = 0;
+			content = content + "|";
+			for (int x = 0; x < matrix.size(); x++) {
+				rowSum = rowSum + matrix.get(i).get(x);
+			}
+			content = content + stringUtils.fillLeftWithWhiteSpaces(rowSum + "", space);
+			content = content + System.lineSeparator();
+		}
+		for (int i = 0; i < (diffrentCategories * (space + 2)); i++) {
+			content = content + "_";
+		}
+
+		content = content + System.lineSeparator();
+		content = content + stringUtils.fillRightWithWhiteSpaces("SUM", space);
+		for (int y = 0; y < matrix.size(); y++) {
+			Integer col = 0;
+			for (int x = 0; x < matrix.size(); x++) {
+				int fieldValue = matrix.get(x).get(y);
+				col += fieldValue;
+			}
+			content = content + stringUtils.fillLeftWithWhiteSpaces(col + "", space);
+		}
+		content = content + stringUtils.fillLeftWithWhiteSpaces(contentCounter + "", space);
+		content = content + System.lineSeparator();
+		
+		matrixAsString = header+content;
 		return matrixAsString;
 	}
 
@@ -445,15 +485,22 @@ public class Comparator {
 	}
 
 	public String getAnnotator01() {
+		if (matrix == null)
+			generateMatrix();
+		if (annotator01 == null)
+			annotator01 = "unknown";
 		return annotator01;
 	}
 
 	public String getAnnotator02() {
+		if (matrix == null)
+			generateMatrix();
+		if (annotator02 == null)
+			annotator02 = "unknown";
 		return annotator02;
 	}
 
 	public Float getKappaFactor() {
 		return kappaFactor;
 	}
-
 }

@@ -1,15 +1,15 @@
  # de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS | PosValue
 #id=1
 #text=Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt.
-1-1	Als	KOKOM	
+1-1	Als	KOUS	
 1-2	Gregor	NE	
 1-3	Samsa	NE	
 1-4	eines	ART	
-1-5	Morgens	ADV	
+1-5	Morgens	NN	
 1-6	aus	APPR	
 1-7	unruhigen	ADJA	
 1-8	Träumen	NN	
-1-9	erwachte	VMFIN	
+1-9	erwachte	VVFIN	
 1-10	,	$,	
 1-11	fand	VVFIN	
 1-12	er	PPER	
@@ -17,11 +17,11 @@
 1-14	in	APPR	
 1-15	seinem	PPOSAT	
 1-16	Bett	NN	
-1-17	zu	PTKVZ	
+1-17	zu	APPR	
 1-18	einem	ART	
 1-19	ungeheueren	ADJA	
 1-20	Ungeziefer	NN	
-1-21	verwandelt	VVFIN	
+1-21	verwandelt	VVPP	
 1-22	.	$.	
 
 #id=2
@@ -41,7 +41,7 @@
 2-13	den	ART	
 2-14	Kopf	NN	
 2-15	ein	ART	
-2-16	wenig	ADJD	
+2-16	wenig	PIDAT	
 2-17	hob	VVFIN	
 2-18	,	$,	
 2-19	seinen	PPOSAT	
@@ -49,47 +49,47 @@
 2-21	,	$,	
 2-22	braunen	ADJA	
 2-23	,	$,	
-2-24	von	APPR	
+2-24	von	PTKA	
 2-25	bogenförmigen	ADJA	
 2-26	Versteifungen	NN	
 2-27	geteilten	ADJA	
 2-28	Bauch	NN	
 2-29	,	$,	
 2-30	auf	APPR	
-2-31	dessen	PRF	
+2-31	dessen	PRELAT	
 2-32	Höhe	NN	
 2-33	sich	PRF	
 2-34	die	ART	
 2-35	Bettdecke	NN	
 2-36	,	$,	
-2-37	zum	APPO	
+2-37	zum	APPRART	
 2-38	gänzlichen	ADJA	
 2-39	Niedergleiten	NN	
-2-40	bereit	VVFIN	
+2-40	bereit	VMPP	
 2-41	,	$,	
-2-42	kaum	ADJD	
-2-43	noch	ADJD	
-2-44	erhalten	VVFIN	
-2-45	konnte	VMFIN	
+2-42	kaum	ADV	
+2-43	noch	PTKA	
+2-44	erhalten	VVINF	
+2-45	konnte	VVFIN	
 2-46	.	$.	
 
 #id=3
 #text=Seine vielen, im Vergleich zu seinem sonstigen Umfang kläglich dünnen Beine flimmerten ihm hilflos vor den Augen.
 3-1	Seine	PPOSAT	
-3-2	vielen	ADJD	
+3-2	vielen	PIDAT	
 3-3	,	$,	
 3-4	im	APPRART	
 3-5	Vergleich	NN	
-3-6	zu	PTKZU	
+3-6	zu	APPR	
 3-7	seinem	PPOSAT	
 3-8	sonstigen	ADJA	
 3-9	Umfang	NN	
-3-10	kläglich	ADJD	
+3-10	kläglich	ADJA	
 3-11	dünnen	ADJA	
 3-12	Beine	NN	
 3-13	flimmerten	VVFIN	
 3-14	ihm	PPER	
-3-15	hilflos	ADJD	
+3-15	hilflos	ADV	
 3-16	vor	APPR	
 3-17	den	ART	
 3-18	Augen	NN	
@@ -99,16 +99,16 @@
 #text="Was ist mit mir geschehen?"
 4-1	"	$(	
 4-2	Was	PWS	
-4-3	ist	VAFIN	
+4-3	ist	VVFIN	
 4-4	mit	APPR	
-4-5	mir	PRF	
-4-6	geschehen	VMPP	
+4-5	mir	PPER	
+4-6	geschehen	VVPP	
 4-7	?	$.	
 4-8	"	$(	
 
 #id=5
 #text=, dachte er.
-5-1	,	$,	
+5-1	,	_	
 5-2	dachte	VVFIN	
 5-3	er	PPER	
 5-4	.	$.	
@@ -129,14 +129,14 @@
 7-4	ein	ART	
 7-5	richtiges	ADJA	
 7-6	,	$,	
-7-7	nur	ADV	
-7-8	etwas	ADV	
-7-9	zu	PTKZU	
+7-7	nur	PIDAT	
+7-8	etwas	PIDAT	
+7-9	zu	PTKA	
 7-10	kleines	ADJA	
 7-11	Menschenzimmer	NN	
 7-12	,	$,	
 7-13	lag	VVFIN	
-7-14	ruhig	ADJD	
+7-14	ruhig	ADV	
 7-15	zwischen	APPR	
 7-16	den	ART	
 7-17	vier	CARD	
@@ -146,22 +146,22 @@
 
 #id=8
 #text=Über dem Tisch, auf dem eine auseinandergepackte Musterkollektion von Tuchwaren ausgebreitet war - Samsa war Reisender - hing das Bild, das er vor kurzem aus einer illustrierten Zeitschrift ausgeschnitten und in einem hübschen, vergoldeten Rahmen untergebracht hatte.
-8-1	Über	PREP	
+8-1	Über	APPR	
 8-2	dem	ART	
 8-3	Tisch	NN	
 8-4	,	$,	
-8-5	auf	PREP	
+8-5	auf	APPR	
 8-6	dem	ART	
-8-7	eine	ADJA	
+8-7	eine	CARD	
 8-8	auseinandergepackte	ADJA	
 8-9	Musterkollektion	NN	
-8-10	von	PREP	
+8-10	von	APPR	
 8-11	Tuchwaren	NN	
-8-12	ausgebreitet	ADJD	
-8-13	war	VAFIN	
+8-12	ausgebreitet	VVPP	
+8-13	war	VVFIN	
 8-14	-	$(	
 8-15	Samsa	NE	
-8-16	war	VAFIN	
+8-16	war	VVFIN	
 8-17	Reisender	NN	
 8-18	-	$(	
 8-19	hing	VVFIN	
@@ -170,59 +170,59 @@
 8-22	,	$,	
 8-23	das	PRELS	
 8-24	er	PPER	
-8-25	vor	PREP	
-8-26	kurzem	ADJD	
-8-27	aus	PREP	
+8-25	vor	APPR	
+8-26	kurzem	PIS	
+8-27	aus	APPR	
 8-28	einer	ART	
 8-29	illustrierten	ADJA	
 8-30	Zeitschrift	NN	
 8-31	ausgeschnitten	VVPP	
 8-32	und	KON	
-8-33	in	PREP	
+8-33	in	APPR	
 8-34	einem	ART	
 8-35	hübschen	ADJA	
 8-36	,	$,	
 8-37	vergoldeten	ADJA	
 8-38	Rahmen	NN	
 8-39	untergebracht	VVPP	
-8-40	hatte	VAFIN	
+8-40	hatte	VVFIN	
 8-41	.	$.	
 
 #id=9
 #text=Es stellte eine Dame dar, die mit einem Pelzhut und einer Pelzboa versehen, aufrecht dasaß und einen schweren Pelzmuff, in dem ihr ganzer Unterarm verschwunden war, dem Beschauer entgegenhob.
 9-1	Es	PPER	
 9-2	stellte	VVFIN	
-9-3	eine	NN	
+9-3	eine	ART	
 9-4	Dame	NN	
 9-5	dar	PTKVZ	
 9-6	,	$,	
 9-7	die	PRELS	
-9-8	mit	PREP	
+9-8	mit	APPR	
 9-9	einem	ART	
 9-10	Pelzhut	NN	
 9-11	und	KON	
 9-12	einer	ART	
 9-13	Pelzboa	NN	
-9-14	versehen	VVPP	
+9-14	versehen	VVINF	
 9-15	,	$,	
-9-16	aufrecht	ADJD	
+9-16	aufrecht	ADV	
 9-17	dasaß	VVFIN	
 9-18	und	KON	
 9-19	einen	ART	
 9-20	schweren	ADJA	
 9-21	Pelzmuff	NN	
 9-22	,	$,	
-9-23	in	PREP	
+9-23	in	APPR	
 9-24	dem	ART	
-9-25	ihr	PRF	
-9-26	ganzer	ADJA	
+9-25	ihr	PPER	
+9-26	ganzer	PIAT	
 9-27	Unterarm	NN	
-9-28	verschwunden	ADJD	
-9-29	war	VAFIN	
+9-28	verschwunden	VVINF	
+9-29	war	VVFIN	
 9-30	,	$,	
 9-31	dem	ART	
 9-32	Beschauer	NN	
 9-33	entgegenhob	VVFIN	
 9-34	.	$.	
 
-_Michael Czaja
+_amuedo
