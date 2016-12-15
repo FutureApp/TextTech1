@@ -53,8 +53,8 @@ public class Task2Runner {
 			FileUtils.write(resultFile,                        comp.getMatrixAsString(),                        encoding, true);
 			FileUtils.write(resultFile, "Quality(%)      : " + comp.getMatchInPro() + System.lineSeparator(),   encoding, true);
 			FileUtils.write(resultFile, "Quality(kappa)  : " + comp.getMatchInKappa() + System.lineSeparator(), encoding, true);
-			FileUtils.write(resultFile, "A1 - Annotator1 : " + comp.getAnnotator01() + System.lineSeparator(),  encoding, true);
-			FileUtils.write(resultFile, "A2 - Annotator2 : " + comp.getAnnotator02() + System.lineSeparator(),  encoding, true);
+			FileUtils.write(resultFile, "A1 - Annotator1 : " + comp.getNameOfAnnotator01() + System.lineSeparator(),  encoding, true);
+			FileUtils.write(resultFile, "A2 - Annotator2 : " + comp.getNameOfAnnotator02() + System.lineSeparator(),  encoding, true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -81,8 +81,8 @@ public class Task2Runner {
 			System.out.println(comp.getMatrixAsString());
 			System.out.println("Pro: " + comp.getMatchInPro());
 			System.out.println("Kappa: " + comp.getMatchInKappa());
-			System.out.println("A1 - Annotator 1: " + comp.getAnnotator01());
-			System.out.println("A2 - Annotator 2: " + comp.getAnnotator02());
+			System.out.println("A1 - Annotator 1: " + comp.getNameOfAnnotator01());
+			System.out.println("A2 - Annotator 2: " + comp.getNameOfAnnotator02());
 			break;
 		default:
 			break;

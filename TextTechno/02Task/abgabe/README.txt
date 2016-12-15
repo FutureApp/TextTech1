@@ -6,3 +6,9 @@ ja.tsv
 
 Ergebnis der Auswertung ist zu finden unter: 
 ./resuts/task2_result.txt zu finden
+
+File-Beschreibung:
+Kafka_amuedo - Annotations vom Text von amuedo.
+Kafka_czaja - Annotaions vom Text von michael czaja (mir).
+task2_resultFinal.txt - Auswertung der Annotationen Kafka_amuedo und Kafka_czaja.
+TextTech2.jar - Das Programm.

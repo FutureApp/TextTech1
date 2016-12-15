@@ -119,7 +119,7 @@ public class Comparator {
 					line = abstractInformations(file.getAbsolutePath(), line);
 					content.add(line);
 				} else {
-					System.out.println("Documents dont have the correct format.");
+					System.out.println("Documents don't have the correct format.");
 					System.exit(1);
 				}
 			}
@@ -199,11 +199,13 @@ public class Comparator {
 		}
 
 		float tempKappaFactor = 0F;
+		//calculates the kappa-factor
 		for (int i = 0; i < matrix.size(); i++) {
 			tempKappaFactor = tempKappaFactor
 					+ (x_axis_Sum.get(i) * y_axis_Sum.get(i) / ((float) contentCounter * (float) contentCounter));
 		}
 		kappaFactor = (float) tempKappaFactor;
+		//calcs the kappa-value alias kappa-match
 		matchInKappa = ((getMatchInPro() - kappaFactor) / (1 - kappaFactor));
 	}
 
@@ -275,7 +277,7 @@ public class Comparator {
 	}
 
 	/**
-	 * Create the index for the matrix. Calculates for each annotation
+	 * Creates the index for the matrix. Calculates for each annotation
 	 * category's a index.
 	 */
 	private void createMatrixIndex() {
@@ -289,7 +291,7 @@ public class Comparator {
 	}
 
 	/**
-	 * The create the skeleton of the matrix alias the schema of the matrix.
+	 * Will create an empty matrix (every entry is 0).
 	 */
 	private void createMatrixSchema() {
 		matrix = new ArrayList<>();
@@ -484,7 +486,12 @@ public class Comparator {
 		matrix.get(posX).set(posY, updatedValue);
 	}
 
-	public String getAnnotator01() {
+	/**
+	 * Returns the name of the annotator from text 2.  
+	 * @return
+	 * Name of annotator of text 2 or 'unkown' if the name isn't present in the text.
+	 */
+	public String getNameOfAnnotator01() {
 		if (matrix == null)
 			generateMatrix();
 		if (annotator01 == null)
@@ -492,7 +499,12 @@ public class Comparator {
 		return annotator01;
 	}
 
-	public String getAnnotator02() {
+	/**
+	 * Returns the name of the annotator from text 2.  
+	 * @return
+	 * Name of annotator of text 2 or 'unkown' if the name isn't present in the text.
+	 */
+	public String getNameOfAnnotator02() {
 		if (matrix == null)
 			generateMatrix();
 		if (annotator02 == null)
