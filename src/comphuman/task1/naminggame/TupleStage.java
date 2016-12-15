@@ -1,4 +1,4 @@
-package humancomp.task1.naminggame;
+package comphuman.task1.naminggame;
 
 public class TupleStage {
 	private int stageID;

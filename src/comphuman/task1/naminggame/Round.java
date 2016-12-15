@@ -1,4 +1,4 @@
-package humancomp.task1.naminggame;
+package comphuman.task1.naminggame;
 
 import java.util.ArrayList;
 import java.util.HashMap;
