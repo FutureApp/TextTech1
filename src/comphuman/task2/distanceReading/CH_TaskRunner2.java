@@ -18,11 +18,15 @@ public class CH_TaskRunner2 {
 		validateAmountOfGivenInput();
 	}
 
+	
+	
+	
+	
 	/**
 	 * Checks if the amount of the given input matches the requirements. If okay
 	 * then pass else print usage() and terminate program with exit-code 2.
 	 */
-	public static void validateAmountOfGivenInput() {
+	private static void validateAmountOfGivenInput() {
 		if (arg.length < 3) {
 			SystemMessage.eMessage("More input is needed");
 			System.out.println();
