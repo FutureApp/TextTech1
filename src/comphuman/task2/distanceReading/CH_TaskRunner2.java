@@ -1,6 +1,7 @@
 package comphuman.task2.distanceReading;
 
 import xgeneral.modules.Encoding;
+import xgeneral.modules.SystemMessage;
 
 public class CH_TaskRunner2 {
 
@@ -23,7 +24,7 @@ public class CH_TaskRunner2 {
 	 */
 	public static void validateAmountOfGivenInput() {
 		if (arg.length < 3) {
-			System.err.println("ERROR - More Input is needed.");
+			SystemMessage.eMessage("More input is needed");
 			System.out.println();
 			for (int i = 0; i < arg.length; i++) {
 				System.out.printf("Argument %d: %s", i, arg[i]);
@@ -39,9 +40,6 @@ public class CH_TaskRunner2 {
 	 */
 	private static void usage() {
 		System.out.println("---------- Usage ----------");
-		System.out.println("java -jar <name of jar>.jar <pro/kappa/all> <path to file 01> <path to file 02>");
-		System.out.println(
-				"After an successfully interaction with this programm, you will find a result file under <./result/task2_result.txt>");
+		System.out.println("java -jar <name of jar>.jar <options> <wikipedia baseurl to topic>");
 	}
-
 }
