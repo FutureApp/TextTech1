@@ -200,10 +200,10 @@ public class Text {
 		Boolean isUpperCase = false;
 		Boolean isNumber = false;
 		// Rule how to decide in which map a word should be inserted
-		if (('a' <= token.charAt(0) && token.charAt(0) <= 'z') || ('ä' <= token.charAt(0) && token.charAt(0) <= 'ß')) {
+		if (('a' <= token.charAt(0) && token.charAt(0) <= 'z') || ('Ä' <= token.charAt(0) && token.charAt(0) <= 'Ü')) {
 			isLowerCase = true;
 		}
-		if (('A' <= token.charAt(0) && token.charAt(0) <= 'Z') || ('Ä' <= token.charAt(0) && token.charAt(0) <= 'Ö')) {
+		if (('A' <= token.charAt(0) && token.charAt(0) <= 'Z') || ('ß' <= token.charAt(0) && token.charAt(0) <= 'ö')) {
 			isUpperCase = true;
 		}
 		if (('0' <= token.charAt(0) && token.charAt(0) <= '9')) {
