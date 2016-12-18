@@ -4,6 +4,8 @@ public class WikiDisContribution {
 
 	String id;
 	String content;
+	String basedOn;
+	Integer layer;
 	String user;
 	String creationTime;
 
@@ -34,6 +36,22 @@ public class WikiDisContribution {
 
 	public void setCreationTime(String creationTime) {
 		this.creationTime = creationTime;
+	}
+
+	public Integer getLayer() {
+		return layer;
+	}
+
+	public void setLayer(Integer layer) {
+		this.layer = layer;
+	}
+
+	public String getBasedOn() {
+		return basedOn;
+	}
+
+	public void setBasedOn(String basedOn) {
+		this.basedOn = basedOn;
 	}
 
 }

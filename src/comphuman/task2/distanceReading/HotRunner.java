@@ -53,27 +53,37 @@ public class HotRunner {
 
 		System.err.println(disHeaderTypeAsArray);
 		abstractContentToInvestigate(nodes);
-		investigateNodes();
+		investigateNodesSmart();
 
 	}
 
-	private static void investigateNodes() {
-		ArrayList<WikiDisContribution> contributions = new ArrayList<>();
-		ArrayList<Element> dasd = sectionsMap.get("Unterschiede zu luise-berlin.de");
-		ArrayList<String> idHolder = new ArrayList<>();
-		Integer layer = 0;
-		WikiDisContribution currContri = new WikiDisContribution(System.nanoTime() + "");
+	private static void investigateNodesSmart() {
+		Extractor extractor = new Extractor();
+		String key = "KALP-Diskussion vom 24. Juli bis zum 14. August 2016 (Exzellent)";
+		ArrayList<Element> dasd = sectionsMap.get(key);
+		ArrayList<String> indexHolder = new ArrayList<>();
+		Integer activeIndex = 0;
 		for (int i = 0; i < dasd.size(); i++) {
-			Element toInvest = dasd.get(i);
-			/*
-			 * <a href="/wiki/Benutzerin:44Pinguine"
-			 * title="Benutzerin:44Pinguine"> 44pinguine <span
-			 * class="hintergrundfarbe9">☕</span> </a> 18:25, 17. Dez. 2016
-			 * (CET)
-			 */
-			
+			Element elem = dasd.get(i);
+			Element elemContainsMaybeUser = elem.select("a").last();
+			System.out.println(elemContainsMaybeUser);
+			if (!(elemContainsMaybeUser == null)) {
+				
+				if(extractor.isUserAndDateExtractable(elem)){
+					Boolean userNameExists = extractor.hasWikiUserName(elem);
+					Boolean creationDate = extractor.hasCreationDate(elem);
+					String userName =extractor.getUserName(elem);
+					String date =extractor.getCreationDate(elem);
+					System.err.println(userNameExists +" -- "+userName);
+					System.err.println(creationDate +" -- "+date);
+				}
+				else {
+					System.err.println("NO");
+				}
+			}
 		}
 	}
+
 
 	private static void abstractContentToInvestigate(Elements nodes) {
 		String currentSectionKey = "null";
