@@ -3,14 +3,14 @@ package comphuman.task2.distanceReading;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class IterativNode3 {
+public class IterativNode {
 	private String content;
 	private String father;
-	private Extractor3 ex;
+	private Extractor ex;
 
-	public IterativNode3(String currentFather, String content) {
+	public IterativNode(String currentFather, String content) {
 		super();
-		this.ex = new Extractor3();
+		this.ex = new Extractor();
 		this.father = currentFather;
 		this.content = content;
 	}

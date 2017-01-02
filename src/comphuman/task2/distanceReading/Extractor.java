@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class Extractor3 {
+public class Extractor {
 	// REGEX
 	private String regexWikiGermanDateFormateAnyWhere = ".*[0-2][0-9]:[0-9][0-9], [0-3]*[0-9]. [a-zA-Z]{3} [0-9][0-9][0-9][0-9].*";
 	private String regexWikiGermanDateFormate = "[0-2][0-9]:[0-9][0-9], [0-3]*[0-9]. [a-zA-Z]{3} [0-9][0-9][0-9][0-9].*";

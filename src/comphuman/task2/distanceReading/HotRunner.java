@@ -15,7 +15,7 @@ import org.jsoup.select.Elements;
 
 import xgeneral.modules.SystemMessage;
 
-public class HotRunner3 {
+public class HotRunner {
 	static File outputFile = new File("CompHuman/Task2/test/temp.txt");
 	static WikiCharFormatterUNICODE wikiMapper = WikiCharFormatterUNICODE.getInstance();
 	// Sections
@@ -71,7 +71,7 @@ public class HotRunner3 {
 			for (Element elem : contentOfHeaders) {
 				content = content + elem.toString();
 			}
-			IterativNode3 iNode = new IterativNode3(key, content);
+			IterativNode iNode = new IterativNode(key, content);
 			ArrayList<WikiNodeDiscussion> wikiCommentsToTopic = iNode.hot();
 			
 			if(!topicMapTopicDiscussion.containsKey(key)){
