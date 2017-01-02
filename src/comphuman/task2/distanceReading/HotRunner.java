@@ -156,16 +156,6 @@ public class HotRunner {
 		});
 	}
 
-	private static void waitSec(int i) {
-		try {
-			Thread.sleep(i * 1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-
 	/**
 	 * Abstracts and batches the content.
 	 * 
