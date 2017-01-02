@@ -153,10 +153,9 @@ public class HotRunner {
 				graph.addEdge(UUID.randomUUID() + "", wikiNode.fatherNodeName, wikiNode.nodeName);
 				
 				if(wikiNode.contentCreatedDate.contains("noDate") ){
-					System.out.println("YES");
+					// if no informations then do nothing. Only the post will be visible.
 				}
 				else{
-					
 				//Node-CreationDate
 				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("label",wikiNode.contentCreatedDate);
 				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style","fill-color: '" + BEIGE + "';");
