@@ -94,12 +94,4 @@ public class IterativNode {
 		return list;
 	}
 
-	private String[] conntentSplittAndRemoveFirstDL(String content) {
-		String[] splittedContent = content.trim().split("\n");
-		if (splittedContent[0].contains("<dl>"))
-			splittedContent[0] = "";
-		if (splittedContent[splittedContent.length - 1].contains("</dl>"))
-			splittedContent[splittedContent.length - 1] = "";
-		return splittedContent;
-	}
 }

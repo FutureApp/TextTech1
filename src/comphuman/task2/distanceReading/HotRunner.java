@@ -36,8 +36,7 @@ public class HotRunner {
 
 	public static void main(String[] args) {
 		// String URL = "https://de.wikipedia.org/wiki/Lindentunnel";
-//		String URL = "https://de.wikipedia.org/wiki/Liste_von_Hallo-Welt-Programmen/H%C3%B6here_Programmiersprachen";
-		String URL = "https://de.wikipedia.org/wiki/Lindentunnel";
+		String URL = "https://de.wikipedia.org/wiki/Liste_von_Hallo-Welt-Programmen/H%C3%B6here_Programmiersprachen";
 		root = URL.split("/")[URL.split("/").length - 1];
 		System.out.println("ROOT-" + root);
 		outputFile.delete();
@@ -153,20 +152,26 @@ public class HotRunner {
 				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "size: 20px,20px;");
 				graph.addEdge(UUID.randomUUID() + "", wikiNode.fatherNodeName, wikiNode.nodeName);
 				
+				if(wikiNode.contentCreatedDate.contains("noDate") ){
+					System.out.println("YES");
+				}
+				else{
+					
 				//Node-CreationDate
 				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("label",wikiNode.contentCreatedDate);
 				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style","fill-color: '" + BEIGE + "';");
 				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style", "size: 15px, 15px;");
-
+				
 				//Node-User
 				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("label",wikiNode.contentCreatedUsername);
 				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style","fill-color: '" + BURLYWOOD + "';");
 				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style", "size: 15px, 15px;");
-
+				
 				//Edge between post <-> userName
 				graph.addEdge(UUID.randomUUID() + "", wikiNode.nodeName, wikiNode.contentCreatedDate + randomeUUID);
 				//Edge between post <-> creationDate
 				graph.addEdge(UUID.randomUUID() + "", wikiNode.nodeName, wikiNode.contentCreatedUsername + randomeUUID);
+				}
 			});
 		});
 	}
