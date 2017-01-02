@@ -12,12 +12,12 @@ import java.util.UUID;
 import org.apache.commons.io.FileUtils;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.MultiGraph;
+import org.graphstream.ui.layout.HierarchicalLayout;
 import org.graphstream.ui.view.Viewer;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import scala.Array;
 import xgeneral.modules.SystemMessage;
 
 public class HotRunner {
@@ -36,7 +36,8 @@ public class HotRunner {
 
 	public static void main(String[] args) {
 		// String URL = "https://de.wikipedia.org/wiki/Lindentunnel";
-		String URL = "https://de.wikipedia.org/wiki/Liste_von_Hallo-Welt-Programmen/H%C3%B6here_Programmiersprachen";
+//		String URL = "https://de.wikipedia.org/wiki/Liste_von_Hallo-Welt-Programmen/H%C3%B6here_Programmiersprachen";
+		String URL = "https://de.wikipedia.org/wiki/Lindentunnel";
 		root = URL.split("/")[URL.split("/").length - 1];
 		System.out.println("ROOT-" + root);
 		outputFile.delete();
@@ -108,10 +109,11 @@ public class HotRunner {
 
 	private static void visTheResults() {
 		String RED = Color.red.toString();
-		String AQUAMARINE = javafx.scene.paint.Color.AQUAMARINE.toString();
-		String AZURE = javafx.scene.paint.Color.AZURE.toString();
+		String BLACK = Color.BLACK.toString();
+		String GREEN= javafx.scene.paint.Color.DARKGREEN.toString();
+		String BLUE = Color.BLUE.toString();
+		String BURLYWOOD = javafx.scene.paint.Color.BURLYWOOD.toString();
 		String BEIGE = javafx.scene.paint.Color.BEIGE.toString();
-		String biggerSize = "size: 20px, 20px;";
 
 		Graph graph = new MultiGraph("Dicussions");
 		graph.addAttribute("ui.stylehseet", "url('http://www.deep.in/the/site/mystylesheet')");
@@ -119,17 +121,19 @@ public class HotRunner {
 		graph.addAttribute("ui.antialias");
 		graph.setStrict(false);
 		graph.setAutoCreate(true);
-		Viewer view = graph.display(true);
-		view.enableAutoLayout();
+		graph.display(true);
 
 		graph.addNode(root).setAttribute("label", root);
-		graph.addNode(root).addAttribute("ui.style", "size: 15px, 20px;");
+		graph.addNode(root).addAttribute("ui.style", "size: 40px, 40px;");
+		graph.addNode(root).addAttribute("ui.style","fill-color: '" + RED + "';");
+		graph.addNode(root).addAttribute("ui.style","stroke-color: '" +BLACK  + "';stroke-width: 10px;");
 		// Do some work ...
 
 		for (Entry<String, ArrayList<WikiNodeDiscussion>> entry : topicMapTopicDiscussion.entrySet()) {
 			String key = entry.getKey();
-			ArrayList value = entry.getValue();
 			graph.addNode(key).setAttribute("label", "Topic:" + key);
+			graph.addNode(key).addAttribute("ui.style","fill-color: '" + GREEN + "';");
+			graph.addNode(key).addAttribute("ui.style", "size: 30px, 30px;");
 			graph.addEdge(root + key, root, key);
 
 		}
@@ -142,25 +146,26 @@ public class HotRunner {
 
 		topicMapTopicDiscussion.forEach((key, content) -> {
 			content.forEach((wikiNode) -> {
-				graph.addEdge(UUID.randomUUID() + "", wikiNode.fatherNodeName, wikiNode.nodeName);
-				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "fill-color: '" + BEIGE + "';");
 				String randomeUUID = UUID.randomUUID() + "";
-				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("label",
-						wikiNode.contentCreatedDate);
-				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("label",
-						wikiNode.contentCreatedUsername);
 
-				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style",
-						"fill-color: '" + AQUAMARINE + "';");
-				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style", "shape: box;");
-				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style",
-						"fill-color: '" + AZURE + "';");
-				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style",
-						"shape: diamond;");
-				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style",
-						"stroke-color: blue;");
+				//Node - Post
+				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "fill-color: '" + BLUE + "';");
+				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "size: 20px,20px;");
+				graph.addEdge(UUID.randomUUID() + "", wikiNode.fatherNodeName, wikiNode.nodeName);
+				
+				//Node-CreationDate
+				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("label",wikiNode.contentCreatedDate);
+				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style","fill-color: '" + BEIGE + "';");
+				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style", "size: 15px, 15px;");
 
+				//Node-User
+				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("label",wikiNode.contentCreatedUsername);
+				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style","fill-color: '" + BURLYWOOD + "';");
+				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style", "size: 15px, 15px;");
+
+				//Edge between post <-> userName
 				graph.addEdge(UUID.randomUUID() + "", wikiNode.nodeName, wikiNode.contentCreatedDate + randomeUUID);
+				//Edge between post <-> creationDate
 				graph.addEdge(UUID.randomUUID() + "", wikiNode.nodeName, wikiNode.contentCreatedUsername + randomeUUID);
 			});
 		});
