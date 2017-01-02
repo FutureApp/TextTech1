@@ -1,109 +1,23 @@
 package comphuman.task2.distanceReading;
 
-import java.util.Currency;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 public class Extractor {
 	// REGEX
-	private String regexWikiGermanDateFormateAnyWhere = ".*[0-2][0-9]:[0-9][0-9], [0-3]*[0-9]. [a-zA-Z]{3} [0-9][0-9][0-9][0-9].*";
-	private String regexWikiGermanDateFormate = "[0-2][0-9]:[0-9][0-9], [0-3]*[0-9]. [a-zA-Z]{3} [0-9][0-9][0-9][0-9].*";
-	private String findRegexWikiGermanDateFormate = "[0-2][0-9]:[0-9][0-9], [0-3]*[0-9]. [a-zA-Z]{3}.*[0-9][0-9][0-9][0-9] .*\\)";
+	private String findRegexWikiGermanDateFormate = "[0-2][0-9]:[0-9][0-9], [0-3]*[0-9]. [a-zA-Zä-ö]{3}.*[0-9][0-9][0-9][0-9] .*\\)";
 	private String regExForUser = ".*Benutzer.*:.*";
-	private String regExForTitle = "title=.*[\"]{1}";
+	private String regExForSpezial = ".*Spezial:.*";
 
 	// CSS-Classes
-	private String classNameForRedirect = "mw-redirect";
 
 	// HTML-TAGS
-	private String delimiterForNextLayer = "<dl>";
-
-	/**
-	 * Checks if a element contains information which look like a creation-date.
-	 * 
-	 * @param e
-	 *            Element which should be checked.
-	 * @return True - if element contains information represented like a
-	 *         creatoin-date.
-	 */
-	public Boolean hasCreationDate(Element e) {
-		return e.html().matches(regexWikiGermanDateFormateAnyWhere);
-	}
-
-	/**
-	 * Abstracts the information of the user name.
-	 * 
-	 * @param Element
-	 *            which contains the user name.
-	 * @return The user name.
-	 */
-	public String getUserName(Element e) {
-		String user = "unkown";
-		if (e == null) {
-			System.err.println("Nothing given");
-		} else {
-			String userNameInTitle = e.select("a").last().attr("title").toString();
-			user = userNameInTitle.substring(userNameInTitle.lastIndexOf(":") + 1);
-
-		}
-		return user;
-	}
-
-	/**
-	 * Abstracts the date of creation.
-	 * 
-	 * @param Element
-	 *            this contains a date of creation.
-	 * @return The date of creation.
-	 */
-	public String getCreationDate(Element e) {
-		String result = "unkown";
-		String eAsHTML = e.html();
-		for (int j = 0; j < eAsHTML.length(); j++) {
-			String toCheck = eAsHTML.substring(j);
-			if (toCheck.matches(regexWikiGermanDateFormate)) {
-				result = new String(toCheck);
-				break;
-			}
-		}
-		return result;
-	}
-
-	public Boolean initNextLayer(Element e) {
-		Boolean initNextLayer = false;
-		if (e.toString().trim().startsWith(delimiterForNextLayer)) {
-			initNextLayer = true;
-		}
-		return initNextLayer;
-	}
-
-	/**
-	 * Checks if the element contains something like a user-name.
-	 * 
-	 * @param e
-	 *            Element to check.
-	 * @return True - If contains.
-	 */
-	public Boolean containsSomethingLikeUserName(Element e) {
-		Boolean containsSomethingLikeUserName = false;
-		Elements selectedElements = e.select("a");
-		if (selectedElements.size() >= 1) {
-			for (Element element : selectedElements) {
-				if (element.hasClass(classNameForRedirect)
-						&& element.getElementsByAttribute("title").toString().matches(regExForUser)) {
-					containsSomethingLikeUserName = true;
-				}
-			}
-		}
-		return containsSomethingLikeUserName;
-	}
 
 	public Boolean containsSomethingLikeUserName(String content) {
 		Boolean containsSomethingLikeUserName = false;
-		if (content.contains("title") && content.matches(regExForUser)) {
+		if (content.contains("title") && (content.matches(regExForUser) || content.matches(regExForSpezial))) {
 			containsSomethingLikeUserName = true;
 		}
 		return containsSomethingLikeUserName;
@@ -136,32 +50,46 @@ public class Extractor {
 	}
 
 	public String findUserName(String currContent) {
+
 		String wordToReturn = extractName(currContent);
 		return wordToReturn;
 	}
 
 	private String extractName(String currContent) {
+		// TODO Spezial tag abarbetiten
 		String user = "";
-		Pattern word = Pattern.compile("title");
-		Matcher match = word.matcher(currContent.toString());
-		if (match.find()) {
-			Integer matchStart = match.start();
-			String con = new String();
-			int secondQuate=0;
-			for (int i = matchStart; i < currContent.length(); i++) {
-				if(secondQuate>=2){
-					user = con;
-					break;
-				}
-				else{
-					Character charAt = currContent.charAt(i);
-					if(charAt.equals('\"')) secondQuate++;
-					else{
-						con = con+charAt;
+
+		if (currContent.toLowerCase().contains("spezial")) {
+			Pattern word = Pattern.compile("\"Spezial.*\"");
+			Matcher match = word.matcher(currContent.toString());
+			if (match.find()) {
+				user = currContent.substring(match.start() + 1, match.end() - 1).split(":")[1].split("/")[1];
+			}
+		} else {
+
+			Pattern word = Pattern.compile("title");
+			Matcher match = word.matcher(currContent.toString());
+			if (match.find()) {
+				Integer matchStart = match.start();
+				String con = new String();
+				int secondQuate = 0;
+				for (int i = matchStart; i < currContent.length(); i++) {
+					if (secondQuate >= 2) {
+						user = con;
+						break;
+					} else {
+						Character charAt = currContent.charAt(i);
+						if (charAt.equals('\"'))
+							secondQuate++;
+						else {
+							con = con + charAt;
+						}
 					}
 				}
+				user = user.split(":")[1];
 			}
+
 		}
-		return user = user.split(":")[1];
+		return user;
 	}
 }

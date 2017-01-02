@@ -31,7 +31,6 @@ public class IterativNode {
 		String activeCreationDate = new String("");
 
 		Boolean readyToPush = false;
-		Boolean push = false;
 		for (String contentFrag : contentSplitted) {
 			activeContent += contentFrag;
 			if (ex.containsSomethingLikeUserName(contentFrag)) {
@@ -47,10 +46,12 @@ public class IterativNode {
 				activeIndex++;
 			}
 			if (contentFrag.contains("</dl>")) {
+				readyToPush=true;
 				fatherNodes.remove(fatherNodes.size()-1);
 				activeIndex--;
 			}
 			if (readyToPush) {
+				
 				System.out.println("PUSHING");
 				System.out.println("USER-Name: " + activeUsername);
 				System.out.println("DATE: " + activeCreationDate);

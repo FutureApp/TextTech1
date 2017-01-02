@@ -17,6 +17,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import scala.Array;
 import xgeneral.modules.SystemMessage;
 
 public class HotRunner {
@@ -34,7 +35,8 @@ public class HotRunner {
 	static HashMap<String, ArrayList<WikiNodeDiscussion>> topicMapTopicDiscussion = new HashMap<>();
 
 	public static void main(String[] args) {
-		String URL = "https://de.wikipedia.org/wiki/Lindentunnel";
+		// String URL = "https://de.wikipedia.org/wiki/Lindentunnel";
+		String URL = "https://de.wikipedia.org/wiki/Liste_von_Hallo-Welt-Programmen/H%C3%B6here_Programmiersprachen";
 		root = URL.split("/")[URL.split("/").length - 1];
 		System.out.println("ROOT-" + root);
 		outputFile.delete();
@@ -89,10 +91,15 @@ public class HotRunner {
 			}
 
 		});
-		System.out.println();
+		//Beautify if topic exits but no entrys were found.
 		topicMapTopicDiscussion.forEach((key, content) -> {
 			System.out.println(key);
 			System.out.println(content.size());
+			if(content.size()==0){
+				ArrayList<WikiNodeDiscussion> emptyPost = new ArrayList<>();
+				emptyPost.add(new WikiNodeDiscussion(key, "", "noUser", "noDate"));
+				topicMapTopicDiscussion.put(key, emptyPost);
+			}
 		});
 
 		visTheResults();
@@ -106,7 +113,6 @@ public class HotRunner {
 		String BEIGE = javafx.scene.paint.Color.BEIGE.toString();
 		String biggerSize = "size: 20px, 20px;";
 
-		
 		Graph graph = new MultiGraph("Dicussions");
 		graph.addAttribute("ui.stylehseet", "url('http://www.deep.in/the/site/mystylesheet')");
 		graph.addAttribute("ui.quality");
@@ -135,23 +141,27 @@ public class HotRunner {
 		}
 
 		topicMapTopicDiscussion.forEach((key, content) -> {
-			content.forEach((wikiNode) ->{
-				graph.addEdge(UUID.randomUUID()+"", wikiNode.fatherNodeName, wikiNode.nodeName);
-				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "fill-color: '"+BEIGE+"';");
-				String randomeUUID = UUID.randomUUID()+"";
-				graph.addNode(wikiNode.contentCreatedDate+randomeUUID).addAttribute("label", wikiNode.contentCreatedDate);
-				graph.addNode(wikiNode.contentCreatedUsername+randomeUUID).addAttribute("label", wikiNode.contentCreatedUsername);
-				
-				graph.addNode(wikiNode.contentCreatedDate+randomeUUID).addAttribute("ui.style", "fill-color: '"+AQUAMARINE+"';");
-				graph.addNode(wikiNode.contentCreatedDate+randomeUUID).addAttribute("ui.style", "shape: box;");
-				graph.addNode(wikiNode.contentCreatedUsername+randomeUUID).addAttribute("ui.style", "fill-color: '"+AZURE+"';");
-				graph.addNode(wikiNode.contentCreatedUsername+randomeUUID).addAttribute("ui.style", "shape: diamond;");
-				graph.addNode(wikiNode.contentCreatedUsername+randomeUUID).addAttribute("ui.style", "stroke-color: blue;");
-				
-				
-				
-				graph.addEdge(UUID.randomUUID()+"", wikiNode.nodeName, wikiNode.contentCreatedDate+randomeUUID);
-				graph.addEdge(UUID.randomUUID()+"", wikiNode.nodeName, wikiNode.contentCreatedUsername+randomeUUID);
+			content.forEach((wikiNode) -> {
+				graph.addEdge(UUID.randomUUID() + "", wikiNode.fatherNodeName, wikiNode.nodeName);
+				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "fill-color: '" + BEIGE + "';");
+				String randomeUUID = UUID.randomUUID() + "";
+				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("label",
+						wikiNode.contentCreatedDate);
+				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("label",
+						wikiNode.contentCreatedUsername);
+
+				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style",
+						"fill-color: '" + AQUAMARINE + "';");
+				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style", "shape: box;");
+				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style",
+						"fill-color: '" + AZURE + "';");
+				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style",
+						"shape: diamond;");
+				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style",
+						"stroke-color: blue;");
+
+				graph.addEdge(UUID.randomUUID() + "", wikiNode.nodeName, wikiNode.contentCreatedDate + randomeUUID);
+				graph.addEdge(UUID.randomUUID() + "", wikiNode.nodeName, wikiNode.contentCreatedUsername + randomeUUID);
 			});
 		});
 	}
