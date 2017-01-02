@@ -16,6 +16,7 @@ public class CH_TaskRunner2 {
 	public static void main(String[] args) {
 		arg = args;
 		validateAmountOfGivenInput();
+		
 	}
 
 	

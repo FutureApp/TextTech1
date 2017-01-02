@@ -1,14 +1,18 @@
 package comphuman.task2.distanceReading;
 
+import java.awt.Color;
 import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map.Entry;
 import java.util.Set;
+import java.util.UUID;
 
 import org.apache.commons.io.FileUtils;
+import org.graphstream.graph.Graph;
+import org.graphstream.graph.implementations.MultiGraph;
+import org.graphstream.ui.view.Viewer;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -18,19 +22,23 @@ import xgeneral.modules.SystemMessage;
 public class HotRunner {
 	static File outputFile = new File("CompHuman/Task2/test/temp.txt");
 	static WikiCharFormatterUNICODE wikiMapper = WikiCharFormatterUNICODE.getInstance();
+
+	static String root;
 	// Sections
 	static Set<String> disHeaderType = new HashSet<>();
 	static ArrayList<String> disHeaderText = new ArrayList<>();
 	static ArrayList<String> disHeaderTypeAsArray = new ArrayList<>();
 	static HashMap<String, ArrayList<Element>> sectionsMap = new HashMap<>();
-	
-	 //Mappings
+
+	// Mappings
 	static HashMap<String, ArrayList<WikiNodeDiscussion>> topicMapTopicDiscussion = new HashMap<>();
-	
 
 	public static void main(String[] args) {
+		String URL = "https://de.wikipedia.org/wiki/Lindentunnel";
+		root = URL.split("/")[URL.split("/").length - 1];
+		System.out.println("ROOT-" + root);
 		outputFile.delete();
-		Document doc = URLReader.getContentOf("https://de.wikipedia.org/wiki/Diskussion:Lindentunnel");
+		Document doc = URLReader.getContentOf(URL);
 		String realBasis = getRealBasis(doc.baseUri());
 
 		String getURLOFDiscussion = doc.select("#ca-talk>span>a").attr("href");
@@ -64,7 +72,7 @@ public class HotRunner {
 	}
 
 	private static void investigateNodesSmart() {
-		sectionsMap.keySet().forEach(key ->{
+		sectionsMap.keySet().forEach(key -> {
 			ArrayList<Element> contentOfHeaders = sectionsMap.get(key);
 			ArrayList<WikiNodeDiscussion> wikinodes = new ArrayList<>();
 			String content = new String();
@@ -73,20 +81,89 @@ public class HotRunner {
 			}
 			IterativNode iNode = new IterativNode(key, content);
 			ArrayList<WikiNodeDiscussion> wikiCommentsToTopic = iNode.hot();
-			
-			if(!topicMapTopicDiscussion.containsKey(key)){
+
+			if (!topicMapTopicDiscussion.containsKey(key)) {
 				topicMapTopicDiscussion.put(key, wikiCommentsToTopic);
-			}
-			else{
+			} else {
 				SystemMessage.eMessage("Found multi contentlists for one topic!");
 			}
-			
+
 		});
 		System.out.println();
-		topicMapTopicDiscussion.forEach((key,content) ->{
+		topicMapTopicDiscussion.forEach((key, content) -> {
 			System.out.println(key);
 			System.out.println(content.size());
 		});
+
+		visTheResults();
+
+	}
+
+	private static void visTheResults() {
+		String RED = Color.red.toString();
+		String AQUAMARINE = javafx.scene.paint.Color.AQUAMARINE.toString();
+		String AZURE = javafx.scene.paint.Color.AZURE.toString();
+		String BEIGE = javafx.scene.paint.Color.BEIGE.toString();
+		String biggerSize = "size: 20px, 20px;";
+
+		
+		Graph graph = new MultiGraph("Dicussions");
+		graph.addAttribute("ui.stylehseet", "url('http://www.deep.in/the/site/mystylesheet')");
+		graph.addAttribute("ui.quality");
+		graph.addAttribute("ui.antialias");
+		graph.setStrict(false);
+		graph.setAutoCreate(true);
+		Viewer view = graph.display(true);
+		view.enableAutoLayout();
+
+		graph.addNode(root).setAttribute("label", root);
+		graph.addNode(root).addAttribute("ui.style", "size: 15px, 20px;");
+		// Do some work ...
+
+		for (Entry<String, ArrayList<WikiNodeDiscussion>> entry : topicMapTopicDiscussion.entrySet()) {
+			String key = entry.getKey();
+			ArrayList value = entry.getValue();
+			graph.addNode(key).setAttribute("label", "Topic:" + key);
+			graph.addEdge(root + key, root, key);
+
+		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		topicMapTopicDiscussion.forEach((key, content) -> {
+			content.forEach((wikiNode) ->{
+				graph.addEdge(UUID.randomUUID()+"", wikiNode.fatherNodeName, wikiNode.nodeName);
+				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "fill-color: '"+BEIGE+"';");
+				String randomeUUID = UUID.randomUUID()+"";
+				graph.addNode(wikiNode.contentCreatedDate+randomeUUID).addAttribute("label", wikiNode.contentCreatedDate);
+				graph.addNode(wikiNode.contentCreatedUsername+randomeUUID).addAttribute("label", wikiNode.contentCreatedUsername);
+				
+				graph.addNode(wikiNode.contentCreatedDate+randomeUUID).addAttribute("ui.style", "fill-color: '"+AQUAMARINE+"';");
+				graph.addNode(wikiNode.contentCreatedDate+randomeUUID).addAttribute("ui.style", "shape: box;");
+				graph.addNode(wikiNode.contentCreatedUsername+randomeUUID).addAttribute("ui.style", "fill-color: '"+AZURE+"';");
+				graph.addNode(wikiNode.contentCreatedUsername+randomeUUID).addAttribute("ui.style", "shape: diamond;");
+				graph.addNode(wikiNode.contentCreatedUsername+randomeUUID).addAttribute("ui.style", "stroke-color: blue;");
+				
+				
+				
+				graph.addEdge(UUID.randomUUID()+"", wikiNode.nodeName, wikiNode.contentCreatedDate+randomeUUID);
+				graph.addEdge(UUID.randomUUID()+"", wikiNode.nodeName, wikiNode.contentCreatedUsername+randomeUUID);
+			});
+		});
+	}
+
+	private static void waitSec(int i) {
+		try {
+			Thread.sleep(i * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 	/**
