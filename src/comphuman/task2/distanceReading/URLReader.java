@@ -14,7 +14,6 @@ public class URLReader {
 		try {
 			 doc = Jsoup.connect(URL).get();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(doc == null) SystemMessage.eMessage("Couldn't establish connection to <"+URL+">");
