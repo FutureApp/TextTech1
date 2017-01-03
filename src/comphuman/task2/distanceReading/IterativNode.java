@@ -6,11 +6,11 @@ import java.util.HashMap;
 public class IterativNode {
 	private String content;
 	private String father;
-	private Extractor ex;
+	private ExtractorGermanWiki ex;
 
 	public IterativNode(String currentFather, String content) {
 		super();
-		this.ex = new Extractor();
+		this.ex = new ExtractorGermanWiki();
 		this.father = currentFather;
 		this.content = content;
 	}

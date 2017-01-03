@@ -5,16 +5,29 @@ import java.util.regex.Pattern;
 
 import org.jsoup.nodes.Element;
 
-public class Extractor {
+/**
+ * This class contains the logic to extract informations from Elements or
+ * Strings. Based on the section, this class could extract the user-name(user
+ * which post the content) and the creation-date of the content.
+ * 
+ * Attention: Use this extractor only for the German Wikipedia. Otherwise it is
+ * possible that the extractor couldn't extract the content because the
+ * extractor uses regex's which correlate only to the German Wikipedia.
+ * 
+ * @author mcz
+ *
+ */
+public class ExtractorGermanWiki {
 	// REGEX
 	private String findRegexWikiGermanDateFormate = "[0-2][0-9]:[0-9][0-9], [0-3]*[0-9]. [a-zA-Zä-ö]{3}.*[0-9][0-9][0-9][0-9] .*\\)";
 	private String regExForUser = ".*Benutzer.*:.*";
 	private String regExForSpezial = ".*Spezial:.*";
 
-	// CSS-Classes
-
-	// HTML-TAGS
-
+	/**
+	 * Searches if the content could have the information of the user-name.
+	 * @param content Content which could contain the specific information(user-name)
+	 * @return True - if content contains something familiar to a user-name.
+	 */
 	public Boolean containsSomethingLikeUserName(String content) {
 		Boolean containsSomethingLikeUserName = false;
 		if (content.contains("title") && (content.matches(regExForUser) || content.matches(regExForSpezial))) {
@@ -23,11 +36,21 @@ public class Extractor {
 		return containsSomethingLikeUserName;
 	}
 
+	/**
+	 * Searches if the given element contains something similar to the creation date.
+	 * @param e An element which should contain the date-information of the post.
+	 * @return True - if element contains something similar to a wiki-date.
+	 */
 	public Boolean containsSomethigLikeCreationDate(Element e) {
 		Boolean containsSomethingLikeDate = containsSomethigLikeCreationDate(e.toString());
 		return containsSomethingLikeDate;
 	}
 
+	/**
+	 * Searches if the content contains something similar to the creation date.
+	 * @param content An element which should contain the date-information of the post.
+	 * @return True - if element contains something similar to a wiki-date.
+	 */
 	public Boolean containsSomethigLikeCreationDate(String content) {
 		Boolean containsSomethingLikeDate = false;
 		Pattern word = Pattern.compile(findRegexWikiGermanDateFormate);
@@ -39,6 +62,11 @@ public class Extractor {
 		return containsSomethingLikeDate;
 	}
 
+	/**
+	 * Searches in the given content for the wiki-post creation date.
+	 * @param currContent Content which contains a wiki-post creation-date.
+	 * @return Returns the wiki-post creation date. Empty if the date couldn't be founsd.
+	 */
 	public String findCreationDate(String currContent) {
 		String wordToReturn = new String();
 		Pattern word = Pattern.compile(findRegexWikiGermanDateFormate);
@@ -49,14 +77,23 @@ public class Extractor {
 		return wordToReturn;
 	}
 
+	/**
+	 * Searches for the user-name  in the given content.
+	 * @param currContent Content which contains the user-name
+	 * @return Returns an empty String if the user-name couldn't be extracted.
+	 */
 	public String findUserName(String currContent) {
-
 		String wordToReturn = extractName(currContent);
 		return wordToReturn;
 	}
 
+	/**
+	 * Extracts the user-name of a given content.
+	 * 
+	 * @param currContent Content which contains the user-name
+	 * @return Returns an empty String if the user-name couldn't be found -> extracted.
+	 */
 	private String extractName(String currContent) {
-		// TODO Spezial tag abarbetiten
 		String user = "";
 
 		if (currContent.toLowerCase().contains("spezial")) {
@@ -66,7 +103,6 @@ public class Extractor {
 				user = currContent.substring(match.start() + 1, match.end() - 1).split(":")[1].split("/")[1];
 			}
 		} else {
-
 			Pattern word = Pattern.compile("title");
 			Matcher match = word.matcher(currContent.toString());
 			if (match.find()) {
