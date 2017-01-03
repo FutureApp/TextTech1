@@ -1,7 +1,6 @@
 package comphuman.task2.distanceReading;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class SectionIterator {

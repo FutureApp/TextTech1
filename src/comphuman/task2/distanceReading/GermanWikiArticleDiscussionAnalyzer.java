@@ -12,8 +12,6 @@ import java.util.UUID;
 import org.apache.commons.io.FileUtils;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.MultiGraph;
-import org.graphstream.ui.layout.HierarchicalLayout;
-import org.graphstream.ui.view.Viewer;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
