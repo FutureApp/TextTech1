@@ -3,15 +3,21 @@ package comphuman.task2.distanceReading;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class WikiNodeDiscussion {
+
+/**
+ * Represents a post in Wikipedia 
+ * @author mcz
+ *
+ */
+public class WikiNodePost {
 	String fatherNodeName;
 	String nodeName;
 	String content;
 	String contentCreatedUsername;
 	String contentCreatedDate;
 	
-	ArrayList<WikiNodeDiscussion> wikiNodes;
-	public WikiNodeDiscussion(String fatherNodeName, String content, String contentCreatedUsername, String contentCreatedDate) {
+	ArrayList<WikiNodePost> wikiNodes;
+	public WikiNodePost(String fatherNodeName, String content, String contentCreatedUsername, String contentCreatedDate) {
 		super();
 		this.fatherNodeName = fatherNodeName;
 		this.content = content;
@@ -19,7 +25,7 @@ public class WikiNodeDiscussion {
 		this.contentCreatedDate = contentCreatedDate;
 		this.nodeName = UUID.randomUUID().toString();
 	}
-	public WikiNodeDiscussion(String UUID,String fatherNodeName, String content, String contentCreatedUsername, String contentCreatedDate) {
+	public WikiNodePost(String UUID,String fatherNodeName, String content, String contentCreatedUsername, String contentCreatedDate) {
 		super();
 		this.fatherNodeName = fatherNodeName;
 		this.content = content;

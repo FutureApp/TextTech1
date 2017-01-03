@@ -19,9 +19,9 @@ public class IterativNode {
 		System.err.println(content.toString());
 	}
 
-	public ArrayList<WikiNodeDiscussion> hot() {
+	public ArrayList<WikiNodePost> hot() {
 		ArrayList<String> fatherNodes = new ArrayList<>();
-		ArrayList<WikiNodeDiscussion> wikiNodes = new ArrayList<>();
+		ArrayList<WikiNodePost> wikiNodes = new ArrayList<>();
 		fatherNodes.add(father);
 
 		ArrayList<String> contentSplitted = mysplit(content);
@@ -55,7 +55,7 @@ public class IterativNode {
 				System.out.println("PUSHING");
 				System.out.println("USER-Name: " + activeUsername);
 				System.out.println("DATE: " + activeCreationDate);
-				WikiNodeDiscussion wikiNode = new WikiNodeDiscussion(fatherNodes.get(activeIndex), activeContent, activeUsername,
+				WikiNodePost wikiNode = new WikiNodePost(fatherNodes.get(activeIndex), activeContent, activeUsername,
 						activeCreationDate);
 				wikiNodes.add(wikiNode);
 				readyToPush = false;
@@ -64,7 +64,7 @@ public class IterativNode {
 		}
 		System.out.println("-------");
 		System.out.println(fatherNodes.size());
-		for (WikiNodeDiscussion node : wikiNodes) {
+		for (WikiNodePost node : wikiNodes) {
 			System.out.println();
 			System.out.println(node.fatherNodeName);
 			System.out.println(node.nodeName);

@@ -32,7 +32,7 @@ public class HotRunner {
 	static HashMap<String, ArrayList<Element>> sectionsMap = new HashMap<>();
 
 	// Mappings
-	static HashMap<String, ArrayList<WikiNodeDiscussion>> topicMapTopicDiscussion = new HashMap<>();
+	static HashMap<String, ArrayList<WikiNodePost>> topicMapTopicDiscussion = new HashMap<>();
 
 	public static void main(String[] args) {
 		// String URL = "https://de.wikipedia.org/wiki/Lindentunnel";
@@ -76,13 +76,13 @@ public class HotRunner {
 	private static void investigateNodesSmart() {
 		sectionsMap.keySet().forEach(key -> {
 			ArrayList<Element> contentOfHeaders = sectionsMap.get(key);
-			ArrayList<WikiNodeDiscussion> wikinodes = new ArrayList<>();
+			ArrayList<WikiNodePost> wikinodes = new ArrayList<>();
 			String content = new String();
 			for (Element elem : contentOfHeaders) {
 				content = content + elem.toString();
 			}
 			IterativNode iNode = new IterativNode(key, content);
-			ArrayList<WikiNodeDiscussion> wikiCommentsToTopic = iNode.hot();
+			ArrayList<WikiNodePost> wikiCommentsToTopic = iNode.hot();
 
 			if (!topicMapTopicDiscussion.containsKey(key)) {
 				topicMapTopicDiscussion.put(key, wikiCommentsToTopic);
@@ -96,8 +96,8 @@ public class HotRunner {
 			System.out.println(key);
 			System.out.println(content.size());
 			if(content.size()==0){
-				ArrayList<WikiNodeDiscussion> emptyPost = new ArrayList<>();
-				emptyPost.add(new WikiNodeDiscussion(key, "", "noUser", "noDate"));
+				ArrayList<WikiNodePost> emptyPost = new ArrayList<>();
+				emptyPost.add(new WikiNodePost(key, "", "noUser", "noDate"));
 				topicMapTopicDiscussion.put(key, emptyPost);
 			}
 		});
@@ -128,7 +128,7 @@ public class HotRunner {
 		graph.addNode(root).addAttribute("ui.style","stroke-color: '" +BLACK  + "';stroke-width: 10px;");
 		// Do some work ...
 
-		for (Entry<String, ArrayList<WikiNodeDiscussion>> entry : topicMapTopicDiscussion.entrySet()) {
+		for (Entry<String, ArrayList<WikiNodePost>> entry : topicMapTopicDiscussion.entrySet()) {
 			String key = entry.getKey();
 			graph.addNode(key).setAttribute("label", "Topic:" + key);
 			graph.addNode(key).addAttribute("ui.style","fill-color: '" + GREEN + "';");
