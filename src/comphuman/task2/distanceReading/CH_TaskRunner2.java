@@ -53,11 +53,12 @@ public class CH_TaskRunner2 {
 		String linkToDiscussion = RunnerHelper.extractDiscussionLink(wikiLink);
 		String linkToHisDiscussion = RunnerHelper.extractHisDiscussionLink(linkToDiscussion);
 		
-		GermanWikiArticleDiscussionHistoryAnalyzer hisAna = new GermanWikiArticleDiscussionHistoryAnalyzer(linkToHisDiscussion, articleName);
-		hisAna.startAnalyser();
 		GermanWikiArticleDiscussionAnalyzer articleAna = new GermanWikiArticleDiscussionAnalyzer(linkToDiscussion, articleName);
 		articleAna.runAnalyses();
 		articleAna.visTheResults();
+		GermanWikiArticleDiscussionHistoryAnalyzer hisAna = new GermanWikiArticleDiscussionHistoryAnalyzer(linkToHisDiscussion, articleName);
+		hisAna.startAnalyser();
+		
 		
 		
 	}
