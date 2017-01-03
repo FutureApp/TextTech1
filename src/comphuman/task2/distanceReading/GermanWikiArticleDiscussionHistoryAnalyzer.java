@@ -23,7 +23,7 @@ public class GermanWikiArticleDiscussionHistoryAnalyzer {
 			startDiscussionAnalyserAndSaveResults(element);
 			//TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			//Remove that shit.
-			break;
+//			break;
 		}
 	}
 
@@ -32,7 +32,8 @@ public class GermanWikiArticleDiscussionHistoryAnalyzer {
 		System.out.println(element.attr("date"));
 		GermanWikiArticleDiscussionAnalyzer disAnal = new GermanWikiArticleDiscussionAnalyzer(URLtoDisHis, articleName);
 		disAnal.runAnalyses();
-		disAnal.saveResults("history/");
+		disAnal.visTheResults();
+//		disAnal.saveResults("history/");
 	}
 
 	/**
