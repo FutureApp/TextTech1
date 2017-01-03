@@ -11,7 +11,6 @@ public class VisualizeTopicMapTopicDiscussion {
 		graph.addEdge("AB", "A", "B");
 		graph.addEdge("BC", "B", "C");
 		graph.addEdge("CA", "C", "A");
-		
 		graph.display();
 	}
 }
