@@ -3,12 +3,13 @@ package comphuman.task2.distanceReading;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class IterativNode {
+
+public class SectionIterator {
 	private String content;
 	private String father;
 	private ExtractorGermanWiki ex;
 
-	public IterativNode(String currentFather, String content) {
+	public SectionIterator(String currentFather, String content) {
 		super();
 		this.ex = new ExtractorGermanWiki();
 		this.father = currentFather;
