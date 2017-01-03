@@ -15,10 +15,6 @@ public class IterativNode {
 		this.content = content;
 	}
 
-	public void SysoElement() {
-		System.err.println(content.toString());
-	}
-
 	public ArrayList<WikiNodePost> hot() {
 		ArrayList<String> fatherNodes = new ArrayList<>();
 		ArrayList<WikiNodePost> wikiNodes = new ArrayList<>();
