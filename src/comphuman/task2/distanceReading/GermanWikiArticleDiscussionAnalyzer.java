@@ -29,7 +29,6 @@ import xgeneral.modules.SystemMessage;
  */
 public class GermanWikiArticleDiscussionAnalyzer {
 	 private File outputFile = new File("CompHuman/Task2/test/temp.txt");
-	 private WikiCharFormatterUNICODE wikiMapper = WikiCharFormatterUNICODE.getInstance();
 	// Sections
 	 private Set<String> disHeaderType = new HashSet<>();
 	 private ArrayList<String> disHeaderText = new ArrayList<>();
