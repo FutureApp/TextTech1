@@ -20,18 +20,19 @@ public class GermanWikiArticleDiscussionHistoryAnalyzer {
 	public void startAnalyser() {
 		ArrayList<Element> linksToHistory = extractHistoryLinks(URL);
 		for (Element element : linksToHistory) {
-			String URLtoDisHis = RunnerHelper.extractBaseURL(URL)+element.attr("href");
-			System.out.println(element.attr("date"));
-			callDiscussionAnalyser(URLtoDisHis);
+			startDiscussionAnalyserAndSaveResults(element);
 			//TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			//Remove that shit.
 			break;
 		}
 	}
 
-	private void callDiscussionAnalyser(String URLtoDisHis) {
+	private void startDiscussionAnalyserAndSaveResults(Element element) {
+		String URLtoDisHis = RunnerHelper.extractBaseURL(URL)+element.attr("href");
+		System.out.println(element.attr("date"));
 		GermanWikiArticleDiscussionAnalyzer disAnal = new GermanWikiArticleDiscussionAnalyzer(URLtoDisHis, articleName);
 		disAnal.runAnalyses();
+		disAnal.saveResults("history/");
 	}
 
 	/**
