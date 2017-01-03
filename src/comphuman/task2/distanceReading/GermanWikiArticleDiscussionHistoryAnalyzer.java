@@ -7,30 +7,31 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class GermanWikiArticleDiscussionHistoryAnalyzer {
-	static String cssSelectorAllHistoryLinkGERMAN = ".mw-changeslist-date";
-	static String basisURL=null;
+	private String URL;
+	private String articleName;
+	String cssSelectorAllHistoryLinkGERMAN = ".mw-changeslist-date";
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String URL = "https://de.wikipedia.org/w/index.php?title=Diskussion:MongoDB&action=history";
-		basisURL = URL.substring(0,URL.indexOf("/", 8));
-		System.out.println(basisURL);
-		URL = attacheLimit(URL, 10000);
-
-		ArrayList<Element> linksToHistory = extractHistoryLinks(URL);
-
-		for (Element element : linksToHistory) {
-
-			callDiscussionAnalyser(element);
-			
-			break;
-		}
-
+	public GermanWikiArticleDiscussionHistoryAnalyzer(String URL, String articleName) {
+		super();
+		this.URL = attacheLimit(URL, 10000);
+		this.articleName = articleName;
 	}
 
-	private static void callDiscussionAnalyser(Element element) {
-		String linkToHis = basisURL+element.attr("href");
-		GermanWikiArticleDiscussionAnalyzer.main(new String[] {linkToHis});
+	public void startAnalyser() {
+		ArrayList<Element> linksToHistory = extractHistoryLinks(URL);
+		for (Element element : linksToHistory) {
+			String URLtoDisHis = RunnerHelper.extractBaseURL(URL)+element.attr("href");
+			System.out.println(element.attr("date"));
+			callDiscussionAnalyser(URLtoDisHis);
+			//TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			//Remove that shit.
+			break;
+		}
+	}
+
+	private void callDiscussionAnalyser(String URLtoDisHis) {
+		GermanWikiArticleDiscussionAnalyzer disAnal = new GermanWikiArticleDiscussionAnalyzer(URLtoDisHis, articleName);
+		disAnal.runAnalyses();
 	}
 
 	/**
@@ -42,14 +43,20 @@ public class GermanWikiArticleDiscussionHistoryAnalyzer {
 	 * @return Array of elements which contains a link to specific history-page.
 	 *         Empty if no history-link could be found.
 	 */
-	private static ArrayList<Element> extractHistoryLinks(String URL) {
+	private ArrayList<Element> extractHistoryLinks(String URL) {
 		ArrayList<Element> linksToHistorys = new ArrayList<>();
 		Document doc = URL_Handler.getContentOf(URL);
 		Elements elements = doc.select(cssSelectorAllHistoryLinkGERMAN);
-		elements.forEach((element) -> linksToHistorys.add(element));
+		for (Element myElements : elements) {
+			String date = myElements.text();
+			myElements.attr("date", date);
+			linksToHistorys.add(myElements);
+		}
 		return linksToHistorys;
+
 	}
-	private static String attacheLimit(String URL, Integer limit) {
+
+	private String attacheLimit(String URL, Integer limit) {
 		return URL += "&limit=" + limit;
 	}
 
