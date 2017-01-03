@@ -98,7 +98,7 @@ public class HotRunner {
 			for (Element elem : contentOfHeaders) {
 				content = content + elem.toString();
 			}
-			IterativNode iNode = new IterativNode(key, content);
+			SectionIterator iNode = new SectionIterator(key, content);
 			ArrayList<WikiNodePost> wikiCommentsToTopic = iNode.hot();
 
 			if (!topicMapTopicDiscussion.containsKey(key)) {
