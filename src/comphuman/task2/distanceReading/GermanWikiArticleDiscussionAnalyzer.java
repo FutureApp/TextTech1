@@ -29,7 +29,7 @@ import xgeneral.modules.SystemMessage;
  * @author mcz
  *
  */
-public class HotRunner {
+public class GermanWikiArticleDiscussionAnalyzer {
 	static File outputFile = new File("CompHuman/Task2/test/temp.txt");
 	static WikiCharFormatterUNICODE wikiMapper = WikiCharFormatterUNICODE.getInstance();
 
