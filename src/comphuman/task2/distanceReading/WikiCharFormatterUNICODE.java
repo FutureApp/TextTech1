@@ -2,13 +2,19 @@ package comphuman.task2.distanceReading;
 
 import java.util.HashMap;
 
+
+/**
+ * Handler to translate some strings to the specific uni-code letters which are used by wikipedia.
+ * @author mcz
+ *
+ */
 public class WikiCharFormatterUNICODE {
 
 	private  HashMap<String, String> wikiUnicodeMap = new HashMap<>();
 	private static final WikiCharFormatterUNICODE YOURSELF = new WikiCharFormatterUNICODE();
 
 	/**
-	 * Call the init function.
+	 * Call the init. function.
 	 */
 	private WikiCharFormatterUNICODE() {
 		__init();
