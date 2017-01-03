@@ -54,11 +54,11 @@ public class HotRunner {
 		root = URL.split("/")[URL.split("/").length - 1];
 		System.out.println("ROOT-" + root);
 		outputFile.delete();
-		Document doc = URLReader.getContentOf(URL);
+		Document doc = URL_Handler.getContentOf(URL);
 		String realBasis = getRealBasis(doc.baseUri());
 
 		String getURLOFDiscussion = doc.select("#ca-talk>span>a").attr("href");
-		Document discussionContent = URLReader.getContentOf(realBasis + getURLOFDiscussion);
+		Document discussionContent = URL_Handler.getContentOf(realBasis + getURLOFDiscussion);
 
 		Elements headers = discussionContent.select("span[class=mw-headline]");
 		headers.forEach((a) -> {
