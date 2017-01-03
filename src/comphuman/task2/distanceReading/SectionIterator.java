@@ -38,6 +38,12 @@ public class SectionIterator {
 			}
 
 			if (contentFrag.contains("<dl>")) {
+				if(0>wikiNodes.size() - 1) {
+					WikiNodePost wikiNode = new WikiNodePost(fatherNodes.get(activeIndex), activeContent, activeUsername,
+							activeCreationDate);
+					wikiNodes.add(wikiNode);
+					
+				}
 				fatherNodes.add(wikiNodes.get(wikiNodes.size() - 1).getNodeName());
 				activeIndex++;
 			}
