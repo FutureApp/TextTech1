@@ -20,6 +20,15 @@ import org.jsoup.select.Elements;
 
 import xgeneral.modules.SystemMessage;
 
+/**
+ * Represents the 'main' class to search,extract and vis the information(
+ * Main-Page-title, all topic's in the discussion-forum(based on
+ * main-page-title), all post to corresponding discussion-topic and
+ * Corresponding information(username & creation-date)).
+ * 
+ * @author mcz
+ *
+ */
 public class HotRunner {
 	static File outputFile = new File("CompHuman/Task2/test/temp.txt");
 	static WikiCharFormatterUNICODE wikiMapper = WikiCharFormatterUNICODE.getInstance();
@@ -34,6 +43,11 @@ public class HotRunner {
 	// Mappings
 	static HashMap<String, ArrayList<WikiNodePost>> topicMapTopicDiscussion = new HashMap<>();
 
+	/**
+	 * Visits the given and abstracts the information. After all, all information get saved and visualized.
+	 * @param args Only one parameter is supported -> arg[0] = wikipedia-weblink.
+	 * 
+	 */
 	public static void main(String[] args) {
 		// String URL = "https://de.wikipedia.org/wiki/Lindentunnel";
 		String URL = "https://de.wikipedia.org/wiki/Liste_von_Hallo-Welt-Programmen/H%C3%B6here_Programmiersprachen";
@@ -70,13 +84,16 @@ public class HotRunner {
 
 		System.err.println(disHeaderTypeAsArray);
 		abstractContentToInvestigate(nodes);
-		investigateNodesSmart();
+		exploreNodesSmart();
 	}
 
-	private static void investigateNodesSmart() {
+	
+	/**
+	 * Explores each section and extracts the important informations (user-name,creation-date).
+	 */
+	private static void exploreNodesSmart() {
 		sectionsMap.keySet().forEach(key -> {
 			ArrayList<Element> contentOfHeaders = sectionsMap.get(key);
-			ArrayList<WikiNodePost> wikinodes = new ArrayList<>();
 			String content = new String();
 			for (Element elem : contentOfHeaders) {
 				content = content + elem.toString();
@@ -91,92 +108,23 @@ public class HotRunner {
 			}
 
 		});
-		//Beautify if topic exits but no entrys were found.
+		// Beautifying of section if section exits but contains no entry's. Happens if not signed or due an fail-recognition.
 		topicMapTopicDiscussion.forEach((key, content) -> {
 			System.out.println(key);
 			System.out.println(content.size());
-			if(content.size()==0){
+			if (content.size() == 0) {
 				ArrayList<WikiNodePost> emptyPost = new ArrayList<>();
 				emptyPost.add(new WikiNodePost(key, "", "noUser", "noDate"));
 				topicMapTopicDiscussion.put(key, emptyPost);
 			}
 		});
-
 		visTheResults();
 
 	}
 
-	private static void visTheResults() {
-		String RED = Color.red.toString();
-		String BLACK = Color.BLACK.toString();
-		String GREEN= javafx.scene.paint.Color.DARKGREEN.toString();
-		String BLUE = Color.BLUE.toString();
-		String BURLYWOOD = javafx.scene.paint.Color.BURLYWOOD.toString();
-		String BEIGE = javafx.scene.paint.Color.BEIGE.toString();
-
-		Graph graph = new MultiGraph("Dicussions");
-		graph.addAttribute("ui.stylehseet", "url('http://www.deep.in/the/site/mystylesheet')");
-		graph.addAttribute("ui.quality");
-		graph.addAttribute("ui.antialias");
-		graph.setStrict(false);
-		graph.setAutoCreate(true);
-		graph.display(true);
-
-		graph.addNode(root).setAttribute("label", root);
-		graph.addNode(root).addAttribute("ui.style", "size: 40px, 40px;");
-		graph.addNode(root).addAttribute("ui.style","fill-color: '" + RED + "';");
-		graph.addNode(root).addAttribute("ui.style","stroke-color: '" +BLACK  + "';stroke-width: 10px;");
-		// Do some work ...
-
-		for (Entry<String, ArrayList<WikiNodePost>> entry : topicMapTopicDiscussion.entrySet()) {
-			String key = entry.getKey();
-			graph.addNode(key).setAttribute("label", "Topic:" + key);
-			graph.addNode(key).addAttribute("ui.style","fill-color: '" + GREEN + "';");
-			graph.addNode(key).addAttribute("ui.style", "size: 30px, 30px;");
-			graph.addEdge(root + key, root, key);
-
-		}
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		topicMapTopicDiscussion.forEach((key, content) -> {
-			content.forEach((wikiNode) -> {
-				String randomeUUID = UUID.randomUUID() + "";
-
-				//Node - Post
-				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "fill-color: '" + BLUE + "';");
-				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "size: 20px,20px;");
-				graph.addEdge(UUID.randomUUID() + "", wikiNode.fatherNodeName, wikiNode.nodeName);
-				
-				if(wikiNode.contentCreatedDate.contains("noDate") ){
-					// if no informations then do nothing. Only the post will be visible.
-				}
-				else{
-				//Node-CreationDate
-				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("label",wikiNode.contentCreatedDate);
-				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style","fill-color: '" + BEIGE + "';");
-				graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style", "size: 15px, 15px;");
-				
-				//Node-User
-				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("label",wikiNode.contentCreatedUsername);
-				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style","fill-color: '" + BURLYWOOD + "';");
-				graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style", "size: 15px, 15px;");
-				
-				//Edge between post <-> userName
-				graph.addEdge(UUID.randomUUID() + "", wikiNode.nodeName, wikiNode.contentCreatedDate + randomeUUID);
-				//Edge between post <-> creationDate
-				graph.addEdge(UUID.randomUUID() + "", wikiNode.nodeName, wikiNode.contentCreatedUsername + randomeUUID);
-				}
-			});
-		});
-	}
-
+	
 	/**
-	 * Abstracts and batches the content.
+	 * Abstracts the sections and offers the content for exploration.
 	 * 
 	 * @param nodes
 	 *            Nodes,which containing the content.
@@ -238,5 +186,85 @@ public class HotRunner {
 	private static String getRealBasis(String URI) {
 		return URI.substring(0, URI.replace("//", "$").indexOf('/') + 1);
 	}
+	/**
+	 * Visualize the informations which are generated by
+	 * {@link #exploreNodesSmart()}
+	 */
+	private static void visTheResults() {
+		String RED = Color.red.toString();
+		String BLACK = Color.BLACK.toString();
+		String GREEN = javafx.scene.paint.Color.DARKGREEN.toString();
+		String BLUE = Color.BLUE.toString();
+		String BURLYWOOD = javafx.scene.paint.Color.BURLYWOOD.toString();
+		String BEIGE = javafx.scene.paint.Color.BEIGE.toString();
+
+		Graph graph = new MultiGraph("Dicussions");
+		graph.addAttribute("ui.stylehseet", "url('http://www.deep.in/the/site/mystylesheet')");
+		graph.addAttribute("ui.quality");
+		graph.addAttribute("ui.antialias");
+		graph.setStrict(false);
+		graph.setAutoCreate(true);
+		graph.display(true);
+
+		graph.addNode(root).setAttribute("label", root);
+		graph.addNode(root).addAttribute("ui.style", "size: 40px, 40px;");
+		graph.addNode(root).addAttribute("ui.style", "fill-color: '" + RED + "';");
+		graph.addNode(root).addAttribute("ui.style", "stroke-color: '" + BLACK + "';stroke-width: 10px;");
+		// Do some work ...
+
+		for (Entry<String, ArrayList<WikiNodePost>> entry : topicMapTopicDiscussion.entrySet()) {
+			String key = entry.getKey();
+			graph.addNode(key).setAttribute("label", "Topic:" + key);
+			graph.addNode(key).addAttribute("ui.style", "fill-color: '" + GREEN + "';");
+			graph.addNode(key).addAttribute("ui.style", "size: 30px, 30px;");
+			graph.addEdge(root + key, root, key);
+
+		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		topicMapTopicDiscussion.forEach((key, content) -> {
+			content.forEach((wikiNode) -> {
+				String randomeUUID = UUID.randomUUID() + "";
+
+				// Node - Post
+				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "fill-color: '" + BLUE + "';");
+				graph.addNode(wikiNode.nodeName).addAttribute("ui.style", "size: 20px,20px;");
+				graph.addEdge(UUID.randomUUID() + "", wikiNode.fatherNodeName, wikiNode.nodeName);
+
+				if (wikiNode.contentCreatedDate.contains("noDate")) {
+					// if no informations then do nothing. Only the post will be
+					// visible.
+				} else {
+					// Node-CreationDate
+					graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("label",
+							wikiNode.contentCreatedDate);
+					graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style",
+							"fill-color: '" + BEIGE + "';");
+					graph.addNode(wikiNode.contentCreatedDate + randomeUUID).addAttribute("ui.style",
+							"size: 15px, 15px;");
+
+					// Node-User
+					graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("label",
+							wikiNode.contentCreatedUsername);
+					graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style",
+							"fill-color: '" + BURLYWOOD + "';");
+					graph.addNode(wikiNode.contentCreatedUsername + randomeUUID).addAttribute("ui.style",
+							"size: 15px, 15px;");
+
+					// Edge between post <-> userName
+					graph.addEdge(UUID.randomUUID() + "", wikiNode.nodeName, wikiNode.contentCreatedDate + randomeUUID);
+					// Edge between post <-> creationDate
+					graph.addEdge(UUID.randomUUID() + "", wikiNode.nodeName,
+							wikiNode.contentCreatedUsername + randomeUUID);
+				}
+			});
+		});
+	}
+
 
 }
