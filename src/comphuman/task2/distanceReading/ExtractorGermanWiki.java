@@ -65,7 +65,7 @@ public class ExtractorGermanWiki {
 	/**
 	 * Searches in the given content for the wiki-post creation date.
 	 * @param currContent Content which contains a wiki-post creation-date.
-	 * @return Returns the wiki-post creation date. Empty if the date couldn't be founsd.
+	 * @return Returns the wiki-post creation date. Empty if the date couldn't be found.
 	 */
 	public String findCreationDate(String currContent) {
 		String wordToReturn = new String();
@@ -74,6 +74,7 @@ public class ExtractorGermanWiki {
 		if (match.find()) {
 			wordToReturn = currContent.substring(match.start(), match.end());
 		}
+		wordToReturn = ContentCleaner.clean(wordToReturn);
 		return wordToReturn;
 	}
 
@@ -126,6 +127,10 @@ public class ExtractorGermanWiki {
 			}
 
 		}
+		
+		user = ContentCleaner.clean(user);
 		return user;
 	}
+
+	
 }

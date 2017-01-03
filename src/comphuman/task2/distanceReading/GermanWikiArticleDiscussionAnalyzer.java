@@ -31,7 +31,7 @@ public class GermanWikiArticleDiscussionAnalyzer {
 	static File outputFile = new File("CompHuman/Task2/test/temp.txt");
 	static WikiCharFormatterUNICODE wikiMapper = WikiCharFormatterUNICODE.getInstance();
 
-	static String root;
+	static String articleName;
 	// Sections
 	static Set<String> disHeaderType = new HashSet<>();
 	static ArrayList<String> disHeaderText = new ArrayList<>();
@@ -47,10 +47,16 @@ public class GermanWikiArticleDiscussionAnalyzer {
 	 * 
 	 */
 	public static void main(String[] args) {
-		// String URL = "https://de.wikipedia.org/wiki/Lindentunnel";
-		String URL = "https://de.wikipedia.org/wiki/Liste_von_Hallo-Welt-Programmen/H%C3%B6here_Programmiersprachen";
-		root = URL.split("/")[URL.split("/").length - 1];
-		System.out.println("ROOT-" + root);
+		String URL;
+		if(args.length==1) URL= args[0];
+		else URL = "https://de.wikipedia.org/wiki/Liste_von_Hallo-Welt-Programmen/H%C3%B6here_Programmiersprachen";
+		
+		//Tested with
+//		URL = "https://de.wikipedia.org/wiki/Lindentunnel";
+		
+		//-----
+		articleName = URL.split("/")[URL.split("/").length - 1];
+		System.out.println("ROOT-" + articleName);
 		outputFile.delete();
 		Document doc = URL_Handler.getContentOf(URL);
 		String realBasis = getRealBasis(doc.baseUri());
@@ -73,7 +79,6 @@ public class GermanWikiArticleDiscussionAnalyzer {
 		// Prepare for exec
 		Elements nodes = discussionContent.select("*");
 		if (disHeaderTypeAsArray.size() != 0) {
-
 			for (String selector : disHeaderTypeAsArray) {
 				nodes = discussionContent.select(selector + ":has(span[class=mw-headline])").before("<start>").get(0)
 						.siblingElements();
@@ -204,18 +209,18 @@ public class GermanWikiArticleDiscussionAnalyzer {
 		graph.setAutoCreate(true);
 		graph.display(true);
 
-		graph.addNode(root).setAttribute("label", root);
-		graph.addNode(root).addAttribute("ui.style", "size: 40px, 40px;");
-		graph.addNode(root).addAttribute("ui.style", "fill-color: '" + RED + "';");
-		graph.addNode(root).addAttribute("ui.style", "stroke-color: '" + BLACK + "';stroke-width: 10px;");
+		graph.addNode(articleName).setAttribute("label", articleName);
+		graph.addNode(articleName).addAttribute("ui.style", "size: 40px, 40px;");
+		graph.addNode(articleName).addAttribute("ui.style", "fill-color: '" + RED + "';");
+		graph.addNode(articleName).addAttribute("ui.style", "stroke-color: '" + BLACK + "';stroke-width: 10px;");
 		// Do some work ...
 
 		for (Entry<String, ArrayList<WikiNodePost>> entry : topicMapTopicDiscussion.entrySet()) {
 			String key = entry.getKey();
-			graph.addNode(key).setAttribute("label", "Topic:" + key);
+			graph.addNode(key).setAttribute("label", "Section[ " + key+" ] ");
 			graph.addNode(key).addAttribute("ui.style", "fill-color: '" + GREEN + "';");
 			graph.addNode(key).addAttribute("ui.style", "size: 30px, 30px;");
-			graph.addEdge(root + key, root, key);
+			graph.addEdge(articleName + key, articleName, key);
 
 		}
 		try {
