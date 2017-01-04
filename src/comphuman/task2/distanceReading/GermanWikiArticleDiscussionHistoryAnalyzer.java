@@ -6,6 +6,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import comphuman.task2.distanceReading.newOne.URL_Handler;
+
 public class GermanWikiArticleDiscussionHistoryAnalyzer {
 	private String URL;
 	private String articleName;
@@ -21,9 +23,6 @@ public class GermanWikiArticleDiscussionHistoryAnalyzer {
 		ArrayList<Element> linksToHistory = extractHistoryLinks(URL);
 		for (Element element : linksToHistory) {
 			startDiscussionAnalyserAndSaveResults(element);
-			//TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			//Remove that shit.
-//			break;
 		}
 	}
 
@@ -32,7 +31,7 @@ public class GermanWikiArticleDiscussionHistoryAnalyzer {
 		System.out.println(element.attr("date"));
 		GermanWikiArticleDiscussionAnalyzer disAnal = new GermanWikiArticleDiscussionAnalyzer(URLtoDisHis, articleName);
 		disAnal.runAnalyses();
-		disAnal.visTheResults();
+//		disAnal.visTheResults();
 //		disAnal.saveResults("history/");
 	}
 

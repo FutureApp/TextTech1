@@ -2,6 +2,8 @@ package comphuman.task2.distanceReading;
 
 import org.jsoup.nodes.Document;
 
+import comphuman.task2.distanceReading.newOne.URL_Handler;
+
 public class RunnerHelper {
 
 	public static String extractArticleName(String wikiLink) {

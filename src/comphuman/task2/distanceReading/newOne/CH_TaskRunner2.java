@@ -1,7 +1,8 @@
-package comphuman.task2.distanceReading;
+package comphuman.task2.distanceReading.newOne;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.commons.io.FileUtils;
 
@@ -12,8 +13,8 @@ public class CH_TaskRunner2 {
 
 	static String[] arg;
 	static String encoding = Encoding.getDefaultEncoding();
-	
-	static String resultDir="CompHuman/result";
+
+	static String resultDir = "CompHuman/result";
 
 	/**
 	 * Entry-point of application. TODO
@@ -25,47 +26,33 @@ public class CH_TaskRunner2 {
 		validateAmountOfGivenInput();
 		cleanResultDir(resultDir);
 		runAnalysis(arg[0]);
+
+	}
+
+	private static void runAnalysis(String URL) {
+		WikiArticle wikiArticle = new WikiArticle(URL);
+		System.out.println(wikiArticle.getArticleName());
+		System.out.println(wikiArticle.getWikiURL());
+		wikiArticle.searchForContent();
+		wikiArticle.getWikiArticlePage();
+		ArrayList<String> SectionsFromDisPage = wikiArticle.searchAndSaveSectionsFromDisPage();
+		ArtNodeExtractor nodeExtractor = new ArtNodeExtractor(SectionsFromDisPage);
+		nodeExtractor.extractNodes();
 		
 	}
 
-	
-	
-	
-	
 	private static void cleanResultDir(String dir) {
 		File file = new File(dir);
-		if(!file.exists()) file.mkdirs();
+		if (!file.exists())
+			file.mkdirs();
 		try {
 			FileUtils.cleanDirectory(new File(dir));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-
-
-
-
-
-	private static void runAnalysis(String wikiLink) {
-		String articleName= RunnerHelper.extractArticleName(wikiLink);
-		String linkToDiscussion = RunnerHelper.extractDiscussionLink(wikiLink);
-		String linkToHisDiscussion = RunnerHelper.extractHisDiscussionLink(linkToDiscussion);
-		
-		GermanWikiArticleDiscussionAnalyzer articleAna = new GermanWikiArticleDiscussionAnalyzer(linkToDiscussion, articleName);
-		articleAna.runAnalyses();
-		articleAna.visTheResults();
-		GermanWikiArticleDiscussionHistoryAnalyzer hisAna = new GermanWikiArticleDiscussionHistoryAnalyzer(linkToHisDiscussion, articleName);
-		hisAna.startAnalyser();
-		
-		
-		
-	}
-
-
-
-
 
 	/**
 	 * Checks if the amount of the given input matches the requirements. If okay

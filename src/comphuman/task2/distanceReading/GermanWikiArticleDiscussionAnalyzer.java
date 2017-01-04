@@ -16,6 +16,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import comphuman.task2.distanceReading.newOne.URL_Handler;
 import xgeneral.modules.SystemMessage;
 
 /**
@@ -58,12 +59,6 @@ public class GermanWikiArticleDiscussionAnalyzer {
 	 */
 	public void runAnalyses(){
 		
-//		URL = "https://de.wikipedia.org/wiki/Liste_von_Hallo-Welt-Programmen/H%C3%B6here_Programmiersprachen";
-		//Tested with
-//		URL = "https://de.wikipedia.org/wiki/Lindentunnel";
-		
-		//-----
-
 		Document discussionContent = URL_Handler.getContentOf(URL_ToDiscussion);
 
 		Elements headers = discussionContent.select("span[class=mw-headline]");
@@ -87,7 +82,6 @@ public class GermanWikiArticleDiscussionAnalyzer {
 			}
 		}
 
-		System.err.println(disHeaderTypeAsArray);
 		abstractContentToInvestigate(nodes);
 		exploreNodesSmart();
 	}

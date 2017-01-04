@@ -44,6 +44,7 @@ public class SectionIterator {
 			if (contentFrag.contains("<dl>")) {
 				if(wikiNodes.size() - 1 < 0){
 					SystemMessage.wMessage("Section<"+fatherNodes.get(0)+"> will be ignored. The content of the section uses a format which isn't known.");
+					System.exit(1);
 					break big;
 				}else{
 					fatherNodes.add(wikiNodes.get(wikiNodes.size() - 1).getNodeName());
