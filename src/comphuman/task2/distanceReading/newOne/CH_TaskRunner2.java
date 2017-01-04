@@ -36,7 +36,7 @@ public class CH_TaskRunner2 {
 		wikiArticle.searchForContent();
 		wikiArticle.getWikiArticlePage();
 		ArrayList<String> SectionsFromDisPage = wikiArticle.searchAndSaveSectionsFromDisPage();
-		ArtNodeExtractor nodeExtractor = new ArtNodeExtractor(SectionsFromDisPage);
+		ArtNodeExtractor nodeExtractor = new ArtNodeExtractor(SectionsFromDisPage,wikiArticle.getArticleName());
 		nodeExtractor.extractNodes();
 		
 	}

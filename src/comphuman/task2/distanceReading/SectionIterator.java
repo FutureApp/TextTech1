@@ -3,6 +3,7 @@ package comphuman.task2.distanceReading;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import comphuman.task2.distanceReading.newOne.ExtractorGermanWiki;
 import xgeneral.modules.SystemMessage;
 
 

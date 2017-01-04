@@ -1,9 +1,11 @@
-package comphuman.task2.distanceReading;
+package comphuman.task2.distanceReading.newOne;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.jsoup.nodes.Element;
+
+import comphuman.task2.distanceReading.ContentCleaner;
 
 /**
  * This class contains the logic to extract informations from Elements or
@@ -123,14 +125,12 @@ public class ExtractorGermanWiki {
 						}
 					}
 				}
-				user = user.split(":")[1];
+				if(user.split(":").length<2) System.out.println("!!!"+user);
+				else user = user.split(":")[1];
 			}
-
 		}
 		
 		user = ContentCleaner.clean(user);
 		return user;
 	}
-
-	
 }
