@@ -57,7 +57,7 @@ public class CH_TaskRunner2 {
 		articleAna.runAnalyses();
 		articleAna.visTheResults();
 		GermanWikiArticleDiscussionHistoryAnalyzer hisAna = new GermanWikiArticleDiscussionHistoryAnalyzer(linkToHisDiscussion, articleName);
-		hisAna.startAnalyser();
+//		hisAna.startAnalyser();
 		
 		
 		

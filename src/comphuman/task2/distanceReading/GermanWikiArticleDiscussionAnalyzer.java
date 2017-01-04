@@ -230,7 +230,7 @@ public class GermanWikiArticleDiscussionAnalyzer {
 				graph.addEdge(UUID.randomUUID() + "", wikiNode.fatherNodeName, wikiNode.nodeName);
 
 				if (wikiNode.contentCreatedDate.contains("noDate")) {
-					// if no informations then do nothing. Only the post will be
+					// if no date information then do nothing. Only the post will be
 					// visible.
 				} else {
 					// Node-CreationDate

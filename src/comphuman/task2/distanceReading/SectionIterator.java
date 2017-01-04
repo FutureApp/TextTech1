@@ -1,6 +1,9 @@
 package comphuman.task2.distanceReading;
 
 import java.util.ArrayList;
+import java.util.UUID;
+
+import xgeneral.modules.SystemMessage;
 
 
 public class SectionIterator {
@@ -8,6 +11,7 @@ public class SectionIterator {
 	private String father;
 	private ExtractorGermanWiki ex;
 
+	String terminator = UUID.randomUUID()+"";
 	public SectionIterator(String currentFather, String content) {
 		super();
 		this.ex = new ExtractorGermanWiki();
@@ -23,11 +27,11 @@ public class SectionIterator {
 		ArrayList<String> contentSplitted = mysplit(content);
 		Integer activeIndex = 0;
 		String activeContent = new String("");
-		String activeUsername = new String("");
-		String activeCreationDate = new String("");
+		String activeUsername = new String(terminator);
+		String activeCreationDate = new String(terminator);
 
 		Boolean readyToPush = false;
-		for (String contentFrag : contentSplitted) {
+		big: for (String contentFrag : contentSplitted) {
 			activeContent += contentFrag;
 			if (ex.containsSomethingLikeUserName(contentFrag)) {
 				activeUsername = ex.findUserName(contentFrag);
@@ -38,14 +42,13 @@ public class SectionIterator {
 			}
 
 			if (contentFrag.contains("<dl>")) {
-				if(0>wikiNodes.size() - 1) {
-					WikiNodePost wikiNode = new WikiNodePost(fatherNodes.get(activeIndex), activeContent, activeUsername,
-							activeCreationDate);
-					wikiNodes.add(wikiNode);
-					
+				if(wikiNodes.size() - 1 < 0){
+					SystemMessage.wMessage("Section<"+fatherNodes.get(0)+"> will be ignored. The content of the section uses a format which isn't known.");
+					break big;
+				}else{
+					fatherNodes.add(wikiNodes.get(wikiNodes.size() - 1).getNodeName());
+					activeIndex++;
 				}
-				fatherNodes.add(wikiNodes.get(wikiNodes.size() - 1).getNodeName());
-				activeIndex++;
 			}
 			if (contentFrag.contains("</dl>")) {
 				readyToPush=true;
@@ -53,15 +56,19 @@ public class SectionIterator {
 				activeIndex--;
 			}
 			if (readyToPush) {
-				
-				System.out.println("PUSHING");
-				System.out.println("USER-Name: " + activeUsername);
-				System.out.println("DATE: " + activeCreationDate);
-				WikiNodePost wikiNode = new WikiNodePost(fatherNodes.get(activeIndex), activeContent, activeUsername,
-						activeCreationDate);
-				wikiNodes.add(wikiNode);
+				// Push node only if not similar to default values.
+				if (activeCreationDate.compareTo(terminator) != 0 || activeUsername.compareTo(terminator) != 0) {
+					System.out.println("PUSHING");
+					System.out.println("USER-Name: " + activeUsername);
+					System.out.println("DATE: " + activeCreationDate);
+					WikiNodePost wikiNode = new WikiNodePost(fatherNodes.get(activeIndex), activeContent,
+							activeUsername, activeCreationDate);
+					wikiNodes.add(wikiNode);
+				}
 				readyToPush = false;
 				activeContent = new String("");
+				activeCreationDate = terminator;
+				activeUsername = terminator;
 			}
 		}
 		System.out.println("-------");
