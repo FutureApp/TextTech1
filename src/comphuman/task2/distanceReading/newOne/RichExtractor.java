@@ -120,6 +120,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 		// For debugging purpose.
 		// showRelation();
 	}
+	
 
 	/**
 	 * Shows the relation between notes.
