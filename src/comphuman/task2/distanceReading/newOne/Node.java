@@ -8,11 +8,11 @@ public class Node {
 	String date;
 	
 	/**
-	 * 
-	 * @param name
-	 * @param father
-	 * @param aut
-	 * @param date
+	 * Post in node-representation.
+	 * @param name ID of the node.
+	 * @param father Father of the node.
+	 * @param aut Name of user who created that post.
+	 * @param date Creation date of the post.
 	 */
 	public Node(String name, String father, String aut, String date) {
 		super();
