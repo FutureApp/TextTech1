@@ -3,7 +3,7 @@ java -jar <name of jar>.jar <URL to wiki-article>
 
 ___
 Programmaufruf(Beispiel):
-java -jar TextTech2.jar https://de.wikipedia.org/wiki/Lindentunnel
+java -jar CHTask2.jar https://de.wikipedia.org/wiki/Lindentunnel
 
 ____
 Struktur des Ergebnissordners:
