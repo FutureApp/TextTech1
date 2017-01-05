@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import javax.sound.midi.Synthesizer;
-
 import org.apache.commons.io.FileUtils;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
