@@ -25,11 +25,12 @@ public class CH_TaskRunner2 {
 		arg = args;
 		validateAmountOfGivenInput();
 		cleanResultDir(resultDir);
-		runAnalysis(arg[0]);
+		ArrayList<ArrayList<Node>> resultAnalysis = runAnalysis(arg[0]);
+		vizAnalyseResults(resultAnalysis);
 
 	}
 
-	private static void runAnalysis(String URL) {
+	private static ArrayList<ArrayList<Node>> runAnalysis(String URL) {
 		WikiArticle wikiArticle = new WikiArticle(URL);
 		System.out.println(wikiArticle.getArticleName());
 		System.out.println(wikiArticle.getWikiURL());
@@ -38,10 +39,13 @@ public class CH_TaskRunner2 {
 		ArrayList<String> SectionsFromDisPage = wikiArticle.searchAndSaveSectionsFromDisPage();
 		ArtNodeExtractor nodeExtractor = new ArtNodeExtractor(SectionsFromDisPage,wikiArticle.getArticleName());
 		nodeExtractor.extractNodes();
-		ArrayList<ArrayList<Node>> allNodesAllSections = nodeExtractor.getAllNodesAllSections();
-		VisRichArtDis vis = new VisRichArtDis(allNodesAllSections);
-		vis.startVizRichDis();
+		return nodeExtractor.getAllNodesAllSections();
 		
+	}
+	
+	private static void vizAnalyseResults(ArrayList<ArrayList<Node>> resultAnalysis) {
+		VisRichArtDis vis = new VisRichArtDis(resultAnalysis);
+		vis.startVizRichDis();
 	}
 
 	private static void cleanResultDir(String dir) {
