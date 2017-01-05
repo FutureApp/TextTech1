@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 public class Fitter {
 
-	private String[] split;
 	ArrayList<String> con = new ArrayList<>();
 	Boolean changed = false;
 
 	public Fitter(String[] split) {
-		this.split = split;
 		for (int i = 0; i < split.length; i++) {
 			con.add(split[i]);
 		}
