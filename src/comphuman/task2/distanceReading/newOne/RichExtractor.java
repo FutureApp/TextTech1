@@ -108,7 +108,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	 */
 	private void showRelation() {
 		for (Node node : nodeList) {
-			System.out.println(node.father + " <- " + node.name + " -" + node.aut);
+//			System.out.println(node.father + " <- " + node.name + " -" + node.aut);
 		}
 
 	}
@@ -161,8 +161,6 @@ public class RichExtractor extends ExtractorGermanWiki {
 		String disRootName = extractRootName(content.get(0));
 		Node disRoot = new Node(disRootName, nodeList.get(0).getName(), "", "");
 		nodeList.add(disRoot);
-		nodeList.forEach((node) -> System.out.println(node.getName() + "->" + node.getFather()));
-
 	}
 
 	/**
