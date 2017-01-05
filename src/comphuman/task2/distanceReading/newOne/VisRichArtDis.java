@@ -3,12 +3,10 @@ package comphuman.task2.distanceReading.newOne;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.UUID;
-import java.util.Map.Entry;
 
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.MultiGraph;
 
-import comphuman.task2.distanceReading.WikiNodePost;
 
 public class VisRichArtDis {
 	
@@ -73,7 +71,6 @@ public class VisRichArtDis {
 				}
 			}
 		}
-		graph.display();
 	}
 
 

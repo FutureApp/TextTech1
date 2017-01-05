@@ -43,11 +43,12 @@ public class CH_TaskRunner2 {
 	 */
 	private static void saveNodeInformations(ArrayList<ArrayList<Node>> resultAnalysis) {
 		File saveContentTo = new File(resultDir + locationOfArticleNodes);
+		System.out.println(saveContentTo.getAbsolutePath());
 		String headerStructure = "Name of node | Name of father node | Created by User(user-name) | Creation Date";
 		if (saveContentTo.exists())
 			FileUtils.deleteQuietly(saveContentTo);
-		saveContentTo.mkdirs();
 		try {
+			saveContentTo.getParentFile().mkdirs();
 			FileUtils.write(saveContentTo, headerStructure, encoding, false);
 			for (int i = 0; i < resultAnalysis.size(); i++) {
 				ArrayList<Node> section = resultAnalysis.get(i);
@@ -57,7 +58,7 @@ public class CH_TaskRunner2 {
 					String fatherName = node.getFather();
 					String userName = node.getAut();
 					String creationDate = node.getDate();
-					String statement = String.format("%d|%d|%d|%d|%d|", nodeName, fatherName, userName, creationDate);
+					String statement = String.format("%s|%s|%s|%s", nodeName, fatherName, userName, creationDate);
 					FileUtils.write(saveContentTo, statement + System.lineSeparator(), encoding, true);
 				}
 			}
