@@ -37,8 +37,8 @@ https://de.wikipedia.org/wiki/MongoDB
 
 ___
 Hinweis:
-Programm ist nur für die deutsche Wikipedia konzipiert. Keine Angabe zum Progammoutput für anderssprachige Wikipedia-Artikel.
-
+1) Programm ist nur für die deutsche Wikipedia konzipiert. Keine Angabe zum Progammoutput für anderssprachige Wikipedia-Artikel.
+2) Die Visualisierung der Diskussion wird als seperates Fenster angezeigt. Die einzelnen Nodes können bewegt werden, wenn ein Knoten genauer untersucht werden will.
 
 ___
 Code
