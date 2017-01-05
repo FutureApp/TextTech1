@@ -15,8 +15,6 @@ import xgeneral.modules.SystemMessage;
 
 public class WikiArticle {
 	String encoding = "UTF-8";
-	File sectionFile = new File("result/curArt/extractedSections.txt");
-
 	String URL;
 
 	private Document wikiArticlePage;
@@ -91,7 +89,7 @@ public class WikiArticle {
 	public ArrayList<String> searchAndSaveSectionsFromDisPage() {
 		ArrayList<String> extractSections = extractSections(
 				wikiArticleDiscussionPage.getElementById("mw-content-text").toString().split("\n"));
-		saveSections(sectionFile, extractSections);
+//		saveSections(new File("sectionTest.txt"), extractSections);
 		return extractSections;
 	}
 	public HashMap<String, ArrayList<String>> searchAndSectionsFromHisDisPage() {
