@@ -59,6 +59,12 @@ public class VisRichArtDis {
 				}
 				// Posts
 				else {
+					//Empty aut. and date means post not signed or wasn't identified.
+					if(node.aut=="" && node.date==""){
+						graph.addNode(node.name).addAttribute(style, "fill-color: '" + BLACK + "';");
+						graph.addEdge(nodeID, node.name, node.father);
+					}else{
+						
 					graph.addNode(node.name).addAttribute(style, "fill-color: '" + BLACK + "';");
 					graph.addEdge(nodeID, node.name, node.father);
 					graph.addNode("user" + nodeID).addAttribute("label", node.aut);
@@ -68,6 +74,7 @@ public class VisRichArtDis {
 					graph.addNode("date" + nodeID).addAttribute(style, "fill-color: '" + BLANCHEDALMOND + "';");
 					graph.addEdge(UUID.randomUUID().toString(), node.name, "user" + nodeID);
 					graph.addEdge(UUID.randomUUID().toString(), node.name, "date" + nodeID);
+					}
 				}
 			}
 		}
