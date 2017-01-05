@@ -106,6 +106,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	/**
 	 * Shows the relation between notes.
 	 */
+	@SuppressWarnings("unused")
 	private void showRelation() {
 		for (Node node : nodeList) {
 //			System.out.println(node.father + " <- " + node.name + " -" + node.aut);
