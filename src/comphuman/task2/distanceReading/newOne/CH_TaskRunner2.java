@@ -14,8 +14,8 @@ public class CH_TaskRunner2 {
 	static String encoding = Encoding.getDefaultEncoding();
 
 	static String resultDir = "CompHuman/result";
-	static String locationOfArticleNodes = "/article/nodeInformations.txt";
-	static String locationOfArticleVis = "/article/vis.png";
+	static String locationOfArticleNodes = "/discussion/nodeInformations.txt";
+	static String locationOfArticleVis = "/discussion/graph.png";
 
 	/**
 	 * Entry-point of the application.
