@@ -15,6 +15,9 @@ public class Fitter {
 		}
 	}
 
+	/**
+	 * Normalizes the level of tags. Anchor to normalize is the <dl>-tag.
+	 */
 	public void trimDL() {
 		System.out.println();
 		int depLevel = 1;
@@ -35,10 +38,12 @@ public class Fitter {
 		}
 		con.clear();
 		con.addAll(newCon);
-		
 	}
 	
 	
+	/**
+	 * Normalizes the level of tags. Anchor to normalize is the <dl>-tag.
+	 */
 	public void trimUL() {
 		ArrayList<String> newCon = new ArrayList<>();
 		ArrayList<Integer> lefter = new ArrayList<>();
@@ -66,6 +71,11 @@ public class Fitter {
 		return con;
 	}
 
+	/**
+	 * Counts the white-spaces on the left side till first non-white-space char.
+	 * @param con Line
+	 * @return Count of white spaces.
+	 */
 	public Integer countLeft(String con) {
 		Integer c = 0;
 		for (int i = 0; i < con.length(); i++) {
@@ -77,6 +87,12 @@ public class Fitter {
 		return c;
 	}
 
+	/**
+	 * Removes given amount of white spaces from the left side.
+	 * @param howMany How many should be ignored.
+	 * @param line Line.
+	 * @return Line with without ignored white-spaces.
+	 */
 	public String removeLeft(Integer howMany, String line) {
 		return line.substring(howMany);
 	}
