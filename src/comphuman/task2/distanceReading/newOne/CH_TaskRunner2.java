@@ -3,8 +3,10 @@ package comphuman.task2.distanceReading.newOne;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
+import org.jsoup.nodes.Document;
 
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
@@ -16,76 +18,37 @@ public class CH_TaskRunner2 {
 
 	static String resultDir = "CompHuman/result";
 	static String locationOfArticleNodes = "/article/nodeInformations.txt";
-	static String locationOfArticleVis = "/article/vis.txt";
+	static String locationOfArticleVis = "/article/vis.png";
 
 	/**
 	 * Entry-point of the application.
 	 * 
-	 * @param args Only args[0] - Link to a german wiki article.
+	 * @param args
+	 *            Only args[0] - Link to a german wiki article.
 	 */
 	public static void main(String[] args) {
 		arg = args;
 		validateAmountOfGivenInput();
 		cleanResultDir(resultDir);
-		ArrayList<ArrayList<Node>> resultAnalysis = runDisAnalysis(arg[0]);
-		vizAnalyseResults(resultAnalysis);
-		saveNodeInformations(resultAnalysis);
-		saveNodeAnalyse(resultAnalysis);
-
+		WikiArticle wikiArticle = new WikiArticle(arg[0]);
+		wikiArticle.searchForContent();
+		ArrayList<ArrayList<Node>> resultAnalysis = runDisAnalysis(wikiArticle);
+		String fileLocation = resultDir + locationOfArticleVis;
+		vizAnalyseResults(resultAnalysis,fileLocation);
+		saveNodeInformations(resultAnalysis, resultDir + locationOfArticleNodes);
+		//
+		runHisAnalysis(wikiArticle);
 	}
 
 	/**
-	 * Saves all node information to a file. File is located under
-	 * ./article/nodeInformations.txt.
+	 * Analyzes a given german wiki-link to an article(analyze
+	 * ofdiscussion-page).
 	 * 
-	 * @param resultAnalysis
-	 *            Content to save(List of List of Nodes).
-	 */
-	private static void saveNodeInformations(ArrayList<ArrayList<Node>> resultAnalysis) {
-		File saveContentTo = new File(resultDir + locationOfArticleNodes);
-		System.out.println(saveContentTo.getAbsolutePath());
-		String headerStructure = "Name of node | Name of father node | Created by User(user-name) | Creation Date";
-		if (saveContentTo.exists())
-			FileUtils.deleteQuietly(saveContentTo);
-		try {
-			saveContentTo.getParentFile().mkdirs();
-			FileUtils.write(saveContentTo, headerStructure, encoding, false);
-			for (int i = 0; i < resultAnalysis.size(); i++) {
-				ArrayList<Node> section = resultAnalysis.get(i);
-				FileUtils.write(saveContentTo, System.lineSeparator(), encoding, true);
-				for (Node node : section) {
-					String nodeName = node.getName();
-					String fatherName = node.getFather();
-					String userName = node.getAut();
-					String creationDate = node.getDate();
-					String statement = String.format("%s|%s|%s|%s", nodeName, fatherName, userName, creationDate);
-					FileUtils.write(saveContentTo, statement + System.lineSeparator(), encoding, true);
-				}
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * 
-	 * @param resultAnalysis
-	 */
-	private static void saveNodeAnalyse(ArrayList<ArrayList<Node>> resultAnalysis) {
-
-	}
-
-	/**
-	 * Analyzes a given german wiki-link to an article(analyze ofdiscussion-page).
-	 * @param URL URL to an article in the german wikipedia.
+	 * @param URL
+	 *            URL to an article in the german wikipedia.
 	 * @return Returns the posts from the discussion-page as nodes.
 	 */
-	private static ArrayList<ArrayList<Node>> runDisAnalysis(String URL) {
-		WikiArticle wikiArticle = new WikiArticle(URL);
-		System.out.println(wikiArticle.getArticleName());
-		System.out.println(wikiArticle.getWikiURL());
-		wikiArticle.searchForContent();
-		wikiArticle.getWikiArticlePage();
+	private static ArrayList<ArrayList<Node>> runDisAnalysis(WikiArticle wikiArticle) {
 		ArrayList<String> SectionsFromDisPage = wikiArticle.searchAndSaveSectionsFromDisPage();
 		ArtNodeExtractor nodeExtractor = new ArtNodeExtractor(SectionsFromDisPage, wikiArticle.getArticleName());
 		nodeExtractor.extractNodes();
@@ -93,14 +56,34 @@ public class CH_TaskRunner2 {
 
 	}
 
-	private static void vizAnalyseResults(ArrayList<ArrayList<Node>> resultAnalysis) {
+	private static void runHisAnalysis(WikiArticle wikiArticle) {
+		HashMap<String, ArrayList<String>> map = wikiArticle.searchAndSectionsFromHisDisPage();
+		map.forEach((dateOfHis, sections) -> {
+			String location = resultDir + "/history/" + Normalizer.normalizeDateForFileName(dateOfHis);
+			System.out.print(dateOfHis);
+			System.out.println("-- " + sections);
+			ArtNodeExtractor hisExtractor = new ArtNodeExtractor(sections,
+					wikiArticle.getArticleName() + "(" + dateOfHis + ")");
+
+			hisExtractor.extractNodes();
+			ArrayList<ArrayList<Node>> allNodesAllSections = hisExtractor.getAllNodesAllSections();
+			saveNodeInformations(allNodesAllSections, location + "/nodeInformations.txt");
+			// TODO
+			vizAnalyseResults(allNodesAllSections, location);
+		});
+	}
+
+	private static void vizAnalyseResults(ArrayList<ArrayList<Node>> resultAnalysis, String fileLocation) {
+		File saveContentTo = new File(resultDir + locationOfArticleVis);
 		VisRichArtDis vis = new VisRichArtDis(resultAnalysis);
-		vis.startVizRichDis();
+		vis.startVizRichDis(saveContentTo, true);
 	}
 
 	/**
-	 * Cleans the location of  the result-dir.
-	 * @param dir Dir where to save the results.
+	 * Cleans the location of the result-dir.
+	 * 
+	 * @param dir
+	 *            Dir where to save the results.
 	 */
 	private static void cleanResultDir(String dir) {
 		File file = new File(dir);
@@ -128,6 +111,42 @@ public class CH_TaskRunner2 {
 			}
 			usage();
 			System.exit(2);
+		}
+	}
+
+	/**
+	 * Saves all node information to a file. File is located under
+	 * ./article/nodeInformations.txt.
+	 * 
+	 * @param resultAnalysis
+	 *            Content to save(List of List of Nodes).
+	 * @param location
+	 */
+	private static void saveNodeInformations(ArrayList<ArrayList<Node>> resultAnalysis, String location) {
+		File saveContentTo = new File(location);
+		System.out.println(saveContentTo.getAbsolutePath());
+		String headerStructure = "Name of node | Name of father node | Created by User(user-name) | Creation Date";
+		if (saveContentTo.exists())
+			FileUtils.deleteQuietly(saveContentTo);
+		try {
+			saveContentTo.getParentFile().mkdirs();
+			FileUtils.write(saveContentTo, headerStructure, encoding, false);
+			for (int i = 0; i < resultAnalysis.size(); i++) {
+				ArrayList<Node> section = resultAnalysis.get(i);
+				FileUtils.write(saveContentTo, System.lineSeparator(), encoding, true);
+				for (Node node : section) {
+					// Assign var's for better understanding
+					String nodeName = node.getName();
+					String fatherName = node.getFather();
+					String userName = node.getAut();
+					String creationDate = node.getDate();
+					
+					String statement = String.format("%s|%s|%s|%s", nodeName, fatherName, userName, creationDate);
+					FileUtils.write(saveContentTo, statement + System.lineSeparator(), encoding, true);
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 

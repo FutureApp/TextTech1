@@ -4,9 +4,16 @@ package comphuman.task2.distanceReading.newOne;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.sound.midi.Synthesizer;
 
 import org.apache.commons.io.FileUtils;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import xgeneral.modules.SystemMessage;
 
 public class WikiArticle {
 	String encoding = "UTF-8";
@@ -88,6 +95,23 @@ public class WikiArticle {
 				wikiArticleDiscussionPage.getElementById("mw-content-text").toString().split("\n"));
 		saveSections(sectionFile, extractSections);
 		return extractSections;
+	}
+	public HashMap<String, ArrayList<String>> searchAndSectionsFromHisDisPage() {
+		HashMap<String, ArrayList<String>> map = new HashMap<>();
+		Elements aTags = wikiArticleHistoryPage.select(".mw-changeslist-date");
+
+		for (Element element : aTags) {
+			String link = element.attr("href");
+			String realLink =getWikiURL()+link;
+			
+			Document doc = URL_Handler.getContentOf(realLink);
+			String backUpDate = element.text();
+			ArrayList<String> extractSections = extractSections(
+					doc.getElementById("mw-content-text").toString().split("\n"));
+			if(!map.containsKey(backUpDate)) map.put(backUpDate, extractSections);
+			else SystemMessage.wMessage("Entry already exists.");
+		}
+		return map;
 	}
 
 	/**
