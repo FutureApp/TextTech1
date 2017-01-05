@@ -46,6 +46,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	 * Extracts the post from the section.
 	 */
 	private void extractPosts() {
+
 		String defaultValue = "";
 		String autName = new String(defaultValue);
 		String date = new String(defaultValue);
@@ -99,6 +100,23 @@ public class RichExtractor extends ExtractorGermanWiki {
 				fatherNodes.add(level, father);
 			}
 		}
+		if (nodeList.size() < 3) {
+			for (String string : content) {
+				System.out.println(string);
+			}
+			System.out.println(content);
+			for (Node node : fatherNodes) {
+				System.out.println(node.getName());
+			}
+			for (Node node : nodeList) {
+				System.out.println(node.getName());
+			}
+			System.out.println("achtung");
+
+			// Add one empty Post because a dis-dopic without a post couldn't be.
+			// That means: 1- Post not identified  2- Post isn't signed.
+			nodeList.add(new Node(UUID.randomUUID().toString(), father.getName(), "", ""));
+		}
 		// For debugging purpose.
 		// showRelation();
 	}
@@ -109,7 +127,8 @@ public class RichExtractor extends ExtractorGermanWiki {
 	@SuppressWarnings("unused")
 	private void showRelation() {
 		for (Node node : nodeList) {
-//			System.out.println(node.father + " <- " + node.name + " -" + node.aut);
+			// System.out.println(node.father + " <- " + node.name + " -" +
+			// node.aut);
 		}
 
 	}
