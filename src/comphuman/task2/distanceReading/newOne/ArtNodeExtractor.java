@@ -26,7 +26,10 @@ public class ArtNodeExtractor {
 			Fitter fit = new Fitter(split);
 			fit.trimDL();
 			fit.trimUL();
+			fit.trimSMALL();
+			fit.trimI();
 			// start of node extraction-
+//			System.out.println(fit.getContent());
 			RichExtractor myEx = new RichExtractor(fit.getContent(), artName);
 			myEx.extract();
 			ArrayList<Node> nodeList = myEx.getNodeList();

@@ -18,12 +18,8 @@ public class VisRichArtDis {
 	String RED = Color.red.toString();
 	String BLACK = Color.BLACK.toString();
 	String GREEN = javafx.scene.paint.Color.DARKGREEN.toString();
-	String BLUE = Color.BLUE.toString();
-	String BURLYWOOD = javafx.scene.paint.Color.BURLYWOOD.toString();
-	String BEIGE = javafx.scene.paint.Color.BEIGE.toString();
 	String CADETBLUE = javafx.scene.paint.Color.CADETBLUE.toString();
-	String ALICEBLUE = javafx.scene.paint.Color.ALICEBLUE.toString();
-	String LAVENDER = javafx.scene.paint.Color.BLANCHEDALMOND.toString();
+	String BLANCHEDALMOND = javafx.scene.paint.Color.BLANCHEDALMOND.toString();
 	ArrayList<ArrayList<Node>> listOfListFromNodes;
 
 	/**
@@ -42,7 +38,6 @@ public class VisRichArtDis {
 		graph.addAttribute("ui.antialias");
 		graph.setStrict(false);
 		graph.setAutoCreate(true);
-		if(showViz) graph.display(true);
 
 		for (int i = 0; i < listOfListFromNodes.size(); i++) {
 			ArrayList<Node> nodesToTopic = listOfListFromNodes.get(i);
@@ -70,12 +65,15 @@ public class VisRichArtDis {
 					graph.addNode("user" + nodeID).addAttribute(style, "fill-color: '" + CADETBLUE + "';");
 
 					graph.addNode("date" + nodeID).addAttribute("label", node.date);
-					graph.addNode("date" + nodeID).addAttribute(style, "fill-color: '" + LAVENDER + "';");
+					graph.addNode("date" + nodeID).addAttribute(style, "fill-color: '" + BLANCHEDALMOND + "';");
 					graph.addEdge(UUID.randomUUID().toString(), node.name, "user" + nodeID);
 					graph.addEdge(UUID.randomUUID().toString(), node.name, "date" + nodeID);
 				}
 			}
 		}
+		// show graph or not.
+		if(showViz) graph.display(true);
+		
 		FileSinkImages pic = new FileSinkImages(OutputType.JPG, Resolutions.HD720);
 		pic.setAutofit(true);
 		pic.setQuality(Quality.HIGH);

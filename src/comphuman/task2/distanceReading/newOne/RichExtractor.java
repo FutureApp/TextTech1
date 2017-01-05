@@ -17,9 +17,13 @@ public class RichExtractor extends ExtractorGermanWiki {
 	private ArrayList<Node> nodeList;
 
 	/**
-	 * Extractor for nodes to german wiki-dis-page. You need to deliver the dis in sections.
-	 * @param content List where every list-content contains a section.
-	 * @param artName Name of the article.
+	 * Extractor for nodes to german wiki-dis-page. You need to deliver the dis
+	 * in sections.
+	 * 
+	 * @param content
+	 *            List where every list-content contains a section.
+	 * @param artName
+	 *            Name of the article.
 	 */
 	public RichExtractor(ArrayList<String> content, String artName) {
 		super();
@@ -47,7 +51,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 		String date = new String(defaultValue);
 		Integer level = 1;
 		Node father = nodeList.get(1);
-		System.out.println(father.name);
+		// System.out.println(father.name);
 		ArrayList<Node> fatherNodes = new ArrayList<>();
 		// Creates a dummy array for lookin up a father-node.
 		// You could only have so many father like lines.MAX-Value
@@ -60,11 +64,11 @@ public class RichExtractor extends ExtractorGermanWiki {
 		for (int i = 1; i < content.size(); i++) {
 			String line = content.get(i);
 			/*
-			 * Check if line contains user-name
-			 * Check if line contains creation-date
-			 * if both informations are given  then create a node with the given info
-			 * point to another father (current level > new active level.
-			 * create new father based on last node and point to him.(current level < new active level
+			 * Check if line contains user-name Check if line contains
+			 * creation-date if both informations are given then create a node
+			 * with the given info point to another father (current level > new
+			 * active level. create new father based on last node and point to
+			 * him.(current level < new active level
 			 * 
 			 */
 			if (containsSomethingLikeUserName(line)) {
@@ -95,8 +99,8 @@ public class RichExtractor extends ExtractorGermanWiki {
 				fatherNodes.add(level, father);
 			}
 		}
-
-		showRelation();
+		// For debugging purpose.
+		// showRelation();
 	}
 
 	/**
@@ -178,7 +182,9 @@ public class RichExtractor extends ExtractorGermanWiki {
 
 	/**
 	 * Counts white-spaces from left.
-	 * @param oneLine Line where to count.
+	 * 
+	 * @param oneLine
+	 *            Line where to count.
 	 * @return Number of white-spaces until first non-white-space char.
 	 */
 	public Integer countLeft(String oneLine) {
@@ -193,7 +199,9 @@ public class RichExtractor extends ExtractorGermanWiki {
 	}
 
 	/**
-	 * Returns all extracted nodes from the given section. Before use: Execute {@link #extract()}
+	 * Returns all extracted nodes from the given section. Before use: Execute
+	 * {@link #extract()}
+	 * 
 	 * @return Returns all extracted nodes.
 	 */
 	public ArrayList<Node> getNodeList() {

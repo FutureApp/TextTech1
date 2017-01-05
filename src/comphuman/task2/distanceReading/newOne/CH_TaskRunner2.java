@@ -4,10 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import org.apache.commons.io.FileUtils;
-import org.jsoup.nodes.Document;
-
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
 
@@ -34,7 +31,7 @@ public class CH_TaskRunner2 {
 		wikiArticle.searchForContent();
 		ArrayList<ArrayList<Node>> resultAnalysis = runDisAnalysis(wikiArticle);
 		String fileLocation = resultDir + locationOfArticleVis;
-		vizAnalyseResults(resultAnalysis,fileLocation);
+		vizAnalyseResults(resultAnalysis, fileLocation, true);
 		saveNodeInformations(resultAnalysis, resultDir + locationOfArticleNodes);
 		//
 		runHisAnalysis(wikiArticle);
@@ -60,23 +57,23 @@ public class CH_TaskRunner2 {
 		HashMap<String, ArrayList<String>> map = wikiArticle.searchAndSectionsFromHisDisPage();
 		map.forEach((dateOfHis, sections) -> {
 			String location = resultDir + "/history/" + Normalizer.normalizeDateForFileName(dateOfHis);
-			System.out.print(dateOfHis);
-			System.out.println("-- " + sections);
+//			System.out.print(dateOfHis);
+//			System.out.println("-- " + sections);
 			ArtNodeExtractor hisExtractor = new ArtNodeExtractor(sections,
 					wikiArticle.getArticleName() + "(" + dateOfHis + ")");
 
 			hisExtractor.extractNodes();
 			ArrayList<ArrayList<Node>> allNodesAllSections = hisExtractor.getAllNodesAllSections();
 			saveNodeInformations(allNodesAllSections, location + "/nodeInformations.txt");
-			// TODO
-			vizAnalyseResults(allNodesAllSections, location);
+			vizAnalyseResults(allNodesAllSections, location + "/graph.jpg", false);
 		});
 	}
 
-	private static void vizAnalyseResults(ArrayList<ArrayList<Node>> resultAnalysis, String fileLocation) {
-		File saveContentTo = new File(resultDir + locationOfArticleVis);
+	private static void vizAnalyseResults(ArrayList<ArrayList<Node>> resultAnalysis, String fileLocation,
+			Boolean visResults) {
+		File saveContentTo = new File(fileLocation);
 		VisRichArtDis vis = new VisRichArtDis(resultAnalysis);
-		vis.startVizRichDis(saveContentTo, true);
+		vis.startVizRichDis(saveContentTo, visResults);
 	}
 
 	/**
@@ -124,7 +121,7 @@ public class CH_TaskRunner2 {
 	 */
 	private static void saveNodeInformations(ArrayList<ArrayList<Node>> resultAnalysis, String location) {
 		File saveContentTo = new File(location);
-		System.out.println(saveContentTo.getAbsolutePath());
+//		System.out.println(saveContentTo.getAbsolutePath());
 		String headerStructure = "Name of node | Name of father node | Created by User(user-name) | Creation Date";
 		if (saveContentTo.exists())
 			FileUtils.deleteQuietly(saveContentTo);
@@ -140,7 +137,7 @@ public class CH_TaskRunner2 {
 					String fatherName = node.getFather();
 					String userName = node.getAut();
 					String creationDate = node.getDate();
-					
+
 					String statement = String.format("%s|%s|%s|%s", nodeName, fatherName, userName, creationDate);
 					FileUtils.write(saveContentTo, statement + System.lineSeparator(), encoding, true);
 				}
@@ -155,6 +152,6 @@ public class CH_TaskRunner2 {
 	 */
 	private static void usage() {
 		System.out.println("---------- Usage ----------");
-		System.out.println("java -jar <name of jar>.jar <options> <wikipedia baseurl to topic>");
+		System.out.println("java -jar <name of jar>.jar <wikipedia url to article>");
 	}
 }

@@ -19,7 +19,6 @@ public class Fitter {
 	 * Normalizes the level of tags. Anchor to normalize is the <dl>-tag.
 	 */
 	public void trimDL() {
-		System.out.println();
 		int depLevel = 1;
 		ArrayList<String> newCon = new ArrayList<>();
 		for (String line : con) {
@@ -95,6 +94,50 @@ public class Fitter {
 	 */
 	public String removeLeft(Integer howMany, String line) {
 		return line.substring(howMany);
+	}
+
+	public void trimSMALL() {
+		ArrayList<String> newCon = new ArrayList<>();
+		ArrayList<Integer> lefter = new ArrayList<>();
+		lefter.add(0);
+		Integer activeLefter = 0;
+		for (String line : con) {
+			String newLine = removeLeft(lefter.get(activeLefter), line);
+			if(line.contains("<small>")){
+				lefter.add(countLeft(line));
+				activeLefter++;
+			}
+			if(line.contains("</small>")){
+				lefter.remove(lefter.size()-1);
+				newLine = line;
+				activeLefter--;
+			};
+			newCon.add(newLine);
+		}
+		con.clear();
+		con.addAll(newCon);
+	}
+	
+	public void trimI() {
+		ArrayList<String> newCon = new ArrayList<>();
+		ArrayList<Integer> lefter = new ArrayList<>();
+		lefter.add(0);
+		Integer activeLefter = 0;
+		for (String line : con) {
+			String newLine = removeLeft(lefter.get(activeLefter), line);
+			if(line.contains("<i>")){
+				lefter.add(countLeft(line));
+				activeLefter++;
+			}
+			if(line.contains("</i>")){
+				lefter.remove(lefter.size()-1);
+				newLine = line;
+				activeLefter--;
+			};
+			newCon.add(newLine);
+		}
+		con.clear();
+		con.addAll(newCon);
 	}
 
 }
