@@ -1,0 +1,11 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+MongoDB(08:41, 16. Apr. 2015)|MongoDB(08:41, 16. Apr. 2015)||
+Kritik an der Kritik: Rasse?|MongoDB(08:41, 16. Apr. 2015)||
+7829b0fd-a439-4e83-bdbb-186685db188d|Kritik an der Kritik: Rasse?|188.97.160.59|19:21, 17. Mai 2013 (CEST)
+
+MongoDB(08:41, 16. Apr. 2015)|MongoDB(08:41, 16. Apr. 2015)||
+Dramatische Sicherheitslücke 10.2.2015 ?|MongoDB(08:41, 16. Apr. 2015)||
+05b4577e-e134-42bc-80a6-9b147e637730|Dramatische Sicherheitslücke 10.2.2015 ?|88.130.57.250|11:22, 10. Feb. 2015 (CET))
+
+MongoDB(08:41, 16. Apr. 2015)|MongoDB(08:41, 16. Apr. 2015)||
+Vorzüge/Nachteile im Vergleich zu SQL?|MongoDB(08:41, 16. Apr. 2015)||

@@ -1,0 +1,4 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+MongoDB(18:21, 17. Mai 2013)|MongoDB(18:21, 17. Mai 2013)||
+Kritik an der Kritik: Rasse?|MongoDB(18:21, 17. Mai 2013)||
+2512862e-6f96-409d-afe7-12eb13640745|Kritik an der Kritik: Rasse?|188.97.160.59|19:21, 17. Mai 2013 (CEST)

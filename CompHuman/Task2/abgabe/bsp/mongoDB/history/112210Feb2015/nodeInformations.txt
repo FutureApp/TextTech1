@@ -1,0 +1,7 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+MongoDB(11:22, 10. Feb. 2015)|MongoDB(11:22, 10. Feb. 2015)||
+Kritik an der Kritik: Rasse?|MongoDB(11:22, 10. Feb. 2015)||
+f9f723b9-ae94-498c-b27d-3030bfd20978|Kritik an der Kritik: Rasse?|188.97.160.59|19:21, 17. Mai 2013 (CEST)
+
+MongoDB(11:22, 10. Feb. 2015)|MongoDB(11:22, 10. Feb. 2015)||
+Dramatische Sicherheitslücke 10.2.2015 ?|MongoDB(11:22, 10. Feb. 2015)||
