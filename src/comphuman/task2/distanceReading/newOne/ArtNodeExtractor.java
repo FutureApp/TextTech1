@@ -27,17 +27,6 @@ public class ArtNodeExtractor {
 	}
 
 	private void extractNode(String section) {
-		ExtractorGermanWiki ex = new ExtractorGermanWiki();
-		ArrayList<ArrayList<String>> list = new ArrayList<>();
-		String defaultValue = UUID.randomUUID()+"";
-		String nodeContent = new String(defaultValue);
-		String nodeUser = new String(defaultValue);
-		String nodeDate = new String(defaultValue);
-		
-		Integer activeLevel = 1;
-		for (int i = 1; i < section.split("\n").length; i++) {
-			
-		}
 		String[] split = section.split("\n");
 		Fitter fit = new Fitter(split);
 		fit.trimDL();
