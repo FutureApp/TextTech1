@@ -16,6 +16,11 @@ public class RichExtractor extends ExtractorGermanWiki {
 	private ArrayList<String> content;
 	private ArrayList<Node> nodeList;
 
+	/**
+	 * Extractor for nodes to german wiki-dis-page. You need to deliver the dis in sections.
+	 * @param content List where every list-content contains a section.
+	 * @param artName Name of the article.
+	 */
 	public RichExtractor(ArrayList<String> content, String artName) {
 		super();
 		this.content = content;
@@ -118,6 +123,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 		Elements select = doc.select("a");
 		List<Element> elements = new ArrayList<>();
 		select.forEach((a) -> elements.add(a));
+		// start from behind to det last aut and date.
 		Collections.reverse(elements);
 		big: for (int i = 0; i < elements.size(); i++) {
 			Element elem = elements.get(i);
@@ -131,6 +137,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 			if (!title.equals(""))
 				break big;
 		}
+		// german wiki specific.
 		if (userName.contains(" (Seite nicht vorhanden)"))
 			userName = userName.substring(0, userName.indexOf(" (Seite nicht vorhanden)"));
 		return userName;
