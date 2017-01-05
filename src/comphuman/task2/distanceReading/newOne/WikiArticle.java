@@ -127,7 +127,6 @@ public class WikiArticle {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	/**

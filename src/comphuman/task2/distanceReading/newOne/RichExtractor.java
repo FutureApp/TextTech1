@@ -54,12 +54,13 @@ public class RichExtractor extends ExtractorGermanWiki {
 		Node father = nodeList.get(1);
 		// System.out.println(father.name);
 		ArrayList<Node> fatherNodes = new ArrayList<>();
-		// Creates a dummy array for lookin up a father-node.
+		// Creates a dummy array for looking up a father-node.
 		// You could only have so many father like lines.MAX-Value
 		for (int i = 0; i < content.size(); i++) {
 			fatherNodes.add(new Node("", "", "", ""));
 		}
 		// Adds the dis-topic node as the first father-node.
+		
 		fatherNodes.add(level, father);
 
 		for (int i = 1; i < content.size(); i++) {
@@ -172,6 +173,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	 * Extracts the article name and pushes,based on the name, the root-node.
 	 */
 	private void extractArtRoot() {
+		System.out.println("artName - "+artName);
 		nodeList.add(new Node(artName, artName, "", ""));
 	}
 
@@ -181,6 +183,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	private void extractDisRoot() {
 		String disRootName = extractRootName(content.get(0));
 		Node disRoot = new Node(disRootName, nodeList.get(0).getName(), "", "");
+		
 		nodeList.add(disRoot);
 	}
 
