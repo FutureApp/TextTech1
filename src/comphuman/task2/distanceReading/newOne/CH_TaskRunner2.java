@@ -41,12 +41,12 @@ public class CH_TaskRunner2 {
 	}
 
 	private static void printFinish() {
-System.out.println();		
-System.out.println();		
-System.out.println();		
-System.out.println();		
-System.out.println("Programm has finished!!!");
-System.out.println("Feel free to close all window and/or explore the results.");
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("Programm has finished!!!");
+		System.out.println("Feel free to close all open windows and/or explore the results.");
 	}
 
 	/**
@@ -65,6 +65,10 @@ System.out.println("Feel free to close all window and/or explore the results.");
 
 	}
 
+	/**
+	 * Runs the analysis for the history of a discussion.
+	 * @param wikiArticle The article.
+	 */
 	private static void runHisAnalysis(WikiArticle wikiArticle) {
 		HashMap<String, ArrayList<String>> map = wikiArticle.searchAndSectionsFromHisDisPage();
 		map.forEach((dateOfHis, sections) -> {
@@ -81,6 +85,12 @@ System.out.println("Feel free to close all window and/or explore the results.");
 		});
 	}
 
+	/**
+	 * Start the viz of the results
+	 * @param resultAnalysis The results as the result-list
+	 * @param fileLocation Where to save the information
+	 * @param visResults True - Shows all extra windows.
+	 */
 	private static void vizAnalyseResults(ArrayList<ArrayList<Node>> resultAnalysis, String fileLocation,
 			Boolean visResults) {
 		File saveContentTo = new File(fileLocation);
