@@ -38,6 +38,9 @@ public class CH_TaskRunner2 {
 		ArrayList<String> SectionsFromDisPage = wikiArticle.searchAndSaveSectionsFromDisPage();
 		ArtNodeExtractor nodeExtractor = new ArtNodeExtractor(SectionsFromDisPage,wikiArticle.getArticleName());
 		nodeExtractor.extractNodes();
+		ArrayList<ArrayList<Node>> allNodesAllSections = nodeExtractor.getAllNodesAllSections();
+		VisRichArtDis vis = new VisRichArtDis(allNodesAllSections);
+		vis.startVizRichDis();
 		
 	}
 
