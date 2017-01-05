@@ -46,4 +46,4 @@ Der Entrypoint des Programm ist gegeben durch: comphuman.task2.distanceReading.n
 
 ___
 Source-Code:
-Git: https://github.com/FutureApp/TextTech1/releases/tag/CHTask2
+Git Release (CHTask2): https://github.com/FutureApp/TextTech1/releases/tag/CHTask2
