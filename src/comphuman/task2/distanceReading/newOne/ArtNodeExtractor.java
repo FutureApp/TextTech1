@@ -1,9 +1,6 @@
 package comphuman.task2.distanceReading.newOne;
 
 import java.util.ArrayList;
-import java.util.UUID;
-
-import org.jsoup.Jsoup;
 
 public class ArtNodeExtractor {
 
