@@ -19,9 +19,9 @@ public class CH_TaskRunner2 {
 	static String locationOfArticleVis = "/article/vis.txt";
 
 	/**
-	 * Entry-point of application. TODO
+	 * Entry-point of the application.
 	 * 
-	 * @param args
+	 * @param args Only args[0] - Link to a german wiki article.
 	 */
 	public static void main(String[] args) {
 		arg = args;

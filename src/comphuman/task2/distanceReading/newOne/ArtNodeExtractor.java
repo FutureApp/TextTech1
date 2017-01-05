@@ -22,9 +22,11 @@ public class ArtNodeExtractor {
 			String section = potNodes.get(i);
 			String[] split = section.split("\n");
 			
+			// Normalized the content.
 			Fitter fit = new Fitter(split);
 			fit.trimDL();
 			fit.trimUL();
+			// start of node extraction-
 			RichExtractor myEx = new RichExtractor(fit.getContent(), artName);
 			myEx.extract();
 			ArrayList<Node> nodeList = myEx.getNodeList();
