@@ -3,9 +3,7 @@ package comphuman.task2.distanceReading.newOne;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import org.apache.commons.io.FileUtils;
 import org.jsoup.nodes.Document;
@@ -20,6 +18,12 @@ public class WikiArticle {
 	private Document wikiArticleDiscussionPage;
 	private Document wikiArticleHistoryPage;
 
+	/**
+	 * 
+	 * @param URL
+	 *            URL where the article could be located. Link to the
+	 *            german-wikipedia.
+	 */
 	public WikiArticle(String URL) {
 		super();
 		this.URL = URL;
@@ -33,6 +37,11 @@ public class WikiArticle {
 		return URL.substring(0, URL.replace("//", "$$").indexOf("/"));
 	}
 
+	/**
+	 * Searches for the link to the dis-page of an article and the link to the
+	 * history-page of the an article. Will set the values of
+	 * wikiArticleDiscussionPage and wikiArticleHistoryPage.
+	 */
 	public void searchForContent() {
 		Integer limit = 1000;
 		wikiArticlePage = URL_Handler.getContentOf(URL);
@@ -42,19 +51,38 @@ public class WikiArticle {
 				getWikiURL() + wikiArticleDiscussionPage.select("#ca-history>span>a").attr("href") + "&limit=" + limit);
 	}
 
+	/**
+	 * Returns the wiki article page.
+	 * 
+	 * @return The article page.
+	 */
 	public Document getWikiArticlePage() {
 		return wikiArticlePage;
 	}
 
+	/**
+	 * Returns the wiki discussion page of an article.
+	 * 
+	 * @return The discussion page of an article.
+	 */
 	public Document getWikiArticleDiscussionPage() {
 		return wikiArticleDiscussionPage;
 	}
 
+	/**
+	 * Returns the wiki history page of an article.
+	 * 
+	 * @return The history page of an article..
+	 */
 	public Document getWikiArticleHistoryPage() {
 		return wikiArticleHistoryPage;
 	}
 
-	
+	/**
+	 * Searches in the discussion-pages for the sections and batches them.
+	 * 
+	 * @return Batched sections of the discussion-page.
+	 */
 	public ArrayList<String> searchAndSaveSectionsFromDisPage() {
 		ArrayList<String> extractSections = extractSections(
 				wikiArticleDiscussionPage.getElementById("mw-content-text").toString().split("\n"));
@@ -64,8 +92,11 @@ public class WikiArticle {
 
 	/**
 	 * Saves the sections.
-	 * @param file Location where to save.
-	 * @param extractedSections Extracted Sections.
+	 * 
+	 * @param file
+	 *            Location where to save.
+	 * @param extractedSections
+	 *            Extracted Sections.
 	 */
 	private void saveSections(File file, ArrayList<String> extractedSections) {
 		try {
@@ -76,12 +107,13 @@ public class WikiArticle {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	/**
-	 * Extracts all section from the art.
-	 * @param strings 
+	 * Extracts all sections from the dis-page of a german wiki-art.
+	 * 
+	 * @param strings
 	 * @return List of List which contains content for node-extraction.
 	 */
 	private ArrayList<String> extractSections(String[] strings) {
@@ -91,7 +123,7 @@ public class WikiArticle {
 			String string = strings[i];
 			if (string.contains("class=\"mw-headline\"")) {
 				result.add(sectionContent);
-				sectionContent = new String(string+"\n");
+				sectionContent = new String(string + "\n");
 			} else if (string.contains("NewPP limit report")) {
 				result.add(sectionContent.substring(0, sectionContent.indexOf("<!--")));
 				break big;
@@ -100,6 +132,5 @@ public class WikiArticle {
 			}
 		}
 		return result;
-
 	}
 }

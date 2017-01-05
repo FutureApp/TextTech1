@@ -23,7 +23,10 @@ public class VisRichArtDis {
 	String LAVENDER = javafx.scene.paint.Color.BLANCHEDALMOND.toString();
 	ArrayList<ArrayList<Node>> listOfListFromNodes;
 	
-
+/**
+ * 
+ * @param listOfListFromNodes
+ */
 	public VisRichArtDis(ArrayList<ArrayList<Node>> listOfListFromNodes) {
 		super();
 		this.listOfListFromNodes = listOfListFromNodes;
