@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.apache.commons.io.FileUtils;
+import org.omg.Messaging.SyncScopeHelper;
+
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
 
@@ -35,6 +37,16 @@ public class CH_TaskRunner2 {
 		saveNodeInformations(resultAnalysis, resultDir + locationOfArticleNodes);
 		//
 		runHisAnalysis(wikiArticle);
+		printFinish();
+	}
+
+	private static void printFinish() {
+System.out.println();		
+System.out.println();		
+System.out.println();		
+System.out.println();		
+System.out.println("Programm has finished!!!");
+System.out.println("Feel free to close all window and/or explore the results.");
 	}
 
 	/**
