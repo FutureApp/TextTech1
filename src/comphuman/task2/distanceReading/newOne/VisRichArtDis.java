@@ -33,7 +33,6 @@ public class VisRichArtDis {
 
 	public void startVizRichDis(File fileWhereToSaveVis, Boolean showViz) {
 		Graph graph = new MultiGraph("Dicussions");
-		graph.addAttribute("ui.stylehseet", "url('http://www.deep.in/the/site/mystylesheet')");
 		graph.addAttribute("ui.quality");
 		graph.addAttribute("ui.antialias");
 		graph.setStrict(false);

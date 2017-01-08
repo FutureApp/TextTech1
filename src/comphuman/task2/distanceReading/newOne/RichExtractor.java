@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
+import javax.print.Doc;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -163,7 +165,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 			if (!title.equals(""))
 				break big;
 		}
-		// german wiki specific.
+		// specific togerman wiki .
 		if (userName.contains(" (Seite nicht vorhanden)"))
 			userName = userName.substring(0, userName.indexOf(" (Seite nicht vorhanden)"));
 		return userName;
@@ -181,25 +183,37 @@ public class RichExtractor extends ExtractorGermanWiki {
 	 * Extracts the root-node.
 	 */
 	private void extractDisRoot() {
-		String disRootName = extractRootName(content.get(0));
+		String disRootName = extractDisRootName(content.get(0));
 		Node disRoot = new Node(disRootName, nodeList.get(0).getName(), "", "");
-		
 		nodeList.add(disRoot);
 	}
 
 	/**
-	 * Extracts the dis-header. It will be used as root-Node.
+	 * Extracts the discussion section Name.
 	 * 
 	 * @param line
-	 *            Line which contains the root-name.
-	 * @return The root-name.
+	 *            Line which contains the discussion section Name.
+	 * @return The discussion section Name .
 	 */
-	private String extractRootName(String line) {
+	private String extractDisRootName(String line) {
 		Document doc = Jsoup.parse(line);
-		String rootName = doc.text();
-		if (rootName.contains("[Quelltext bearbeiten]"))
-			rootName = rootName.substring(0, rootName.indexOf("[Quelltext bearbeiten]"));
-		return rootName;
+		String disRootName = "";
+		String lineContainsRootName = doc.text();
+		
+		if (lineContainsRootName.contains("[Quelltext bearbeiten]")){
+			
+			disRootName = lineContainsRootName.substring(0, lineContainsRootName.indexOf("[Quelltext bearbeiten]"));
+		}
+		else{
+			disRootName = new String(lineContainsRootName);
+		}
+		
+		if(disRootName.length() <3){
+			System.out.println(lineContainsRootName);
+			System.out.println("STOP");
+			System.exit(1);
+		}
+		return disRootName;
 	}
 
 	/**
