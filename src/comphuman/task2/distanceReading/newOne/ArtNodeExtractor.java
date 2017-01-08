@@ -16,6 +16,12 @@ public class ArtNodeExtractor {
 	}
 
 	public void extractNodes() {
+		for (int i = 0; i < potNodes.size(); i++) {
+if (!potNodes.contains("mw-headline")) {
+	smallExtractor();
+}
+		}
+		
 		if (potNodes.size()>1) {
 			for (int i = 1; i < potNodes.size(); i++) {
 				String section = potNodes.get(i);
@@ -56,6 +62,11 @@ public class ArtNodeExtractor {
 //			System.exit(1);
 		}
 
+	}
+
+	private void smallExtractor() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	/**
