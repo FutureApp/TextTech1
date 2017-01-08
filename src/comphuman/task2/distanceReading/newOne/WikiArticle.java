@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 import org.apache.commons.io.FileUtils;
 import org.jsoup.nodes.Document;
@@ -92,8 +93,8 @@ public class WikiArticle {
 //		saveSections(new File("sectionTest.txt"), extractSections);
 		return extractSections;
 	}
-	public HashMap<String, ArrayList<String>> searchAndSectionsFromHisDisPage() {
-		HashMap<String, ArrayList<String>> map = new HashMap<>();
+	public TreeMap<String, ArrayList<String>> searchForSectionsFromHisDisPage() {
+		TreeMap<String, ArrayList<String>> map = new TreeMap<>();
 		Elements aTags = wikiArticleHistoryPage.select(".mw-changeslist-date");
 
 		for (Element element : aTags) {

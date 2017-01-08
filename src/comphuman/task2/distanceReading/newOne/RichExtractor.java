@@ -14,9 +14,9 @@ import org.jsoup.select.Elements;
 
 public class RichExtractor extends ExtractorGermanWiki {
 
-	private String artName;
-	private ArrayList<String> content;
-	private ArrayList<Node> nodeList;
+	protected String artName;
+	protected ArrayList<String> content;
+	protected ArrayList<Node> nodeList;
 
 	/**
 	 * Extractor for nodes to german wiki-dis-page. You need to deliver the dis
@@ -47,8 +47,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	/**
 	 * Extracts the post from the section.
 	 */
-	private void extractPosts() {
-
+	protected void extractPosts() {
 		String defaultValue = "";
 		String autName = new String(defaultValue);
 		String date = new String(defaultValue);
@@ -64,7 +63,6 @@ public class RichExtractor extends ExtractorGermanWiki {
 		// Adds the dis-topic node as the first father-node.
 		
 		fatherNodes.add(level, father);
-
 		for (int i = 1; i < content.size(); i++) {
 			String line = content.get(i);
 			/*
@@ -103,25 +101,6 @@ public class RichExtractor extends ExtractorGermanWiki {
 				fatherNodes.add(level, father);
 			}
 		}
-		if (nodeList.size() < 3) {
-			for (String string : content) {
-				System.out.println(string);
-			}
-			System.out.println(content);
-			for (Node node : fatherNodes) {
-				System.out.println(node.getName());
-			}
-			for (Node node : nodeList) {
-				System.out.println(node.getName());
-			}
-			System.out.println("achtung");
-
-			// Add one empty Post because a dis-dopic without a post couldn't be.
-			// That means: 1- Post not identified  2- Post isn't signed.
-			nodeList.add(new Node(UUID.randomUUID().toString(), father.getName(), "", ""));
-		}
-		// For debugging purpose.
-		// showRelation();
 	}
 	
 
@@ -145,7 +124,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	 *            {@link #containsSomethingLikeUserName(String)}
 	 * @return Returns the user-name-
 	 */
-	private String extractName(String line) {
+	protected String extractName(String line) {
 		String userName = "";
 		Document doc = Jsoup.parse(line);
 		Elements select = doc.select("a");
@@ -174,7 +153,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	/**
 	 * Extracts the article name and pushes,based on the name, the root-node.
 	 */
-	private void extractArtRoot() {
+	protected void extractArtRoot() {
 		System.out.println("artName - "+artName);
 		nodeList.add(new Node(artName, artName, "", ""));
 	}
@@ -182,7 +161,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	/**
 	 * Extracts the root-node.
 	 */
-	private void extractDisRoot() {
+	protected void extractDisRoot() {
 		String disRootName = extractDisRootName(content.get(0));
 		Node disRoot = new Node(disRootName, nodeList.get(0).getName(), "", "");
 		nodeList.add(disRoot);
@@ -195,7 +174,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	 *            Line which contains the discussion section Name.
 	 * @return The discussion section Name .
 	 */
-	private String extractDisRootName(String line) {
+	protected String extractDisRootName(String line) {
 		Document doc = Jsoup.parse(line);
 		String disRootName = "";
 		String lineContainsRootName = doc.text();
@@ -208,11 +187,6 @@ public class RichExtractor extends ExtractorGermanWiki {
 			disRootName = new String(lineContainsRootName);
 		}
 		
-		if(disRootName.length() <3){
-			System.out.println(lineContainsRootName);
-			System.out.println("STOP");
-			System.exit(1);
-		}
 		return disRootName;
 	}
 

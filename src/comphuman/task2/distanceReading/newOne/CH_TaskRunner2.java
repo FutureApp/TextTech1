@@ -3,9 +3,9 @@ package comphuman.task2.distanceReading.newOne;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.TreeMap;
+
 import org.apache.commons.io.FileUtils;
-import org.omg.Messaging.SyncScopeHelper;
 
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
@@ -58,8 +58,8 @@ public class CH_TaskRunner2 {
 	 * @return Returns the posts from the discussion-page as nodes.
 	 */
 	private static ArrayList<ArrayList<Node>> runDisAnalysis(WikiArticle wikiArticle) {
-		ArrayList<String> SectionsFromDisPage = wikiArticle.searchAndSaveSectionsFromDisPage();
-		ArtNodeExtractor nodeExtractor = new ArtNodeExtractor(SectionsFromDisPage, wikiArticle.getArticleName());
+		ArrayList<String> ContentFromDisPage = wikiArticle.searchAndSaveSectionsFromDisPage();
+		ArtNodeExtractor nodeExtractor = new ArtNodeExtractor(ContentFromDisPage, wikiArticle.getArticleName());
 		nodeExtractor.extractNodes();
 		return nodeExtractor.getAllNodesAllSections();
 
@@ -70,7 +70,7 @@ public class CH_TaskRunner2 {
 	 * @param wikiArticle The article.
 	 */
 	private static void runHisAnalysis(WikiArticle wikiArticle) {
-		HashMap<String, ArrayList<String>> map = wikiArticle.searchAndSectionsFromHisDisPage();
+		TreeMap<String, ArrayList<String>> map = wikiArticle.searchForSectionsFromHisDisPage();
 		map.forEach((dateOfHis, sections) -> {
 			String location = resultDir + "/history/" + Normalizer.normalizeDateForFileName(dateOfHis);
 //			System.out.print(dateOfHis);
