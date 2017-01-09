@@ -17,58 +17,32 @@ public class ArtNodeExtractor {
 
 	public void extractNodes() {
 		for (int i = 0; i < potNodes.size(); i++) {
-if (!potNodes.contains("mw-headline")) {
-	smallExtractor();
-}
-		}
-		
-		if (potNodes.size()>1) {
-			for (int i = 1; i < potNodes.size(); i++) {
-				String section = potNodes.get(i);
-				String[] split = section.split("\n");
-
-				// Normalized the content.
-				Fitter fit = new Fitter(split);
-				fit.trimDL();
-				fit.trimUL();
-				fit.trimSMALL();
-				fit.trimI();
-				// start of node extraction-
-				// System.out.println(fit.getContent());
-				RichExtractor myEx = new RichExtractor(fit.getContent(), artName);
-				myEx.extract();
-				ArrayList<Node> nodeList = myEx.getNodeList();
-				allNodesAllSections.add(nodeList);
-			}
-		} else {
-			for (int i = 0; i < potNodes.size(); i++) {
-				String section = potNodes.get(i);
-				String[] split = section.split("\n");
-
-				System.out.println(section);
-				// Normalized the content.
-				Fitter fit = new Fitter(split);
-				fit.trimDL();
-				fit.trimUL();
-				fit.trimSMALL();
-				fit.trimI();
-				// start of node extraction-
+			String section = potNodes.get(i);
+			String[] split = section.split("\n");
+			// Normalized the content.
+			Fitter fit = new Fitter(split);
+			fit.trimDL();
+			fit.trimUL();
+			fit.trimSMALL();
+			fit.trimI();
+			if (!section.contains("mw-headline")) {
+				// start of node extraction- Poor-filled contetn
 				// System.out.println(fit.getContent());
 				SmallExtractor myEx = new SmallExtractor(fit.getContent(), artName);
 				myEx.extract();
 				ArrayList<Node> nodeList = myEx.getNodeList();
 				allNodesAllSections.add(nodeList);
 			}
-//			System.exit(1);
+			else{
+				// start of node extraction- Rich-filled content
+				// System.out.println(fit.getContent());
+				RichExtractor myEx = new RichExtractor(fit.getContent(), artName);
+				myEx.extract();
+				ArrayList<Node> nodeList = myEx.getNodeList();
+				allNodesAllSections.add(nodeList);
+			}
 		}
-
 	}
-
-	private void smallExtractor() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	/**
 	 * Returns all nodes over all sections.
 	 * 

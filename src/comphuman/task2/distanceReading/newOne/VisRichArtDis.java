@@ -32,11 +32,13 @@ public class VisRichArtDis {
 	}
 
 	public void startVizRichDis(File fileWhereToSaveVis, Boolean showViz) {
+		String rootNodeName= new String();
 		Graph graph = new MultiGraph("Dicussions");
 		graph.addAttribute("ui.quality");
 		graph.addAttribute("ui.antialias");
 		graph.setStrict(false);
 		graph.setAutoCreate(true);
+		
 
 		for (int i = 0; i < listOfListFromNodes.size(); i++) {
 			ArrayList<Node> nodesToTopic = listOfListFromNodes.get(i);
@@ -47,13 +49,18 @@ public class VisRichArtDis {
 
 				// Root ( ArticleName)
 				if (x == 0) {
+					rootNodeName=new String(node.name);
 					graph.addNode(node.name).addAttribute("label", node.name);
 					graph.getNode(node.name).addAttribute(style, "fill-color: '" + RED + "';");
 				}
 				// Section of article.
 				else if (x == 1) {
 					graph.addNode(node.name).addAttribute("label", "[" + node.name + "]");
-					graph.getNode(node.name).addAttribute(style, "fill-color: '" + GREEN + "';");
+					if(rootNodeName.equals(node.name)) 
+						graph.getNode(node.name).addAttribute(style, "fill-color: '" + RED + "';");
+					else
+						graph.getNode(node.name).addAttribute(style, "fill-color: '" + GREEN + "';");
+					
 					graph.addEdge(nodeID, node.name, node.father);
 				}
 				// Posts
