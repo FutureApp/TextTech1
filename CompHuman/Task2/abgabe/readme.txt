@@ -7,11 +7,11 @@ java -jar CHTask2.jar https://de.wikipedia.org/wiki/Lindentunnel
 
 ____
 Struktur des Ergebnissordners:
- ./result/discussion			(Enthält die Analyse der Diskussions-Seite)
+ ./CompHuman/result/discussion			(Enthält die Analyse der Diskussions-Seite)
 	nodeInformations.txt 		(Enthält die Informationen über die einzelnen Post-Nodes. Anhand dieser Daten wird der Graph konstruiert.)
 	graph.png 					(Enthält die Visualisierung der Analyse.)
 	 
-./result/history 				(Enthält die Analyse der Historien -Seite)
+ ./CompHuman/result/history 				(Enthält die Analyse der Historien -Seite)
 	/xxxxx/nodeinformations.txt (Enthält die Informationen über die einzelnen Post-Nodes. Anhand dieser Daten wird der Graph konstruiert.)
 	/xxxxx/graph.jpg 			(Enthält die Visualisierung der Analyse.)
 		.
@@ -43,7 +43,7 @@ Hinweis:
 
 2) Die Visualisierung der Diskussion wird als separates Fenster angezeigt. Die einzelnen Nodes können bewegt werden, wenn ein Knoten genauer untersucht werden will.
 
-3) Wenn unter ./history/. ein Ordner-Element folgender Gestalt <x(1,2,...)> enthalten ist, bedeutet dies, dass es mehrere Historieneinträge gibt, die das gleiche Datum verweisen.
+3) Wenn unter ./CompHuman/result/history/. ein Ordner-Element folgender Gestalt <x(1,2,...)> enthalten ist, bedeutet dies, dass es mehrere Historieneinträge gibt, die das gleiche Datum verweisen.
 ___
 Code
 Der Entrypoint des Programms ist gegeben durch: comphuman.task2.distanceReading.newOne/CH_TaskRunner2.java
