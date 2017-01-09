@@ -106,6 +106,7 @@ public class WikiArticle {
 			ArrayList<String> extractSections = extractSections(
 					doc.getElementById("mw-content-text").toString().split("\n"));
 			if(!map.containsKey(backUpDate)) map.put(backUpDate, extractSections);
+			// If an his-entry has more then one-time the same date then do this:
 			else {
 				big: for (int i = 1; i < 1001; i++) {
 					String newName = backUpDate+"("+i+")";
