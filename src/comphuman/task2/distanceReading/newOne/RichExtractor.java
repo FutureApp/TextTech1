@@ -19,11 +19,10 @@ public class RichExtractor extends ExtractorGermanWiki {
 	protected ArrayList<Node> nodeList;
 
 	/**
-	 * Extractor for nodes to german wiki-dis-page. You need to deliver the dis
-	 * in sections.
+	 * Extractor for nodes to german wiki-dis-page. 
 	 * 
 	 * @param content
-	 *            List where every list-content contains a section.
+	 *            List where every list-entry represents a discussion-section.
 	 * @param artName
 	 *            Name of the article.
 	 */
@@ -35,7 +34,7 @@ public class RichExtractor extends ExtractorGermanWiki {
 	}
 
 	/**
-	 * Start the extraction of need informations.
+	 * Begin extraction of information.
 	 * 
 	 */
 	public void extract() {
