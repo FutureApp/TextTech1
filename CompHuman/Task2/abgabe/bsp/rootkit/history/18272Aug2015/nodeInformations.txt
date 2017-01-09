@@ -1,0 +1,39 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(18:27, 2. Aug. 2015)|Rootkit(18:27, 2. Aug. 2015)||
+Rootkit(18:27, 2. Aug. 2015)|Rootkit(18:27, 2. Aug. 2015)||
+
+Rootkit(18:27, 2. Aug. 2015)|Rootkit(18:27, 2. Aug. 2015)||
+Ein paar Links|Rootkit(18:27, 2. Aug. 2015)||
+7574d426-6c94-4423-9055-39e7db8236f3|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit(18:27, 2. Aug. 2015)|Rootkit(18:27, 2. Aug. 2015)||
+Auf Grund gelaufen?|Rootkit(18:27, 2. Aug. 2015)||
+9b32726d-0fb7-4fff-8f7e-9d6e0fa733e9|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+208329cf-eabb-482c-9203-5f09048c43b1|Auf Grund gelaufen?|87.180.131.158|22:49, 13. Okt. 2009 (CEST))
+
+Rootkit(18:27, 2. Aug. 2015)|Rootkit(18:27, 2. Aug. 2015)||
+Backdoor funktionalität|Rootkit(18:27, 2. Aug. 2015)||
+2b08e416-0c82-4cd0-b57c-5221cb5da7e6|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit(18:27, 2. Aug. 2015)|Rootkit(18:27, 2. Aug. 2015)||
+"Positive Aspekte von Rootkits"???|Rootkit(18:27, 2. Aug. 2015)||
+b02c71d8-0b80-4bdc-9fa7-7f77fd9dc432|"Positive Aspekte von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)
+009bd017-93f1-41e5-8b88-f84573c97657|b02c71d8-0b80-4bdc-9fa7-7f77fd9dc432|Volty|00:22, 29. Aug. 2007 (CEST)
+
+Rootkit(18:27, 2. Aug. 2015)|Rootkit(18:27, 2. Aug. 2015)||
+Ergänzungsvorschlag|Rootkit(18:27, 2. Aug. 2015)||
+d480f0a7-ec40-4923-b33e-85cb08d63a7d|Ergänzungsvorschlag|109.192.62.95|04:43, 28. Mär. 2010 (CEST))
+
+Rootkit(18:27, 2. Aug. 2015)|Rootkit(18:27, 2. Aug. 2015)||
+Hybride|Rootkit(18:27, 2. Aug. 2015)||
+9cf759c6-02af-4b82-9ca2-9d0558411675|Hybride|188.46.116.153|14:37, 21. Sep. 2009 (CEST)
+6e7abd8a-3d00-47b9-86cf-f52f24154ba1|9cf759c6-02af-4b82-9ca2-9d0558411675|R.Schuster|11:49, 28. Mär. 2010 (CEST)
+
+Rootkit(18:27, 2. Aug. 2015)|Rootkit(18:27, 2. Aug. 2015)||
+Veraltete Informationen|Rootkit(18:27, 2. Aug. 2015)||
+c15bc9b5-bf94-49e9-8409-e38ba57cddab|Veraltete Informationen|Nerdture|09:18, 28. Feb. 2012 (CET))
+64411bc8-cfa8-4daa-8d59-5f1112aa00a7|c15bc9b5-bf94-49e9-8409-e38ba57cddab|LKD|09:27, 28. Feb. 2012 (CET)
+
+Rootkit(18:27, 2. Aug. 2015)|Rootkit(18:27, 2. Aug. 2015)||
+Abschnitt ohne Belege?|Rootkit(18:27, 2. Aug. 2015)||
+18747db2-1a8f-43c8-be5a-06c7e0cce37b|Abschnitt ohne Belege?|Echoray|19:27, 2. Aug. 2015 (CEST)

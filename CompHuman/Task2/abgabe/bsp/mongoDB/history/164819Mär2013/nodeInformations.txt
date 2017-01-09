@@ -1,3 +1,0 @@
-Name of node | Name of father node | Created by User(user-name) | Creation Date
-MongoDB(16:48, 19. Mär. 2013)|MongoDB(16:48, 19. Mär. 2013)||
-Kritik an der Kritik: Rasse?|MongoDB(16:48, 19. Mär. 2013)||

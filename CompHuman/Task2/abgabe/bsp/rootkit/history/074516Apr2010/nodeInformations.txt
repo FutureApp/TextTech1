@@ -1,0 +1,26 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(07:45, 16. Apr. 2010)|Rootkit(07:45, 16. Apr. 2010)||
+Rootkit(07:45, 16. Apr. 2010)|Rootkit(07:45, 16. Apr. 2010)||
+
+Rootkit(07:45, 16. Apr. 2010)|Rootkit(07:45, 16. Apr. 2010)||
+Auf Grund gelaufen?|Rootkit(07:45, 16. Apr. 2010)||
+c501afc3-94dc-47aa-85a0-55c8bdc3afef|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+694c3b2d-b904-459e-8748-12cf6e3d623d|Auf Grund gelaufen?|87.180.131.158|22:49, 13. Okt. 2009 (CEST))
+
+Rootkit(07:45, 16. Apr. 2010)|Rootkit(07:45, 16. Apr. 2010)||
+Backdoor funktionalität|Rootkit(07:45, 16. Apr. 2010)||
+b64aad07-eabb-4660-83f2-c2061d6cb8be|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit(07:45, 16. Apr. 2010)|Rootkit(07:45, 16. Apr. 2010)||
+"Positive Aspekte von Rootkits"???|Rootkit(07:45, 16. Apr. 2010)||
+3ed5f842-c8e8-487a-82c9-aba6ccfabfd9|"Positive Aspekte von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)
+756637f9-0726-4363-8b0c-2d74bea09841|3ed5f842-c8e8-487a-82c9-aba6ccfabfd9|Volty|00:22, 29. Aug. 2007 (CEST)
+
+Rootkit(07:45, 16. Apr. 2010)|Rootkit(07:45, 16. Apr. 2010)||
+Ergänzungsvorschlag|Rootkit(07:45, 16. Apr. 2010)||
+11a798a0-733e-416e-ab32-e0646cc566b7|Ergänzungsvorschlag|109.192.62.95|04:43, 28. Mär. 2010 (CEST))
+
+Rootkit(07:45, 16. Apr. 2010)|Rootkit(07:45, 16. Apr. 2010)||
+Hybride|Rootkit(07:45, 16. Apr. 2010)||
+8bb44cc4-4326-4b34-98fe-d4356930cb0f|Hybride|188.46.116.153|14:37, 21. Sep. 2009 (CEST)
+f6260043-f0c4-4205-8080-bec244a93fc8|8bb44cc4-4326-4b34-98fe-d4356930cb0f|R.Schuster|11:49, 28. Mär. 2010 (CEST)

@@ -1,0 +1,38 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(11:48, 5. Aug. 2015)|Rootkit(11:48, 5. Aug. 2015)||
+Rootkit(11:48, 5. Aug. 2015)|Rootkit(11:48, 5. Aug. 2015)||
+
+Rootkit(11:48, 5. Aug. 2015)|Rootkit(11:48, 5. Aug. 2015)||
+Ein paar Links|Rootkit(11:48, 5. Aug. 2015)||
+8c227b56-a2b2-4d98-a52a-537e3767867b|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit(11:48, 5. Aug. 2015)|Rootkit(11:48, 5. Aug. 2015)||
+Auf Grund gelaufen?|Rootkit(11:48, 5. Aug. 2015)||
+d33a4a0c-7e51-40c6-a2d5-d1df66f97397|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+9e380af1-5d6a-4b36-a15a-e4df2524c9ea|Auf Grund gelaufen?|87.180.131.158|22:49, 13. Okt. 2009 (CEST))
+
+Rootkit(11:48, 5. Aug. 2015)|Rootkit(11:48, 5. Aug. 2015)||
+Backdoor funktionalität|Rootkit(11:48, 5. Aug. 2015)||
+72d6fbcc-e131-4ba2-9063-60760954cfc1|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit(11:48, 5. Aug. 2015)|Rootkit(11:48, 5. Aug. 2015)||
+"Positive Aspekte von Rootkits"???|Rootkit(11:48, 5. Aug. 2015)||
+835bcaa8-e827-4ce9-a025-2b0da152ecca|"Positive Aspekte von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)
+63d40316-6d8c-465d-b28f-1d64778fd6dd|835bcaa8-e827-4ce9-a025-2b0da152ecca|Volty|00:22, 29. Aug. 2007 (CEST)
+
+Rootkit(11:48, 5. Aug. 2015)|Rootkit(11:48, 5. Aug. 2015)||
+Ergänzungsvorschlag|Rootkit(11:48, 5. Aug. 2015)||
+0fce0146-52ef-4be4-bf95-10d4a08c1b44|Ergänzungsvorschlag|109.192.62.95|04:43, 28. Mär. 2010 (CEST))
+
+Rootkit(11:48, 5. Aug. 2015)|Rootkit(11:48, 5. Aug. 2015)||
+Hybride|Rootkit(11:48, 5. Aug. 2015)||
+481efdfc-6043-4201-a9ef-127a3efb7f63|Hybride|188.46.116.153|14:37, 21. Sep. 2009 (CEST)
+4e6fd4e7-df27-4096-b922-7d41941926dc|481efdfc-6043-4201-a9ef-127a3efb7f63|R.Schuster|11:49, 28. Mär. 2010 (CEST)
+
+Rootkit(11:48, 5. Aug. 2015)|Rootkit(11:48, 5. Aug. 2015)||
+Veraltete Informationen|Rootkit(11:48, 5. Aug. 2015)||
+5a4be29e-8e00-4c7a-b9ef-1edd027d930d|Veraltete Informationen|Nerdture|09:18, 28. Feb. 2012 (CET))
+8ba9174a-1d89-42ed-b3ce-130b2c4a9ae7|5a4be29e-8e00-4c7a-b9ef-1edd027d930d|LKD|09:27, 28. Feb. 2012 (CET)
+a27b62dc-31e9-4793-9c42-d0f4363fb9e0|Veraltete Informationen|MWExpert|12:48, 5. Aug. 2015 (CEST)
+77025c6d-eb54-49fa-8404-ab02f4972be9|a27b62dc-31e9-4793-9c42-d0f4363fb9e0|Echoray|19:27, 2. Aug. 2015 (CEST)
+a37bdc80-e24b-443e-8a18-90790afa8bc3|Veraltete Informationen|MWExpert|09:43, 5. Aug. 2015 (CEST))

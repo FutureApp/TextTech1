@@ -1,0 +1,46 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+Ein paar Links|Rootkit(14:40, 13. Aug. 2016)||
+14c7f88c-669a-4640-ac44-26d09cd5f326|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+Auf Grund gelaufen?|Rootkit(14:40, 13. Aug. 2016)||
+751053e2-e52a-457b-8e54-10104ffa327b|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+7a5170b8-083a-425d-9ec2-41e13ab51c47|Auf Grund gelaufen?|87.180.131.158|22:49, 13. Okt. 2009 (CEST))
+
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+Backdoor funktionalität|Rootkit(14:40, 13. Aug. 2016)||
+503ddcdb-2c46-44d0-b75a-ff989404bea3|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+"Positive Aspekte von Rootkits"???|Rootkit(14:40, 13. Aug. 2016)||
+0fe9644d-75c2-4ca7-98b5-a7134d2305b0|"Positive Aspekte von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)
+6d4f1842-094a-47bc-b8cf-9dca6f6e2789|0fe9644d-75c2-4ca7-98b5-a7134d2305b0|Volty|00:22, 29. Aug. 2007 (CEST)
+8cc9fee4-dc83-4db1-9055-fc583b1b05da|"Positive Aspekte von Rootkits"???|93.210.68.149|12:05, 13. Aug. 2016 (CEST))
+
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+Ergänzungsvorschlag|Rootkit(14:40, 13. Aug. 2016)||
+1384358c-6817-461f-8126-6f1251e7394c|Ergänzungsvorschlag|109.192.62.95|04:43, 28. Mär. 2010 (CEST))
+
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+Hybride|Rootkit(14:40, 13. Aug. 2016)||
+abc11ffa-7d21-4a19-bfa4-90c95cc5ee6b|Hybride|188.46.116.153|14:37, 21. Sep. 2009 (CEST)
+df015bf1-8346-4432-95cb-b4135a02f972|abc11ffa-7d21-4a19-bfa4-90c95cc5ee6b|R.Schuster|11:49, 28. Mär. 2010 (CEST)
+
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+Veraltete Informationen|Rootkit(14:40, 13. Aug. 2016)||
+ed9e816b-4653-4a40-bd30-39be4009afbb|Veraltete Informationen|Nerdture|09:18, 28. Feb. 2012 (CET))
+64c68012-ef40-43fa-8bde-c630e89b6322|ed9e816b-4653-4a40-bd30-39be4009afbb|LKD|09:27, 28. Feb. 2012 (CET)
+
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+Abschnitt ohne Belege?|Rootkit(14:40, 13. Aug. 2016)||
+43cd32bb-862d-4c70-9a27-d95bfe92779e|Abschnitt ohne Belege?|MWExpert|12:48, 2. Aug. 2015 (CEST)
+5252df7d-d88f-45e6-a9da-834aae7eb22e|43cd32bb-862d-4c70-9a27-d95bfe92779e|Echoray|19:27, 2. Aug. 2015 (CEST)
+d667e08a-4e3a-49dd-ba38-8181c4bdbb83|Abschnitt ohne Belege?|MWExpert|12:48, 5. Aug. 2015 (CEST)
+
+Rootkit(14:40, 13. Aug. 2016)|Rootkit(14:40, 13. Aug. 2016)||
+"Jedoch gibt es für viele Rootkits ... Programme zur Erkennung und Entfernung, z. B. das Sony Rootkit"|Rootkit(14:40, 13. Aug. 2016)||
+94c8a051-53cc-4582-855e-9579112b0780|"Jedoch gibt es für viele Rootkits ... Programme zur Erkennung und Entfernung, z. B. das Sony Rootkit"|JonnyNord|16:05, 23. Feb. 2016 (CET)

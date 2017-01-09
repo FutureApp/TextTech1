@@ -1,0 +1,7 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(10:39, 27. Jan. 2006)|Rootkit(10:39, 27. Jan. 2006)||
+Rootkit(10:39, 27. Jan. 2006)|Rootkit(10:39, 27. Jan. 2006)||
+023ecdea-d62c-4e4b-9f6d-8e16f665ca84|Rootkit(10:39, 27. Jan. 2006)|Neo23x0|20:46, 20. Jan 2006 (CET)
+
+Rootkit(10:39, 27. Jan. 2006)|Rootkit(10:39, 27. Jan. 2006)||
+Ein paar Links|Rootkit(10:39, 27. Jan. 2006)||

@@ -1,0 +1,29 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Virginia(15:09, 6. Mär. 2013)|Virginia(15:09, 6. Mär. 2013)||
+Virginia(15:09, 6. Mär. 2013)|Virginia(15:09, 6. Mär. 2013)||
+
+Virginia(15:09, 6. Mär. 2013)|Virginia(15:09, 6. Mär. 2013)||
+Bitte Vorlage:Lautschrift entfernen!|Virginia(15:09, 6. Mär. 2013)||
+89612ea6-10c6-4539-b992-8d83e13aee4b|Bitte Vorlage:Lautschrift entfernen!|J. 'mach' wust|00:40, 17. Mai 2005 (CEST)
+
+Virginia(15:09, 6. Mär. 2013)|Virginia(15:09, 6. Mär. 2013)||
+Religion|Virginia(15:09, 6. Mär. 2013)||
+1139fee2-8ac9-4874-835c-810fdfb23610|Religion|Gamgee|21:42, 15. Feb 2006 (CET)
+
+Virginia(15:09, 6. Mär. 2013)|Virginia(15:09, 6. Mär. 2013)||
+Basisdaten|Virginia(15:09, 6. Mär. 2013)||
+6224cee7-cf6c-4253-addc-7dd42edcb79c|Basisdaten|80.108.114.246|15:48, 22. Jan 2006 (CET)
+
+Virginia(15:09, 6. Mär. 2013)|Virginia(15:09, 6. Mär. 2013)||
+Great Falls Park|Virginia(15:09, 6. Mär. 2013)||
+ad490578-e348-4d27-9644-bd56e9e18595|Great Falls Park|Erik74|19:14, 21. Apr. 2011 (CEST)
+f50ccf8c-9a86-4166-a48d-d1684c60b172|ad490578-e348-4d27-9644-bd56e9e18595|H-stt|15:14, 26. Apr. 2011 (CEST)
+
+Virginia(15:09, 6. Mär. 2013)|Virginia(15:09, 6. Mär. 2013)||
+Einleitung|Virginia(15:09, 6. Mär. 2013)||
+f9750476-50eb-4369-8c7b-39fb14ea328d|Einleitung|87.165.105.41|02:04, 30. Dez. 2011 (CET)
+
+Virginia(15:09, 6. Mär. 2013)|Virginia(15:09, 6. Mär. 2013)||
+Einwohnerentwicklung|Virginia(15:09, 6. Mär. 2013)||
+d2d86f1b-59c3-426d-99e2-e3a4a870b0ee|Einwohnerentwicklung|Gamgee|11:19, 8. Mär. 2012 (CET)
+90416483-e45b-4d92-bc90-f619919fe8c1|d2d86f1b-59c3-426d-99e2-e3a4a870b0ee|H-stt|10:48, 9. Mär. 2012 (CET)

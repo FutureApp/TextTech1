@@ -1,0 +1,9 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(20:30, 18. Jul. 2006)|Rootkit(20:30, 18. Jul. 2006)||
+Rootkit(20:30, 18. Jul. 2006)|Rootkit(20:30, 18. Jul. 2006)||
+0f9163ec-59f0-427d-b8f1-60c8e2989460|Rootkit(20:30, 18. Jul. 2006)|Neo23x0|20:46, 20. Jan 2006 (CET)
+fc4011e2-e6fa-4081-938c-4ed202cda44c|Rootkit(20:30, 18. Jul. 2006)|84.60.231.209|12:53, 4. Mai 2006 (CEST)
+9c1a5cbf-cdad-464c-a080-5a05032c1a3a|Rootkit(20:30, 18. Jul. 2006)|80.134.134.223|21:30, 18. Jul 2006 (CEST)
+
+Rootkit(20:30, 18. Jul. 2006)|Rootkit(20:30, 18. Jul. 2006)||
+Ein paar Links|Rootkit(20:30, 18. Jul. 2006)||

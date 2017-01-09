@@ -1,0 +1,27 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(21:49, 13. Okt. 2009)|Rootkit(21:49, 13. Okt. 2009)||
+Rootkit(21:49, 13. Okt. 2009)|Rootkit(21:49, 13. Okt. 2009)||
+
+Rootkit(21:49, 13. Okt. 2009)|Rootkit(21:49, 13. Okt. 2009)||
+Ein paar Links|Rootkit(21:49, 13. Okt. 2009)||
+094320cd-b3a6-4656-a0ab-76d99e8ee371|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit(21:49, 13. Okt. 2009)|Rootkit(21:49, 13. Okt. 2009)||
+Auf Grund gelaufen?|Rootkit(21:49, 13. Okt. 2009)||
+3d6dfd15-3d1c-4d92-8210-710fc230190b|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+
+Rootkit(21:49, 13. Okt. 2009)|Rootkit(21:49, 13. Okt. 2009)||
+Backdoor funktionalität|Rootkit(21:49, 13. Okt. 2009)||
+4913d830-f93c-4a6a-b70a-ca41fe67e348|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit(21:49, 13. Okt. 2009)|Rootkit(21:49, 13. Okt. 2009)||
+"Positive Aspekte von Rootkits"???|Rootkit(21:49, 13. Okt. 2009)||
+e623db0b-1690-4b33-ae01-ed457a67e074|"Positive Aspekte von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)
+b27606a5-d0de-4e5b-8a37-c857ba484a65|e623db0b-1690-4b33-ae01-ed457a67e074|Volty|00:22, 29. Aug. 2007 (CEST)
+
+Rootkit(21:49, 13. Okt. 2009)|Rootkit(21:49, 13. Okt. 2009)||
+Ergänzungsvorschlag|Rootkit(21:49, 13. Okt. 2009)||
+
+Rootkit(21:49, 13. Okt. 2009)|Rootkit(21:49, 13. Okt. 2009)||
+Hybride|Rootkit(21:49, 13. Okt. 2009)||
+25ae0e84-e112-4d63-8543-81a10ece5484|Hybride|188.46.116.153|14:37, 21. Sep. 2009 (CEST)

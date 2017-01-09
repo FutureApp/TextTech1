@@ -1,0 +1,46 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit|Rootkit||
+Rootkit|Rootkit||
+
+Rootkit|Rootkit||
+Ein paar Links|Rootkit||
+bef6668f-81c2-45eb-a046-7c6b43767d77|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit|Rootkit||
+Auf Grund gelaufen?|Rootkit||
+ef1d9ca4-85f5-42d4-b140-716d5c8d3b93|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+01f6fc3f-261d-4959-b598-e5121b9242ca|Auf Grund gelaufen?|87.180.131.158|22:49, 13. Okt. 2009 (CEST))
+
+Rootkit|Rootkit||
+Backdoor funktionalität|Rootkit||
+ebbf6217-e9de-4be0-81e1-14fc96ce2c9a|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit|Rootkit||
+"Positive Aspekte von Rootkits"???|Rootkit||
+d6b2a857-1087-4daf-bf47-410a491390b0|"Positive Aspekte von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)
+7413a2d6-3e1e-4f52-92fb-640e6b23b39f|d6b2a857-1087-4daf-bf47-410a491390b0|Volty|00:22, 29. Aug. 2007 (CEST)
+8244a8dc-d931-4ce5-a8f7-d2f4e8a05de8|"Positive Aspekte von Rootkits"???|93.210.68.149|12:05, 13. Aug. 2016 (CEST))
+
+Rootkit|Rootkit||
+Ergänzungsvorschlag|Rootkit||
+e44bb2e2-ce75-4ed3-8712-e4360f70e78b|Ergänzungsvorschlag|109.192.62.95|04:43, 28. Mär. 2010 (CEST))
+
+Rootkit|Rootkit||
+Hybride|Rootkit||
+8c508eea-df37-4b56-ab38-709c9d8cc796|Hybride|188.46.116.153|14:37, 21. Sep. 2009 (CEST)
+2bf80ae4-c149-4f69-b68f-3f014fac8982|8c508eea-df37-4b56-ab38-709c9d8cc796|R.Schuster|11:49, 28. Mär. 2010 (CEST)
+
+Rootkit|Rootkit||
+Veraltete Informationen|Rootkit||
+6b66638d-37d1-452a-99e0-deb14f7a8f6e|Veraltete Informationen|Nerdture|09:18, 28. Feb. 2012 (CET))
+ba34256a-9b32-4c04-95c1-0a701bb7f29e|6b66638d-37d1-452a-99e0-deb14f7a8f6e|LKD|09:27, 28. Feb. 2012 (CET)
+
+Rootkit|Rootkit||
+Abschnitt ohne Belege?|Rootkit||
+4f52a6f7-60f0-4c34-a0e8-2bf3d8a698b2|Abschnitt ohne Belege?|MWExpert|12:48, 2. Aug. 2015 (CEST)
+670fd73a-95f0-4121-930a-ed1117f3de84|4f52a6f7-60f0-4c34-a0e8-2bf3d8a698b2|Echoray|19:27, 2. Aug. 2015 (CEST)
+40a33da9-c31c-4af2-89bc-d9b2d19b093e|Abschnitt ohne Belege?|MWExpert|12:48, 5. Aug. 2015 (CEST)
+
+Rootkit|Rootkit||
+"Jedoch gibt es für viele Rootkits ... Programme zur Erkennung und Entfernung, z. B. das Sony Rootkit"|Rootkit||
+52471fbd-7022-4536-a974-d2d3fddbd611|"Jedoch gibt es für viele Rootkits ... Programme zur Erkennung und Entfernung, z. B. das Sony Rootkit"|JonnyNord|16:05, 23. Feb. 2016 (CET)

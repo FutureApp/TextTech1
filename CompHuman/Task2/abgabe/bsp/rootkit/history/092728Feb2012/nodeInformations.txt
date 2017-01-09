@@ -1,0 +1,35 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(09:27, 28. Feb. 2012)|Rootkit(09:27, 28. Feb. 2012)||
+Rootkit(09:27, 28. Feb. 2012)|Rootkit(09:27, 28. Feb. 2012)||
+
+Rootkit(09:27, 28. Feb. 2012)|Rootkit(09:27, 28. Feb. 2012)||
+Ein paar Links|Rootkit(09:27, 28. Feb. 2012)||
+fe8a4abb-4719-492f-8042-302a5c847878|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit(09:27, 28. Feb. 2012)|Rootkit(09:27, 28. Feb. 2012)||
+Auf Grund gelaufen?|Rootkit(09:27, 28. Feb. 2012)||
+723aee71-7a27-4b10-be40-2ce70c552136|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+59e5e185-3b51-4753-aa22-5975fbeb1022|Auf Grund gelaufen?|87.180.131.158|22:49, 13. Okt. 2009 (CEST))
+
+Rootkit(09:27, 28. Feb. 2012)|Rootkit(09:27, 28. Feb. 2012)||
+Backdoor funktionalität|Rootkit(09:27, 28. Feb. 2012)||
+8850a2d8-0e12-4c1e-a882-6c2b0cb64b56|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit(09:27, 28. Feb. 2012)|Rootkit(09:27, 28. Feb. 2012)||
+"Positive Aspekte von Rootkits"???|Rootkit(09:27, 28. Feb. 2012)||
+991c1921-a54e-4329-bd16-83ba06b1469b|"Positive Aspekte von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)
+830a7cfb-cf4f-472e-bf3b-43c9dcccb8ca|991c1921-a54e-4329-bd16-83ba06b1469b|Volty|00:22, 29. Aug. 2007 (CEST)
+
+Rootkit(09:27, 28. Feb. 2012)|Rootkit(09:27, 28. Feb. 2012)||
+Ergänzungsvorschlag|Rootkit(09:27, 28. Feb. 2012)||
+9a4712b8-dffa-44b9-ac28-69bd6c19c4ed|Ergänzungsvorschlag|109.192.62.95|04:43, 28. Mär. 2010 (CEST))
+
+Rootkit(09:27, 28. Feb. 2012)|Rootkit(09:27, 28. Feb. 2012)||
+Hybride|Rootkit(09:27, 28. Feb. 2012)||
+3b20e767-ebac-42de-9740-b1e0847f3a8e|Hybride|188.46.116.153|14:37, 21. Sep. 2009 (CEST)
+cf080011-cb48-4bd2-9007-91d623d5d6c4|3b20e767-ebac-42de-9740-b1e0847f3a8e|R.Schuster|11:49, 28. Mär. 2010 (CEST)
+
+Rootkit(09:27, 28. Feb. 2012)|Rootkit(09:27, 28. Feb. 2012)||
+Veraltete Informationen|Rootkit(09:27, 28. Feb. 2012)||
+644fd842-a303-464d-a4b5-995817bdb71f|Veraltete Informationen|Nerdture|09:18, 28. Feb. 2012 (CET))
+e7e6fb6f-e3a8-4a44-af82-dccd048b2215|644fd842-a303-464d-a4b5-995817bdb71f|LKD|09:27, 28. Feb. 2012 (CET)

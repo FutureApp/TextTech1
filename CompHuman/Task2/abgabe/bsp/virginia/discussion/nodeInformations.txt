@@ -1,0 +1,33 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Virginia|Virginia||
+Virginia|Virginia||
+
+Virginia|Virginia||
+Bitte Vorlage:Lautschrift entfernen!|Virginia||
+44aa554f-39ef-4534-8251-dfcdc11c7d2e|Bitte Vorlage:Lautschrift entfernen!|J. 'mach' wust|00:40, 17. Mai 2005 (CEST)
+
+Virginia|Virginia||
+Religion|Virginia||
+27a61b4a-770d-4840-ba8f-b9266e1e0b0c|Religion|Gamgee|21:42, 15. Feb 2006 (CET)
+
+Virginia|Virginia||
+Basisdaten|Virginia||
+d2a82fc3-b10e-487e-aed9-10162ffba57a|Basisdaten|80.108.114.246|15:48, 22. Jan 2006 (CET)
+
+Virginia|Virginia||
+Great Falls Park|Virginia||
+d9b880dc-ea5a-4cda-aec5-0203f30070c5|Great Falls Park|Erik74|19:14, 21. Apr. 2011 (CEST)
+ee74e832-3672-4790-80cf-e0f3210c779f|d9b880dc-ea5a-4cda-aec5-0203f30070c5|H-stt|15:14, 26. Apr. 2011 (CEST)
+
+Virginia|Virginia||
+Einleitung|Virginia||
+b3b0e1d3-d6a8-4638-9f69-e4d3005ce9b5|Einleitung|87.165.105.41|02:04, 30. Dez. 2011 (CET)
+
+Virginia|Virginia||
+Einwohnerentwicklung|Virginia||
+f976ee2e-14a1-41d1-98d9-c97413dde5aa|Einwohnerentwicklung|Gamgee|11:19, 8. Mär. 2012 (CET)
+4315a283-b80c-4411-9893-9e73f4ed870c|f976ee2e-14a1-41d1-98d9-c97413dde5aa|H-stt|10:48, 9. Mär. 2012 (CET)
+
+Virginia|Virginia||
+Defekte Weblinks|Virginia||
+25d6dc9f-8570-4fac-8285-f13435766da1|Defekte Weblinks|GiftBot|06:19, 27. Nov. 2015 (CET)

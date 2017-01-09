@@ -31,11 +31,18 @@ public class CH_TaskRunner2 {
 		cleanResultDir(resultDir);
 		WikiArticle wikiArticle = new WikiArticle(arg[0]);
 		wikiArticle.searchForContent();
-		ArrayList<ArrayList<Node>> resultAnalysis = runDisAnalysis(wikiArticle);
-		String fileLocation = resultDir + locationOfArticleVis;
-		vizAnalyseResults(resultAnalysis, fileLocation, true);
-		saveNodeInformations(resultAnalysis, resultDir + locationOfArticleNodes);
-		//
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				ArrayList<ArrayList<Node>> resultAnalysis = runDisAnalysis(wikiArticle);
+				String fileLocation = resultDir + locationOfArticleVis;
+				vizAnalyseResults(resultAnalysis, fileLocation, true);
+				saveNodeInformations(resultAnalysis, resultDir + locationOfArticleNodes);
+			}
+		}).start();
+		
 		runHisAnalysis(wikiArticle);
 		printFinish();
 	}

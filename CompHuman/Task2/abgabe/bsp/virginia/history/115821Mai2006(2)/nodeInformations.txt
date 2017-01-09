@@ -1,0 +1,15 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Virginia(11:58, 21. Mai 2006(2))|Virginia(11:58, 21. Mai 2006(2))||
+Virginia(11:58, 21. Mai 2006(2))|Virginia(11:58, 21. Mai 2006(2))||
+
+Virginia(11:58, 21. Mai 2006(2))|Virginia(11:58, 21. Mai 2006(2))||
+Bitte Vorlage:Lautschrift entfernen!|Virginia(11:58, 21. Mai 2006(2))||
+e5bd1e0d-78b2-4ec6-8575-090d5c56025d|Bitte Vorlage:Lautschrift entfernen!|J. 'mach' wust|00:40, 17. Mai 2005 (CEST)
+
+Virginia(11:58, 21. Mai 2006(2))|Virginia(11:58, 21. Mai 2006(2))||
+Religion|Virginia(11:58, 21. Mai 2006(2))||
+d464f62b-4eef-47cc-9527-6dc943729c84|Religion|Gamgee|21:42, 15. Feb 2006 (CET)
+
+Virginia(11:58, 21. Mai 2006(2))|Virginia(11:58, 21. Mai 2006(2))||
+Basisdaten|Virginia(11:58, 21. Mai 2006(2))||
+829192e6-7830-435b-bf88-248b8073df8f|Basisdaten|80.108.114.246|15:48, 22. Jan 2006 (CET)

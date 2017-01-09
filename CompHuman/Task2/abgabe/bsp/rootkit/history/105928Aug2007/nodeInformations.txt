@@ -1,0 +1,22 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(10:59, 28. Aug. 2007)|Rootkit(10:59, 28. Aug. 2007)||
+Rootkit(10:59, 28. Aug. 2007)|Rootkit(10:59, 28. Aug. 2007)||
+56c3490b-3d08-4f8e-a05c-f170233c405b|Rootkit(10:59, 28. Aug. 2007)|Neo23x0|20:46, 20. Jan 2006 (CET)
+503456d5-1f7f-4f8f-961c-82d57d9eab6c|Rootkit(10:59, 28. Aug. 2007)|84.60.231.209|12:53, 4. Mai 2006 (CEST)
+42e7e4d8-92c4-43be-a28a-048422c20a14|Rootkit(10:59, 28. Aug. 2007)|80.134.134.223|21:30, 18. Jul 2006 (CEST)
+
+Rootkit(10:59, 28. Aug. 2007)|Rootkit(10:59, 28. Aug. 2007)||
+Ein paar Links|Rootkit(10:59, 28. Aug. 2007)||
+a273f76c-38d2-46fc-adea-8dc752a58c4d|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit(10:59, 28. Aug. 2007)|Rootkit(10:59, 28. Aug. 2007)||
+Auf Grund gelaufen?|Rootkit(10:59, 28. Aug. 2007)||
+e0e0125d-71ce-48c4-8263-4e1825808cdb|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+
+Rootkit(10:59, 28. Aug. 2007)|Rootkit(10:59, 28. Aug. 2007)||
+Backdoor funktionalität|Rootkit(10:59, 28. Aug. 2007)||
+c117a121-ac52-4f46-9980-89390a558e3e|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit(10:59, 28. Aug. 2007)|Rootkit(10:59, 28. Aug. 2007)||
+"Positive Anwendung von Rootkits"???|Rootkit(10:59, 28. Aug. 2007)||
+c8c495ba-d252-4ff7-ae93-6f3c06ad2173|"Positive Anwendung von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)

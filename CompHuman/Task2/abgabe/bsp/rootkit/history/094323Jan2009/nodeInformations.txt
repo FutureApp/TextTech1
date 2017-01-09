@@ -1,0 +1,27 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(09:43, 23. Jan. 2009)|Rootkit(09:43, 23. Jan. 2009)||
+Rootkit(09:43, 23. Jan. 2009)|Rootkit(09:43, 23. Jan. 2009)||
+5b7e5d6c-df82-4260-a5c3-3843ec65837b|Rootkit(09:43, 23. Jan. 2009)|Neo23x0|20:46, 20. Jan 2006 (CET)
+de9146b9-ccbe-4899-b8dd-958dcf1d65b7|Rootkit(09:43, 23. Jan. 2009)|84.60.231.209|12:53, 4. Mai 2006 (CEST)
+29596f21-9a4c-4c10-8b53-0c9c45a61f6c|Rootkit(09:43, 23. Jan. 2009)|80.134.134.223|21:30, 18. Jul 2006 (CEST)
+520733c9-2d56-4e41-a9e8-cfa0bebeb320|Rootkit(09:43, 23. Jan. 2009)|AFI|22:03, 28. Apr. 2008 (CEST)
+
+Rootkit(09:43, 23. Jan. 2009)|Rootkit(09:43, 23. Jan. 2009)||
+Ein paar Links|Rootkit(09:43, 23. Jan. 2009)||
+c37890fd-97c5-4597-ad78-17844bf31c77|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit(09:43, 23. Jan. 2009)|Rootkit(09:43, 23. Jan. 2009)||
+Auf Grund gelaufen?|Rootkit(09:43, 23. Jan. 2009)||
+e492a41d-5776-4e87-a017-10ac6d1c0922|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+
+Rootkit(09:43, 23. Jan. 2009)|Rootkit(09:43, 23. Jan. 2009)||
+Backdoor funktionalität|Rootkit(09:43, 23. Jan. 2009)||
+675dcc87-0c14-4fef-a3ac-007a44751cf3|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit(09:43, 23. Jan. 2009)|Rootkit(09:43, 23. Jan. 2009)||
+"Positive Aspekte von Rootkits"???|Rootkit(09:43, 23. Jan. 2009)||
+d5e81dca-8c2d-4778-93d9-b9aa07e2510d|"Positive Aspekte von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)
+f6a52941-ba8a-4ef1-bd66-6c2b45bf4d37|d5e81dca-8c2d-4778-93d9-b9aa07e2510d|Volty|00:22, 29. Aug. 2007 (CEST)
+
+Rootkit(09:43, 23. Jan. 2009)|Rootkit(09:43, 23. Jan. 2009)||
+Ergänzungsvorschlag|Rootkit(09:43, 23. Jan. 2009)||

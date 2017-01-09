@@ -1,0 +1,17 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(03:25, 24. Mär. 2007)|Rootkit(03:25, 24. Mär. 2007)||
+Rootkit(03:25, 24. Mär. 2007)|Rootkit(03:25, 24. Mär. 2007)||
+46035270-ff5f-4343-b440-1f6c757c362f|Rootkit(03:25, 24. Mär. 2007)|Neo23x0|20:46, 20. Jan 2006 (CET)
+43e88fec-f0a0-4854-8ff6-d4662061270a|Rootkit(03:25, 24. Mär. 2007)|84.60.231.209|12:53, 4. Mai 2006 (CEST)
+30cb0685-53b9-4d48-9da1-b58ecf6d2f30|Rootkit(03:25, 24. Mär. 2007)|80.134.134.223|21:30, 18. Jul 2006 (CEST)
+
+Rootkit(03:25, 24. Mär. 2007)|Rootkit(03:25, 24. Mär. 2007)||
+Ein paar Links|Rootkit(03:25, 24. Mär. 2007)||
+9409660f-fe00-4a0b-abb0-16b77ebb98c2|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit(03:25, 24. Mär. 2007)|Rootkit(03:25, 24. Mär. 2007)||
+Auf Grund gelaufen?|Rootkit(03:25, 24. Mär. 2007)||
+ea268183-d489-451b-87ff-6eb58ba6a060|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+
+Rootkit(03:25, 24. Mär. 2007)|Rootkit(03:25, 24. Mär. 2007)||
+Backdoor funktionalität|Rootkit(03:25, 24. Mär. 2007)||

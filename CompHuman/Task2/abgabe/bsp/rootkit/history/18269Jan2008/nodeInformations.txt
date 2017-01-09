@@ -1,0 +1,26 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(18:26, 9. Jan. 2008)|Rootkit(18:26, 9. Jan. 2008)||
+Rootkit(18:26, 9. Jan. 2008)|Rootkit(18:26, 9. Jan. 2008)||
+7841cde9-02af-4c83-a891-5afad537212f|Rootkit(18:26, 9. Jan. 2008)|Neo23x0|20:46, 20. Jan 2006 (CET)
+cdb399c4-466a-42a6-a343-440bab8e7f4a|Rootkit(18:26, 9. Jan. 2008)|84.60.231.209|12:53, 4. Mai 2006 (CEST)
+6c507f15-a49c-42b1-b479-3617d3363c29|Rootkit(18:26, 9. Jan. 2008)|80.134.134.223|21:30, 18. Jul 2006 (CEST)
+
+Rootkit(18:26, 9. Jan. 2008)|Rootkit(18:26, 9. Jan. 2008)||
+Ein paar Links|Rootkit(18:26, 9. Jan. 2008)||
+6412d102-1e09-4634-aa7f-ee5bca9726d7|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit(18:26, 9. Jan. 2008)|Rootkit(18:26, 9. Jan. 2008)||
+Auf Grund gelaufen?|Rootkit(18:26, 9. Jan. 2008)||
+510b6b1d-f71e-4554-a7a8-2126871b2ee1|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+
+Rootkit(18:26, 9. Jan. 2008)|Rootkit(18:26, 9. Jan. 2008)||
+Backdoor funktionalität|Rootkit(18:26, 9. Jan. 2008)||
+3e727443-f710-4bd3-993c-14b9dd5d4622|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit(18:26, 9. Jan. 2008)|Rootkit(18:26, 9. Jan. 2008)||
+"Positive Aspekte von Rootkits"???|Rootkit(18:26, 9. Jan. 2008)||
+7cfaaca0-ae9b-4345-9e66-ab39fb77029b|"Positive Aspekte von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)
+a7c748f8-8e1f-4c9a-a347-4e650807facb|7cfaaca0-ae9b-4345-9e66-ab39fb77029b|Volty|00:22, 29. Aug. 2007 (CEST)
+
+Rootkit(18:26, 9. Jan. 2008)|Rootkit(18:26, 9. Jan. 2008)||
+Ergänzungsvorschlag|Rootkit(18:26, 9. Jan. 2008)||

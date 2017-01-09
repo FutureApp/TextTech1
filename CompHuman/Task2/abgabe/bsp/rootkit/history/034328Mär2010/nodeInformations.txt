@@ -1,0 +1,28 @@
+Name of node | Name of father node | Created by User(user-name) | Creation Date
+Rootkit(03:43, 28. Mär. 2010)|Rootkit(03:43, 28. Mär. 2010)||
+Rootkit(03:43, 28. Mär. 2010)|Rootkit(03:43, 28. Mär. 2010)||
+
+Rootkit(03:43, 28. Mär. 2010)|Rootkit(03:43, 28. Mär. 2010)||
+Ein paar Links|Rootkit(03:43, 28. Mär. 2010)||
+97cd1b4f-dd3c-415a-a18d-4e9d8b778e47|Ein paar Links|87.162.65.234|12:08, 9. Okt. 2006 (CEST)
+
+Rootkit(03:43, 28. Mär. 2010)|Rootkit(03:43, 28. Mär. 2010)||
+Auf Grund gelaufen?|Rootkit(03:43, 28. Mär. 2010)||
+99ccecf4-fe13-4f48-a708-9d8813038c1d|Auf Grund gelaufen?|217.10.60.85|11:11, 14. Feb. 2007 (CET)
+ff5c872a-f2ad-42e0-af58-fea018628258|Auf Grund gelaufen?|87.180.131.158|22:49, 13. Okt. 2009 (CEST))
+
+Rootkit(03:43, 28. Mär. 2010)|Rootkit(03:43, 28. Mär. 2010)||
+Backdoor funktionalität|Rootkit(03:43, 28. Mär. 2010)||
+58756bc5-426e-41ff-911f-a1c64de71405|Backdoor funktionalität|Trublu|08:31, 24. Mär. 2007 (CET)
+
+Rootkit(03:43, 28. Mär. 2010)|Rootkit(03:43, 28. Mär. 2010)||
+"Positive Aspekte von Rootkits"???|Rootkit(03:43, 28. Mär. 2010)||
+844e76cc-503b-475d-85d0-8c9c46de2313|"Positive Aspekte von Rootkits"???|129.27.46.94|15:11, 19. Jun. 2007 (CEST)
+f815cfa4-87c8-4b22-8b48-86c972cab96a|844e76cc-503b-475d-85d0-8c9c46de2313|Volty|00:22, 29. Aug. 2007 (CEST)
+
+Rootkit(03:43, 28. Mär. 2010)|Rootkit(03:43, 28. Mär. 2010)||
+Ergänzungsvorschlag|Rootkit(03:43, 28. Mär. 2010)||
+
+Rootkit(03:43, 28. Mär. 2010)|Rootkit(03:43, 28. Mär. 2010)||
+Hybride|Rootkit(03:43, 28. Mär. 2010)||
+02651460-b67d-485a-b9d1-9da6eefe5b12|Hybride|188.46.116.153|14:37, 21. Sep. 2009 (CEST)
