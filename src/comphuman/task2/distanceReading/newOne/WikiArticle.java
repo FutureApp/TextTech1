@@ -106,7 +106,15 @@ public class WikiArticle {
 			ArrayList<String> extractSections = extractSections(
 					doc.getElementById("mw-content-text").toString().split("\n"));
 			if(!map.containsKey(backUpDate)) map.put(backUpDate, extractSections);
-			else SystemMessage.wMessage("Entry already exists.");
+			else {
+				big: for (int i = 1; i < 1001; i++) {
+					String newName = backUpDate+"("+i+")";
+					if(!map.containsKey(newName)) {
+						map.put(newName, extractSections);
+						break big;
+					}
+				}
+			}
 		}
 		return map;
 	}
