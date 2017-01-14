@@ -4,6 +4,7 @@ package comphuman.task2.distanceReading.newOne;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Formatter;
 import java.util.HashMap;
 import java.util.TreeMap;
 
@@ -13,6 +14,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import comphuman.xgeneral.URL_Handler;
+import scala.runtime.StringFormat;
 import xgeneral.modules.SystemMessage;
 
 public class WikiArticle {
@@ -22,6 +24,7 @@ public class WikiArticle {
 	private Document wikiArticlePage;
 	private Document wikiArticleDiscussionPage;
 	private Document wikiArticleHistoryPage;
+	private Integer limit=1000;
 
 	/**
 	 * 
@@ -41,13 +44,20 @@ public class WikiArticle {
 	public String getWikiURL() {
 		return URL.substring(0, URL.replace("//", "$$").indexOf("/"));
 	}
+	
+	public Document getRevisionsPage() {
+		String revisionPageSuffix = new Formatter().format("w/index.php?title=%s&action=history&limit=%d", getArticleName(),limit).toString();
+		System.out.println(revisionPageSuffix);
+		System.exit(1);
+		return URL_Handler.getContentOf(getWikiURL());
+	}
 
 	/**
 	 * Searches for the link to the dis-page of an article and the link to the
 	 * history-page of the an article. Will set the values of
 	 * wikiArticleDiscussionPage and wikiArticleHistoryPage.
 	 */
-	public void searchForContent() {
+	public void searchForDisContent() {
 		Integer limit = 1000;
 		wikiArticlePage = URL_Handler.getContentOf(URL);
 		wikiArticleDiscussionPage = URL_Handler

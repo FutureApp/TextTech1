@@ -30,9 +30,14 @@ public class CH_TaskRunner3 {
 		validateAmountOfGivenInput();
 		cleanResultDir(resultDir);
 		Document articlePage = getArticlePage(arg[0]);
-		
-		
+		getRevisionHistoryPage(arg[0]);
 		printFinish();
+	}
+
+	private static Document getRevisionHistoryPage(String URL_ToArticle) {
+		// TODO Auto-generated method stub	
+		Document doc = URL_Handler.getContentOf("");  
+		return doc;
 	}
 
 	private static Document getArticlePage(String URL) {
