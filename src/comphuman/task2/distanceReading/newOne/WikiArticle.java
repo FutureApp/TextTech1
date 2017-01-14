@@ -24,7 +24,8 @@ public class WikiArticle {
 	private Document wikiArticlePage;
 	private Document wikiArticleDiscussionPage;
 	private Document wikiArticleHistoryPage;
-	private Integer limit=1000;
+	private Formatter formater = new Formatter();
+	private Integer limit=10000;
 
 	/**
 	 * 
@@ -37,6 +38,10 @@ public class WikiArticle {
 		this.URL = URL;
 	}
 
+	/**
+	 * Returns the Name of the the article
+	 * @return Name of the article.
+	 */
 	public String getArticleName() {
 		return URL.substring(URL.lastIndexOf("/") + 1);
 	}
@@ -46,10 +51,11 @@ public class WikiArticle {
 	}
 	
 	public Document getRevisionsPage() {
-		String revisionPageSuffix = new Formatter().format("w/index.php?title=%s&action=history&limit=%d", getArticleName(),limit).toString();
-		System.out.println(revisionPageSuffix);
-		System.exit(1);
-		return URL_Handler.getContentOf(getWikiURL());
+		String revisionPageSuffix = formater
+				.format("w/index.php?title=%s&action=history&limit=%d", getArticleName(), limit).toString();
+		String linkToRevisionsPage = getWikiURL()+"/"+revisionPageSuffix;
+		System.out.println(linkToRevisionsPage);
+		return URL_Handler.getContentOf(linkToRevisionsPage);
 	}
 
 	/**
@@ -104,6 +110,8 @@ public class WikiArticle {
 //		saveSections(new File("sectionTest.txt"), extractSections);
 		return extractSections;
 	}
+	
+	
 	public TreeMap<String, ArrayList<String>> searchForSectionsFromHisDisPage() {
 		TreeMap<String, ArrayList<String>> map = new TreeMap<>();
 		Elements aTags = wikiArticleHistoryPage.select(".mw-changeslist-date");

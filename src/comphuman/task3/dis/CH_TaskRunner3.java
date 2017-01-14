@@ -2,10 +2,12 @@ package comphuman.task3.dis;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.commons.io.FileUtils;
 import org.jsoup.nodes.Document;
 
+import comphuman.task2.distanceReading.newOne.WikiArticle;
 import comphuman.xgeneral.URL_Handler;
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
@@ -29,16 +31,15 @@ public class CH_TaskRunner3 {
 		arg = args;
 		validateAmountOfGivenInput();
 		cleanResultDir(resultDir);
-		Document articlePage = getArticlePage(arg[0]);
-		getRevisionHistoryPage(arg[0]);
+		WikiArticle art = new WikiArticle(arg[0]);
+		WikiRevisionPageAnalyzer revisionAnalyzer = new WikiRevisionPageAnalyzer(art.getRevisionsPage());
+		revisionAnalyzer.getRevisionLinks();
+		revisionAnalyzer.startAnalysis();
+		
+		
 		printFinish();
 	}
 
-	private static Document getRevisionHistoryPage(String URL_ToArticle) {
-		// TODO Auto-generated method stub	
-		Document doc = URL_Handler.getContentOf("");  
-		return doc;
-	}
 
 	private static Document getArticlePage(String URL) {
 		Document doc = URL_Handler.getContentOf(URL);
