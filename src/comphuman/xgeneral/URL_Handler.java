@@ -1,4 +1,4 @@
-package comphuman.task2.distanceReading.newOne;
+package comphuman.xgeneral;
 
 import java.io.IOException;
 
