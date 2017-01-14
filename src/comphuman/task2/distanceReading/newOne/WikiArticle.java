@@ -12,6 +12,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import comphuman.xgeneral.URL_Handler;
 import xgeneral.modules.SystemMessage;
 
 public class WikiArticle {

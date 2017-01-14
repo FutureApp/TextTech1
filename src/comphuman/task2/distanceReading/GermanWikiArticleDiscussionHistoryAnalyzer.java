@@ -6,7 +6,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import comphuman.task2.distanceReading.newOne.URL_Handler;
+import comphuman.xgeneral.URL_Handler;
 
 public class GermanWikiArticleDiscussionHistoryAnalyzer {
 	private String URL;

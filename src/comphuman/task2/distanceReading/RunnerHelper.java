@@ -2,7 +2,7 @@ package comphuman.task2.distanceReading;
 
 import org.jsoup.nodes.Document;
 
-import comphuman.task2.distanceReading.newOne.URL_Handler;
+import comphuman.xgeneral.URL_Handler;
 
 public class RunnerHelper {
 

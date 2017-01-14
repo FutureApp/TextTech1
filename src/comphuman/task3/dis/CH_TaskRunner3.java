@@ -2,11 +2,11 @@ package comphuman.task3.dis;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.TreeMap;
 
 import org.apache.commons.io.FileUtils;
+import org.jsoup.nodes.Document;
 
+import comphuman.xgeneral.URL_Handler;
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
 
@@ -29,10 +29,15 @@ public class CH_TaskRunner3 {
 		arg = args;
 		validateAmountOfGivenInput();
 		cleanResultDir(resultDir);
-		
+		Document articlePage = getArticlePage(arg[0]);
 		
 		
 		printFinish();
+	}
+
+	private static Document getArticlePage(String URL) {
+		Document doc = URL_Handler.getContentOf(URL);
+		return doc;
 	}
 
 	private static void printFinish() {
