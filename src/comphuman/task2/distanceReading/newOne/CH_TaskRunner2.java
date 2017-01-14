@@ -30,7 +30,7 @@ public class CH_TaskRunner2 {
 		validateAmountOfGivenInput();
 		cleanResultDir(resultDir);
 		WikiArticle wikiArticle = new WikiArticle(arg[0]);
-		wikiArticle.searchForContent();
+		wikiArticle.searchForDisContent();
 		
 		new Thread(new Runnable() {
 			
