@@ -32,17 +32,11 @@ public class CH_TaskRunner3 {
 		cleanResultDir(resultDir);
 		WikiArticle article = new WikiArticle(arg[0]);
 		WikiRevisionPageAnalyzerSimple revisionAnalyzer = new WikiRevisionPageAnalyzerSimple(article.getRevisionsPage());
-		revisionAnalyzer.getRevisionLinks();
 		revisionAnalyzer.startAnalysis();
+		revisionAnalyzer.calcEditNetwork();
 		
 		
 		printFinish();
-	}
-
-
-	private static Document getArticlePage(String URL) {
-		Document doc = URL_Handler.getContentOf(URL);
-		return doc;
 	}
 
 	private static void printFinish() {
