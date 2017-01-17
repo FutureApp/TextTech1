@@ -19,7 +19,6 @@ public class WikiRevisionPage {
 	 */
 	public void abstractContentFromWikiRevisionPage() {
 		Document revisionPage = URL_Handler.getContentOf(linkToRevisionPage);
-
 		//TODO
 		WikiRevision revision = new WikiRevision(null, null, null);
 	}

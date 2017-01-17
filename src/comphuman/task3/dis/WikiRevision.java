@@ -9,5 +9,5 @@ public class WikiRevision {
 		this.revisor = revisor;
 		this.revisedContentBy = revisedContentBy;
 		this.typeOfRevision = typeOfRevision;
-	}
+}
 }
