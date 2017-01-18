@@ -51,8 +51,6 @@ public class WikiEditNetworkNode {
 		return  (double)innerNodeHigh/(double)innerNodeWeight;
 	}
 
-
-
 	private Double clacNetAddedRation(Integer innerNetAdded, Integer innerActivtyIndex) {
 		return netAddedRatio/activityIndex;
 	}

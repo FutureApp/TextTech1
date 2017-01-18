@@ -10,6 +10,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import scala.Array;
 import xgeneral.modules.SystemMessage;
 
 /**
@@ -202,4 +203,21 @@ public class WikiRevisionPageAnalyzerSimple {
 		}
 	}
 
+	public ArrayList<WikiEditNetworkNode> generateEditNodes() {
+		ArrayList<WikiEditNetworkNode> editNetworkNode = new ArrayList<>();
+		
+		for (Entry<String, WikiRevisionUser> entry : revisionMap.entrySet()) {
+			System.out.println(entry.getKey());
+			WikiEditNetworkNode node;
+			if(revisedMap.containsKey(entry.getValue().getUsername())){
+				node = new WikiEditNetworkNode(entry.getValue(), revisedMap.get(entry.getValue().getUsername()));
+			}else{
+				ArrayList<String> emptyElementList = new ArrayList<>();
+				emptyElementList.add("<$noElement$>");
+				node = new WikiEditNetworkNode(entry.getValue(), emptyElementList);
+			}
+			editNetworkNode.add(node);
+		}
+		return editNetworkNode;
+	}
 }

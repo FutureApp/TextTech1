@@ -2,6 +2,7 @@ package comphuman.task3.dis;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.commons.io.FileUtils;
 import org.jsoup.nodes.Document;
@@ -34,6 +35,7 @@ public class CH_TaskRunner3 {
 		WikiRevisionPageAnalyzerSimple revisionAnalyzer = new WikiRevisionPageAnalyzerSimple(article.getRevisionsPage());
 		revisionAnalyzer.startAnalysis();
 		revisionAnalyzer.generateMapsForCalcs();
+		ArrayList<WikiEditNetworkNode> editNodes = revisionAnalyzer.generateEditNodes();
 		
 		
 		
