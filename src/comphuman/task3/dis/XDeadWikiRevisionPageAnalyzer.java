@@ -12,7 +12,7 @@ import xgeneral.modules.SystemMessage;
  * @author Michael Czaja
  *
  */
-public class WikiRevisionPageAnalyzer {
+public class XDeadWikiRevisionPageAnalyzer {
 	private String revisionLinkSelector = ".mw-history-histlinks";
 	Document wikiRevisionPage;
 	ArrayList<String> linksToRevisions = new ArrayList<>();
@@ -23,7 +23,7 @@ public class WikiRevisionPageAnalyzer {
 	 * @param wikiRevisionPage
 	 *            Document- which contains the wiki-article-revision page.
 	 */
-	public WikiRevisionPageAnalyzer(Document wikiRevisionPage) {
+	public XDeadWikiRevisionPageAnalyzer(Document wikiRevisionPage) {
 		super();
 		this.wikiRevisionPage = wikiRevisionPage;
 	}

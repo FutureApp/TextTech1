@@ -23,9 +23,12 @@ public class WikiRevisionPageAnalyzerSimple {
 	private Integer neutralInteraction = 0;
 
 	Document wikiRevisionPage;
-	ArrayList<String> linksToRevisions = new ArrayList<>();
-	List<List<String>> revisorUserMap = new ArrayList<>();
+	ArrayList<String> linksToRevisionsPage = new ArrayList<>();
+	
+	List<List<String>> listOfListRevisions = new ArrayList<>();
 	HashMap<String, WikiRevisionUser> revisionMap = new HashMap<>();
+	
+	private HashMap revisedMap  = new HashMap<>();
 
 	/**
 	 * An analyzer for the revisions of a wiki-article.
@@ -48,8 +51,9 @@ public class WikiRevisionPageAnalyzerSimple {
 	 * 
 	 * @return Array of an Arrays which containing the map [user,actionValue].
 	 */
-	public ArrayList<String> abstractRevisionItems() {
-		if (linksToRevisions.isEmpty()) {
+	public void abstractRevisionItems() {
+		//Provides an empty list for each method-call
+		if(!listOfListRevisions.isEmpty()) listOfListRevisions.clear();
 			Element selectedElements = wikiRevisionPage.getElementById(revisionContentHolderID);
 			Elements liElements = selectedElements.select("li");
 			System.out.println(liElements.size());
@@ -66,17 +70,15 @@ public class WikiRevisionPageAnalyzerSimple {
 				ArrayList<String> realUserMap = new ArrayList<>();
 				realUserMap.add(userName);
 				realUserMap.add(actionValue + "");
-				revisorUserMap.add(realUserMap);
+				listOfListRevisions.add(realUserMap);
 			}
 
-		}
-		return linksToRevisions;
 	}
 
 	public void calcEditNetwork() {
 		List<List<String>> reversedRevList = new ArrayList<>();
-		for (int i = 0; i < revisorUserMap.size(); i++) {
-			List<String> item = revisorUserMap.get(i);
+		for (int i = 0; i < listOfListRevisions.size(); i++) {
+			List<String> item = listOfListRevisions.get(i);
 			reversedRevList.add(item);
 		}
 
@@ -186,7 +188,7 @@ public class WikiRevisionPageAnalyzerSimple {
 	 * correctly then this method will do nothing.
 	 */
 	private void startAbstractionIfNeeded() {
-		if (linksToRevisions.isEmpty()) {
+		if (linksToRevisionsPage.isEmpty()) {
 			System.out.println("linksToRevisions - is empty");
 			abstractRevisionItems();
 		}
