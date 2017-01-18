@@ -66,4 +66,173 @@ public class WikiEditNetworkNode {
 				+ wikiRevisionUser.getNeutralProcess();
 		return innerActivityIndex;
 	}
+
+
+
+
+
+
+
+
+
+
+	public String getUserName() {
+		return userName;
+	}
+
+
+
+
+
+
+
+
+
+
+	public Integer getActivityIndex() {
+		return activityIndex;
+	}
+
+
+
+
+
+
+
+
+
+
+	public Integer getPositivActions() {
+		return positivActions;
+	}
+
+
+
+
+
+
+
+
+
+
+	public Integer getNegativActions() {
+		return negativActions;
+	}
+
+
+
+
+
+
+
+
+
+
+	public Integer getNeutralActions() {
+		return neutralActions;
+	}
+
+
+
+
+
+
+
+
+
+
+	public Integer getNodeHigh() {
+		return nodeHigh;
+	}
+
+
+
+
+
+
+
+
+
+
+	public Integer getNodeWeight() {
+		return nodeWeight;
+	}
+
+
+
+
+
+
+
+
+
+
+	public Integer getNetAdded() {
+		return netAdded;
+	}
+
+
+
+
+
+
+
+
+
+
+	public Double getNetAddedRatio() {
+		return netAddedRatio;
+	}
+
+
+
+
+
+
+
+
+
+
+	public Double getRelationOfRevisorAndRevised() {
+		return relationOfRevisorAndRevised;
+	}
+
+
+
+
+
+
+
+
+
+
+	public Double getNodeRatio() {
+		return nodeRatio;
+	}
+
+
+
+
+
+
+
+
+
+
+	public ArrayList<String> getRevisorFor() {
+		return revisorFor;
+	}
+
+
+
+
+
+
+
+
+
+
+	public ArrayList<String> getRevisedBy() {
+		return revisedBy;
+	}
 }
