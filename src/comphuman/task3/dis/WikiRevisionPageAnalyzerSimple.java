@@ -111,14 +111,8 @@ public class WikiRevisionPageAnalyzerSimple {
 				revisionMap.put(currentNameOfRevisor, userOfRevision);
 				System.out.println(currentNameOfRevisor + "  " + currentRevisionAction);
 			}
-
-			// if (revisionMap.containsKey("83.228.60.175")) {
-			// if (revisionMap.get("83.228.60.175").postitivProcesses > 1) {
-			// System.out.println("STPO");
-			// System.exit(1);
-			// }
-			// }
 		}
+		
 		for (Entry<String, WikiRevisionUser> entry : revisionMap.entrySet()) {
 			System.out.printf("user:%s | type: %s | pos: %d | neg: %d | %s", entry.getKey(), entry.getValue().type,
 					entry.getValue().getPostitivProcesses(), entry.getValue().getNegativeProcesses(),
