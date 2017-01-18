@@ -149,7 +149,7 @@ public class WikiRevisionPageAnalyzerSimple {
 			revision.addNeutralProcess(curActionValue);
 			neutralInteraction += curActionValue;
 		}
-		revision.interactedWith(activeUser);
+		revision.addRevisedUser(activeUser);
 	}
 
 	/**

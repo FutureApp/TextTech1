@@ -61,8 +61,10 @@ public class WikiRevisionUser {
 	public void addPositiveProcess(Integer value) {
 		postitivProcesses += value;
 	}
+	
 
-	public void interactedWith(String user) {
+	
+	public void addRevisedUser(String user) {
 		if (!interactedOn.contains(user))
 			interactedOn.add(user);
 	}
