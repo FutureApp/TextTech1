@@ -22,14 +22,14 @@ public class WikiRevisionPageAnalyzerSimple {
 	private Integer negativInteraction = 0;
 	private Integer positivInteraction = 0;
 	private Integer neutralInteraction = 0;
-	
+
 	Document wikiRevisionPage;
 	ArrayList<String> linksToRevisionsPage = new ArrayList<>();
-	
+
 	List<List<String>> listOfListRevisions = new ArrayList<>();
 	HashMap<String, WikiRevisionUser> revisionMap = new HashMap<>();
-	
-	private HashMap<String, ArrayList<String>> revisedMap  = new HashMap<>();
+
+	private HashMap<String, ArrayList<String>> revisedMap = new HashMap<>();
 
 	/**
 	 * An analyzer for the revisions of a wiki-article.
@@ -53,26 +53,27 @@ public class WikiRevisionPageAnalyzerSimple {
 	 * @return Array of an Arrays which containing the map [user,actionValue].
 	 */
 	public void abstractRevisionItems() {
-		//Provides an empty list for each method-call
-		if(!listOfListRevisions.isEmpty()) listOfListRevisions.clear();
-			Element selectedElements = wikiRevisionPage.getElementById(revisionContentHolderID);
-			Elements liElements = selectedElements.select("li");
-			System.out.println(liElements.size());
-			for (Element element : liElements) {
-				Elements containsUserName = element.select(".history-user");
-				Elements userNameWiki = containsUserName.select("a");
-				String userName = userNameWiki.select("bdi").text();
-				Elements unknownActionValue = element.select("[class*='mw-plusminus-']");
-				Integer actionValue = 0;
-				if (unknownActionValue.size() != 1)
-					SystemMessage.wMessage("Action for user <%s> is unknown.");
-				else
-					actionValue = detActionValue(unknownActionValue);
-				ArrayList<String> realUserMap = new ArrayList<>();
-				realUserMap.add(userName);
-				realUserMap.add(actionValue + "");
-				listOfListRevisions.add(realUserMap);
-			}
+		// Provides an empty list for each method-call
+		if (!listOfListRevisions.isEmpty())
+			listOfListRevisions.clear();
+		Element selectedElements = wikiRevisionPage.getElementById(revisionContentHolderID);
+		Elements liElements = selectedElements.select("li");
+		System.out.println(liElements.size());
+		for (Element element : liElements) {
+			Elements containsUserName = element.select(".history-user");
+			Elements userNameWiki = containsUserName.select("a");
+			String userName = userNameWiki.select("bdi").text();
+			Elements unknownActionValue = element.select("[class*='mw-plusminus-']");
+			Integer actionValue = 0;
+			if (unknownActionValue.size() != 1)
+				SystemMessage.wMessage("Action for user <%s> is unknown.");
+			else
+				actionValue = detActionValue(unknownActionValue);
+			ArrayList<String> realUserMap = new ArrayList<>();
+			realUserMap.add(userName);
+			realUserMap.add(actionValue + "");
+			listOfListRevisions.add(realUserMap);
+		}
 
 	}
 
@@ -107,34 +108,36 @@ public class WikiRevisionPageAnalyzerSimple {
 
 				WikiRevisionUser userOfRevision = revisionMap.get(currentNameOfRevisor);
 				addRevision(activeRevisedUserName, currentRevisionAction, userOfRevision);
-				addRevised(activeRevisedUserName,currentNameOfRevisor);
-				
+				addRevised(activeRevisedUserName, currentNameOfRevisor);
+
 				activeRevisedUserName = new String(currentNameOfRevisor);
 				revisionMap.put(currentNameOfRevisor, userOfRevision);
 				System.out.println(currentNameOfRevisor + "  " + currentRevisionAction);
 			}
 		}
-		
+
 		for (Entry<String, WikiRevisionUser> entry : revisionMap.entrySet()) {
-			System.out.printf("user:%s | type: %s | pos: %d | neg: %d | neut: %d | %s", entry.getKey(), entry.getValue().type,
-					entry.getValue().getPostitivProcesses(), entry.getValue().getNegativeProcesses(), entry.getValue().getNeutralProcess(),
+			System.out.printf("user:%s | type: %s | pos: %d | neg: %d | neut: %d | %s", entry.getKey(),
+					entry.getValue().type, entry.getValue().getPostitivProcesses(),
+					entry.getValue().getNegativeProcesses(), entry.getValue().getNeutralProcess(),
 					entry.getValue().getInteractedOn());
 			System.out.println();
-			System.out.println(entry.getValue().getNeutralProcess()+"!!!");
+			System.out.println(entry.getValue().getNeutralProcess() + "!!!");
 			System.out.println("_ _ _ _ _");
 
 		}
-		
+
 		System.out.println("........................................");
 		System.out.println();
-		for (Entry<String,ArrayList<String>> item : revisedMap.entrySet()) {
-			System.out.printf("user <%s> revised by <%s>", item.getKey(),item.getValue().toString());
+		for (Entry<String, ArrayList<String>> item : revisedMap.entrySet()) {
+			System.out.printf("user <%s> revised by <%s>", item.getKey(), item.getValue().toString());
 			System.out.println();
 		}
 	}
 
 	private void addRevised(String activeRevisedUserName, String currentNameOfRevisor) {
-		if(!revisedMap.containsKey(activeRevisedUserName)) revisedMap.put(activeRevisedUserName, new ArrayList<>());
+		if (!revisedMap.containsKey(activeRevisedUserName))
+			revisedMap.put(activeRevisedUserName, new ArrayList<>());
 		revisedMap.get(activeRevisedUserName).add(currentNameOfRevisor);
 	}
 
@@ -153,7 +156,7 @@ public class WikiRevisionPageAnalyzerSimple {
 	}
 
 	/**
-	 * Starts the analysis. If you miss to
+	 * Starts the analysis.
 	 */
 	public void startAnalysis() {
 		startAbstractionIfNeeded();
@@ -182,7 +185,7 @@ public class WikiRevisionPageAnalyzerSimple {
 			valueOfAction = ActionValue.positiv.getValue();
 			break;
 		case "mw-plusminus-neg":
-			valueOfAction =ActionValue.negative.getValue();
+			valueOfAction = ActionValue.negative.getValue();
 			break;
 		default:
 			// if action is unknown then return 0. No impact for further calc.
@@ -204,15 +207,25 @@ public class WikiRevisionPageAnalyzerSimple {
 		}
 	}
 
+	
+	/**
+	 * Generates a list of Nodes which contain to the edit-network-graph.
+	 * @return A list of nodes for the edit-network-graph.
+	 */
 	public ArrayList<WikiEditNetworkNode> generateEditNodes() {
 		ArrayList<WikiEditNetworkNode> editNetworkNode = new ArrayList<>();
 		for (Entry<String, WikiRevisionUser> entry : revisionMap.entrySet()) {
 			WikiEditNetworkNode node;
-			if(revisedMap.containsKey(entry.getValue().getUsername())){
+			if (revisedMap.containsKey(entry.getValue().getUsername())) {
 				node = new WikiEditNetworkNode(entry.getValue(), revisedMap.get(entry.getValue().getUsername()));
-			}else{
+			} else {
+				/*
+				 * generates a dummy element to prevent linking to an
+				 * null-object or more worst, division by zero. To determine
+				 * this element by viz-step, a noElement-tag is used. (Last User could have non revisers).
+				 */
 				ArrayList<String> emptyElementList = new ArrayList<>();
-				emptyElementList.add("<$noElement$>");
+				emptyElementList.add(XSpecialIndicator.noElement);
 				node = new WikiEditNetworkNode(entry.getValue(), emptyElementList);
 			}
 			editNetworkNode.add(node);
