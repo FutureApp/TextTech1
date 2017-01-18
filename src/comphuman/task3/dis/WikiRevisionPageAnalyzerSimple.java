@@ -205,9 +205,7 @@ public class WikiRevisionPageAnalyzerSimple {
 
 	public ArrayList<WikiEditNetworkNode> generateEditNodes() {
 		ArrayList<WikiEditNetworkNode> editNetworkNode = new ArrayList<>();
-		
 		for (Entry<String, WikiRevisionUser> entry : revisionMap.entrySet()) {
-			System.out.println(entry.getKey());
 			WikiEditNetworkNode node;
 			if(revisedMap.containsKey(entry.getValue().getUsername())){
 				node = new WikiEditNetworkNode(entry.getValue(), revisedMap.get(entry.getValue().getUsername()));

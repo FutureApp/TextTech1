@@ -37,6 +37,11 @@ public class CH_TaskRunner3 {
 		revisionAnalyzer.generateMapsForCalcs();
 		ArrayList<WikiEditNetworkNode> editNodes = revisionAnalyzer.generateEditNodes();
 		
+		Integer actionCounter = 0;
+		for (int i = 0; i < editNodes.size(); i++) {
+		actionCounter+= editNodes.get(i).getActivityIndex();
+		}
+		System.out.println(actionCounter);
 		
 		
 		
