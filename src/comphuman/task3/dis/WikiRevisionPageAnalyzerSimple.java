@@ -28,7 +28,7 @@ public class WikiRevisionPageAnalyzerSimple {
 	List<List<String>> listOfListRevisions = new ArrayList<>();
 	HashMap<String, WikiRevisionUser> revisionMap = new HashMap<>();
 	
-	private HashMap revisedMap  = new HashMap<>();
+	private HashMap<String, ArrayList<String>> revisedMap  = new HashMap<>();
 
 	/**
 	 * An analyzer for the revisions of a wiki-article.
@@ -85,30 +85,31 @@ public class WikiRevisionPageAnalyzerSimple {
 		Collections.reverse(reversedRevList);
 
 		System.out.println(reversedRevList.size());
-		String activeUser = new String("");
+		String activeRevisedUserName = new String("");
 		System.out.println(reversedRevList.size() + "+-----------");
 
 		for (int i = 0; i < reversedRevList.size(); i++) {
 			List<String> item = reversedRevList.get(i);
-			String curUser = item.get(0);
-			Integer curActionValue = Integer.parseInt(item.get(1));
+			String currentNameOfRevisor = item.get(0);
+			Integer currentRevisionAction = Integer.parseInt(item.get(1));
 
 			if (i == 0) {
-				activeUser = new String(curUser);
-				WikiRevisionUser revUser = new WikiRevisionUser("aut", activeUser);
+				activeRevisedUserName = new String(currentNameOfRevisor);
+				WikiRevisionUser revUser = new WikiRevisionUser("aut", activeRevisedUserName);
 				revUser.addPositiveProcess(1);
-				revisionMap.put(activeUser, revUser);
+				revisionMap.put(activeRevisedUserName, revUser);
 
 			} else {
-				if (!revisionMap.containsKey(curUser)) {
-					revisionMap.put(curUser, new WikiRevisionUser("cur", curUser));
+				if (!revisionMap.containsKey(currentNameOfRevisor)) {
+					revisionMap.put(currentNameOfRevisor, new WikiRevisionUser("cur", currentNameOfRevisor));
 				}
 
-				WikiRevisionUser revision = revisionMap.get(curUser);
-				addRevision(activeUser, curActionValue, revision);
-				activeUser = new String(curUser);
-				revisionMap.put(curUser, revision);
-				System.out.println(curUser + "  " + curActionValue);
+				WikiRevisionUser userOfRevision = revisionMap.get(currentNameOfRevisor);
+				addRevision(activeRevisedUserName, currentRevisionAction, userOfRevision);
+				addRevised(activeRevisedUserName,currentNameOfRevisor);
+				activeRevisedUserName = new String(currentNameOfRevisor);
+				revisionMap.put(currentNameOfRevisor, userOfRevision);
+				System.out.println(currentNameOfRevisor + "  " + currentRevisionAction);
 			}
 
 			// if (revisionMap.containsKey("83.228.60.175")) {
@@ -126,7 +127,18 @@ public class WikiRevisionPageAnalyzerSimple {
 			System.out.println("_ _ _ _ _");
 
 		}
+		
+		System.out.println("........................................");
+		System.out.println();
+		for (Entry<String,ArrayList<String>> item : revisedMap.entrySet()) {
+			System.out.printf("user <%s> revised by <%s>", item.getKey(),item.getValue().toString());
+			System.out.println();
+		}
+	}
 
+	private void addRevised(String activeRevisedUserName, String currentNameOfRevisor) {
+		if(!revisedMap.containsKey(activeRevisedUserName)) revisedMap.put(activeRevisedUserName, new ArrayList<>());
+		revisedMap.get(activeRevisedUserName).add(currentNameOfRevisor);
 	}
 
 	private void addRevision(String activeUser, Integer curActionValue, WikiRevisionUser revision) {
