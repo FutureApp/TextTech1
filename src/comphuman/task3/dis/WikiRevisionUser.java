@@ -25,8 +25,8 @@ public class WikiRevisionUser {
 	public Integer getNegativeProcesses() {
 		return negativeProcesses;
 	}
-	
-	public Integer getNeutralProcess(){
+
+	public Integer getNeutralProcess() {
 		return neutralProcess;
 	}
 
@@ -50,6 +50,14 @@ public class WikiRevisionUser {
 		this.interactedOn = interactedOn;
 	}
 
+	/**
+	 * Adds the value of a negative process. Negative process means, that the
+	 * author deletes some bytes of the article. By design, the value of +1 will
+	 * be passed. See {@link ActionValue}
+	 * 
+	 * @param value.
+	 *           See {@link ActionValue} and look for positive.
+	 */
 	public void addPositiveProcess(Integer value) {
 		postitivProcesses += value;
 	}
@@ -59,12 +67,30 @@ public class WikiRevisionUser {
 			interactedOn.add(user);
 	}
 
+	/**
+	 * Adds the value of a negative process. Negative process means, that the
+	 * author deletes some bytes of the article. By design, the value of -1 will
+	 * be passed. See {@link ActionValue}. Method will convert the given negative number to a positive one.
+	 * 
+	 * @param value.
+	 *           See {@link ActionValue} and look for negative
+	 */
 	public void addNegativeProcess(Integer value) {
-		negativeProcesses -= value;
-
+		Integer valueToPush = 0; 
+		if(value < 0 ) valueToPush = value*(-1);
+		else valueToPush = value;
+		negativeProcesses += valueToPush;
 	}
 
-	public void addNeutralProcess(Integer curActionValue) {
-		neutralProcess += curActionValue;
+	/**
+	 * Adds the value of a neutral process. Neutral process means, that the
+	 * author didn't change the amount of the article-bytes. By design, this
+	 * method will  get the value of 0. Method will push +1;
+	 * 
+	 * @param value.
+	 *           See {@link ActionValue} and look for neutral.
+	 */
+	public void addNeutralProcess(Integer value) {
+		neutralProcess += value + 1;
 	}
 }

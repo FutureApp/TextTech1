@@ -22,7 +22,7 @@ public class WikiRevisionPageAnalyzerSimple {
 	private Integer negativInteraction = 0;
 	private Integer positivInteraction = 0;
 	private Integer neutralInteraction = 0;
-
+	
 	Document wikiRevisionPage;
 	ArrayList<String> linksToRevisionsPage = new ArrayList<>();
 	
@@ -62,12 +62,12 @@ public class WikiRevisionPageAnalyzerSimple {
 				Elements containsUserName = element.select(".history-user");
 				Elements userNameWiki = containsUserName.select("a");
 				String userName = userNameWiki.select("bdi").text();
-				Elements s = element.select("[class*='mw-plusminus-']");
+				Elements unknownActionValue = element.select("[class*='mw-plusminus-']");
 				Integer actionValue = 0;
-				if (s.size() != 1)
+				if (unknownActionValue.size() != 1)
 					SystemMessage.wMessage("Action for user <%s> is unknown.");
 				else
-					actionValue = detActionValue(s);
+					actionValue = detActionValue(unknownActionValue);
 				ArrayList<String> realUserMap = new ArrayList<>();
 				realUserMap.add(userName);
 				realUserMap.add(actionValue + "");
@@ -120,6 +120,7 @@ public class WikiRevisionPageAnalyzerSimple {
 					entry.getValue().getPostitivProcesses(), entry.getValue().getNegativeProcesses(), entry.getValue().getNeutralProcess(),
 					entry.getValue().getInteractedOn());
 			System.out.println();
+			System.out.println(entry.getValue().getNeutralProcess()+"!!!");
 			System.out.println("_ _ _ _ _");
 
 		}
@@ -175,13 +176,13 @@ public class WikiRevisionPageAnalyzerSimple {
 		Integer valueOfAction;
 		switch (valueToInvestigate) {
 		case "mw-plusminus-null":
-			valueOfAction = 0;
+			valueOfAction = ActionValue.neutral.getValue();
 			break;
 		case "mw-plusminus-pos":
-			valueOfAction = 1;
+			valueOfAction = ActionValue.positiv.getValue();
 			break;
 		case "mw-plusminus-neg":
-			valueOfAction = -1;
+			valueOfAction =ActionValue.negative.getValue();
 			break;
 		default:
 			// if action is unknown then return 0. No impact for further calc.
