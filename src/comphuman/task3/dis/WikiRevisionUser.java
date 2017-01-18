@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class WikiRevisionUser {
 
 	Integer negativeProcesses = 0;
+	Integer neutralProcess = 0;
 	Integer postitivProcesses = 0;
 	String type;
 	ArrayList<String> interactedOn = new ArrayList<>();
@@ -23,6 +24,10 @@ public class WikiRevisionUser {
 
 	public Integer getNegativeProcesses() {
 		return negativeProcesses;
+	}
+	
+	public Integer getNeutralProcess(){
+		return neutralProcess;
 	}
 
 	public void setNegativeProcesses(Integer negativeProcesses) {
@@ -46,8 +51,7 @@ public class WikiRevisionUser {
 	}
 
 	public void addPositiveProcess(Integer value) {
-		System.out.println(value);
-		postitivProcesses+=value;
+		postitivProcesses += value;
 	}
 
 	public void interactedWith(String user) {
@@ -56,8 +60,11 @@ public class WikiRevisionUser {
 	}
 
 	public void addNegativeProcess(Integer value) {
-		System.out.println(-1);
 		negativeProcesses -= value;
 
+	}
+
+	public void addNeutralProcess(Integer curActionValue) {
+		neutralProcess += curActionValue;
 	}
 }

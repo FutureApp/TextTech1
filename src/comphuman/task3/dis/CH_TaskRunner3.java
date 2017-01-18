@@ -33,7 +33,8 @@ public class CH_TaskRunner3 {
 		WikiArticle article = new WikiArticle(arg[0]);
 		WikiRevisionPageAnalyzerSimple revisionAnalyzer = new WikiRevisionPageAnalyzerSimple(article.getRevisionsPage());
 		revisionAnalyzer.startAnalysis();
-		revisionAnalyzer.calcEditNetwork();
+		revisionAnalyzer.generateMapsForCalcs();
+		
 		
 		
 		printFinish();

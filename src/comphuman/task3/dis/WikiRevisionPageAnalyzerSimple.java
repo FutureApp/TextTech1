@@ -75,7 +75,7 @@ public class WikiRevisionPageAnalyzerSimple {
 
 	}
 
-	public void calcEditNetwork() {
+	public void generateMapsForCalcs() {
 		List<List<String>> reversedRevList = new ArrayList<>();
 		for (int i = 0; i < listOfListRevisions.size(); i++) {
 			List<String> item = listOfListRevisions.get(i);
@@ -107,6 +107,7 @@ public class WikiRevisionPageAnalyzerSimple {
 				WikiRevisionUser userOfRevision = revisionMap.get(currentNameOfRevisor);
 				addRevision(activeRevisedUserName, currentRevisionAction, userOfRevision);
 				addRevised(activeRevisedUserName,currentNameOfRevisor);
+				
 				activeRevisedUserName = new String(currentNameOfRevisor);
 				revisionMap.put(currentNameOfRevisor, userOfRevision);
 				System.out.println(currentNameOfRevisor + "  " + currentRevisionAction);
@@ -114,8 +115,8 @@ public class WikiRevisionPageAnalyzerSimple {
 		}
 		
 		for (Entry<String, WikiRevisionUser> entry : revisionMap.entrySet()) {
-			System.out.printf("user:%s | type: %s | pos: %d | neg: %d | %s", entry.getKey(), entry.getValue().type,
-					entry.getValue().getPostitivProcesses(), entry.getValue().getNegativeProcesses(),
+			System.out.printf("user:%s | type: %s | pos: %d | neg: %d | neut: %d | %s", entry.getKey(), entry.getValue().type,
+					entry.getValue().getPostitivProcesses(), entry.getValue().getNegativeProcesses(), entry.getValue().getNeutralProcess(),
 					entry.getValue().getInteractedOn());
 			System.out.println();
 			System.out.println("_ _ _ _ _");
@@ -143,6 +144,7 @@ public class WikiRevisionPageAnalyzerSimple {
 			revision.addPositiveProcess(curActionValue);
 			positivInteraction += curActionValue;
 		} else if (curActionValue == 0) {
+			revision.addNeutralProcess(curActionValue);
 			neutralInteraction += curActionValue;
 		}
 		revision.interactedWith(activeUser);
@@ -181,7 +183,7 @@ public class WikiRevisionPageAnalyzerSimple {
 			valueOfAction = -1;
 			break;
 		default:
-			// if action is unknown then return 0. No impact in the coming calc.
+			// if action is unknown then return 0. No impact for further calc.
 			valueOfAction = 0;
 			SystemMessage.wMessage("Action is unkown. Content:" + element.toString() + " " + this.getClass().getName());
 			break;
