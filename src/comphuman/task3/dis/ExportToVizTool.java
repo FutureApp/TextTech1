@@ -46,6 +46,12 @@ public class ExportToVizTool {
 		doc = docBuilder.newDocument();
 	}
 
+	/**
+	 * Constructs the file in GRAPH-ML syntax.
+	 * 
+	 * @param locationToSave
+	 *            Location, where to save the file.
+	 */
 	public void exportToGraphMlFormate(File locationToSave) {
 		try {
 			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -60,6 +66,9 @@ public class ExportToVizTool {
 					"http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd");
 			doc.appendChild(rootElement);
 
+			/*
+			 * KEY-Section
+			 */
 			Element keyNodeColor = doc.createElement("key");
 			keyNodeColor.setAttribute("id", "nodeKeyColor");
 			keyNodeColor.setAttribute("for", "node");
@@ -73,14 +82,14 @@ public class ExportToVizTool {
 			keyNodeLabel.setAttribute("attr.name", "label");
 			keyNodeLabel.setAttribute("attr.type", "string");
 			rootElement.appendChild(keyNodeLabel);
-			//
+
 			Element keyNodeHeigh = doc.createElement("key");
 			keyNodeHeigh.setAttribute("id", "nodeKeyHeigh");
 			keyNodeHeigh.setAttribute("for", "node");
 			keyNodeHeigh.setAttribute("attr.name", "heigh");
 			keyNodeHeigh.setAttribute("attr.type", "double");
 			rootElement.appendChild(keyNodeHeigh);
-			//
+
 			Element keyNodeWeight = doc.createElement("key");
 			keyNodeWeight.setAttribute("id", "nodeKeyWeight");
 			keyNodeWeight.setAttribute("for", "node");
@@ -111,43 +120,57 @@ public class ExportToVizTool {
 			defElem.setTextContent((Color.BLANCHEDALMOND + "").replace("0x", "#"));
 			keyNodeColor.appendChild(defElem);
 
-			// THE NODES
+			/*
+			 * NODE Sections
+			 */
 			for (WikiEditNetworkNode wikiEditNetworkNode : setOfNodesForExport) {
 				String id = wikiEditNetworkNode.getUserName();
 				String label = wikiEditNetworkNode.getUserName();
+
+				// A node itselfs
 				Element exportNode = doc.createElement("node");
 				exportNode.setAttribute("id", id.replace(" ", "_").replaceAll("[-+!^,]", ""));
 				exportNode.setAttribute("label", label);
 				graphElement.appendChild(exportNode);
 
+				/* Node fill-color. Depends on netAdded/Activity-Ratio */
 				Element dataKeyColor = doc.createElement("data");
 				dataKeyColor.setAttribute("key", "nodeKeyColor");
 				dataKeyColor.setTextContent(
 						CalcColors.clacInnerGrey(wikiEditNetworkNode.getNetAddedRatio()).toString().replace("0x", "#"));
 
+				/*
+				 * Border-color. LIGHTPINK -> Author, Black -> 'normal user',
+				 * LIGHTSKYBLUE -> Last user( last input in revision-his. If the
+				 * user has the role aut and last -> LIGHTSALMON
+				 */
 				Element dataKeyBorder = doc.createElement("data");
 				dataKeyBorder.setAttribute("key", "nodeKeyBorder");
 				if (wikiEditNetworkNode.userRole.equals("aut")) {
-					dataKeyBorder.setTextContent(Color.LIGHTBLUE.toString().replace("0x", "#"));
+					dataKeyBorder.setTextContent(Color.LIGHTPINK.toString().replace("0x", "#"));
 				} else if (wikiEditNetworkNode.userRole.equals("cur")) {
 					dataKeyBorder.setTextContent(Color.BLACK.toString().replace("0x", "#"));
 				} else if (wikiEditNetworkNode.userRole.equals("last")) {
-					dataKeyColor.setTextContent(Color.LIGHTSKYBLUE.toString().replace("0x", "#"));
+					dataKeyBorder.setTextContent(Color.LIGHTSKYBLUE.toString().replace("0x", "#"));
+				} else if (wikiEditNetworkNode.userRole.equals("both")) {
+					dataKeyBorder.setTextContent(Color.DARKRED.toString().replace("0x", "#"));
 				}
-			
 
+				// NODE label
 				Element dataKeyLabel = doc.createElement("data");
 				dataKeyLabel.setAttribute("key", "nodeKeyLabel");
 				dataKeyLabel.setTextContent(label);
 
+				// Node Height
 				Element dataKeyHeigh = doc.createElement("data");
 				dataKeyHeigh.setAttribute("key", "nodeKeyHeigh");
 				dataKeyHeigh.setTextContent((double) wikiEditNetworkNode.nodeHigh * 10 + "");
-				//
+
+				// Node Weight
 				Element dataKeyWeight = doc.createElement("data");
 				dataKeyWeight.setAttribute("key", "nodeKeyWeight");
 				dataKeyWeight.setTextContent((double) wikiEditNetworkNode.nodeWeight * 10 + "");
-				//
+				// Append-Section
 				exportNode.appendChild(dataKeyColor);
 				exportNode.appendChild(dataKeyLabel);
 				exportNode.appendChild(dataKeyHeigh);
@@ -155,7 +178,7 @@ public class ExportToVizTool {
 				exportNode.appendChild(dataKeyBorder);
 			}
 
-			// THE EDGES
+			/* Edge Section */
 			for (WikiEditNetworkNode wikiEditNetworkNode : setOfNodesForExport) {
 				String id = wikiEditNetworkNode.getUserName();
 
@@ -175,6 +198,9 @@ public class ExportToVizTool {
 				}
 			}
 
+			/*
+			 * FILE output-section
+			 */
 			// write the content into xml file
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
@@ -183,22 +209,14 @@ public class ExportToVizTool {
 			StreamResult result2 = new StreamResult(new File("C:/Users/admin/Desktop/test.xml"));
 			transformer.transform(source, result2);
 
-			// Output to console for testing
-			// StreamResult result = new StreamResult(System.out);
-
 			transformer.transform(source, result);
-
 			System.out.println("File saved!");
 
-			//
 		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (TransformerConfigurationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (TransformerException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

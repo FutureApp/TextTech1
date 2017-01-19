@@ -102,16 +102,27 @@ public class WikiRevisionPageAnalyzerSimple {
 				revisionMap.put(activeRevisedUserName, revUser);
 
 			} else {
-				if (!revisionMap.containsKey(currentNameOfRevisor)) {
-					revisionMap.put(currentNameOfRevisor, new WikiRevisionUser("cur", currentNameOfRevisor));
+
+				if (i == reversedRevList.size() - 1) {
+					if (!revisionMap.containsKey(currentNameOfRevisor)) {
+						revisionMap.put(currentNameOfRevisor, new WikiRevisionUser("last", currentNameOfRevisor));
+					}
+					else{
+						revisionMap.get(currentNameOfRevisor).setRole("both");
+					}
+					
+				} else {
+					if (!revisionMap.containsKey(currentNameOfRevisor)) {
+						revisionMap.put(currentNameOfRevisor, new WikiRevisionUser("cur", currentNameOfRevisor));
+					}
+
+					WikiRevisionUser userOfRevision = revisionMap.get(currentNameOfRevisor);
+					addRevision(activeRevisedUserName, currentRevisionAction, userOfRevision);
+					addRevised(activeRevisedUserName, currentNameOfRevisor);
+
+					activeRevisedUserName = new String(currentNameOfRevisor);
+					revisionMap.put(currentNameOfRevisor, userOfRevision);
 				}
-
-				WikiRevisionUser userOfRevision = revisionMap.get(currentNameOfRevisor);
-				addRevision(activeRevisedUserName, currentRevisionAction, userOfRevision);
-				addRevised(activeRevisedUserName, currentNameOfRevisor);
-
-				activeRevisedUserName = new String(currentNameOfRevisor);
-				revisionMap.put(currentNameOfRevisor, userOfRevision);
 				System.out.println(currentNameOfRevisor + "  " + currentRevisionAction);
 			}
 		}
@@ -142,13 +153,13 @@ public class WikiRevisionPageAnalyzerSimple {
 	}
 
 	private void addRevision(String activeUser, Integer curActionValue, WikiRevisionUser revision) {
-		if (curActionValue < 0)        {
+		if (curActionValue < 0) {
 			revision.addNegativeProcess(curActionValue);
 			negativInteraction += curActionValue;
 		} else if (curActionValue > 0) {
 			revision.addPositiveProcess(curActionValue);
 			positivInteraction += curActionValue;
-		} else if (curActionValue == 0){
+		} else if (curActionValue == 0) {
 			revision.addNeutralProcess(curActionValue);
 			neutralInteraction += curActionValue;
 		}
@@ -207,9 +218,9 @@ public class WikiRevisionPageAnalyzerSimple {
 		}
 	}
 
-	
 	/**
 	 * Generates a list of Nodes which contain to the edit-network-graph.
+	 * 
 	 * @return A list of nodes for the edit-network-graph.
 	 */
 	public ArrayList<WikiEditNetworkNode> generateEditNodes() {
@@ -222,7 +233,8 @@ public class WikiRevisionPageAnalyzerSimple {
 				/*
 				 * generates a dummy element to prevent linking to an
 				 * null-object or more worst, division by zero. To determine
-				 * this element by viz-step, a noElement-tag is used. (Last User could have non revisers).
+				 * this element by viz-step, a noElement-tag is used. (Last User
+				 * could have non revisers).
 				 */
 				ArrayList<String> emptyElementList = new ArrayList<>();
 				emptyElementList.add(XSpecialIndicator.noElement);
