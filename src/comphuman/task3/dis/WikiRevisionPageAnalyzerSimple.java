@@ -106,11 +106,16 @@ public class WikiRevisionPageAnalyzerSimple {
 				if (i == reversedRevList.size() - 1) {
 					if (!revisionMap.containsKey(currentNameOfRevisor)) {
 						revisionMap.put(currentNameOfRevisor, new WikiRevisionUser("last", currentNameOfRevisor));
+						
+						WikiRevisionUser userOfRevision = revisionMap.get(currentNameOfRevisor);
+						addRevision(activeRevisedUserName, currentRevisionAction, userOfRevision);
+						addRevised(activeRevisedUserName, currentNameOfRevisor);
+						activeRevisedUserName = new String(currentNameOfRevisor);
+						revisionMap.put(currentNameOfRevisor, userOfRevision);
 					}
 					else{
 						revisionMap.get(currentNameOfRevisor).setRole("both");
 					}
-					
 				} else {
 					if (!revisionMap.containsKey(currentNameOfRevisor)) {
 						revisionMap.put(currentNameOfRevisor, new WikiRevisionUser("cur", currentNameOfRevisor));

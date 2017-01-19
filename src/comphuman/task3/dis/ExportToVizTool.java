@@ -75,6 +75,7 @@ public class ExportToVizTool {
 			keyNodeColor.setAttribute("attr.name", "color");
 			keyNodeColor.setAttribute("attr.type", "string");
 			rootElement.appendChild(keyNodeColor);
+			
 
 			Element keyNodeLabel = doc.createElement("key");
 			keyNodeLabel.setAttribute("id", "nodeKeyLabel");
@@ -103,6 +104,20 @@ public class ExportToVizTool {
 			keyNodeBorder.setAttribute("attr.name", "border");
 			keyNodeBorder.setAttribute("attr.type", "string");
 			rootElement.appendChild(keyNodeBorder);
+			
+			Element keyNodeBorderWeight = doc.createElement("key");
+			keyNodeBorderWeight.setAttribute("id", "nodeKeyBorderWeight");
+			keyNodeBorderWeight.setAttribute("for", "node");
+			keyNodeBorderWeight.setAttribute("attr.name", "borderweight");
+			keyNodeBorderWeight.setAttribute("attr.type", "double");
+			rootElement.appendChild(keyNodeBorderWeight);
+			
+			Element keyNodeTextColor = doc.createElement("key");
+			keyNodeTextColor.setAttribute("id", "nodeKeyTextColor");
+			keyNodeTextColor.setAttribute("for", "node");
+			keyNodeTextColor.setAttribute("attr.name", "txtColor");
+			keyNodeTextColor.setAttribute("attr.type", "string");
+			rootElement.appendChild(keyNodeTextColor);
 
 			Element keyPath = doc.createElement("key");
 			keyPath.setAttribute("id", "path");
@@ -115,10 +130,6 @@ public class ExportToVizTool {
 			graphElement.setAttribute("id", "G-Graph-SimpleEditNetwork");
 			graphElement.setAttribute("edgedefault", "undirected");
 			rootElement.appendChild(graphElement);
-
-			Element defElem = doc.createElement("default");
-			defElem.setTextContent((Color.BLANCHEDALMOND + "").replace("0x", "#"));
-			keyNodeColor.appendChild(defElem);
 
 			/*
 			 * NODE Sections
@@ -138,7 +149,14 @@ public class ExportToVizTool {
 				dataKeyColor.setAttribute("key", "nodeKeyColor");
 				dataKeyColor.setTextContent(
 						CalcColors.clacInnerGrey(wikiEditNetworkNode.getNetAddedRatio()).toString().replace("0x", "#"));
-
+				
+				if(wikiEditNetworkNode.getNetAddedRatio() < -0.5d){
+					Element dataKeyTextColor = doc.createElement("data");
+					dataKeyTextColor.setAttribute("key", "nodeKeyTextColor");
+					dataKeyTextColor.setTextContent(Color.LIGHTGOLDENRODYELLOW.toString().replace("0x", "#"));
+					exportNode.appendChild(dataKeyTextColor);
+				}
+				
 				/*
 				 * Border-color. LIGHTPINK -> Author, Black -> 'normal user',
 				 * LIGHTSKYBLUE -> Last user( last input in revision-his. If the
@@ -150,11 +168,15 @@ public class ExportToVizTool {
 					dataKeyBorder.setTextContent(Color.LIGHTPINK.toString().replace("0x", "#"));
 				} else if (wikiEditNetworkNode.userRole.equals("cur")) {
 					dataKeyBorder.setTextContent(Color.BLACK.toString().replace("0x", "#"));
+					
 				} else if (wikiEditNetworkNode.userRole.equals("last")) {
 					dataKeyBorder.setTextContent(Color.LIGHTSKYBLUE.toString().replace("0x", "#"));
 				} else if (wikiEditNetworkNode.userRole.equals("both")) {
 					dataKeyBorder.setTextContent(Color.DARKRED.toString().replace("0x", "#"));
 				}
+				Element dataKeyBorderWeight = doc.createElement("data");
+				dataKeyBorderWeight.setAttribute("key", "keyNodeBorderWeight");
+				dataKeyBorderWeight.setTextContent("10.0");
 
 				// NODE label
 				Element dataKeyLabel = doc.createElement("data");
@@ -176,6 +198,7 @@ public class ExportToVizTool {
 				exportNode.appendChild(dataKeyHeigh);
 				exportNode.appendChild(dataKeyWeight);
 				exportNode.appendChild(dataKeyBorder);
+				exportNode.appendChild(dataKeyBorderWeight);
 			}
 
 			/* Edge Section */

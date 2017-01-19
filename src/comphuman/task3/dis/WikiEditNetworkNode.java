@@ -12,7 +12,7 @@ public class WikiEditNetworkNode {
 	Integer negativActions;
 	Integer neutralActions;
 	Integer nodeHigh;
-	Integer nodeWeight;
+	Double nodeWeight;
 	Integer netAdded = 0;
 
 	Double netAddedRatio = 0d;
@@ -35,12 +35,19 @@ public class WikiEditNetworkNode {
 		this.revisorFor = wikiRevisionUser.getInteractedOn();
 		this.revisedBy = revisedBy;
 		this.nodeHigh = revisorFor.size();
-		this.nodeWeight = revisedBy.size();
+		this.nodeWeight = checkEmptyElementAndReturnSize(revisedBy);
 		this.nodeRatio = calcNodeRatio(this.nodeHigh, this.nodeWeight);
 		this.relationOfRevisorAndRevised = (double) revisorFor.size() / (double) revisedBy.size();
 	}
 
-	private Double calcNodeRatio(Integer innerNodeHigh, Integer innerNodeWeight) {
+	private Double checkEmptyElementAndReturnSize(ArrayList<String> revisedby) {
+		Double value = 0d;
+		if(revisedby.contains(XSpecialIndicator.noElement)) value=0.1d;
+		else value = (double)revisedby.size();
+		return value;
+	}
+
+	private Double calcNodeRatio(Integer innerNodeHigh, Double innerNodeWeight) {
 		return (double) innerNodeHigh / (double) innerNodeWeight;
 	}
 
@@ -82,7 +89,7 @@ public class WikiEditNetworkNode {
 		return nodeHigh;
 	}
 
-	public Integer getNodeWeight() {
+	public Double getNodeWeight() {
 		return nodeWeight;
 	}
 
