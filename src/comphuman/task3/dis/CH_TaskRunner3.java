@@ -48,22 +48,7 @@ public class CH_TaskRunner3 {
 		System.out.println(actionCounter);
 
 		/* BYTE Section*/
-		WikiRevisionPageAnalyzerSimpleBytes revisionAnalyzerByte = new WikiRevisionPageAnalyzerSimpleBytes(
-				article.getRevisionsPage());
-		revisionAnalyzerByte.startAnalysis();
-		revisionAnalyzerByte.generateMapsForCalcs();
-		ArrayList<WikiEditNetworkNode> editNodesWithByte = revisionAnalyzerByte.generateEditNodes();
-
-		Integer byteActionCounter = 0;
-		for (int i = 0; i < editNodesWithByte.size(); i++) {
-			byteActionCounter += editNodesWithByte.get(i).getActivityIndex();
-			WikiEditNetworkNode node = editNodesWithByte.get(i);
-			System.out.println(node.getUserName());
-			System.out.println(node.getRelationOfRevisorAndRevised());
-		}
-		ExportToVizTool vizExporterByte = new ExportToVizTool(editNodesWithByte);
-		vizExporterByte.exportToGraphMlFormate(new File("C:/Users/admin/Desktop/testByte.graphml"));
-		System.out.println(byteActionCounter);
+		
 
 		/* FINISH */
 		printFinish();
