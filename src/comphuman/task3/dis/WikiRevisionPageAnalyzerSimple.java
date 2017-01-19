@@ -48,9 +48,9 @@ public class WikiRevisionPageAnalyzerSimple {
 	 * reacts positive of the last comment. User added some bytes. <-1>: User
 	 * reacts negative on the last comment. User deletes some bytes. <0> : User
 	 * didn't change anything. Returns the same value if an action wasn't
-	 * recordnize,too.
+	 * recognized.
 	 * 
-	 * @return Array of an Arrays which containing the map [user,actionValue].
+	 * @return Array of an Arrays which contains the map [user,actionValue].
 	 */
 	public void abstractRevisionItems() {
 		// Provides an empty list for each method-call
@@ -58,7 +58,8 @@ public class WikiRevisionPageAnalyzerSimple {
 			listOfListRevisions.clear();
 		Element selectedElements = wikiRevisionPage.getElementById(revisionContentHolderID);
 		Elements liElements = selectedElements.select("li");
-		System.out.println(liElements.size());
+
+		/* iterate throw all elements and det. the action-impact. */
 		for (Element element : liElements) {
 			Elements containsUserName = element.select(".history-user");
 			Elements userNameWiki = containsUserName.select("a");
@@ -74,53 +75,76 @@ public class WikiRevisionPageAnalyzerSimple {
 			realUserMap.add(actionValue + "");
 			listOfListRevisions.add(realUserMap);
 		}
-
 	}
 
+	/**
+	 * Generate the map for the calcs. The calcs. will be done by class
+	 * {@link WikiEditNetworkNode}:
+	 */
 	public void generateMapsForCalcs() {
 		List<List<String>> reversedRevList = new ArrayList<>();
 		for (int i = 0; i < listOfListRevisions.size(); i++) {
 			List<String> item = listOfListRevisions.get(i);
 			reversedRevList.add(item);
 		}
-
+		/*
+		 * Starts at the first user, which produced content. The author of the
+		 * wiki-article-page
+		 */
 		Collections.reverse(reversedRevList);
-
-		System.out.println(reversedRevList.size());
 		String activeRevisedUserName = new String("");
-		System.out.println(reversedRevList.size() + "+-----------");
 
 		for (int i = 0; i < reversedRevList.size(); i++) {
 			List<String> item = reversedRevList.get(i);
 			String currentNameOfRevisor = item.get(0);
 			Integer currentRevisionAction = Integer.parseInt(item.get(1));
 
+			/* inserts the first user. Special because index-1 doesn't exists */
 			if (i == 0) {
 				activeRevisedUserName = new String(currentNameOfRevisor);
 				WikiRevisionUser revUser = new WikiRevisionUser("aut", activeRevisedUserName);
 				revUser.addPositiveProcess(1);
 				revisionMap.put(activeRevisedUserName, revUser);
 
+				// For all other user exluded first user.
 			} else {
 
+				// The last user which added some content.
 				if (i == reversedRevList.size() - 1) {
+
+					// User is new
 					if (!revisionMap.containsKey(currentNameOfRevisor)) {
 						revisionMap.put(currentNameOfRevisor, new WikiRevisionUser("last", currentNameOfRevisor));
-						
 						WikiRevisionUser userOfRevision = revisionMap.get(currentNameOfRevisor);
 						addRevision(activeRevisedUserName, currentRevisionAction, userOfRevision);
 						addRevised(activeRevisedUserName, currentNameOfRevisor);
 						activeRevisedUserName = new String(currentNameOfRevisor);
 						revisionMap.put(currentNameOfRevisor, userOfRevision);
+					} else {
+						// First user and last user are the same. New Tag is
+						// given.
+						if (revisionMap.get(currentNameOfRevisor).userRole.equals("aut")) {
+							revisionMap.get(currentNameOfRevisor).setRole("both");
+						} else {
+							// User contains the type cur. Replace that with
+							// last.
+							revisionMap.put(currentNameOfRevisor, new WikiRevisionUser("last", currentNameOfRevisor));
+							WikiRevisionUser userOfRevision = revisionMap.get(currentNameOfRevisor);
+							addRevision(activeRevisedUserName, currentRevisionAction, userOfRevision);
+							addRevised(activeRevisedUserName, currentNameOfRevisor);
+							activeRevisedUserName = new String(currentNameOfRevisor);
+							revisionMap.put(currentNameOfRevisor, userOfRevision);
+						}
 					}
-					else{
-						revisionMap.get(currentNameOfRevisor).setRole("both");
-					}
+					/* Do if non-special case. */
 				} else {
 					if (!revisionMap.containsKey(currentNameOfRevisor)) {
 						revisionMap.put(currentNameOfRevisor, new WikiRevisionUser("cur", currentNameOfRevisor));
 					}
 
+					/*
+					 * Inserts the user.
+					 */
 					WikiRevisionUser userOfRevision = revisionMap.get(currentNameOfRevisor);
 					addRevision(activeRevisedUserName, currentRevisionAction, userOfRevision);
 					addRevised(activeRevisedUserName, currentNameOfRevisor);
@@ -128,10 +152,12 @@ public class WikiRevisionPageAnalyzerSimple {
 					activeRevisedUserName = new String(currentNameOfRevisor);
 					revisionMap.put(currentNameOfRevisor, userOfRevision);
 				}
-				System.out.println(currentNameOfRevisor + "  " + currentRevisionAction);
 			}
 		}
 
+		/*
+		 * Prints some results of this method to the screen.
+		 */
 		for (Entry<String, WikiRevisionUser> entry : revisionMap.entrySet()) {
 			System.out.printf("user:%s | type: %s | pos: %d | neg: %d | neut: %d | %s", entry.getKey(),
 					entry.getValue().userRole, entry.getValue().getPostitivProcesses(),
@@ -140,23 +166,26 @@ public class WikiRevisionPageAnalyzerSimple {
 			System.out.println();
 			System.out.println(entry.getValue().getNeutralProcess() + "!!!");
 			System.out.println("_ _ _ _ _");
-
-		}
-
-		System.out.println("........................................");
-		System.out.println();
-		for (Entry<String, ArrayList<String>> item : revisedMap.entrySet()) {
-			System.out.printf("user <%s> revised by <%s>", item.getKey(), item.getValue().toString());
-			System.out.println();
 		}
 	}
 
+	/**
+	 * Adds a user to the revised-list
+	 * @param activeRevisedUserName name of the user, which is currently active.
+	 * @param currentNameOfRevisor name of user, which revised by the given(active) user.
+	 */
 	private void addRevised(String activeRevisedUserName, String currentNameOfRevisor) {
 		if (!revisedMap.containsKey(activeRevisedUserName))
 			revisedMap.put(activeRevisedUserName, new ArrayList<>());
 		revisedMap.get(activeRevisedUserName).add(currentNameOfRevisor);
 	}
 
+	/**
+	 * Adds the action-value to the user. 
+	 * @param activeUser name of current active user.
+	 * @param curActionValue the action-value.
+	 * @param revision The user himself as a wiki-revision-user.
+	 */
 	private void addRevision(String activeUser, Integer curActionValue, WikiRevisionUser revision) {
 		if (curActionValue < 0) {
 			revision.addNegativeProcess(curActionValue);

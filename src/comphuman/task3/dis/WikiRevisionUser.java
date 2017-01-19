@@ -17,35 +17,65 @@ public class WikiRevisionUser {
 		this.userRole = userRole;
 		this.username = username;
 	}
-
+/**
+ * Returns the user-name.
+ * @return name of user.
+ */
 	public String getUsername() {
 		return username;
 	}
 
+	/**
+	 * Returns the number of negative- processes caused by the user himself.
+	 * @return Number of negative-processes.
+	 */
 	public Integer getNegativeProcesses() {
 		return negativeProcesses;
 	}
 
+	/**
+	 * Returns the number of neutral- processes caused by the user himself.
+	 * @return Number of neutral-processes.
+	 */
 	public Integer getNeutralProcess() {
 		return neutralProcess;
 	}
 
+	/**
+	 * Sets the number of negative-processes.
+	 * @param negativeProcesses Number of negative-processes.
+	 */
 	public void setNegativeProcesses(Integer negativeProcesses) {
 		this.negativeProcesses = negativeProcesses;
 	}
 
+	/**
+	 * Returns the number of positive- processes caused by the user himself.
+	 * @return Number of positive-processes.
+	 */
 	public Integer getPostitivProcesses() {
 		return postitivProcesses;
 	}
 
+	/**
+	 * Sets the number of positive-processes.
+	 * @param negativeProcesses Number of postivie-processes.
+	 */
 	public void setPostitivProcesses(Integer postitivProcesses) {
 		this.postitivProcesses = postitivProcesses;
 	}
 
+	/**
+	 * Returns a list of all revised-users.
+	 * @return List of revised users.
+	 */
 	public ArrayList<String> getInteractedOn() {
 		return interactedOn;
 	}
-
+	/**
+	 * Sets the number of negative-processes.
+	 * @param negativeProcesses Number of negative-processes.
+	 */
 	public void setInteractedOn(ArrayList<String> interactedOn) {
 		this.interactedOn = interactedOn;
 	}
@@ -62,6 +92,10 @@ public class WikiRevisionUser {
 		postitivProcesses += value;
 	}
 
+	/**
+	 * Add a user-name to the list of revised-users.
+	 * @param user Name of user who get revised by the given user.
+	 */
 	public void addRevisedUser(String user) {
 		if (!interactedOn.contains(user))
 			interactedOn.add(user);
@@ -97,6 +131,10 @@ public class WikiRevisionUser {
 		neutralProcess += value + 1;
 	}
 
+	/**
+	 * Sets the role of the given user. Most used values: aut,cur,both
+	 * @param role aut|cur|both
+	 */
 	public void setRole(String role) {
 		userRole = role;
 	}

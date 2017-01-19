@@ -36,7 +36,6 @@ public class ExportToVizTool {
 	 *            {@link WikiEditNetworkNode}
 	 */
 	public ExportToVizTool(ArrayList<WikiEditNetworkNode> editNodes) {
-		// TODO Auto-generated constructor stub
 		this.setOfNodesForExport = editNodes;
 		try {
 			docBuilder = docFactory.newDocumentBuilder();

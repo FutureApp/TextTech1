@@ -35,18 +35,8 @@ public class CH_TaskRunner3 {
 		revisionAnalyzer.startAnalysis();
 		revisionAnalyzer.generateMapsForCalcs();
 		ArrayList<WikiEditNetworkNode> editNodes = revisionAnalyzer.generateEditNodes();
-
-		Integer actionCounter = 0;
-		for (int i = 0; i < editNodes.size(); i++) {
-			actionCounter += editNodes.get(i).getActivityIndex();
-			WikiEditNetworkNode node = editNodes.get(i);
-			System.out.println(node.getUserName());
-			System.out.println(node.getRelationOfRevisorAndRevised());
-		}
 		ExportToVizTool vizExporter = new ExportToVizTool(editNodes);
 		vizExporter.exportToGraphMlFormate(new File("C:/Users/admin/Desktop/test.graphml"));
-		System.out.println(actionCounter);
-
 		/* BYTE Section*/
 		
 
@@ -54,6 +44,9 @@ public class CH_TaskRunner3 {
 		printFinish();
 	}
 
+	/**
+	 * Prints the finish-message.
+	 */
 	private static void printFinish() {
 		System.out.println();
 		System.out.println();
