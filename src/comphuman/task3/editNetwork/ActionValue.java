@@ -1,4 +1,4 @@
-package comphuman.task3.dis;
+package comphuman.task3.editNetwork;
 
 
 /**

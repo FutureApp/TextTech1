@@ -1,4 +1,4 @@
-package comphuman.task3.dis;
+package comphuman.task3.editNetwork;
 
 import java.io.File;
 import java.util.ArrayList;
