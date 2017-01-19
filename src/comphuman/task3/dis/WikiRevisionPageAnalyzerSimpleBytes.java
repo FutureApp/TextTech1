@@ -17,7 +17,7 @@ import xgeneral.modules.SystemMessage;
  * @author Michael Czaja
  *
  */
-public class WikiRevisionPageAnalyzerSimple {
+public class WikiRevisionPageAnalyzerSimpleBytes {
 	private String revisionContentHolderID = "pagehistory";
 	private Integer negativInteraction = 0;
 	private Integer positivInteraction = 0;
@@ -37,7 +37,7 @@ public class WikiRevisionPageAnalyzerSimple {
 	 * @param wikiRevisionPage
 	 *            Document- which contains the wiki-article-revision page.
 	 */
-	public WikiRevisionPageAnalyzerSimple(Document wikiRevisionPage) {
+	public WikiRevisionPageAnalyzerSimpleBytes(Document wikiRevisionPage) {
 		super();
 		this.wikiRevisionPage = wikiRevisionPage;
 	}
@@ -65,13 +65,18 @@ public class WikiRevisionPageAnalyzerSimple {
 			String userName = userNameWiki.select("bdi").text();
 			Elements unknownActionValue = element.select("[class*='mw-plusminus-']");
 			Integer actionValue = 0;
+			String valueOfByteDif = "";
 			if (unknownActionValue.size() != 1)
 				SystemMessage.wMessage("Action for user <%s> is unknown.");
-			else
+			else{
 				actionValue = detActionValue(unknownActionValue);
+				valueOfByteDif = unknownActionValue.text().replaceAll("[().]", "");
+				System.out.println("BYTE "+ valueOfByteDif);
+			}
 			ArrayList<String> realUserMap = new ArrayList<>();
 			realUserMap.add(userName);
 			realUserMap.add(actionValue + "");
+			realUserMap.add(valueOfByteDif + "");
 			listOfListRevisions.add(realUserMap);
 		}
 
@@ -94,11 +99,12 @@ public class WikiRevisionPageAnalyzerSimple {
 			List<String> item = reversedRevList.get(i);
 			String currentNameOfRevisor = item.get(0);
 			Integer currentRevisionAction = Integer.parseInt(item.get(1));
+			Integer currentRevisionActionInByte = Integer.parseInt((item.get(2)));
 
 			if (i == 0) {
 				activeRevisedUserName = new String(currentNameOfRevisor);
 				WikiRevisionUser revUser = new WikiRevisionUser("aut", activeRevisedUserName);
-				revUser.addPositiveProcess(1);
+				revUser.addPositiveProcess(currentRevisionActionInByte);
 				revisionMap.put(activeRevisedUserName, revUser);
 
 			} else {
@@ -107,8 +113,9 @@ public class WikiRevisionPageAnalyzerSimple {
 				}
 
 				WikiRevisionUser userOfRevision = revisionMap.get(currentNameOfRevisor);
-				addRevision(activeRevisedUserName, currentRevisionAction, userOfRevision);
+				addRevision(activeRevisedUserName, currentRevisionAction,currentRevisionActionInByte, userOfRevision);
 				addRevised(activeRevisedUserName, currentNameOfRevisor);
+				
 
 				activeRevisedUserName = new String(currentNameOfRevisor);
 				revisionMap.put(currentNameOfRevisor, userOfRevision);
@@ -141,16 +148,16 @@ public class WikiRevisionPageAnalyzerSimple {
 		revisedMap.get(activeRevisedUserName).add(currentNameOfRevisor);
 	}
 
-	private void addRevision(String activeUser, Integer curActionValue, WikiRevisionUser revision) {
+	private void addRevision(String activeUser, Integer curActionValue, Integer currentRevisionActionInByte, WikiRevisionUser revision) {
 		if (curActionValue < 0)        {
-			revision.addNegativeProcess(curActionValue);
-			negativInteraction += curActionValue;
+			revision.addNegativeProcess(currentRevisionActionInByte);
+			negativInteraction += currentRevisionActionInByte;
 		} else if (curActionValue > 0) {
-			revision.addPositiveProcess(curActionValue);
-			positivInteraction += curActionValue;
+			revision.addPositiveProcess(currentRevisionActionInByte);
+			positivInteraction += currentRevisionActionInByte;
 		} else if (curActionValue == 0){
-			revision.addNeutralProcess(curActionValue);
-			neutralInteraction += curActionValue;
+			revision.addNeutralProcess(currentRevisionActionInByte);
+			neutralInteraction += currentRevisionActionInByte;
 		}
 		revision.addRevisedUser(activeUser);
 	}
@@ -218,6 +225,7 @@ public class WikiRevisionPageAnalyzerSimple {
 			WikiEditNetworkNode node;
 			if (revisedMap.containsKey(entry.getValue().getUsername())) {
 				node = new WikiEditNetworkNode(entry.getValue(), revisedMap.get(entry.getValue().getUsername()));
+				
 			} else {
 				/*
 				 * generates a dummy element to prevent linking to an

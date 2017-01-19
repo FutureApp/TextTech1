@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+	<key attr.name="color" attr.type="string" for="node" id="nodeKey">
+		<default>blue</default>
+	</key>
+	<graph edgedefault="undirected" id="G-Graph-SimpleEditNetwork">
+		<node id="MorbZBot" />
+		<node id="Andre_de" />
+		<node id="Niki.L" />
+		<node id="84.154.133.18" />
+		<node id="Dmicha" />
+		<node id="Oltau" />
+		<node id="HГq" />
+		<node id="87.157.199.181" />
+		<node id="Crazy1880" />
+		<node id="Metrophil" />
+		<node id="85.178.152.1" />
+		<node id="Färber" />
+		<node id="87.123.154.219" />
+		<node id="Karsten11" />
+		<node id="Rotkaeppchen68" />
+		<node id="BaumfreundFFM" />
+		<node id="SonniWP" />
+		<node id="Hozro" />
+		<node id="Gerold_Broser" />
+		<node id="MystBot" />
+		<node id="Leit" />
+		<node id="Chumwa" />
+		<node id="Itti" />
+		<node id="Platte" />
+		<node id="Ralf_Roletschek" />
+		<node id="Rote4132" />
+		<node id="89.247.16.60" />
+		<node id="62.157.58.29" />
+		<node id="Chewbacca2205" />
+		<node id="Wiegels" />
+		<node id="Christoph_Ziehr" />
+		<node id="Fomafix" />
+		<node id="217.186.226.212" />
+		<node id="Matthias_Lorenz" />
+		<node id="Quark" />
+		<node id="Mad_Max_3" />
+		<node id="2a02:2028:619:cf01:1293:e9ff:fe5e:58bc" />
+		<node id="JvB1953" />
+		<node id="Komischn" />
+		<node id="_Bikkit_" />
+		<node id="Brill58" />
+		<node id="Hadibe" />
+		<node id="Stegosaurus_Rex" />
+		<node id="ErikDunsing" />
+		<node id="Svensteffen_arndt" />
+		<node id="Atamari" />
+		<node id="GeisterPirat" />
+		<node id="Visibot" />
+		<node id="TJ.MD" />
+		<node id="Berliner76" />
+		<node id="Definitiv" />
+		<node id="89.247.8.215" />
+		<node id="Norhei" />
+		<node id="Fasch" />
+		<node id="MitigationMeasure" />
+		<node id="Aka" />
+		<node id="APPER" />
+		<node id="Shoot_the_moon" />
+		<node id="Micham6" />
+		<node id="Herr_Lehrer_ich_weiß_was" />
+		<node id="80.145.209.216" />
+		<node id="Dalabalacaladalaealafalagalahalaiala" />
+		<node id="Spurzem" />
+		<node id="Fridolin_freudenfett" />
+		<node id="44Pinguine" />
+		<node id="Miraki" />
+		<node id="Lley" />
+		<node id="ONAR" />
+		<node id="Wahldresdner" />
+		<node id="BLueFiSH.as" />
+		<node id="Franz_Richter" />
+		<node id="83.228.60.175" />
+	</graph>
+</graphml>

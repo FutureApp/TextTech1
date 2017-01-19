@@ -19,7 +19,7 @@ import org.w3c.dom.Element;
 
 import javafx.scene.paint.Color;
 
-public class ExportToVizTool {
+public class ExportToVizToolByte {
 
 	DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder docBuilder;
@@ -35,7 +35,7 @@ public class ExportToVizTool {
 	 *            List of Nodes containing WikiEditNetworkNode objects.
 	 *            {@link WikiEditNetworkNode}
 	 */
-	public ExportToVizTool(ArrayList<WikiEditNetworkNode> editNodes) {
+	public ExportToVizToolByte(ArrayList<WikiEditNetworkNode> editNodes) {
 		// TODO Auto-generated constructor stub
 		this.setOfNodesForExport = editNodes;
 		try {
@@ -66,35 +66,28 @@ public class ExportToVizTool {
 			keyNodeColor.setAttribute("attr.name", "color");
 			keyNodeColor.setAttribute("attr.type", "string");
 			rootElement.appendChild(keyNodeColor);
-
+			
 			Element keyNodeLabel = doc.createElement("key");
 			keyNodeLabel.setAttribute("id", "nodeKeyLabel");
 			keyNodeLabel.setAttribute("for", "node");
 			keyNodeLabel.setAttribute("attr.name", "label");
 			keyNodeLabel.setAttribute("attr.type", "string");
 			rootElement.appendChild(keyNodeLabel);
-			//
+//			
 			Element keyNodeHeigh = doc.createElement("key");
 			keyNodeHeigh.setAttribute("id", "nodeKeyHeigh");
 			keyNodeHeigh.setAttribute("for", "node");
 			keyNodeHeigh.setAttribute("attr.name", "heigh");
 			keyNodeHeigh.setAttribute("attr.type", "double");
 			rootElement.appendChild(keyNodeHeigh);
-			//
+//			
 			Element keyNodeWeight = doc.createElement("key");
 			keyNodeWeight.setAttribute("id", "nodeKeyWeight");
 			keyNodeWeight.setAttribute("for", "node");
 			keyNodeWeight.setAttribute("attr.name", KEYWORD_WEIGHT);
 			keyNodeWeight.setAttribute("attr.type", "double");
 			rootElement.appendChild(keyNodeWeight);
-
-			Element keyNodeBorder = doc.createElement("key");
-			keyNodeBorder.setAttribute("id", "nodeKeyBorder");
-			keyNodeBorder.setAttribute("for", "node");
-			keyNodeBorder.setAttribute("attr.name", "border");
-			keyNodeBorder.setAttribute("attr.type", "string");
-			rootElement.appendChild(keyNodeBorder);
-
+			
 			Element keyPath = doc.createElement("key");
 			keyPath.setAttribute("id", "path");
 			keyPath.setAttribute("for", "edge");
@@ -102,79 +95,91 @@ public class ExportToVizTool {
 			keyPath.setAttribute("attr.type", "double");
 			rootElement.appendChild(keyPath);
 
+			
+			
 			Element graphElement = doc.createElement("graph");
 			graphElement.setAttribute("id", "G-Graph-SimpleEditNetwork");
 			graphElement.setAttribute("edgedefault", "undirected");
 			rootElement.appendChild(graphElement);
 
+			
 			Element defElem = doc.createElement("default");
-			defElem.setTextContent((Color.BLANCHEDALMOND + "").replace("0x", "#"));
+			defElem.setTextContent((Color.BLANCHEDALMOND+"").replace("0x", "#"));
 			keyNodeColor.appendChild(defElem);
 
+			
 			// THE NODES
 			for (WikiEditNetworkNode wikiEditNetworkNode : setOfNodesForExport) {
 				String id = wikiEditNetworkNode.getUserName();
 				String label = wikiEditNetworkNode.getUserName();
 				Element exportNode = doc.createElement("node");
-				exportNode.setAttribute("id", id.replace(" ", "_").replaceAll("[-+!^,]", ""));
+				exportNode.setAttribute("id", id.replace(" ", "_").replaceAll("[-+!^,]",""));
 				exportNode.setAttribute("label", label);
 				graphElement.appendChild(exportNode);
-
+				
 				Element dataKeyColor = doc.createElement("data");
 				dataKeyColor.setAttribute("key", "nodeKeyColor");
-				dataKeyColor.setTextContent(
-						CalcColors.clacInnerGrey(wikiEditNetworkNode.getNetAddedRatio()).toString().replace("0x", "#"));
-
-				Element dataKeyBorder = doc.createElement("data");
-				dataKeyBorder.setAttribute("key", "nodeKeyBorder");
-				if (wikiEditNetworkNode.userRole.equals("aut")) {
-					dataKeyBorder.setTextContent(Color.LIGHTBLUE.toString().replace("0x", "#"));
-				} else if (wikiEditNetworkNode.userRole.equals("cur")) {
-					dataKeyBorder.setTextContent(Color.BLACK.toString().replace("0x", "#"));
-				} else if (wikiEditNetworkNode.userRole.equals("last")) {
-					dataKeyColor.setTextContent(Color.LIGHTSKYBLUE.toString().replace("0x", "#"));
+				if(wikiEditNetworkNode.userRole.equals("aut")){
+					dataKeyColor.setTextContent(Color.DARKRED.toString().replace("0x", "#"));
 				}
-			
+				else if(wikiEditNetworkNode.userRole.equals("cur")){
+					dataKeyColor.setTextContent(Color.BLANCHEDALMOND.toString().replace("0x", "#"));
+				}
+				else if(wikiEditNetworkNode.userRole.equals("last")){
+					dataKeyColor.setTextContent(Color.DARKSLATEGREY.toString().replace("0x", "#"));
+				}
 
 				Element dataKeyLabel = doc.createElement("data");
 				dataKeyLabel.setAttribute("key", "nodeKeyLabel");
 				dataKeyLabel.setTextContent(label);
+				
 
 				Element dataKeyHeigh = doc.createElement("data");
 				dataKeyHeigh.setAttribute("key", "nodeKeyHeigh");
-				dataKeyHeigh.setTextContent((double) wikiEditNetworkNode.nodeHigh * 10 + "");
-				//
+				dataKeyHeigh.setTextContent((double)wikiEditNetworkNode.nodeHigh+"");
+//				
 				Element dataKeyWeight = doc.createElement("data");
 				dataKeyWeight.setAttribute("key", "nodeKeyWeight");
-				dataKeyWeight.setTextContent((double) wikiEditNetworkNode.nodeWeight * 10 + "");
-				//
+				dataKeyWeight.setTextContent((double)wikiEditNetworkNode.nodeWeight+"");
+//				
 				exportNode.appendChild(dataKeyColor);
 				exportNode.appendChild(dataKeyLabel);
 				exportNode.appendChild(dataKeyHeigh);
 				exportNode.appendChild(dataKeyWeight);
-				exportNode.appendChild(dataKeyBorder);
 			}
-
-			// THE EDGES
+			
+			//THE EDGES
 			for (WikiEditNetworkNode wikiEditNetworkNode : setOfNodesForExport) {
 				String id = wikiEditNetworkNode.getUserName();
-
+			
 				ArrayList<String> revisorFor = wikiEditNetworkNode.getRevisorFor();
-
+				
 				Element defaulEdgeStyle = doc.createElement("data");
 				defaulEdgeStyle.setAttribute("key", "path");
 				defaulEdgeStyle.setTextContent("1.0");
-
+				
 				for (String userNameOfGetRevisor : revisorFor) {
 					Element path = doc.createElement("edge");
-					path.setAttribute("id", UUID.randomUUID() + "");
-					path.setAttribute("source", id.replace(" ", "_").replaceAll("[-+!^,]", ""));
-					path.setAttribute("target", userNameOfGetRevisor.replace(" ", "_").replaceAll("[-+!^,]", ""));
-					graphElement.appendChild(path);
-					path.appendChild(defaulEdgeStyle);
+					path.setAttribute("id", UUID.randomUUID()+"");
+					path.setAttribute("source", id.replace(" ", "_").replaceAll("[-+!^,]",""));
+					path.setAttribute("target", userNameOfGetRevisor.replace(" ", "_").replaceAll("[-+!^,]",""));
+				    graphElement.appendChild(path);
+				    path.appendChild(defaulEdgeStyle);
 				}
 			}
 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			// write the content into xml file
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();

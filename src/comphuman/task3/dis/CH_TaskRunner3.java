@@ -5,11 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.apache.commons.io.FileUtils;
-import org.graphstream.util.time.ISODateComponent.EpochComponent;
-import org.jsoup.nodes.Document;
 
 import comphuman.task2.distanceReading.newOne.WikiArticle;
-import comphuman.xgeneral.URL_Handler;
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
 
@@ -33,26 +30,42 @@ public class CH_TaskRunner3 {
 		validateAmountOfGivenInput();
 		cleanResultDir(resultDir);
 		WikiArticle article = new WikiArticle(arg[0]);
-		WikiRevisionPageAnalyzerSimple revisionAnalyzer = new WikiRevisionPageAnalyzerSimple(article.getRevisionsPage());
+		WikiRevisionPageAnalyzerSimple revisionAnalyzer = new WikiRevisionPageAnalyzerSimple(
+				article.getRevisionsPage());
 		revisionAnalyzer.startAnalysis();
 		revisionAnalyzer.generateMapsForCalcs();
 		ArrayList<WikiEditNetworkNode> editNodes = revisionAnalyzer.generateEditNodes();
-		
+
 		Integer actionCounter = 0;
 		for (int i = 0; i < editNodes.size(); i++) {
-		actionCounter+= editNodes.get(i).getActivityIndex();
-		WikiEditNetworkNode node = editNodes.get(i);
-		System.out.println(node.getUserName());
-		System.out.println(node.getRelationOfRevisorAndRevised());
+			actionCounter += editNodes.get(i).getActivityIndex();
+			WikiEditNetworkNode node = editNodes.get(i);
+			System.out.println(node.getUserName());
+			System.out.println(node.getRelationOfRevisorAndRevised());
 		}
 		ExportToVizTool vizExporter = new ExportToVizTool(editNodes);
 		vizExporter.exportToGraphMlFormate(new File("C:/Users/admin/Desktop/test.graphml"));
 		System.out.println(actionCounter);
 
-		
-		
-		
-		
+		/* BYTE Section*/
+		WikiRevisionPageAnalyzerSimpleBytes revisionAnalyzerByte = new WikiRevisionPageAnalyzerSimpleBytes(
+				article.getRevisionsPage());
+		revisionAnalyzerByte.startAnalysis();
+		revisionAnalyzerByte.generateMapsForCalcs();
+		ArrayList<WikiEditNetworkNode> editNodesWithByte = revisionAnalyzerByte.generateEditNodes();
+
+		Integer byteActionCounter = 0;
+		for (int i = 0; i < editNodesWithByte.size(); i++) {
+			byteActionCounter += editNodesWithByte.get(i).getActivityIndex();
+			WikiEditNetworkNode node = editNodesWithByte.get(i);
+			System.out.println(node.getUserName());
+			System.out.println(node.getRelationOfRevisorAndRevised());
+		}
+		ExportToVizTool vizExporterByte = new ExportToVizTool(editNodesWithByte);
+		vizExporterByte.exportToGraphMlFormate(new File("C:/Users/admin/Desktop/testByte.graphml"));
+		System.out.println(byteActionCounter);
+
+		/* FINISH */
 		printFinish();
 	}
 
@@ -64,7 +77,6 @@ public class CH_TaskRunner3 {
 		System.out.println("Programm has finished!!!");
 		System.out.println("Feel free to close all open windows and/or explore the results.");
 	}
-
 
 	/**
 	 * Cleans the location of the result-dir.

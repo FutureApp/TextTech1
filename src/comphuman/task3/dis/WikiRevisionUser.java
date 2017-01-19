@@ -7,14 +7,14 @@ public class WikiRevisionUser {
 	Integer negativeProcesses = 0;
 	Integer neutralProcess = 0;
 	Integer postitivProcesses = 0;
-	String type;
+	String userRole;
 	ArrayList<String> interactedOn = new ArrayList<>();
 
 	String username;
 
-	public WikiRevisionUser(String type, String username) {
+	public WikiRevisionUser(String userRole, String username) {
 		super();
-		this.type = type;
+		this.userRole = userRole;
 		this.username = username;
 	}
 
