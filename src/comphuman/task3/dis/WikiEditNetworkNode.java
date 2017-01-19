@@ -36,6 +36,7 @@ public class WikiEditNetworkNode {
 		this.nodeHigh 		= revisorFor.size();
 		this.nodeWeight     = revisedBy.size();
 		this.nodeRatio 		= calcNodeRatio(this.nodeHigh, this.nodeWeight);
+		this.relationOfRevisorAndRevised = (double)revisorFor.size()/(double)revisedBy.size();
 	}
 
 

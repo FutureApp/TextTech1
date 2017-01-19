@@ -142,13 +142,13 @@ public class WikiRevisionPageAnalyzerSimple {
 	}
 
 	private void addRevision(String activeUser, Integer curActionValue, WikiRevisionUser revision) {
-		if (curActionValue < 0) {
+		if (curActionValue < 0)        {
 			revision.addNegativeProcess(curActionValue);
 			negativInteraction += curActionValue;
 		} else if (curActionValue > 0) {
 			revision.addPositiveProcess(curActionValue);
 			positivInteraction += curActionValue;
-		} else if (curActionValue == 0) {
+		} else if (curActionValue == 0){
 			revision.addNeutralProcess(curActionValue);
 			neutralInteraction += curActionValue;
 		}

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.apache.commons.io.FileUtils;
+import org.graphstream.util.time.ISODateComponent.EpochComponent;
 import org.jsoup.nodes.Document;
 
 import comphuman.task2.distanceReading.newOne.WikiArticle;
@@ -40,8 +41,15 @@ public class CH_TaskRunner3 {
 		Integer actionCounter = 0;
 		for (int i = 0; i < editNodes.size(); i++) {
 		actionCounter+= editNodes.get(i).getActivityIndex();
+		WikiEditNetworkNode node = editNodes.get(i);
+		System.out.println(node.getUserName());
+		System.out.println(node.getRelationOfRevisorAndRevised());
 		}
+		ExportToVizTool vizExporter = new ExportToVizTool(editNodes);
+		vizExporter.exportToGraphMlFormate(new File("C:/Users/admin/Desktop/test.graphml"));
 		System.out.println(actionCounter);
+
+		
 		
 		
 		
