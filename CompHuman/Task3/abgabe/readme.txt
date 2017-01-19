@@ -3,7 +3,7 @@ java -jar <name of jar>.jar <URL to wiki-article>
 
 ___
 Programmaufruf(Beispiel):
-java -jar CHTask2.jar https://de.wikipedia.org/wiki/Lindentunnel
+java -jar CHTask3.jar https://de.wikipedia.org/wiki/Lindentunnel
 
 ____
 Struktur des Ergebnissordners:
@@ -50,4 +50,4 @@ Der Entrypoint des Programms ist gegeben durch: comphuman.task2.distanceReading.
 
 ___
 Source-Code:
-Git Release (CHTask2): https://github.com/FutureApp/TextTech1/releases/tag/CHTask2
+Git Release (CHTask3): https://github.com/FutureApp/TextTech1/releases/tag/CHTask3
