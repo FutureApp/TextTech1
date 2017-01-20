@@ -9,6 +9,7 @@ public class WikiRevisionUser {
 	Integer postitivProcesses = 0;
 	String userRole;
 	ArrayList<String> interactedOn = new ArrayList<>();
+	ArrayList<Double> EdgesWight = new ArrayList<>();
 
 	String username;
 
@@ -112,10 +113,13 @@ public class WikiRevisionUser {
 	 */
 	public void addNegativeProcess(Integer value) {
 		Integer valueToPush = 0;
-		if (value < 0)
+		if (value < 0){
 			valueToPush = value * (-1);
-		else
+		}
+		else{
 			valueToPush = value;
+			
+		}
 		negativeProcesses += valueToPush;
 	}
 
@@ -137,5 +141,15 @@ public class WikiRevisionUser {
 	 */
 	public void setRole(String role) {
 		userRole = role;
+	}
+	
+	public ArrayList<Double> getListOfRelations() {
+		return EdgesWight;
+	}
+	public void addEdgeWeight(Integer curActionValue) {
+		EdgesWight.add((double)curActionValue);
+	}
+	public void addEdgeWeight(Double curActionValue) {
+		EdgesWight.add(curActionValue);
 	}
 }

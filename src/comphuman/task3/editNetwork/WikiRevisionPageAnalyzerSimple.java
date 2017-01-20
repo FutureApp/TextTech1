@@ -171,8 +171,11 @@ public class WikiRevisionPageAnalyzerSimple {
 
 	/**
 	 * Adds a user to the revised-list
-	 * @param activeRevisedUserName name of the user, which is currently active.
-	 * @param currentNameOfRevisor name of user, which revised by the given(active) user.
+	 * 
+	 * @param activeRevisedUserName
+	 *            name of the user, which is currently active.
+	 * @param currentNameOfRevisor
+	 *            name of user, which revised by the given(active) user.
 	 */
 	private void addRevised(String activeRevisedUserName, String currentNameOfRevisor) {
 		if (!revisedMap.containsKey(activeRevisedUserName))
@@ -181,19 +184,26 @@ public class WikiRevisionPageAnalyzerSimple {
 	}
 
 	/**
-	 * Adds the action-value to the user. 
-	 * @param activeUser name of current active user.
-	 * @param curActionValue the action-value.
-	 * @param revision The user himself as a wiki-revision-user.
+	 * Adds the action-value to the user.
+	 * 
+	 * @param activeUser
+	 *            name of current active user.
+	 * @param curActionValue
+	 *            the action-value.
+	 * @param revision
+	 *            The user himself as a wiki-revision-user.
 	 */
 	private void addRevision(String activeUser, Integer curActionValue, WikiRevisionUser revision) {
 		if (curActionValue < 0) {
+			revision.addEdgeWeight(curActionValue);
 			revision.addNegativeProcess(curActionValue);
 			negativInteraction += curActionValue;
 		} else if (curActionValue > 0) {
+			revision.addEdgeWeight(curActionValue);
 			revision.addPositiveProcess(curActionValue);
 			positivInteraction += curActionValue;
 		} else if (curActionValue == 0) {
+			revision.addEdgeWeight(0.1d);
 			revision.addNeutralProcess(curActionValue);
 			neutralInteraction += curActionValue;
 		}
