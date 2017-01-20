@@ -25,7 +25,7 @@ public class CH_TaskRunner3 {
 	 * @param args
 	 *            Only args[0] - Link to a german wiki article.
 	 */
-	public static void main(String[] args) {''
+	public static void main(String[] args) {
 		arg = args;
 		validateAmountOfGivenInput();
 		cleanResultDir(resultDir);
