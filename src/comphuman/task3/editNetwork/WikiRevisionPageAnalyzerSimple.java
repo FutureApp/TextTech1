@@ -10,7 +10,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import scala.Array;
 import xgeneral.modules.SystemMessage;
 
 /**
