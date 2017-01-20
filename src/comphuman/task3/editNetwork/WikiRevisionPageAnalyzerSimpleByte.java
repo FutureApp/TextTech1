@@ -30,6 +30,12 @@ public class WikiRevisionPageAnalyzerSimpleByte {
 		this.holder = new HashMap<>();
 	}
 
+	/**
+	 * Method abstracts the users and analyzes the action impact(pos,neg or
+	 * null) of the revision-wiki-page. This analyzes is build on the byte indicator.
+	 * 
+	 * @return Array of an Arrays which contains the map [user,actionValue].
+	 */
 	public List<ReviserItem> startExtractionOfReviserItems() {
 		Element selectedElements = wikiRevisionPage.getElementById(revisionContentHolderID);
 		Elements liElements = selectedElements.select("li");
@@ -39,16 +45,17 @@ public class WikiRevisionPageAnalyzerSimpleByte {
 			String nameOfUser = userNameWiki.select("bdi").text();
 			Elements unknownActionValue = element.select("[class*='mw-plusminus-']");
 			if (unknownActionValue.size() != 1)
+				// failed process.
 				SystemMessage.wMessage("Action for user <%s> is unknown.");
 			else {
+				// normal processing.
 				String bytesChanged = unknownActionValue.get(0).text().replaceAll("[().]", "");
 				Integer bytesAsInteger = Integer.parseInt(bytesChanged);
 				ReviserItem revItem = new ReviserItem(nameOfUser, bytesAsInteger);
 				listOfReviserItems.add(revItem);
 			}
-			System.out.println(nameOfUser);
-			// last element is chronicle the first element..
 		}
+		// last element is chronicle the first element..
 		Collections.reverse(listOfReviserItems);
 		return listOfReviserItems;
 	}
@@ -107,18 +114,6 @@ public class WikiRevisionPageAnalyzerSimpleByte {
 		
 	}
 
-	public void hot() {
-		for (int i = 0; i < listOfReviserItems.size(); i++) {
-			System.out.println(listOfReviserItems.get(i).getNameOfUser());
-		}
-		for (Entry<String, WikiReviserEditNetworkNode> entry : holder.entrySet()) {
-			System.out.printf("<%s> <ReviserFor :%s> <RevisedBy :%s", entry.getKey(),
-					entry.getValue().getReviserListToString(), entry.getValue().getRevisedListToString());
-			System.out.println();
-		}
-
-	}
-
 	public void startCreateWikiNodeRevisor() {
 		list = new ArrayList<>();
 		for (Entry<String, WikiReviserEditNetworkNode> entry : holder.entrySet()) {
@@ -127,7 +122,11 @@ public class WikiRevisionPageAnalyzerSimpleByte {
 		}
 		
 	}
-	public ArrayList<WikiEditNetworkNodeByte> exportWikiNodeRevisor() {
+	/**
+	 * Exports the reviser-nodes.
+	 * @return List which contains the reviser-nodes
+	 */
+	public ArrayList<WikiEditNetworkNodeByte> exportWikiNodeReviser() {
 		return list;
 	}
 }
