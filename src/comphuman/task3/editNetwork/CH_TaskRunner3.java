@@ -44,7 +44,7 @@ public class CH_TaskRunner3 {
 				article.getRevisionsPage());
 		byteAnalyser.startExtractionOfReviserItems();
 		byteAnalyser.startCreationOfWikiEditNetwork();
-		byteAnalyser.startCreateWikiNodeRevisor();
+		byteAnalyser.startCreateWikiNodeReviser();
 		ArrayList<WikiEditNetworkNodeByte> exportWikiNodeRevisor = byteAnalyser.exportWikiNodeReviser();
 		ExportToVizToolByte vizExporter2 = new ExportToVizToolByte(exportWikiNodeRevisor);
 		vizExporter2.exportToGraphMlFormate(new File("C:/Users/admin/Desktop/testbyte.graphml"));

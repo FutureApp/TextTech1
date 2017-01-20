@@ -32,7 +32,8 @@ public class WikiRevisionPageAnalyzerSimpleByte {
 
 	/**
 	 * Method abstracts the users and analyzes the action impact(pos,neg or
-	 * null) of the revision-wiki-page. This analyzes is build on the byte indicator.
+	 * null) of the revision-wiki-page. This analyzes is build on the byte
+	 * indicator.
 	 * 
 	 * @return Array of an Arrays which contains the map [user,actionValue].
 	 */
@@ -64,24 +65,27 @@ public class WikiRevisionPageAnalyzerSimpleByte {
 	 * Creates nodes for the wiki-edit-network-graph.
 	 */
 	public void startCreationOfWikiEditNetwork() {
-		System.out.println("----");
 
 		for (int i = 0; i < listOfReviserItems.size(); i++) {
 			ReviserItem item = listOfReviserItems.get(i);
 			Integer actionValue = item.getBytesAsInteger();
-			System.out.println(item.getNameOfUser());
 
+			// Check if the elem is the first one -> author.
 			if (i == 0) {
 				WikiReviserEditNetworkNode node = new WikiReviserEditNetworkNode(item.getNameOfUser(),
 						XSpecialIndicator.roleAuthor);
 				WikiEditNetworkEdge reviserEdge = new WikiEditNetworkEdge(item.getNameOfUser(), item.getNameOfUser(),
 						actionValue);
 				node.addReviserEdge(reviserEdge);
+				// push item the node-holder.
 				holder.put(item.getNameOfUser(), node);
 			} else {
+				// Processes if elem is not first in list.
 				WikiReviserEditNetworkNode node;
 				WikiEditNetworkEdge reviserEdge;
 
+				// Creates a new entry if key(username) dosen't exist.
+				// All revisions are made for the prev-user (i-1).
 				if (!holder.containsKey(item.getNameOfUser())) {
 					node = new WikiReviserEditNetworkNode(item.getNameOfUser(), XSpecialIndicator.roleContributor);
 					reviserEdge = new WikiEditNetworkEdge(item.getNameOfUser(),
@@ -92,38 +96,47 @@ public class WikiRevisionPageAnalyzerSimpleByte {
 					node = holder.get(item.getNameOfUser());
 					reviserEdge = new WikiEditNetworkEdge(item.getNameOfUser(),
 							listOfReviserItems.get(i - 1).getNameOfUser(), actionValue);
+					// Adds the specific edge.
 					node.addReviserEdge(reviserEdge);
 				}
+				// Pushes the user(key) and the user-info to the node-holder Map
 				WikiEditNetworkEdge revisedByEdge = new WikiEditNetworkEdge(listOfReviserItems.get(i).getNameOfUser(),
-						listOfReviserItems.get(i-1).getNameOfUser(), actionValue);
-				WikiReviserEditNetworkNode pastNode = holder.get(listOfReviserItems.get(i-1).getNameOfUser());
+						listOfReviserItems.get(i - 1).getNameOfUser(), actionValue);
+				WikiReviserEditNetworkNode pastNode = holder.get(listOfReviserItems.get(i - 1).getNameOfUser());
+				// Adds the specific edge.
 				pastNode.addRevisedEdge(revisedByEdge);
 			}
-			
-			if(i== listOfReviserItems.size()-1){
+
+			// Last step if the execution reaches the last element in list.
+			if (i == listOfReviserItems.size() - 1) {
 				WikiReviserEditNetworkNode node = holder.get(listOfReviserItems.get(i).getNameOfUser());
 				System.out.println(node.getRole());
-				if(node.getRole().equals(XSpecialIndicator.roleAuthor)){
+				// Last-user = first user ? Tag the user with role 'both'
+				if (node.getRole().equals(XSpecialIndicator.roleAuthor)) {
 					node.setRole(XSpecialIndicator.roleBoth);
-				}
-				else{
+				} else {
+					// Tags the user as 'last'
 					node.setRole(XSpecialIndicator.roleLastContributor);
 				}
 			}
 		}
-		
 	}
 
-	public void startCreateWikiNodeRevisor() {
+	/**
+	 * Starts to create the nodes for all reviser.
+	 */
+	public void startCreateWikiNodeReviser() {
 		list = new ArrayList<>();
 		for (Entry<String, WikiReviserEditNetworkNode> entry : holder.entrySet()) {
 			WikiEditNetworkNodeByte realNode = new WikiEditNetworkNodeByte(entry.getKey(), entry.getValue());
 			list.add(realNode);
 		}
-		
+
 	}
+
 	/**
 	 * Exports the reviser-nodes.
+	 * 
 	 * @return List which contains the reviser-nodes
 	 */
 	public ArrayList<WikiEditNetworkNodeByte> exportWikiNodeReviser() {

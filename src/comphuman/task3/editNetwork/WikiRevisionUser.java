@@ -9,7 +9,7 @@ public class WikiRevisionUser {
 	Integer postitivProcesses = 0;
 	String userRole;
 	ArrayList<String> interactedOn = new ArrayList<>();
-	ArrayList<Double> EdgesWight = new ArrayList<>();
+	ArrayList<Double> EdgesWeight = new ArrayList<>();
 
 	String username;
 
@@ -143,13 +143,25 @@ public class WikiRevisionUser {
 		userRole = role;
 	}
 	
+	/**
+	 * Returns the list which contains the relation between two user. 
+	 * @return
+	 */
 	public ArrayList<Double> getListOfRelations() {
-		return EdgesWight;
+		return EdgesWeight;
 	}
+	/**
+	 * Adds an specific edge-weight.
+	 * @param curActionValue Value of Action (Integer)(mostly: wiki-byte-representation)
+	 */
 	public void addEdgeWeight(Integer curActionValue) {
-		EdgesWight.add((double)curActionValue);
+		EdgesWeight.add((double)curActionValue);
 	}
+	/**
+	 * Adds an specific edge-weight.
+	 * @param curActionValue Value of Action (Double)(mostly: wiki-byte-representation)
+	 */
 	public void addEdgeWeight(Double curActionValue) {
-		EdgesWight.add(curActionValue);
+		EdgesWeight.add(curActionValue);
 	}
 }
