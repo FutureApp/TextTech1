@@ -139,7 +139,6 @@ public class ExportToVizTool {
 				// A node itselfs
 				Element exportNode = doc.createElement("node");
 				exportNode.setAttribute("id", id.replace(" ", "_").replaceAll("[-+!^,]", ""));
-				exportNode.setAttribute("label", label);
 				graphElement.appendChild(exportNode);
 
 				/* Node fill-color. Depends on netAdded/Activity-Ratio */
@@ -229,7 +228,7 @@ public class ExportToVizTool {
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(doc);
 			StreamResult result = new StreamResult(locationToSave);
-			StreamResult result2 = new StreamResult(new File("C:/Users/admin/Desktop/test.xml"));
+			StreamResult result2 = new StreamResult(CH_TaskRunner3.resultDir+"/"+CH_TaskRunner3.articleName+"_SAnalysis.xml");
 			transformer.transform(source, result2);
 
 			transformer.transform(source, result);

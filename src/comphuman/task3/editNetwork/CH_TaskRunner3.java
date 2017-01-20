@@ -18,6 +18,7 @@ public class CH_TaskRunner3 {
 	static String resultDir = "CompHuman/result";
 	static String locationOfArticleNodes = "/discussion/nodeInformations.txt";
 	static String locationOfArticleVis = "/discussion/graph.png";
+	static String articleName;
 
 	/**
 	 * Entry-point of the application.
@@ -30,13 +31,16 @@ public class CH_TaskRunner3 {
 		validateAmountOfGivenInput();
 		cleanResultDir(resultDir);
 		WikiArticle article = new WikiArticle(arg[0]);
+		articleName = article.getArticleName();
 		WikiRevisionPageAnalyzerSimple revisionAnalyzer = new WikiRevisionPageAnalyzerSimple(
 				article.getRevisionsPage());
 		revisionAnalyzer.startAnalysis();
 		revisionAnalyzer.generateMapsForCalcs();
 		ArrayList<WikiEditNetworkNode> editNodes = revisionAnalyzer.generateEditNodes();
 		ExportToVizTool vizExporter = new ExportToVizTool(editNodes);
-		vizExporter.exportToGraphMlFormate(new File("C:/Users/admin/Desktop/test.graphml"));
+		File saveFileSimple = new File(resultDir+"/"+article.getArticleName()+"_SAnalysis.graphml");
+		if(saveFileSimple.exists()) saveFileSimple.delete();
+		vizExporter.exportToGraphMlFormate(saveFileSimple);
 		
 		
 		/* BYTE Section */
@@ -45,9 +49,14 @@ public class CH_TaskRunner3 {
 		byteAnalyser.startExtractionOfReviserItems();
 		byteAnalyser.startCreationOfWikiEditNetwork();
 		byteAnalyser.startCreateWikiNodeReviser();
+		
 		ArrayList<WikiEditNetworkNodeByte> exportWikiNodeRevisor = byteAnalyser.exportWikiNodeReviser();
-		ExportToVizToolByte vizExporter2 = new ExportToVizToolByte(exportWikiNodeRevisor);
-		vizExporter2.exportToGraphMlFormate(new File("C:/Users/admin/Desktop/testbyte.graphml"));
+		ExportToVizToolByte vizExporterByte = new ExportToVizToolByte(exportWikiNodeRevisor);
+		
+		File saveFileByte = new File(resultDir+"/"+article.getArticleName()+"_ByteAnalysis.graphml");
+		if(saveFileByte.exists()) saveFileByte.delete();
+		
+		vizExporterByte.exportToGraphMlFormate(saveFileByte);
 		
 		
 		/* FINISH */
