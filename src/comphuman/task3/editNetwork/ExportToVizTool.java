@@ -211,9 +211,12 @@ public class ExportToVizTool {
 					path.setAttribute("source", id.replace(" ", "_").replaceAll("[-+!^,]", ""));
 					path.setAttribute("target", userNameOfGetRevisor.replace(" ", "_").replaceAll("[-+!^,]", ""));
 					graphElement.appendChild(path);
+
+					// Adds the edge-weight. yEd is not supporting 0.1 values.
+					// yEd will set 0.1 as 1.0
 					Element defaulEdgeStyle = doc.createElement("data");
 					defaulEdgeStyle.setAttribute("key", "path");
-					defaulEdgeStyle.setTextContent(wikiEditNetworkNode.getEdgeWights().get(i) + "");
+					defaulEdgeStyle.setTextContent(wikiEditNetworkNode.getEdgeWeights().get(i) + "");
 					path.appendChild(defaulEdgeStyle);
 				}
 			}

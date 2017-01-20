@@ -24,7 +24,7 @@ public class WikiEditNetworkNode {
 	private ArrayList<Double> edgeWights;
 
 	/**
-	 * Creates a wiki-edit-network-node
+	 * Inits a wiki-edit-network-node.
 	 * 
 	 * @param wikiRevisionUser
 	 *            user, which should be added to the edit-network.
@@ -228,7 +228,11 @@ public class WikiEditNetworkNode {
 		return revisedBy;
 	}
 
-	public ArrayList<Double> getEdgeWights() {
+	/**
+	 * Returns a list of Edge-Weights.
+	 * @return Returns the list of edge-weights.
+	 */
+	public ArrayList<Double> getEdgeWeights() {
 		return edgeWights;
 	}
 	

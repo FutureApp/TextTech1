@@ -66,9 +66,11 @@ public class WikiRevisionPageAnalyzerSimple {
 			String userName = userNameWiki.select("bdi").text();
 			Elements unknownActionValue = element.select("[class*='mw-plusminus-']");
 			Integer actionValue = 0;
+			// Error-Message if something unpredictable is happening
 			if (unknownActionValue.size() != 1)
 				SystemMessage.wMessage("Action for user <%s> is unknown.");
 			else
+				// Normal execution
 				actionValue = detActionValue(unknownActionValue);
 			ArrayList<String> realUserMap = new ArrayList<>();
 			realUserMap.add(userName);
@@ -184,7 +186,7 @@ public class WikiRevisionPageAnalyzerSimple {
 	}
 
 	/**
-	 * Adds the action-value to the user.
+	 * Adds the action-value to the user. The edgeWeight will be set,too.
 	 * 
 	 * @param activeUser
 	 *            name of current active user.

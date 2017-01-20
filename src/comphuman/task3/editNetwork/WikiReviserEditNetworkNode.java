@@ -10,6 +10,11 @@ public class WikiReviserEditNetworkNode {
 	private String nameOfUser;
 	private String role;
 
+	/**
+	 * 
+	 * @param activeUser
+	 * @param userRole
+	 */
 	public WikiReviserEditNetworkNode(String activeUser, String userRole) {
 		super();
 		this.nameOfUser = activeUser;

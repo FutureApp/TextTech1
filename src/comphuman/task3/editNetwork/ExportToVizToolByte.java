@@ -121,13 +121,13 @@ public class ExportToVizToolByte {
 			rootElement.appendChild(graphElement);
 
 			/*
-			 * NODE Sections
+			 * NODE Section
 			 */
 			for (WikiEditNetworkNodeByte wikiEditNetworkNode : setOfNodesForExport) {
 				String id = wikiEditNetworkNode.getName();
 				String label = wikiEditNetworkNode.getName();
 
-				// A node itselfs
+				// A node itself
 				Element exportNode = doc.createElement("node");
 				exportNode.setAttribute("id", id.replace(" ", "_").replaceAll("[-+!^,]", ""));
 				exportNode.setAttribute("label", label);
@@ -175,8 +175,8 @@ public class ExportToVizToolByte {
 				// Node Height
 				Element dataKeyHeigh = doc.createElement("data");
 				dataKeyHeigh.setAttribute("key", "nodeKeyHeigh");
-				System.out.println(label +" ---- "+wikiEditNetworkNode.getNodeHigh());
-				dataKeyHeigh.setTextContent(wikiEditNetworkNode.getNodeHigh()/(double) 10+ "");
+				System.out.println(label +" ---- "+wikiEditNetworkNode.getNodeHeight());
+				dataKeyHeigh.setTextContent(wikiEditNetworkNode.getNodeHeight()/(double) 10+ "");
 
 				// Node Weight
 				Element dataKeyWeight = doc.createElement("data");
@@ -196,6 +196,7 @@ public class ExportToVizToolByte {
 				WikiEditNetworkNodeByte wikiEditNetworkNode = setOfNodesForExport.get(i);
 				String id = wikiEditNetworkNode.getName();
 				ArrayList<String> revisorFor = wikiEditNetworkNode.getRevisorFor();
+				
 				for (int j = 0; j < revisorFor.size(); j++) {
 					String userNameOfGetRevisor = revisorFor.get(j);
 					Element path = doc.createElement("edge");
@@ -204,6 +205,7 @@ public class ExportToVizToolByte {
 					path.setAttribute("target", userNameOfGetRevisor.replace(" ", "_").replaceAll("[-+!^,]", ""));
 					graphElement.appendChild(path);
 
+					// Adds the edge-weight
 					Element defaulEdgeStyle = doc.createElement("data");
 					defaulEdgeStyle.setAttribute("key", "path");
 					defaulEdgeStyle.setTextContent(wikiEditNetworkNode.getEdgeWeight(j)+"");
