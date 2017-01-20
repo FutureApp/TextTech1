@@ -18,16 +18,19 @@ public class WikiRevisionUser {
 		this.userRole = userRole;
 		this.username = username;
 	}
-/**
- * Returns the user-name.
- * @return name of user.
- */
+
+	/**
+	 * Returns the user-name.
+	 * 
+	 * @return name of user.
+	 */
 	public String getUsername() {
 		return username;
 	}
 
 	/**
 	 * Returns the number of negative- processes caused by the user himself.
+	 * 
 	 * @return Number of negative-processes.
 	 */
 	public Integer getNegativeProcesses() {
@@ -36,6 +39,7 @@ public class WikiRevisionUser {
 
 	/**
 	 * Returns the number of neutral- processes caused by the user himself.
+	 * 
 	 * @return Number of neutral-processes.
 	 */
 	public Integer getNeutralProcess() {
@@ -44,7 +48,9 @@ public class WikiRevisionUser {
 
 	/**
 	 * Sets the number of negative-processes.
-	 * @param negativeProcesses Number of negative-processes.
+	 * 
+	 * @param negativeProcesses
+	 *            Number of negative-processes.
 	 */
 	public void setNegativeProcesses(Integer negativeProcesses) {
 		this.negativeProcesses = negativeProcesses;
@@ -52,6 +58,7 @@ public class WikiRevisionUser {
 
 	/**
 	 * Returns the number of positive- processes caused by the user himself.
+	 * 
 	 * @return Number of positive-processes.
 	 */
 	public Integer getPostitivProcesses() {
@@ -60,7 +67,9 @@ public class WikiRevisionUser {
 
 	/**
 	 * Sets the number of positive-processes.
-	 * @param negativeProcesses Number of postivie-processes.
+	 * 
+	 * @param negativeProcesses
+	 *            Number of postivie-processes.
 	 */
 	public void setPostitivProcesses(Integer postitivProcesses) {
 		this.postitivProcesses = postitivProcesses;
@@ -68,14 +77,18 @@ public class WikiRevisionUser {
 
 	/**
 	 * Returns a list of all revised-users.
+	 * 
 	 * @return List of revised users.
 	 */
 	public ArrayList<String> getInteractedOn() {
 		return interactedOn;
 	}
+
 	/**
 	 * Sets the number of negative-processes.
-	 * @param negativeProcesses Number of negative-processes.
+	 * 
+	 * @param negativeProcesses
+	 *            Number of negative-processes.
 	 */
 	public void setInteractedOn(ArrayList<String> interactedOn) {
 		this.interactedOn = interactedOn;
@@ -95,7 +108,9 @@ public class WikiRevisionUser {
 
 	/**
 	 * Add a user-name to the list of revised-users.
-	 * @param user Name of user who get revised by the given user.
+	 * 
+	 * @param user
+	 *            Name of user who get revised by the given user.
 	 */
 	public void addRevisedUser(String user) {
 		if (!interactedOn.contains(user))
@@ -113,12 +128,11 @@ public class WikiRevisionUser {
 	 */
 	public void addNegativeProcess(Integer value) {
 		Integer valueToPush = 0;
-		if (value < 0){
+		if (value < 0) {
 			valueToPush = value * (-1);
-		}
-		else{
+		} else {
 			valueToPush = value;
-			
+
 		}
 		negativeProcesses += valueToPush;
 	}
@@ -137,29 +151,38 @@ public class WikiRevisionUser {
 
 	/**
 	 * Sets the role of the given user. Most used values: aut,cur,both
-	 * @param role aut|cur|both
+	 * 
+	 * @param role
+	 *            aut|cur|both
 	 */
 	public void setRole(String role) {
 		userRole = role;
 	}
-	
+
 	/**
-	 * Returns the list which contains the relation between two user. 
+	 * Returns the list which contains the relation between two user.
+	 * 
 	 * @return
 	 */
 	public ArrayList<Double> getListOfRelations() {
 		return EdgesWeight;
 	}
+
 	/**
 	 * Adds an specific edge-weight.
-	 * @param curActionValue Value of Action (Integer)(mostly: wiki-byte-representation)
+	 * 
+	 * @param curActionValue
+	 *            Value of Action (Integer)(mostly: wiki-byte-representation)
 	 */
 	public void addEdgeWeight(Integer curActionValue) {
-		EdgesWeight.add((double)curActionValue);
+		EdgesWeight.add((double) curActionValue);
 	}
+
 	/**
 	 * Adds an specific edge-weight.
-	 * @param curActionValue Value of Action (Double)(mostly: wiki-byte-representation)
+	 * 
+	 * @param curActionValue
+	 *            Value of Action (Double)(mostly: wiki-byte-representation)
 	 */
 	public void addEdgeWeight(Double curActionValue) {
 		EdgesWeight.add(curActionValue);
