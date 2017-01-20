@@ -192,20 +192,21 @@ public class ExportToVizToolByte {
 			}
 
 			/* Edge Section */
-			for (WikiEditNetworkNodeByte wikiEditNetworkNode : setOfNodesForExport) {
+			for (int i = 0; i < setOfNodesForExport.size(); i++) {
+				WikiEditNetworkNodeByte wikiEditNetworkNode = setOfNodesForExport.get(i);
 				String id = wikiEditNetworkNode.getName();
 				ArrayList<String> revisorFor = wikiEditNetworkNode.getRevisorFor();
-
-				Element defaulEdgeStyle = doc.createElement("data");
-				defaulEdgeStyle.setAttribute("key", "path");
-				defaulEdgeStyle.setTextContent("1.0");
-
-				for (String userNameOfGetRevisor : revisorFor) {
+				for (int j = 0; j < revisorFor.size(); j++) {
+					String userNameOfGetRevisor = revisorFor.get(j);
 					Element path = doc.createElement("edge");
 					path.setAttribute("id", UUID.randomUUID() + "");
 					path.setAttribute("source", id.replace(" ", "_").replaceAll("[-+!^,]", ""));
 					path.setAttribute("target", userNameOfGetRevisor.replace(" ", "_").replaceAll("[-+!^,]", ""));
 					graphElement.appendChild(path);
+
+					Element defaulEdgeStyle = doc.createElement("data");
+					defaulEdgeStyle.setAttribute("key", "path");
+					defaulEdgeStyle.setTextContent(wikiEditNetworkNode.getEdgeWeight(j)+"");
 					path.appendChild(defaulEdgeStyle);
 				}
 			}

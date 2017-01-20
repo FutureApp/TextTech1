@@ -21,6 +21,7 @@ public class WikiEditNetworkNode {
 
 	ArrayList<String> revisorFor;
 	ArrayList<String> revisedBy;
+	private ArrayList<Double> edgeWights;
 
 	/**
 	 * Creates a wiki-edit-network-node
@@ -45,6 +46,7 @@ public class WikiEditNetworkNode {
 		this.nodeHigh = revisorFor.size();
 		this.nodeWeight = checkEmptyElementAndReturnSize(revisedBy);
 		this.nodeRatio = calcNodeRatio(this.nodeHigh, this.nodeWeight);
+		this.edgeWights = wikiRevisionUser.getListOfRelations();
 		this.relationOfRevisorAndRevised = (double) revisorFor.size() / (double) revisedBy.size();
 	}
 
@@ -225,4 +227,9 @@ public class WikiEditNetworkNode {
 	public ArrayList<String> getRevisedBy() {
 		return revisedBy;
 	}
+
+	public ArrayList<Double> getEdgeWights() {
+		return edgeWights;
+	}
+	
 }

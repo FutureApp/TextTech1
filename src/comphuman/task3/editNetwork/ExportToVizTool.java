@@ -24,7 +24,7 @@ public class ExportToVizTool {
 	DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder docBuilder;
 	Document doc;
-	String KEYWORD_WEIGHT = "weight";
+	String KEYWORD_WEIGHT = "Edgeweight";
 	private ArrayList<WikiEditNetworkNode> setOfNodesForExport;
 
 	/**
@@ -74,7 +74,6 @@ public class ExportToVizTool {
 			keyNodeColor.setAttribute("attr.name", "color");
 			keyNodeColor.setAttribute("attr.type", "string");
 			rootElement.appendChild(keyNodeColor);
-			
 
 			Element keyNodeLabel = doc.createElement("key");
 			keyNodeLabel.setAttribute("id", "nodeKeyLabel");
@@ -93,7 +92,7 @@ public class ExportToVizTool {
 			Element keyNodeWeight = doc.createElement("key");
 			keyNodeWeight.setAttribute("id", "nodeKeyWeight");
 			keyNodeWeight.setAttribute("for", "node");
-			keyNodeWeight.setAttribute("attr.name", KEYWORD_WEIGHT);
+			keyNodeWeight.setAttribute("attr.name", "nodeKeyWeightt");
 			keyNodeWeight.setAttribute("attr.type", "double");
 			rootElement.appendChild(keyNodeWeight);
 
@@ -103,14 +102,14 @@ public class ExportToVizTool {
 			keyNodeBorder.setAttribute("attr.name", "border");
 			keyNodeBorder.setAttribute("attr.type", "string");
 			rootElement.appendChild(keyNodeBorder);
-			
+
 			Element keyNodeBorderWeight = doc.createElement("key");
 			keyNodeBorderWeight.setAttribute("id", "nodeKeyBorderWeight");
 			keyNodeBorderWeight.setAttribute("for", "node");
 			keyNodeBorderWeight.setAttribute("attr.name", "borderweight");
 			keyNodeBorderWeight.setAttribute("attr.type", "double");
 			rootElement.appendChild(keyNodeBorderWeight);
-			
+
 			Element keyNodeTextColor = doc.createElement("key");
 			keyNodeTextColor.setAttribute("id", "nodeKeyTextColor");
 			keyNodeTextColor.setAttribute("for", "node");
@@ -148,14 +147,14 @@ public class ExportToVizTool {
 				dataKeyColor.setAttribute("key", "nodeKeyColor");
 				dataKeyColor.setTextContent(
 						CalcColors.clacInnerGrey(wikiEditNetworkNode.getNetAddedRatio()).toString().replace("0x", "#"));
-				
-				if(wikiEditNetworkNode.getNetAddedRatio() < -0.5d){
+
+				if (wikiEditNetworkNode.getNetAddedRatio() < -0.5d) {
 					Element dataKeyTextColor = doc.createElement("data");
 					dataKeyTextColor.setAttribute("key", "nodeKeyTextColor");
 					dataKeyTextColor.setTextContent(Color.LIGHTGOLDENRODYELLOW.toString().replace("0x", "#"));
 					exportNode.appendChild(dataKeyTextColor);
 				}
-				
+
 				/*
 				 * Border-color. LIGHTPINK -> Author, Black -> 'normal user',
 				 * LIGHTSKYBLUE -> Last user( last input in revision-his. If the
@@ -167,7 +166,7 @@ public class ExportToVizTool {
 					dataKeyBorder.setTextContent(Color.LIGHTPINK.toString().replace("0x", "#"));
 				} else if (wikiEditNetworkNode.userRole.equals("cur")) {
 					dataKeyBorder.setTextContent(Color.BLACK.toString().replace("0x", "#"));
-					
+
 				} else if (wikiEditNetworkNode.userRole.equals("last")) {
 					dataKeyBorder.setTextContent(Color.LIGHTSKYBLUE.toString().replace("0x", "#"));
 				} else if (wikiEditNetworkNode.userRole.equals("both")) {
@@ -203,19 +202,18 @@ public class ExportToVizTool {
 			/* Edge Section */
 			for (WikiEditNetworkNode wikiEditNetworkNode : setOfNodesForExport) {
 				String id = wikiEditNetworkNode.getUserName();
-
 				ArrayList<String> revisorFor = wikiEditNetworkNode.getRevisorFor();
 
-				Element defaulEdgeStyle = doc.createElement("data");
-				defaulEdgeStyle.setAttribute("key", "path");
-				defaulEdgeStyle.setTextContent("1.0");
-
-				for (String userNameOfGetRevisor : revisorFor) {
+				for (int i = 0; i < revisorFor.size(); i++) {
+					String userNameOfGetRevisor = revisorFor.get(i);
 					Element path = doc.createElement("edge");
 					path.setAttribute("id", UUID.randomUUID() + "");
 					path.setAttribute("source", id.replace(" ", "_").replaceAll("[-+!^,]", ""));
 					path.setAttribute("target", userNameOfGetRevisor.replace(" ", "_").replaceAll("[-+!^,]", ""));
 					graphElement.appendChild(path);
+					Element defaulEdgeStyle = doc.createElement("data");
+					defaulEdgeStyle.setAttribute("key", "path");
+					defaulEdgeStyle.setTextContent(wikiEditNetworkNode.getEdgeWights().get(i) + "");
 					path.appendChild(defaulEdgeStyle);
 				}
 			}

@@ -5,6 +5,7 @@ import java.util.List;
 
 public class WikiEditNetworkNodeByte {
 	
+	private WikiReviserEditNetworkNode orginalNode;
 	private String role;
 	private String name;
 	private Double posActions ;
@@ -26,6 +27,7 @@ public class WikiEditNetworkNodeByte {
 
 	public WikiEditNetworkNodeByte(String nameOfNode ,WikiReviserEditNetworkNode wikiReviserEditNetworkNode) {
 		super();
+		this.orginalNode = wikiReviserEditNetworkNode;
 		this.name     = nameOfNode;
 		this.role 	  = wikiReviserEditNetworkNode.getRole();
 						calcOutGoingActions(wikiReviserEditNetworkNode);
@@ -107,6 +109,13 @@ public class WikiEditNetworkNodeByte {
 		posActions=valuePost;
 		negActions=valueNeg;
 		neuActions=valueNeut;
+		
+	}
+	
+	public Double getEdgeWeight(Integer index){
+		WikiEditNetworkEdge element = orginalNode.getReviserList().get(index);
+		Double value=(double)element.getActionValue();
+		return value;
 		
 	}
 
