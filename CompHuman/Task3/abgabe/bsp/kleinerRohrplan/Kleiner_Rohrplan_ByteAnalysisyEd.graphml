@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <!--Created by yEd 3.16.2.1-->
+  <key for="port" id="d0" yfiles.type="portgraphics"/>
+  <key for="port" id="d1" yfiles.type="portgeometry"/>
+  <key for="port" id="d2" yfiles.type="portuserdata"/>
+  <key attr.name="color" attr.type="string" for="node" id="d3"/>
+  <key attr.name="label" attr.type="string" for="node" id="d4"/>
+  <key attr.name="heigh" attr.type="double" for="node" id="d5"/>
+  <key attr.name="weight" attr.type="double" for="node" id="d6"/>
+  <key attr.name="border" attr.type="string" for="node" id="d7"/>
+  <key attr.name="borderweight" attr.type="double" for="node" id="d8"/>
+  <key attr.name="txtColor" attr.type="string" for="node" id="d9"/>
+  <key attr.name="url" attr.type="string" for="node" id="d10"/>
+  <key attr.name="description" attr.type="string" for="node" id="d11"/>
+  <key for="node" id="d12" yfiles.type="nodegraphics"/>
+  <key for="graphml" id="d13" yfiles.type="resources"/>
+  <key attr.name="weight" attr.type="double" for="edge" id="d14"/>
+  <key attr.name="url" attr.type="string" for="edge" id="d15"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d16"/>
+  <key for="edge" id="d17" yfiles.type="edgegraphics"/>
+  <graph edgedefault="directed" id="G">
+    <node id="n0">
+      <data key="d3"><![CDATA[#000000ff]]></data>
+      <data key="d4"><![CDATA[Zwobot]]></data>
+      <data key="d5">0.9</data>
+      <data key="d6">28.4</data>
+      <data key="d7"/>
+      <data key="d9"><![CDATA[#fafad2ff]]></data>
+      <data key="d11"/>
+      <data key="d12">
+        <y:ShapeNode>
+          <y:Geometry height="1.0" width="28.0" x="7.67578125" y="41.75"/>
+          <y:Fill color="#000000" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FAFAD2" verticalTextPosition="bottom" visible="true" width="43.3515625" x="-7.67578125" y="-8.8505859375">Zwobot<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n1">
+      <data key="d3"><![CDATA[#ffffffff]]></data>
+      <data key="d4"><![CDATA[Brill58]]></data>
+      <data key="d5">4.5</data>
+      <data key="d6">0.8</data>
+      <data key="d7"/>
+      <data key="d9"/>
+      <data key="d11"/>
+      <data key="d12">
+        <y:ShapeNode>
+          <y:Geometry height="4.0" width="1.0" x="266.5498046875" y="36.798809523809524"/>
+          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="37.345703125" x="-18.1728515625" y="-7.3505859375">Brill58<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n2">
+      <data key="d3"><![CDATA[#ffffffff]]></data>
+      <data key="d4"><![CDATA[Atamari]]></data>
+      <data key="d5">28.4</data>
+      <data key="d6">2.4</data>
+      <data key="d7"/>
+      <data key="d9"/>
+      <data key="d11"/>
+      <data key="d12">
+        <y:ShapeNode>
+          <y:Geometry height="28.0" width="2.0" x="347.40234375" y="0.0"/>
+          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="45.34375" x="-21.671875" y="4.6494140625">Atamari<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n3">
+      <data key="d3"><![CDATA[#fafafaff]]></data>
+      <data key="d4"><![CDATA[Erell]]></data>
+      <data key="d5">123.2</data>
+      <data key="d6">7.9</data>
+      <data key="d7"><![CDATA[#ffb6c1ff]]></data>
+      <data key="d9"/>
+      <data key="d11"/>
+      <data key="d12">
+        <y:ShapeNode>
+          <y:Geometry height="123.0" width="7.0" x="73.3515625" y="22.0"/>
+          <y:Fill color="#FAFAFA" transparent="false"/>
+          <y:BorderStyle color="#FFB6C1" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.005859375" x="-10.5029296875" y="52.1494140625">Erell<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n4">
+      <data key="d3"><![CDATA[#ffffffff]]></data>
+      <data key="d4"><![CDATA[Axt]]></data>
+      <data key="d5">0.9</data>
+      <data key="d6">2.2</data>
+      <data key="d7"/>
+      <data key="d9"/>
+      <data key="d11"/>
+      <data key="d12">
+        <y:ShapeNode>
+          <y:Geometry height="1.0" width="2.0" x="120.0205078125" y="107.35079365079365"/>
+          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="21.337890625" x="-9.6689453125" y="-8.8505859375">Axt<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n5">
+      <data key="d3"><![CDATA[#ffffffff]]></data>
+      <data key="d4"><![CDATA[Definitiv]]></data>
+      <data key="d5">6.7</data>
+      <data key="d6">4.4</data>
+      <data key="d7"/>
+      <data key="d9"/>
+      <data key="d11"/>
+      <data key="d12">
+        <y:ShapeNode>
+          <y:Geometry height="6.0" width="4.0" x="183.029296875" y="82.0"/>
+          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="46.6796875" x="-21.33984375" y="-6.3505859375">Definitiv<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n6">
+      <data key="d3"><![CDATA[#808080ff]]></data>
+      <data key="d4"><![CDATA[Olaf Studt]]></data>
+      <data key="d5">4.8</data>
+      <data key="d6">8.3</data>
+      <data key="d7"/>
+      <data key="d9"/>
+      <data key="d11"/>
+      <data key="d12">
+        <y:ShapeNode>
+          <y:Geometry height="4.0" width="8.0" x="263.0498046875" y="85.5"/>
+          <y:Fill color="#808080" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="57.361328125" x="-24.6806640625" y="-7.3505859375">Olaf Studt<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <edge id="e0" source="n0" target="n3">
+      <data key="d14">-9.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="14.0" sy="0.25" tx="-3.5" ty="-41.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e1" source="n1" target="n3">
+      <data key="d14">45.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="-0.5" sy="-1.0" tx="3.5" ty="-41.0">
+            <y:Point x="95.3515625" y="37.798809523809524"/>
+            <y:Point x="95.3515625" y="42.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e2" source="n2" target="n0">
+      <data key="d14">284.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="-1.0" sy="-7.0" tx="14.0" ty="-0.25">
+            <y:Point x="53.3515625" y="7.0"/>
+            <y:Point x="53.3515625" y="42.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e3" source="n3" target="n3">
+      <data key="d14">1150.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="-1.75" sy="61.5" tx="-3.5" ty="41.0">
+            <y:Point x="75.1015625" y="186.5"/>
+            <y:Point x="57.8515625" y="186.5"/>
+            <y:Point x="57.8515625" y="124.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e4" source="n3" target="n4">
+      <data key="d14">-22.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="3.5" sy="41.0" tx="-1.0" ty="-0.0">
+            <y:Point x="90.3515625" y="124.5"/>
+            <y:Point x="90.3515625" y="107.85079365079365"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e5" source="n3" target="n3">
+      <data key="d14">25.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="1.75" sy="61.5" tx="-3.5" ty="-0.0">
+            <y:Point x="78.6015625" y="197.5"/>
+            <y:Point x="46.8515625" y="197.5"/>
+            <y:Point x="46.8515625" y="83.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e6" source="n3" target="n5">
+      <data key="d14">35.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="3.5" sy="-0.0" tx="-2.0" ty="-1.5"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e7" source="n4" target="n5">
+      <data key="d14">9.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="1.0" sy="-0.0" tx="-2.0" ty="1.5">
+            <y:Point x="141.689453125" y="107.85079365079365"/>
+            <y:Point x="141.689453125" y="86.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e8" source="n5" target="n1">
+      <data key="d14">8.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="2.0" sy="-1.5" tx="-0.5" ty="1.0">
+            <y:Point x="218.369140625" y="83.5"/>
+            <y:Point x="218.369140625" y="39.798809523809524"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e9" source="n5" target="n6">
+      <data key="d14">59.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="2.0" sy="1.5" tx="-4.0" ty="-1.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e10" source="n6" target="n2">
+      <data key="d14">24.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="4.0" sy="-0.0" tx="-1.0" ty="7.0">
+            <y:Point x="305.73046875" y="87.5"/>
+            <y:Point x="305.73046875" y="21.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e11" source="n6" target="n6">
+      <data key="d14">-24.0</data>
+      <data key="d16"/>
+      <data key="d17">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="2.0" tx="-4.0" ty="1.0">
+            <y:Point x="267.0498046875" y="100.0"/>
+            <y:Point x="247.5498046875" y="100.0"/>
+            <y:Point x="247.5498046875" y="88.5"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+  </graph>
+  <data key="d13">
+    <y:Resources/>
+  </data>
+</graphml>

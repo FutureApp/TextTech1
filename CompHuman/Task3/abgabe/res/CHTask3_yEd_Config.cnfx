@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<styles>
+  <style name="nodeWikiNodes" scope="node" selectionOnly="false">
+    <mapping>
+      <source name="color" origin="customProperty" type="string"/>
+      <target name="fillColor" type="color">
+        <hints/>
+      </target>
+      <conversion type="asIs"/>
+    </mapping>
+    <mapping>
+      <source name="label" origin="customProperty" type="string"/>
+      <target name="labelText" type="string">
+        <hints>
+          <hint type="int">0</hint>
+        </hints>
+      </target>
+      <conversion type="asIs"/>
+    </mapping>
+    <mapping>
+      <source name="heigh" origin="customProperty" type="double"/>
+      <target name="geometryHeight" type="double">
+        <hints/>
+      </target>
+      <conversion type="asIs"/>
+    </mapping>
+    <mapping>
+      <source name="weight" origin="customProperty" type="double"/>
+      <target name="geometryWidth" type="double">
+        <hints/>
+      </target>
+      <conversion type="asIs"/>
+    </mapping>
+    <mapping>
+      <source name="border" origin="customProperty" type="string"/>
+      <target name="borderStyleColor" type="color">
+        <hints/>
+      </target>
+      <conversion type="asIs"/>
+    </mapping>
+    <mapping>
+      <source name="borderweight" origin="customProperty" type="double"/>
+      <target name="borderStyleWidth" type="double">
+        <hints/>
+      </target>
+      <conversion type="asIs"/>
+    </mapping>
+    <mapping>
+      <source name="txtColor" origin="customProperty" type="string"/>
+      <target name="labelTextColor" type="color">
+        <hints>
+          <hint type="int">0</hint>
+        </hints>
+      </target>
+      <conversion type="asIs"/>
+    </mapping>
+  </style>
+</styles>

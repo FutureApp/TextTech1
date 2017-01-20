@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+	<key attr.name="color" attr.type="string" for="node" id="nodeKeyColor" />
+	<key attr.name="label" attr.type="string" for="node" id="nodeKeyLabel" />
+	<key attr.name="heigh" attr.type="double" for="node" id="nodeKeyHeigh" />
+	<key attr.name="nodeKeyWeightt" attr.type="double" for="node"
+		id="nodeKeyWeight" />
+	<key attr.name="border" attr.type="string" for="node" id="nodeKeyBorder" />
+	<key attr.name="borderweight" attr.type="double" for="node"
+		id="nodeKeyBorderWeight" />
+	<key attr.name="txtColor" attr.type="string" for="node" id="nodeKeyTextColor" />
+	<key attr.name="Edgeweight" attr.type="double" for="edge" id="path" />
+	<graph edgedefault="undirected" id="G-Graph-SimpleEditNetwork">
+		<node id="MorbZBot">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">MorbZ-Bot</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Andre_de">
+			<data key="nodeKeyColor">#bfbfbfff</data>
+			<data key="nodeKeyLabel">Andre de</data>
+			<data key="nodeKeyHeigh">40.0</data>
+			<data key="nodeKeyWeight">40.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Niki.L">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Niki.L</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="84.154.133.18">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">84.154.133.18</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Dmicha">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Dmicha</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Oltau">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Oltau</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="HГq">
+			<data key="nodeKeyColor">#aaaaaaff</data>
+			<data key="nodeKeyLabel">HГq</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">30.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="87.157.199.181">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">87.157.199.181</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Crazy1880">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Crazy1880</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Metrophil">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Metrophil</data>
+			<data key="nodeKeyHeigh">30.0</data>
+			<data key="nodeKeyWeight">30.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="85.178.152.1">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">85.178.152.1</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Färber">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Färber</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="87.123.154.219">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">87.123.154.219</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">20.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Karsten11">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Karsten11</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Rotkaeppchen68">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Rotkaeppchen68</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="BaumfreundFFM">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Baumfreund-FFM</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="SonniWP">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">SonniWP</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Hozro">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Hozro</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Gerold_Broser">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Gerold Broser</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="MystBot">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">MystBot</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Leit">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Leit</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Chumwa">
+			<data key="nodeKeyColor">#d4d4d4ff</data>
+			<data key="nodeKeyLabel">Chumwa</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">60.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Itti">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Itti</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Platte">
+			<data key="nodeKeyColor">#adadadff</data>
+			<data key="nodeKeyLabel">Platte</data>
+			<data key="nodeKeyHeigh">200.0</data>
+			<data key="nodeKeyWeight">250.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Ralf_Roletschek">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Ralf Roletschek</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Rote4132">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Rote4132</data>
+			<data key="nodeKeyHeigh">30.0</data>
+			<data key="nodeKeyWeight">30.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="89.247.16.60">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">89.247.16.60</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="62.157.58.29">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">62.157.58.29</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Chewbacca2205">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Chewbacca2205</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Wiegels">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Wiegels</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Christoph_Ziehr">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Christoph Ziehr</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Fomafix">
+			<data key="nodeKeyColor">#808080ff</data>
+			<data key="nodeKeyLabel">Fomafix</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">20.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="217.186.226.212">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">217.186.226.212</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Matthias_Lorenz">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Matthias Lorenz</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">20.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Quark">
+			<data key="nodeKeyColor">#aaaaaaff</data>
+			<data key="nodeKeyLabel">Quark</data>
+			<data key="nodeKeyHeigh">30.0</data>
+			<data key="nodeKeyWeight">30.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Mad_Max_3">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Mad Max 3</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="2a02:2028:619:cf01:1293:e9ff:fe5e:58bc">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">2a02:2028:619:cf01:1293:e9ff:fe5e:58bc</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="JvB1953">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">JvB1953</data>
+			<data key="nodeKeyHeigh">30.0</data>
+			<data key="nodeKeyWeight">50.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Komischn">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Komischn</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="_Bikkit_">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">! Bikkit !</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Brill58">
+			<data key="nodeKeyColor">#808080ff</data>
+			<data key="nodeKeyLabel">Brill58</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">20.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Hadibe">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Hadibe</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Stegosaurus_Rex">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Stegosaurus Rex</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="ErikDunsing">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">ErikDunsing</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">1.0</data>
+			<data key="nodeKeyBorder">#87cefaff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Svensteffen_arndt">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Sven-steffen arndt</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Atamari">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Atamari</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="GeisterPirat">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">GeisterPirat</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Visibot">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Visi-bot</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="TJ.MD">
+			<data key="nodeKeyColor">#808080ff</data>
+			<data key="nodeKeyLabel">TJ.MD</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">20.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Berliner76">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Berliner76</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">20.0</data>
+			<data key="nodeKeyBorder">#ffb6c1ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Definitiv">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Definitiv</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">20.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="89.247.8.215">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">89.247.8.215</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Norhei">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Norhei</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Fasch">
+			<data key="nodeKeyColor">#808080ff</data>
+			<data key="nodeKeyLabel">Fasch</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">20.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="MitigationMeasure">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">MitigationMeasure</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Aka">
+			<data key="nodeKeyColor">#bfbfbfff</data>
+			<data key="nodeKeyLabel">Aka</data>
+			<data key="nodeKeyHeigh">40.0</data>
+			<data key="nodeKeyWeight">40.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="APPER">
+			<data key="nodeKeyColor">#808080ff</data>
+			<data key="nodeKeyLabel">APPER</data>
+			<data key="nodeKeyHeigh">40.0</data>
+			<data key="nodeKeyWeight">40.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Shoot_the_moon">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Shoot the moon</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Micham6">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Micham6</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Herr_Lehrer_ich_weiß_was">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Herr Lehrer, ich weiß was!</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">20.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="80.145.209.216">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">80.145.209.216</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Dalabalacaladalaealafalagalahalaiala">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Dalabalacaladalaealafalagalahalaiala</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Spurzem">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Spurzem</data>
+			<data key="nodeKeyHeigh">40.0</data>
+			<data key="nodeKeyWeight">40.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Fridolin_freudenfett">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Fridolin freudenfett</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="44Pinguine">
+			<data key="nodeKeyColor">#d1d1d1ff</data>
+			<data key="nodeKeyLabel">44Pinguine</data>
+			<data key="nodeKeyHeigh">50.0</data>
+			<data key="nodeKeyWeight">110.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Miraki">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Miraki</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Lley">
+			<data key="nodeKeyColor">#808080ff</data>
+			<data key="nodeKeyLabel">Lley</data>
+			<data key="nodeKeyHeigh">30.0</data>
+			<data key="nodeKeyWeight">40.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="ONAR">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">ONAR</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Wahldresdner">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Wahldresdner</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="BLueFiSH.as">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">BLueFiSH.as</data>
+			<data key="nodeKeyHeigh">20.0</data>
+			<data key="nodeKeyWeight">30.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Franz_Richter">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Franz Richter</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="83.228.60.175">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">83.228.60.175</data>
+			<data key="nodeKeyHeigh">10.0</data>
+			<data key="nodeKeyWeight">10.0</data>
+			<data key="nodeKeyBorder">#000000ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<edge id="b3436784-b051-4738-a9bb-49a101e49ef8" source="MorbZBot"
+			target="85.178.152.1">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="94e34f6b-a8bf-494a-9e7b-c57581194bdf" source="Andre_de"
+			target="MitigationMeasure">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="81c5ddfb-b0df-449d-9c9c-4ecc8f24aa93" source="Andre_de"
+			target="Andre_de">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="ae92e426-dafa-4002-a309-0c47bc272da2" source="Andre_de"
+			target="Herr_Lehrer_ich_weiß_was">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="3d84cd93-fdfb-4dfb-8546-c52b018fb426" source="Andre_de"
+			target="Lley">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="ca4a2d22-0202-4dfb-bf55-98fcf8dc8bff" source="Niki.L"
+			target="HГq">
+			<data key="path">0.1</data>
+		</edge>
+		<edge id="afbbdc0f-7e3a-4b54-9aae-a5f6f2c79ffc" source="84.154.133.18"
+			target="Spurzem">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="caef0641-5d66-4c49-9a89-be4e6ee44866" source="Dmicha"
+			target="Spurzem">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="aeec78ce-f66a-48d4-9e8a-ed5937a18de2" source="Oltau"
+			target="Aka">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="9166af38-e9ec-4ce6-83ec-6328ed0ca308" source="HГq"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="5f87ef3b-f5a0-4c6f-b995-cd30a11fdde4" source="HГq"
+			target="_Bikkit_">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="b2e4e7be-d0b9-4ef6-bd5c-be8a3fa0c08e" source="87.157.199.181"
+			target="Fridolin_freudenfett">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="a16a0a32-e7d7-4eec-9b78-6ee54bc8fe0c" source="Crazy1880"
+			target="Ralf_Roletschek">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="fb75ae2d-6c44-4fc7-9417-43a4ffbdaea0" source="Metrophil"
+			target="Karsten11">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="c0749473-451f-464a-8bd4-9dcb0da28e68" source="Metrophil"
+			target="Metrophil">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="c4202e31-4e29-44ff-b10e-084ecf82b2b9" source="Metrophil"
+			target="Wahldresdner">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="33ed931b-accc-446d-879e-6b3e8607f6d6" source="85.178.152.1"
+			target="87.123.154.219">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="11b9fbcf-da40-44e3-ac13-0dbb8b1c7c78" source="Färber"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="1b5b0452-b480-45ac-853c-a6af74970c83" source="87.123.154.219"
+			target="44Pinguine">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="af3a80f8-037f-4fe0-83e1-8136bc176552" source="87.123.154.219"
+			target="87.123.154.219">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="9e0df019-1d08-4118-877f-0eca23d905f4" source="Karsten11"
+			target="62.157.58.29">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="72f9c8c5-7cb4-403f-8aa7-7c689f81629a" source="Rotkaeppchen68"
+			target="Platte">
+			<data key="path">0.1</data>
+		</edge>
+		<edge id="04c9666e-fe52-4910-a6ae-f62541e82919" source="BaumfreundFFM"
+			target="Niki.L">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="cdfcf1d9-2c2f-4d65-ad25-72ab8a2fe729" source="SonniWP"
+			target="Norhei">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="012abb1f-5a07-472a-a988-8a221953a62e" source="Hozro"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="55b36ef4-95f3-4141-a0a7-70e8c9f31157" source="Gerold_Broser"
+			target="Fomafix">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="daea5d56-14df-414a-af12-aa9c90c99ee7" source="MystBot"
+			target="Fomafix">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="e26cc918-b288-48a4-a6a6-5c4b006690ed" source="Leit"
+			target="BLueFiSH.as">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="5d5be0ca-911d-4a19-9068-9e8fc2cea1c5" source="Chumwa"
+			target="Platte">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="fbffd510-6e1e-4392-92a6-6c057a9f8d96" source="Chumwa"
+			target="Chumwa">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="5c0ddf67-dbcc-4802-9e5c-c431ee6b7aef" source="Itti"
+			target="Dalabalacaladalaealafalagalahalaiala">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="00c15ca2-1781-4b2e-b219-d522bd48360a" source="Platte"
+			target="Shoot_the_moon">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="1b5b87c6-9453-4c3a-9419-8bba255b1bec" source="Platte"
+			target="Hozro">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="aadeefba-9b32-4063-887b-821bd58222cd" source="Platte"
+			target="Definitiv">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="9121b656-3903-4794-9cf2-25d7a09c04b8" source="Platte"
+			target="APPER">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="8e9ea357-37ea-47aa-ba3f-a4f57b954293" source="Platte"
+			target="Herr_Lehrer_ich_weiß_was">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="691f7346-6024-41ac-99c0-e62f04ef6df5" source="Platte"
+			target="Oltau">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="2b68b0a4-ebe7-40af-9db0-1d433dc60fde" source="Platte"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="c56c9ab8-d7fd-40eb-9650-4299234944b6" source="Platte"
+			target="GeisterPirat">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="25b84967-e2ce-4210-a508-7f9637e82e6a" source="Platte"
+			target="Hadibe">
+			<data key="path">0.1</data>
+		</edge>
+		<edge id="6cb0ed1a-57a7-45eb-b165-4aed24d9619d" source="Platte"
+			target="Stegosaurus_Rex">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="98429e2b-63c3-47a4-8d6d-fc3141c21a16" source="Platte"
+			target="Färber">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="be579d97-aba1-49ce-bb49-bd68311e233f" source="Platte"
+			target="Metrophil">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="c57641bd-bebf-43f1-aa71-ab1554126dd5" source="Platte"
+			target="Rote4132">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="21a58022-7cc3-4f31-8da6-bfb3ecec3d8e" source="Platte"
+			target="Chewbacca2205">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="ccd340c4-68b3-437a-9088-07a98ae01d8b" source="Platte"
+			target="87.157.199.181">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="ef72e1bf-e652-4fe4-9977-a8564c0e8b3d" source="Platte"
+			target="Crazy1880">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="0607da29-1f0b-448e-b157-5b7e96534b06" source="Platte"
+			target="84.154.133.18">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="530bf8e6-c96a-4f18-a2e2-98f6244f9c1d" source="Platte"
+			target="Matthias_Lorenz">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="43eea6cf-0dd1-45af-8071-06684683bd2b" source="Platte"
+			target="217.186.226.212">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="3ec593b8-b3d9-4e8c-8ff3-c82648c1fe97" source="Platte"
+			target="80.145.209.216">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="271adb54-c2ec-4a3c-8a27-c39eef19de50" source="Ralf_Roletschek"
+			target="Platte">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="884f3bf9-6308-4ee1-9856-8f7f164da27c" source="Rote4132"
+			target="BaumfreundFFM">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="61b94c8e-9444-497c-ac8d-11d2664bac85" source="Rote4132"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="f3c1dfc9-d4e1-4f42-b234-be142e90fbb4" source="Rote4132"
+			target="Rote4132">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="bbae2d75-36c3-41ef-8488-2a3ab36527b0" source="89.247.16.60"
+			target="Lley">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="95ba6c32-6818-484d-8469-bfddffa3673d" source="62.157.58.29"
+			target="SonniWP">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="c6aeeb2e-c3c5-4a9a-85aa-8f46f488c4d4" source="Chewbacca2205"
+			target="HГq">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="1262dc94-b7f7-4529-91a4-c56d9e137848" source="Wiegels"
+			target="Andre_de">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="59413c56-f3e7-46f6-bd6b-8bec4d2b3b3b" source="Christoph_Ziehr"
+			target="2a02:2028:619:cf01:1293:e9ff:fe5e:58bc">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="09949d74-bff5-4f51-85c5-0cca5b0a78f8" source="Fomafix"
+			target="89.247.16.60">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="1385bbc9-50ce-4cf0-9f5e-040e05904c64" source="Fomafix"
+			target="83.228.60.175">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="8a666e8c-f65f-44bd-973c-21ab61a44b71" source="217.186.226.212"
+			target="44Pinguine">
+			<data key="path">0.1</data>
+		</edge>
+		<edge id="85f5b71f-f6e9-4606-bb33-9287c9213089" source="Matthias_Lorenz"
+			target="Platte">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="d155918b-02e6-41c8-b8c3-53ef9b813cbe" source="Matthias_Lorenz"
+			target="Matthias_Lorenz">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="f6fed789-ee49-4491-a4e0-bcfdb8cc5400" source="Quark"
+			target="44Pinguine">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="c0edf7f3-ef6c-4caa-9fcf-6fca2aaea9a5" source="Quark"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="adfe2a4c-b59e-496d-82d4-fd35ed93e74b" source="Quark"
+			target="Quark">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="05ae1364-b425-4146-b552-91c9c17ae8c8" source="Mad_Max_3"
+			target="Rotkaeppchen68">
+			<data key="path">0.1</data>
+		</edge>
+		<edge id="0ef1f8ff-94af-4d70-b7c9-9a008c4b3df2" source="2a02:2028:619:cf01:1293:e9ff:fe5e:58bc"
+			target="44Pinguine">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="39e7815c-02d1-43ff-896c-a2c0c9d7010c" source="JvB1953"
+			target="Komischn">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="2462a191-1b8b-40d7-9c62-5563d3c2038f" source="JvB1953"
+			target="JvB1953">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="947bc431-eeb9-48d6-bf24-49aa70996ba5" source="JvB1953"
+			target="Wiegels">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="190342e2-fd4f-4b60-b942-d039f2b28750" source="Komischn"
+			target="APPER">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="892236a2-a4bd-4e95-a0b7-42a4cbc1e4c6" source="_Bikkit_"
+			target="Aka">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="17aa2aa5-c683-430b-a290-4a776c239355" source="Brill58"
+			target="Platte">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="192f2b3b-8e78-4f2d-b22f-4e9a23a33fbb" source="Brill58"
+			target="Brill58">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="ead4a049-83d2-4624-af9b-578a1cc44ba4" source="Hadibe"
+			target="Chumwa">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="7f9e83d4-05b6-483f-be99-3513f24d489d" source="Stegosaurus_Rex"
+			target="Micham6">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="996e6cec-e4f5-4a7b-aeee-be7e0f8d5cc7" source="ErikDunsing"
+			target="Quark">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="08352227-dda9-4e5f-b521-0495039fb141" source="Svensteffen_arndt"
+			target="Fasch">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="9a2721df-66ef-4e90-af9f-19415b6ae813" source="Atamari"
+			target="Svensteffen_arndt">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="c15014b4-fd9b-4f83-aae6-9eea2442fc3d" source="GeisterPirat"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="ea8e9ef6-943f-4675-9da6-f7bc677dd7dd" source="Visibot"
+			target="APPER">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="6d072e32-9305-4711-8fc9-bea89726e397" source="TJ.MD"
+			target="89.247.8.215">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="93229cc7-bd8f-4cf3-aa85-433d50489569" source="TJ.MD"
+			target="TJ.MD">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="115cf1fe-2c84-4463-aa68-3e338fa6b1a5" source="Berliner76"
+			target="Berliner76">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="ddf6636d-c509-4e33-b629-499bbdba12df" source="Definitiv"
+			target="TJ.MD">
+			<data key="path">0.1</data>
+		</edge>
+		<edge id="5e0f93f2-d70a-40de-9f51-b649e7d6c974" source="Definitiv"
+			target="MorbZBot">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="f676d46c-d437-49a6-88e2-2ada91b5b88a" source="89.247.8.215"
+			target="Platte">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="1c7cb8c3-9980-494b-8f7b-1335a083b5d1" source="Norhei"
+			target="Miraki">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="50a5113e-df21-443e-b60e-22670f450cb2" source="Fasch"
+			target="Gerold_Broser">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="9e0f0e40-c409-49f0-bafc-ee7f5c82336e" source="Fasch"
+			target="Fasch">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="d47775cc-03ed-4c84-9a62-34e83bbddda9" source="MitigationMeasure"
+			target="Definitiv">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="36b2b7a9-9743-41ed-8582-95aebe3b47ba" source="Aka"
+			target="JvB1953">
+			<data key="path">0.1</data>
+		</edge>
+		<edge id="c3e28316-f431-4c6e-8f98-e115d456ebfe" source="Aka"
+			target="Metrophil">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="705c0a8c-81ce-4abf-9145-fe03826e50f5" source="Aka"
+			target="Andre_de">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="eb07252c-86bc-434a-af40-e98d197ce43d" source="Aka"
+			target="Itti">
+			<data key="path">0.1</data>
+		</edge>
+		<edge id="e4ed9ab6-cbb2-4a7f-aba6-8d4c07627847" source="APPER"
+			target="Franz_Richter">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="b57b4a26-b0ad-4462-b4ba-a9f315cdf7ec" source="APPER"
+			target="APPER">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="60a43a08-e5a5-4be0-9d11-a1317f523d8e" source="APPER"
+			target="Visibot">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="2a6ce574-a94f-42aa-aed0-aee50e95d2a5" source="APPER"
+			target="MystBot">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="777313a4-c734-4866-b307-b9daa21addf8" source="Shoot_the_moon"
+			target="ONAR">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="a8b9c1cc-b52f-4cc3-87c3-a0533cc2025d" source="Micham6"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="7c0dd20d-2cc5-4ba2-b79a-88e5447b43e2" source="Herr_Lehrer_ich_weiß_was"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="485cc773-6ff8-4ead-8abd-44c6de7fba3e" source="Herr_Lehrer_ich_weiß_was"
+			target="Andre_de">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="d5051346-eb51-4fa9-a84c-5ceaa8f9fe9f" source="80.145.209.216"
+			target="Christoph_Ziehr">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="890aea6d-2049-4eba-aae6-dceb81b72d2c" source="Dalabalacaladalaealafalagalahalaiala"
+			target="Rote4132">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="de8f71c5-f419-456c-97ea-7b7dfda0830f" source="Spurzem"
+			target="Mad_Max_3">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="1e50d98c-0362-40c2-8c47-aec2550c5aff" source="Spurzem"
+			target="Quark">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="0459664f-960e-4421-b903-ec06439102bb" source="Spurzem"
+			target="Platte">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="a835b42a-10a9-4142-b132-6c471ed97fbb" source="Spurzem"
+			target="Spurzem">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="975da515-e58a-4017-b953-2f9fb9d3eb8f" source="Fridolin_freudenfett"
+			target="HГq">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="4d29d1ba-1b83-43bb-97e1-3d6e17a6e407" source="44Pinguine"
+			target="Aka">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="1be8d3be-fa3a-4800-aa8e-7f0787069b85" source="44Pinguine"
+			target="44Pinguine">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="854ccb9c-189b-4744-9fe1-5a23480a17f8" source="44Pinguine"
+			target="Dmicha">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="92c68681-389c-457e-8771-9ed32a6fbe84" source="44Pinguine"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="2dbe5bfd-17e0-4544-b75f-5af75bd1fa2f" source="44Pinguine"
+			target="Spurzem">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="d6685dc3-fd8f-4f13-bf6c-41de43a8c487" source="Miraki"
+			target="Brill58">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="488d953b-efc9-4495-83e0-42d3d088caec" source="Lley"
+			target="Leit">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="d2601838-80db-4108-8e46-cf96144c5003" source="Lley"
+			target="Lley">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="34d01d8d-54ce-4ca3-85a4-2976956d0b60" source="Lley"
+			target="JvB1953">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="09b6ac6c-6308-466c-8ee1-52b1af21b6af" source="ONAR"
+			target="Aka">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="62b4c14d-b412-49f0-85d9-3f0ba29c1c01" source="Wahldresdner"
+			target="Platte">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="4579bb24-80b4-42e4-9703-6bc0b338c2bc" source="BLueFiSH.as"
+			target="Berliner76">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="aa3754aa-3276-45f3-a2fc-3b5fa23692a3" source="BLueFiSH.as"
+			target="BLueFiSH.as">
+			<data key="path">1.0</data>
+		</edge>
+		<edge id="4f71ee16-a801-45e4-b572-6a93b4787ec9" source="Franz_Richter"
+			target="Atamari">
+			<data key="path">-1.0</data>
+		</edge>
+		<edge id="96c9e1d1-481d-472a-9246-13ec68e72a9b" source="83.228.60.175"
+			target="Platte">
+			<data key="path">1.0</data>
+		</edge>
+	</graph>
+</graphml>

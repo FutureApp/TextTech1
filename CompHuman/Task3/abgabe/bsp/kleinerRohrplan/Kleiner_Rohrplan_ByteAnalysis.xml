@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+	<key attr.name="color" attr.type="string" for="node" id="nodeKeyColor" />
+	<key attr.name="label" attr.type="string" for="node" id="nodeKeyLabel" />
+	<key attr.name="heigh" attr.type="double" for="node" id="nodeKeyHeigh" />
+	<key attr.name="weight" attr.type="double" for="node" id="nodeKeyWeight" />
+	<key attr.name="border" attr.type="string" for="node" id="nodeKeyBorder" />
+	<key attr.name="borderweight" attr.type="double" for="node"
+		id="nodeKeyBorderWeight" />
+	<key attr.name="txtColor" attr.type="string" for="node" id="nodeKeyTextColor" />
+	<key attr.name="weight" attr.type="double" for="edge" id="path" />
+	<graph edgedefault="undirected" id="G-Graph-SimpleEditNetwork">
+		<node id="Zwobot">
+			<data key="nodeKeyTextColor">#fafad2ff</data>
+			<data key="nodeKeyColor">#000000ff</data>
+			<data key="nodeKeyLabel">Zwobot</data>
+			<data key="nodeKeyHeigh">0.9</data>
+			<data key="nodeKeyWeight">28.4</data>
+			<data key="nodeKeyBorder" />
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Brill58">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Brill58</data>
+			<data key="nodeKeyHeigh">4.5</data>
+			<data key="nodeKeyWeight">0.8</data>
+			<data key="nodeKeyBorder" />
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Atamari">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Atamari</data>
+			<data key="nodeKeyHeigh">28.4</data>
+			<data key="nodeKeyWeight">2.4</data>
+			<data key="nodeKeyBorder" />
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Erell">
+			<data key="nodeKeyColor">#fafafaff</data>
+			<data key="nodeKeyLabel">Erell</data>
+			<data key="nodeKeyHeigh">123.2</data>
+			<data key="nodeKeyWeight">7.9</data>
+			<data key="nodeKeyBorder">#ffb6c1ff</data>
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Axt">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Axt</data>
+			<data key="nodeKeyHeigh">0.9</data>
+			<data key="nodeKeyWeight">2.2</data>
+			<data key="nodeKeyBorder" />
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Definitiv">
+			<data key="nodeKeyColor">#ffffffff</data>
+			<data key="nodeKeyLabel">Definitiv</data>
+			<data key="nodeKeyHeigh">6.7</data>
+			<data key="nodeKeyWeight">4.4</data>
+			<data key="nodeKeyBorder" />
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<node id="Olaf_Studt">
+			<data key="nodeKeyColor">#808080ff</data>
+			<data key="nodeKeyLabel">Olaf Studt</data>
+			<data key="nodeKeyHeigh">4.8</data>
+			<data key="nodeKeyWeight">8.3</data>
+			<data key="nodeKeyBorder" />
+			<data key="keyNodeBorderWeight">10.0</data>
+		</node>
+		<edge id="14698160-fefe-4978-869d-5ca778a1959b" source="Zwobot"
+			target="Erell">
+			<data key="path">-9.0</data>
+		</edge>
+		<edge id="b170fe77-c1fc-46a7-bec3-ae73b4c91eef" source="Brill58"
+			target="Erell">
+			<data key="path">45.0</data>
+		</edge>
+		<edge id="4cd32800-d830-4b4f-b16a-94c36f5afd8d" source="Atamari"
+			target="Zwobot">
+			<data key="path">284.0</data>
+		</edge>
+		<edge id="96b670fa-bc31-4006-abe1-d1c9beabddb4" source="Erell"
+			target="Erell">
+			<data key="path">1150.0</data>
+		</edge>
+		<edge id="a31c8442-8cff-4534-a1ca-37c64098907c" source="Erell"
+			target="Axt">
+			<data key="path">-22.0</data>
+		</edge>
+		<edge id="9670571e-43a8-4b1c-bfe7-85c1db20bedd" source="Erell"
+			target="Erell">
+			<data key="path">25.0</data>
+		</edge>
+		<edge id="13ff1b12-dac3-40a7-aa9c-0a102011b4d0" source="Erell"
+			target="Definitiv">
+			<data key="path">35.0</data>
+		</edge>
+		<edge id="d60ff4a9-8e0d-4833-9d36-df83369eeca3" source="Axt"
+			target="Definitiv">
+			<data key="path">9.0</data>
+		</edge>
+		<edge id="2ccf14d9-fb01-4c63-9931-6cd17cbbec03" source="Definitiv"
+			target="Brill58">
+			<data key="path">8.0</data>
+		</edge>
+		<edge id="29d6967e-e1c2-4080-bc3e-6981c536eec8" source="Definitiv"
+			target="Olaf_Studt">
+			<data key="path">59.0</data>
+		</edge>
+		<edge id="f40ee11f-f4df-4afc-8c6d-f860f309ce70" source="Olaf_Studt"
+			target="Atamari">
+			<data key="path">24.0</data>
+		</edge>
+		<edge id="63a46bc0-08be-42e3-a496-41327973d6c1" source="Olaf_Studt"
+			target="Olaf_Studt">
+			<data key="path">-24.0</data>
+		</edge>
+	</graph>
+</graphml>
