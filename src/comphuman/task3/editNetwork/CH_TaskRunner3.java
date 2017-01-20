@@ -37,9 +37,20 @@ public class CH_TaskRunner3 {
 		ArrayList<WikiEditNetworkNode> editNodes = revisionAnalyzer.generateEditNodes();
 		ExportToVizTool vizExporter = new ExportToVizTool(editNodes);
 		vizExporter.exportToGraphMlFormate(new File("C:/Users/admin/Desktop/test.graphml"));
-		/* BYTE Section*/
 		
-
+		
+		/* BYTE Section */
+		WikiRevisionPageAnalyzerSimpleByte byteAnalyser = new WikiRevisionPageAnalyzerSimpleByte(
+				article.getRevisionsPage());
+		byteAnalyser.startExtractionOfReviserItems();
+		byteAnalyser.startCreationOfWikiEditNetwork();
+		byteAnalyser.startCreateWikiNodeRevisor();
+		ArrayList<WikiEditNetworkNodeByte> exportWikiNodeRevisor = byteAnalyser.exportWikiNodeRevisor();
+		ExportToVizToolByte vizExporter2 = new ExportToVizToolByte(exportWikiNodeRevisor);
+		vizExporter2.exportToGraphMlFormate(new File("C:/Users/admin/Desktop/testbyte.graphml"));
+		
+		
+		byteAnalyser.hot();
 		/* FINISH */
 		printFinish();
 	}
