@@ -1,0 +1,1431 @@
+<!DOCTYPE TEI PUBLIC '-//TEI//DTD TEI XML ver. 1' 'http://dtd.hucompute.org/tei_all.dtd'>
+<TEI xml:id="TEd1">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>PlainText</title>
+   </titleStmt>
+   <publicationStmt>
+    <idno type="Timestamp">Mi. Jun 5 11:15:12 2013</idno>
+    <idno type="Number of tokens">1290</idno>
+    <idno type="Number of unknown tokens">17</idno>
+    <idno type="Number of prob. unknown tokens">141</idno>
+    <idno type="Number of word forms">397</idno>
+    <idno type="Number of lemmata">346</idno>
+    <idno type="Hapax Legomena (word form)">18,All,Als,Ankunft,Antwort,Armstuhl,Aufsicht,Augenblick,Ausbrüchen,Ausflügen,Ausnahme,Begeisterung,Bei,Biß,Boden,Bucht,Bäume,Bücher,Dickicht,Dickichts,Die,Diese,Drohungen,Eilandes,Einsiedlers,Ende,Es,Familie,Feuer,Fiebern,Fischen,Freiheit,Freundes,Freundschaft,Fuß,Geistesgaben,Gelegenheiten,Goldkäfer,Größere,Gärtnern,Hartnäckigkeit,Hauptvergnügen,Herbst,Herr,Herrn,Hochachtung,Holzblöcken,Holzhäuser,Hugenottenfamilie,Höhe,Im,Immergrün,In,Insekten,Interesse,Jagen,Jahren,Jupiter,Jupiters,Kamin,Kerl,Kurz,Küste,Land,Legrands,Leute,Luft,Mann,Manne,Marschhühnern,Massa,Menge,Misanthropie,Mitte,Muscheln,Myrte,Neger,Neues,New,Nähe,Oktober,Orleans,Palmetto,Recht,Reihe,Ried,Sammlung,Schlüssel,Schritt,Schutz,See,Sein,Sie,Sonnenuntergang,Staub,Stelle,Streifens,Stück,Sumpfboden,Süd-Carolina,Tag,Tarantel,Teiles,Trübsinn,Ufer,Um,Umherstreifen,Unangenehmes,Unannehmlichkeiten,Unglücksfällen,Unsere,Vegetation,Verarmen,Versprechen,Versteck,Verwandten,Viertelmeile,Vom,Von,Vor,Vorfahren,Vorhergesagten,Weg,Wesen,Westende,Wildnis,Will,William,Wirtes,Wochen,Wohlgeruch,Wohnsitz,Zeit,Zufall,Zwar,Züge,ab,aber,abwechselnd,all,also,alten,alter,angelangt,aufzugeben,ausgesetzt,ausgezeichnete,bahnte,bald,bedeckt,bedürftigen,begleitete,bekam,bekannt,bekannten,belädt,besaß,bestand,besteht,bestärkten,besucht,bevor,bewegen,bewohnte,bildet,bis,brannte,breit,damit,denn,diesen,dort,drei,durchaus,dürftig,einem,eines,elenden,engere,englischen,entfernt,entfliehen,entgehen,entlang,erfüllten,erhalten,erreicht,erwartete,erweckten,es,etwa,etwas,fand,früher,fünfzehn,ganzen,gebildeten,gedeiht,gemacht,geschätzt,getrennt,getrieben,gewissen,gewährt,gift'gem,große,haben,harten,heizen,heutzutage,hielten,hin,hindurchwindet,holte,häufig,ihnen,innersten,jeden,jener,jenes,jungen,kalten,kaum,keine,keinen,keiner,kleine,klopfte,knisternden,kommt,krankhaften,lang,las,legte,leicht,litt,lustiges,mehreren,mein,merkwürdiges,milde,muß,mühsam,nach,nahe,namens,neun,nichts,nirgendwo,oder,oft,ohne,paar,plötzliches,recht,reichhaltige,sand,schloß,schlug,schwerem,sei,seinem,seinen,seiner,seines,seit,selbst,sieht,so,solch,solchen,stachlige,stammte,suchte,süßduftenden,tanzt,the,tiefen,toll,undurchdringliches,ungefähr,ungewöhnlich,ungewöhnlichen,unterhielt,unwahrscheinlich,verarmte,verkrüppelt,verließ,vermögend,verständlich,vertieften,viele,vielen,vom,wachen,wahrnehmbare,waren,warf,weder,weit,weißen,wenigen,weniger,westlichen,wird,wo,wohnte,wrong,wuchernden,wurde,zahllosen,zieht,ziellosem,zum,zurechnungsfähig,zurückzukommen,zwanzig,Überrock,östlichen</idno>
+    <idno type="Hapax Legomena (lemma)">18,Ankunft,Antwort,Armstuhl,Aufsicht,Augenblick,Ausbruch,Ausflug,Ausnahme,Baum,Begeisterung,Boden,Buch,Bucht,Drohung,Eiland,Einsiedler,Ende,Familie,Feuer,Fiebern,Fisch,Freiheit,Freund,Freundschaft,Fuß,Geistesgabe,Gelegenheit,Goldkäfer,Gärtner,Hartnäckigkeit,Hauptvergnügen,Herbst,Hochachtung,Holzblock,Holzhaus,Hugenottenfamilie,Höhe,Immergrün,Insekt,Interesse,Jahr,Kamin,Kerl,Küste,Land,Leute,Luft,Marschhühnern,Massa,Menge,Misanthropie,Mitte,Muschel,Myrte,Neger,New,Nähe,Oktober,Orleans,Palmetto,Recht,Reihe,Ried,Sammlung,Schlüssel,Schritt,Schutz,See,Sonnenuntergang,Staub,Stelle,Streifen,Stück,Sumpfboden,Süd-Carolina,Tag,Tarantel,Teil,Trübsinn,Ufer,Umherstreifen,Unannehmlichkeit,Unglücksfall,Vegetation,Verarmen,Versprechen,Versteck,Verwandte,Viertelmeile,Vorfahr,Weg,Wesen,Westende,Wildnis,William,Wirt,Woche,Wohlgeruch,Wohnsitz,Zeit,Zufall,Zug,ab,aber,abwechselnd,also,anlangen,aufgeben,ausgezeichnet,aussetzen,bahnen,bald,bedecken,bedürftig,begleiten,beißen,bekommen,beladen,besitzen,bestärken,besuchen,bevor,bewegen,bewohnen,bilden,bis,breit,brennen,damit,denn,dort,drei,durchaus,dürftig,elend,eng,englisch,entfernen,entfliehen,entgehen,entlang,erfüllen,erhalten,erreichen,erwarten,erwecken,etwa,etwas,finden,früh,fünfzehn,gebildet,gedeihen,gewiß,gewähren,gift'gem,halten,hart,heizen,heutzutage,hin,hindurchwindet,holen,häufig,inner,jagen,jed,jung,kalt,kaum,klein,klopfen,knisternd,kommen,krankhaft,kurz,lang,legen,leicht,leiden,lesen,lustig,machen,mehrer,merkwürdig,mild,mühsam,müssen,nach,nah,namens,neu,neun,nichts,nirgendwo,oder,oft,ohne,paar,plötzlich,recht,reichhaltig,sand,schlagen,schließen,schwer,schätzen,sehen,seit,selbst,so,stachlig,stammen,suchen,süßduftend,tanzen,the,tief,toll,treiben,trennen,unangenehm,undurchdringlich,ungefähr,unser,unterhalten,unwahrscheinlich,verarmen,verkrüppeln,verlassen,vermögend,verständlich,vertiefen,vorhergesagt,wachen,wahrnehmbar,weder,weit,weiß,werfen,westlich,wo,wohnen,wollen,wrong,wuchernd,zahllos,ziehen,ziellos,zum,zurechnungsfähig,zurückkommen,zwanzig,zwar,Überrock,östlich</idno>
+    <idno type="Number of sentences">36</idno>
+    <idno type="Number of paragraphs">7</idno>
+    <idno type="Number of divisions">1</idno>
+    <idno type="Number of captions">0</idno>
+    <idno type="Number of tables">0</idno>
+    <idno type="Text length">4048</idno>
+    <idno type="Number of named entities">13</idno>
+    <idno type="Number of nouns">135</idno>
+    <idno type="Number of adjectives">101</idno>
+    <idno type="Number of verbs">86</idno>
+    <idno type="Number of punctuation marks">83</idno>
+    <idno type="Frequent nouns">Insel,Legrand,Hütte,Charleston,Beziehung,Dickicht,Festland,Mann,Meile,Myrtengestrüpp</idno>
+    <idno type="Frequent phrases">gewissen Herr William Legrand engere Beziehung,ganzen Insel,Verwandte Legrands,kleine Hütte,undurchdringliches Dickicht,bedürftigen Mann,gebildeten Mann,Größere Baum,Hartnäckigkeit Jupiters,Mitte Oktober</idno>
+   </publicationStmt>
+   <sourceDesc>
+    <p>Name: Corpus; Source: CorpusRes</p>
+   </sourceDesc>
+  </fileDesc>
+ </teiHeader>
+ <text xml:id="t1">
+  <body xml:id="b1">
+   <div xml:id="xd1_di1">
+    <p xml:id="xd1_pa1">
+     <s xml:id="xd1_se1">
+      <w xml:id="xd1_wo1" lemma="der" type="ART" function="pro">Der</w>
+      <c xml:id="xd1_co2"> </c>
+      <w xml:id="xd1_wo3" lemma="Goldkäfer" type="NN" function="dic">Goldkäfer</w>
+     </s>
+    </p>
+    <p xml:id="xd1_pa2">
+     <s xml:id="xd1_se2">
+      <w xml:id="xd1_wo4" lemma="Schau" type="NN" function="dic">Schau</w>
+      <c xml:id="xd1_co5"> </c>
+      <w xml:id="xd1_wo6" lemma="her" type="PTKVZ" function="dic">her</w>
+      <c xml:id="xd1_co7" type="$.">!</c>
+     </s>
+     <s xml:id="xd1_se3">
+      <w xml:id="xd1_wo8" lemma="Schau" type="NN" function="dic">Schau</w>
+      <c xml:id="xd1_co9"> </c>
+      <w xml:id="xd1_wo10" lemma="her" type="PTKVZ" function="dic">her</w>
+      <c xml:id="xd1_co11" type="$.">!</c>
+     </s>
+     <s xml:id="xd1_se4">
+      <w xml:id="xd1_wo12" lemma="der" type="ART" function="pro">Der</w>
+      <c xml:id="xd1_co13"> </c>
+      <w xml:id="xd1_wo14" lemma="Kerl" type="NN" function="dic">Kerl</w>
+      <c xml:id="xd1_co15"> </c>
+      <w xml:id="xd1_wo16" lemma="dort" type="ADV" function="dic">dort</w>
+      <c xml:id="xd1_co17"> </c>
+      <w xml:id="xd1_wo18" lemma="tanzen" type="VVFIN" function="dic">tanzt</w>
+      <c xml:id="xd1_co19"> </c>
+      <w xml:id="xd1_wo20" lemma="wie" type="KOKOM" function="dic">wie</w>
+      <c xml:id="xd1_co21"> </c>
+      <w xml:id="xd1_wo22" lemma="toll" type="ADJD" function="dic">toll</w>
+      <c xml:id="xd1_co23" type="$.">!</c>
+     </s>
+     <s xml:id="xd1_se5">
+      <w xml:id="xd1_wo24" lemma="von" type="APPR" function="dic">Von</w>
+      <c xml:id="xd1_co25"> </c>
+      <w xml:id="xd1_wo26" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co27"> </c>
+      <w xml:id="xd1_wo28" lemma="Tarantel" type="NN" function="dic">Tarantel</w>
+      <c xml:id="xd1_co29"> </c>
+      <w xml:id="xd1_wo30" lemma="gift'gem" type="ADJA" function="unk">gift'gem</w>
+      <c xml:id="xd1_co31"> </c>
+      <w xml:id="xd1_wo32" lemma="beißen" type="NN" function="pro">Biß</w>
+      <c xml:id="xd1_co33"> </c>
+      <w xml:id="xd1_wo34" lemma="treiben" type="VVPP" function="dic">getrieben</w>
+      <c xml:id="xd1_co35" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se6">
+      <w xml:id="xd1_wo36" lemma="all" type="FM" function="pro">All</w>
+      <c xml:id="xd1_co37"> </c>
+      <w xml:id="xd1_wo38" lemma="in" type="FM" function="pro">in</w>
+      <c xml:id="xd1_co39"> </c>
+      <w xml:id="xd1_wo40" lemma="the" type="FM" function="unk">the</w>
+      <c xml:id="xd1_co41"> </c>
+      <w xml:id="xd1_wo42" lemma="wrong" type="FM" function="unk">wrong</w>
+      <c xml:id="xd1_co43" type="$.">.</c>
+     </s>
+    </p>
+    <p xml:id="xd1_pa3">
+     <s xml:id="xd1_se7">
+      <w xml:id="xd1_wo44" lemma="vor" type="APPR" function="dic">Vor</w>
+      <c xml:id="xd1_co45"> </c>
+      <w xml:id="xd1_wo46" lemma="viel" type="PIDAT" function="pro">vielen</w>
+      <c xml:id="xd1_co47"> </c>
+      <w xml:id="xd1_wo48" lemma="Jahr" type="NN" function="dic">Jahren</w>
+      <c xml:id="xd1_co49"> </c>
+      <w xml:id="xd1_wo50" lemma="unterhalten" type="VVFIN" function="dic">unterhielt</w>
+      <c xml:id="xd1_co51"> </c>
+      <w xml:id="xd1_wo52" lemma="ich" type="PPER" function="dic">ich</w>
+      <c xml:id="xd1_co53"> </c>
+      <w xml:id="xd1_wo54" lemma="mit" type="APPR" function="dic">mit</w>
+      <c xml:id="xd1_co55"> </c>
+      <w xml:id="xd1_wo56" lemma="ein" type="ART" function="pro">einem</w>
+      <c xml:id="xd1_co57"> </c>
+      <w xml:id="xd1_wo58" lemma="gewiß" type="ADJA" function="dic">gewissen</w>
+      <c xml:id="xd1_co59"> </c>
+      <seg xml:id="xd1_segm1">
+       <w xml:id="xd1_wo60" lemma="Herr" type="NN" function="pro">Herrn</w>
+       <c xml:id="xd1_co61"> </c>
+       <w xml:id="xd1_wo62" lemma="William" subtype="personName" type="NE" function="dic">William</w>
+       <c xml:id="xd1_co63"> </c>
+       <w xml:id="xd1_wo64" lemma="Legrand" subtype="personName" type="NE" function="dic">Legrand</w>
+      </seg>
+      <c xml:id="xd1_co65"> </c>
+      <w xml:id="xd1_wo66" lemma="eng" type="ADJA" function="dic">engere</w>
+      <c xml:id="xd1_co67"> </c>
+      <w xml:id="xd1_wo68" lemma="Beziehung" type="NN" function="dic">Beziehungen</w>
+      <c xml:id="xd1_co69" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se8">
+      <w xml:id="xd1_wo70" lemma="ich" type="PPER" function="pro">Er</w>
+      <c xml:id="xd1_co71"> </c>
+      <w xml:id="xd1_wo72" lemma="stammen" type="VVFIN" function="dic">stammte</w>
+      <c xml:id="xd1_co73"> </c>
+      <w xml:id="xd1_wo74" lemma="aus" type="APPR" function="dic">aus</w>
+      <c xml:id="xd1_co75"> </c>
+      <w xml:id="xd1_wo76" lemma="ein" type="ART" function="pro">einer</w>
+      <c xml:id="xd1_co77"> </c>
+      <w xml:id="xd1_wo78" lemma="alt" type="ADJA" function="dic">alten</w>
+      <c xml:id="xd1_co79"> </c>
+      <w xml:id="xd1_wo80" lemma="Hugenottenfamilie" type="NN" function="dic">Hugenottenfamilie</w>
+      <c xml:id="xd1_co81"> </c>
+      <w xml:id="xd1_wo82" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co83"> </c>
+      <w xml:id="xd1_wo84" lemma="sein" type="VAFIN" function="dic">war</w>
+      <c xml:id="xd1_co85"> </c>
+      <w xml:id="xd1_wo86" lemma="früh" type="ADV" function="pro">früher</w>
+      <c xml:id="xd1_co87"> </c>
+      <w xml:id="xd1_wo88" lemma="sehr" type="ADV" function="dic">sehr</w>
+      <c xml:id="xd1_co89"> </c>
+      <w xml:id="xd1_wo90" lemma="vermögend" type="ADJD" function="dic">vermögend</w>
+      <c xml:id="xd1_co91"> </c>
+      <w xml:id="xd1_wo92" lemma="sein" type="VAPP" function="dic">gewesen</w>
+      <c xml:id="xd1_co93" type="$,">,</c>
+      <c xml:id="xd1_co94"> </c>
+      <w xml:id="xd1_wo95" lemma="doch" type="ADV" function="pro">doch</w>
+      <c xml:id="xd1_co96"> </c>
+      <w xml:id="xd1_wo97" lemma="haben" type="VAFIN" function="dic">hatte</w>
+      <c xml:id="xd1_co98"> </c>
+      <w xml:id="xd1_wo99" lemma="ein" type="ART" function="pro">eine</w>
+      <c xml:id="xd1_co100"> </c>
+      <w xml:id="xd1_wo101" lemma="Reihe" type="NN" function="dic">Reihe</w>
+      <c xml:id="xd1_co102"> </c>
+      <w xml:id="xd1_wo103" lemma="von" type="APPR" function="dic">von</w>
+      <c xml:id="xd1_co104"> </c>
+      <w xml:id="xd1_wo105" lemma="Unglücksfall" type="NN" function="dic">Unglücksfällen</w>
+      <c xml:id="xd1_co106"> </c>
+      <w xml:id="xd1_wo107" lemma="er" type="PPER" function="dic">ihn</w>
+      <c xml:id="xd1_co108"> </c>
+      <w xml:id="xd1_wo109" lemma="zum" type="APPRART" function="dic">zum</w>
+      <c xml:id="xd1_co110"> </c>
+      <w xml:id="xd1_wo111" lemma="bedürftig" type="ADJA" function="dic">bedürftigen</w>
+      <c xml:id="xd1_co112"> </c>
+      <w xml:id="xd1_wo113" lemma="Mann" type="NN" function="dic">Manne</w>
+      <c xml:id="xd1_co114"> </c>
+      <w xml:id="xd1_wo115" lemma="machen" type="VVPP" function="dic">gemacht</w>
+      <c xml:id="xd1_co116" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se9">
+      <w xml:id="xd1_wo117" lemma="um" type="APPR" function="dic">Um</w>
+      <c xml:id="xd1_co118"> </c>
+      <w xml:id="xd1_wo119" lemma="all" type="PIDAT" function="unk">all</w>
+      <c xml:id="xd1_co120"> </c>
+      <w xml:id="xd1_wo121" lemma="der" type="ART" function="dic">den</w>
+      <c xml:id="xd1_co122"> </c>
+      <w xml:id="xd1_wo123" lemma="Unannehmlichkeit" type="NN" function="dic">Unannehmlichkeiten</w>
+      <c xml:id="xd1_co124" type="$,">,</c>
+      <c xml:id="xd1_co125"> </c>
+      <w xml:id="xd1_wo126" lemma="der" type="PRELS" function="pro">die</w>
+      <c xml:id="xd1_co127"> </c>
+      <w xml:id="xd1_wo128" lemma="ein" type="ART" function="pro">ein</w>
+      <c xml:id="xd1_co129"> </c>
+      <w xml:id="xd1_wo130" lemma="solch" type="PIDAT" function="dic">solch</w>
+      <c xml:id="xd1_co131"> </c>
+      <w xml:id="xd1_wo132" lemma="plötzlich" type="ADJA" function="dic">plötzliches</w>
+      <c xml:id="xd1_co133"> </c>
+      <w xml:id="xd1_wo134" lemma="Verarmen" type="NN" function="dic">Verarmen</w>
+      <c xml:id="xd1_co135"> </c>
+      <w xml:id="xd1_wo136" lemma="nach" type="APPR" function="dic">nach</w>
+      <c xml:id="xd1_co137"> </c>
+      <w xml:id="xd1_wo138" lemma="sich" type="PRF" function="dic">sich</w>
+      <c xml:id="xd1_co139"> </c>
+      <w xml:id="xd1_wo140" lemma="ziehen" type="VVFIN" function="dic">zieht</w>
+      <c xml:id="xd1_co141" type="$(">,</c>
+      <c xml:id="xd1_co142"> </c>
+      <w xml:id="xd1_wo143" lemma="zu" type="PTKZU" function="dic">zu</w>
+      <c xml:id="xd1_co144"> </c>
+      <w xml:id="xd1_wo145" lemma="entgehen" type="VVINF" function="dic">entgehen</w>
+      <c xml:id="xd1_co146" type="$,">,</c>
+      <c xml:id="xd1_co147"> </c>
+      <w xml:id="xd1_wo148" lemma="verlassen" type="VVFIN" function="dic">verließ</w>
+      <c xml:id="xd1_co149"> </c>
+      <w xml:id="xd1_wo150" lemma="ich" type="PPER" function="pro">er</w>
+      <c xml:id="xd1_co151"> </c>
+      <seg xml:id="xd1_segm2">
+       <w xml:id="xd1_wo152" lemma="New" subtype="personName" type="NE" function="unk">New</w>
+       <c xml:id="xd1_co153"> </c>
+       <w xml:id="xd1_wo154" lemma="Orleans" subtype="geoCity" type="NE" function="unk">Orleans</w>
+      </seg>
+      <c xml:id="xd1_co155" type="$(">,</c>
+      <c xml:id="xd1_co156"> </c>
+      <w xml:id="xd1_wo157" lemma="der" type="ART" function="pro">die</w>
+      <c xml:id="xd1_co158"> </c>
+      <w xml:id="xd1_wo159" lemma="Stadt" type="NN" function="dic">Stadt</w>
+      <c xml:id="xd1_co160"> </c>
+      <w xml:id="xd1_wo161" lemma="ich" type="PPOSAT" function="pro">seiner</w>
+      <c xml:id="xd1_co162"> </c>
+      <w xml:id="xd1_wo163" lemma="Vorfahr" type="NN" function="dic">Vorfahren</w>
+      <c xml:id="xd1_co164" type="$(">,</c>
+      <c xml:id="xd1_co165"> </c>
+      <w xml:id="xd1_wo166" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co167"> </c>
+      <w xml:id="xd1_wo168" lemma="schlagen" type="VVFIN" function="dic">schlug</w>
+      <c xml:id="xd1_co169"> </c>
+      <w xml:id="xd1_wo170" lemma="sein" type="PPOSAT" function="dic">seinen</w>
+      <c xml:id="xd1_co171"> </c>
+      <w xml:id="xd1_wo172" lemma="Wohnsitz" type="NN" function="dic">Wohnsitz</w>
+      <c xml:id="xd1_co173"> </c>
+      <w xml:id="xd1_wo174" lemma="auf" type="APPR" function="dic">auf</w>
+      <c xml:id="xd1_co175"> </c>
+      <w xml:id="xd1_wo176" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co177"> </c>
+      <w xml:id="xd1_wo178" lemma="Sullivans-Insel" type="NN" function="unk">Sullivans-Insel</w>
+      <c xml:id="xd1_co179"> </c>
+      <w xml:id="xd1_wo180" lemma="bei" type="APPR" function="dic">bei</w>
+      <c xml:id="xd1_co181"> </c>
+      <w xml:id="xd1_wo182" lemma="Charleston" subtype="geoCity" type="NE" function="pro">Charleston</w>
+      <c xml:id="xd1_co183"> </c>
+      <w xml:id="xd1_wo184" lemma="in" type="APPR" function="dic">in</w>
+      <c xml:id="xd1_co185"> </c>
+      <w xml:id="xd1_wo186" lemma="Süd-Carolina" type="NN" function="unk">Süd-Carolina</w>
+      <c xml:id="xd1_co187"> </c>
+      <w xml:id="xd1_wo188" lemma="auf" type="PTKVZ" function="dic">auf</w>
+      <c xml:id="xd1_co189" type="$.">.</c>
+     </s>
+    </p>
+    <p xml:id="xd1_pa4">
+     <s xml:id="xd1_se10">
+      <w xml:id="xd1_wo190" lemma="dies" type="PDAT" function="pro">Diese</w>
+      <c xml:id="xd1_co191"> </c>
+      <w xml:id="xd1_wo192" lemma="Insel" type="NN" function="dic">Insel</w>
+      <c xml:id="xd1_co193"> </c>
+      <w xml:id="xd1_wo194" lemma="sein" type="VAFIN" function="dic">ist</w>
+      <c xml:id="xd1_co195"> </c>
+      <w xml:id="xd1_wo196" lemma="ein" type="ART" function="pro">ein</w>
+      <c xml:id="xd1_co197"> </c>
+      <w xml:id="xd1_wo198" lemma="sehr" type="ADV" function="dic">sehr</w>
+      <c xml:id="xd1_co199"> </c>
+      <w xml:id="xd1_wo200" lemma="merkwürdig" type="ADJA" function="dic">merkwürdiges</w>
+      <c xml:id="xd1_co201"> </c>
+      <w xml:id="xd1_wo202" lemma="Stück" type="NN" function="dic">Stück</w>
+      <c xml:id="xd1_co203"> </c>
+      <w xml:id="xd1_wo204" lemma="Land" type="NN" function="dic">Land</w>
+      <c xml:id="xd1_co205" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se11">
+      <w xml:id="xd1_wo206" lemma="sie" type="PPER" function="dic">Sie</w>
+      <c xml:id="xd1_co207"> </c>
+      <w xml:id="xd1_wo208" lemma="bestehen" type="VVFIN" function="dic">besteht</w>
+      <c xml:id="xd1_co209"> </c>
+      <w xml:id="xd1_wo210" lemma="fast" type="ADV" function="pro">fast</w>
+      <c xml:id="xd1_co211"> </c>
+      <w xml:id="xd1_wo212" lemma="nur" type="ADV" function="pro">nur</w>
+      <c xml:id="xd1_co213"> </c>
+      <w xml:id="xd1_wo214" lemma="aus" type="APPR" function="dic">aus</w>
+      <c xml:id="xd1_co215"> </c>
+      <w xml:id="xd1_wo216" lemma="See" subtype="geoCity" type="NE" function="pro">See</w>
+      <c xml:id="xd1_co217" type="$(">-</c>
+      <c xml:id="xd1_co218"> </c>
+      <w xml:id="xd1_wo219" lemma="sand" type="ADJA" function="unk">sand</w>
+      <c xml:id="xd1_co220"> </c>
+      <w xml:id="xd1_wo221" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co222"> </c>
+      <w xml:id="xd1_wo223" lemma="sein" type="VAFIN" function="dic">ist</w>
+      <c xml:id="xd1_co224"> </c>
+      <w xml:id="xd1_wo225" lemma="ungefähr" type="ADJD" function="dic">ungefähr</w>
+      <c xml:id="xd1_co226"> </c>
+      <seg xml:id="xd1_segm3">
+       <w xml:id="xd1_wo227" lemma="drei" type="CARD" function="dic">drei</w>
+       <c xml:id="xd1_co228"> </c>
+       <w xml:id="xd1_wo229" lemma="Meile" type="NN" function="dic">Meilen</w>
+      </seg>
+      <c xml:id="xd1_co230"> </c>
+      <w xml:id="xd1_wo231" lemma="lang" type="ADJD" function="dic">lang</w>
+      <c xml:id="xd1_co232"> </c>
+      <w xml:id="xd1_wo233" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co234"> </c>
+      <w xml:id="xd1_wo235" lemma="an" type="APPR" function="dic">an</w>
+      <c xml:id="xd1_co236"> </c>
+      <w xml:id="xd1_wo237" lemma="kein" type="PIAT" function="pro">keiner</w>
+      <c xml:id="xd1_co238"> </c>
+      <w xml:id="xd1_wo239" lemma="Stelle" type="NN" function="dic">Stelle</w>
+      <c xml:id="xd1_co240"> </c>
+      <w xml:id="xd1_wo241" lemma="über" type="APPR" function="dic">über</w>
+      <c xml:id="xd1_co242"> </c>
+      <w xml:id="xd1_wo243" lemma="ein" type="ART" function="pro">eine</w>
+      <c xml:id="xd1_co244"> </c>
+      <w xml:id="xd1_wo245" lemma="Viertelmeile" type="CARD" function="dic">Viertelmeile</w>
+      <c xml:id="xd1_co246"> </c>
+      <w xml:id="xd1_wo247" lemma="breit" type="ADJD" function="dic">breit</w>
+      <c xml:id="xd1_co248" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se12">
+      <w xml:id="xd1_wo249" lemma="vom" type="APPRART" function="dic">Vom</w>
+      <c xml:id="xd1_co250"> </c>
+      <w xml:id="xd1_wo251" lemma="Festland" type="NN" function="dic">Festland</w>
+      <c xml:id="xd1_co252"> </c>
+      <w xml:id="xd1_wo253" lemma="sein" type="VAFIN" function="dic">ist</w>
+      <c xml:id="xd1_co254"> </c>
+      <w xml:id="xd1_wo255" lemma="sie" type="PPER" function="dic">sie</w>
+      <c xml:id="xd1_co256"> </c>
+      <w xml:id="xd1_wo257" lemma="durch" type="APPR" function="dic">durch</w>
+      <c xml:id="xd1_co258"> </c>
+      <w xml:id="xd1_wo259" lemma="ein" type="ART" function="pro">eine</w>
+      <c xml:id="xd1_co260"> </c>
+      <w xml:id="xd1_wo261" lemma="kaum" type="ADV" function="dic">kaum</w>
+      <c xml:id="xd1_co262"> </c>
+      <w xml:id="xd1_wo263" lemma="wahrnehmbar" type="ADJA" function="dic">wahrnehmbare</w>
+      <c xml:id="xd1_co264"> </c>
+      <w xml:id="xd1_wo265" lemma="Bucht" type="NN" function="dic">Bucht</w>
+      <c xml:id="xd1_co266"> </c>
+      <w xml:id="xd1_wo267" lemma="trennen" type="VVPP" function="dic">getrennt</w>
+      <c xml:id="xd1_co268" type="$,">,</c>
+      <c xml:id="xd1_co269"> </c>
+      <w xml:id="xd1_wo270" lemma="der" type="PRELS" function="pro">die</w>
+      <c xml:id="xd1_co271"> </c>
+      <w xml:id="xd1_wo272" lemma="sich" type="PRF" function="dic">sich</w>
+      <c xml:id="xd1_co273"> </c>
+      <w xml:id="xd1_wo274" lemma="durch" type="APPR" function="dic">durch</w>
+      <c xml:id="xd1_co275"> </c>
+      <w xml:id="xd1_wo276" lemma="ein" type="ART" function="pro">eine</w>
+      <c xml:id="xd1_co277"> </c>
+      <w xml:id="xd1_wo278" lemma="Wildnis" type="NN" function="dic">Wildnis</w>
+      <c xml:id="xd1_co279"> </c>
+      <w xml:id="xd1_wo280" lemma="von" type="APPR" function="dic">von</w>
+      <c xml:id="xd1_co281"> </c>
+      <w xml:id="xd1_wo282" lemma="Ried" subtype="geoCity" type="NE" function="dic">Ried</w>
+      <c xml:id="xd1_co283"> </c>
+      <w xml:id="xd1_wo284" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co285"> </c>
+      <w xml:id="xd1_wo286" lemma="Sumpfboden" type="NN" function="dic">Sumpfboden</w>
+      <c xml:id="xd1_co287"> </c>
+      <w xml:id="xd1_wo288" lemma="hindurchwindet" type="VVFIN" function="unk">hindurchwindet</w>
+      <c xml:id="xd1_co289"> </c>
+      <w xml:id="xd1_wo290" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co291"> </c>
+      <w xml:id="xd1_wo292" lemma="zahllos" type="ADJA" function="dic">zahllosen</w>
+      <c xml:id="xd1_co293"> </c>
+      <w xml:id="xd1_wo294" lemma="Marschhühnern" type="NN" function="unk">Marschhühnern</w>
+      <c xml:id="xd1_co295"> </c>
+      <w xml:id="xd1_wo296" lemma="ausgezeichnet" type="ADJA" function="dic">ausgezeichnete</w>
+      <c xml:id="xd1_co297"> </c>
+      <w xml:id="xd1_wo298" lemma="Schlupfwinkel" type="NN" function="dic">Schlupfwinkel</w>
+      <c xml:id="xd1_co299"> </c>
+      <w xml:id="xd1_wo300" lemma="gewähren" type="VVPP" function="dic">gewährt</w>
+      <c xml:id="xd1_co301" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se13">
+      <w xml:id="xd1_wo302" lemma="der" type="ART" function="pro">Die</w>
+      <c xml:id="xd1_co303"> </c>
+      <w xml:id="xd1_wo304" lemma="Vegetation" type="NN" function="dic">Vegetation</w>
+      <c xml:id="xd1_co305"> </c>
+      <w xml:id="xd1_wo306" lemma="sein" type="VAFIN" function="dic">ist</w>
+      <c xml:id="xd1_co307" type="$,">,</c>
+      <c xml:id="xd1_co308"> </c>
+      <w xml:id="xd1_wo309" lemma="wie" type="KOKOM" function="dic">wie</w>
+      <c xml:id="xd1_co310"> </c>
+      <w xml:id="xd1_wo311" lemma="aus" type="APPR" function="dic">aus</w>
+      <c xml:id="xd1_co312"> </c>
+      <w xml:id="xd1_wo313" lemma="der" type="ART" function="pro">dem</w>
+      <c xml:id="xd1_co314"> </c>
+      <w xml:id="xd1_wo315" lemma="vorhergesagt" type="NN" function="pro">Vorhergesagten</w>
+      <c xml:id="xd1_co316"> </c>
+      <w xml:id="xd1_wo317" lemma="leicht" type="ADJD" function="dic">leicht</w>
+      <c xml:id="xd1_co318"> </c>
+      <w xml:id="xd1_wo319" lemma="verständlich" type="ADJD" function="dic">verständlich</w>
+      <c xml:id="xd1_co320" type="$(">,</c>
+      <c xml:id="xd1_co321"> </c>
+      <w xml:id="xd1_wo322" lemma="höchst" type="ADV" function="dic">höchst</w>
+      <c xml:id="xd1_co323"> </c>
+      <w xml:id="xd1_wo324" lemma="dürftig" type="ADJD" function="dic">dürftig</w>
+      <c xml:id="xd1_co325"> </c>
+      <w xml:id="xd1_wo326" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co327"> </c>
+      <w xml:id="xd1_wo328" lemma="verkrüppeln" type="VVFIN" function="dic">verkrüppelt</w>
+      <c xml:id="xd1_co329" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se14">
+      <w xml:id="xd1_wo330" lemma="groß" type="ADJA" function="dic">Größere</w>
+      <c xml:id="xd1_co331"> </c>
+      <w xml:id="xd1_wo332" lemma="Baum" type="NN" function="dic">Bäume</w>
+      <c xml:id="xd1_co333"> </c>
+      <w xml:id="xd1_wo334" lemma="sehen" type="VVFIN" function="dic">sieht</w>
+      <c xml:id="xd1_co335"> </c>
+      <w xml:id="xd1_wo336" lemma="man" type="PIS" function="pro">man</w>
+      <c xml:id="xd1_co337"> </c>
+      <w xml:id="xd1_wo338" lemma="nirgendwo" type="ADV" function="dic">nirgendwo</w>
+      <c xml:id="xd1_co339" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se15">
+      <w xml:id="xd1_wo340" lemma="zwar" type="ADV" function="dic">Zwar</w>
+      <c xml:id="xd1_co341"> </c>
+      <w xml:id="xd1_wo342" lemma="gedeihen" type="VVFIN" function="dic">gedeiht</w>
+      <c xml:id="xd1_co343"> </c>
+      <w xml:id="xd1_wo344" lemma="hin" type="PTKVZ" function="dic">hin</w>
+      <c xml:id="xd1_co345"> </c>
+      <w xml:id="xd1_wo346" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co347"> </c>
+      <w xml:id="xd1_wo348" lemma="wieder" type="ADV" function="dic">wieder</w>
+      <c xml:id="xd1_co349"> </c>
+      <w xml:id="xd1_wo350" lemma="am" type="APPRART" function="pro">am</w>
+      <c xml:id="xd1_co351"> </c>
+      <w xml:id="xd1_wo352" lemma="Westende" type="NN" function="dic">Westende</w>
+      <c xml:id="xd1_co353"> </c>
+      <w xml:id="xd1_wo354" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co355"> </c>
+      <w xml:id="xd1_wo356" lemma="Insel" type="NN" function="dic">Insel</w>
+      <c xml:id="xd1_co357" type="$(">,</c>
+      <c xml:id="xd1_co358"> </c>
+      <w xml:id="xd1_wo359" lemma="in" type="APPR" function="dic">in</w>
+      <c xml:id="xd1_co360"> </c>
+      <w xml:id="xd1_wo361" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co362"> </c>
+      <w xml:id="xd1_wo363" lemma="Nähe" type="NN" function="dic">Nähe</w>
+      <c xml:id="xd1_co364"> </c>
+      <w xml:id="xd1_wo365" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co366"> </c>
+      <w xml:id="xd1_wo367" lemma="wenig" type="PIDAT" function="pro">wenigen</w>
+      <c xml:id="xd1_co368"> </c>
+      <w xml:id="xd1_wo369" lemma="elend" type="ADJA" function="dic">elenden</w>
+      <c xml:id="xd1_co370"> </c>
+      <w xml:id="xd1_wo371" lemma="Holzhaus" type="NN" function="dic">Holzhäuser</w>
+      <c xml:id="xd1_co372" type="$,">,</c>
+      <c xml:id="xd1_co373"> </c>
+      <w xml:id="xd1_wo374" lemma="der" type="PRELS" function="pro">die</w>
+      <c xml:id="xd1_co375"> </c>
+      <w xml:id="xd1_wo376" lemma="sich" type="PRF" function="dic">sich</w>
+      <c xml:id="xd1_co377"> </c>
+      <w xml:id="xd1_wo378" lemma="ein" type="ART" function="pro">ein</w>
+      <c xml:id="xd1_co379"> </c>
+      <w xml:id="xd1_wo380" lemma="paar" type="PIDAT" function="pro">paar</w>
+      <c xml:id="xd1_co381"> </c>
+      <w xml:id="xd1_wo382" lemma="Leute" type="NN" function="dic">Leute</w>
+      <c xml:id="xd1_co383"> </c>
+      <w xml:id="xd1_wo384" lemma="erbauen" type="VVPP" function="dic">erbaut</w>
+      <c xml:id="xd1_co385"> </c>
+      <w xml:id="xd1_wo386" lemma="haben" type="VAINF" function="dic">haben</w>
+      <c xml:id="xd1_co387" type="$,">,</c>
+      <c xml:id="xd1_co388"> </c>
+      <w xml:id="xd1_wo389" lemma="um" type="KOUI" function="dic">um</w>
+      <c xml:id="xd1_co390"> </c>
+      <w xml:id="xd1_wo391" lemma="im" type="APPRART" function="dic">im</w>
+      <c xml:id="xd1_co392"> </c>
+      <w xml:id="xd1_wo393" lemma="Sommer" type="NN" function="dic">Sommer</w>
+      <c xml:id="xd1_co394"> </c>
+      <w xml:id="xd1_wo395" lemma="der" type="ART" function="dic">den</w>
+      <c xml:id="xd1_co396"> </c>
+      <w xml:id="xd1_wo397" lemma="Fiebern" type="NN" function="dic">Fiebern</w>
+      <c xml:id="xd1_co398"> </c>
+      <w xml:id="xd1_wo399" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co400"> </c>
+      <w xml:id="xd1_wo401" lemma="der" type="ART" function="pro">dem</w>
+      <c xml:id="xd1_co402"> </c>
+      <w xml:id="xd1_wo403" lemma="Staub" type="NN" function="dic">Staub</w>
+      <c xml:id="xd1_co404"> </c>
+      <w xml:id="xd1_wo405" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co406"> </c>
+      <w xml:id="xd1_wo407" lemma="Stadt" type="NN" function="dic">Stadt</w>
+      <c xml:id="xd1_co408"> </c>
+      <w xml:id="xd1_wo409" lemma="zu" type="PTKZU" function="dic">zu</w>
+      <c xml:id="xd1_co410"> </c>
+      <w xml:id="xd1_wo411" lemma="entfliehen" type="VVINF" function="dic">entfliehen</w>
+      <c xml:id="xd1_co412" type="$,">,</c>
+      <c xml:id="xd1_co413"> </c>
+      <w xml:id="xd1_wo414" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co415"> </c>
+      <w xml:id="xd1_wo416" lemma="stachlig" type="ADJA" function="dic">stachlige</w>
+      <c xml:id="xd1_co417"> </c>
+      <w xml:id="xd1_wo418" lemma="Palmetto" type="NN" function="unk">Palmetto</w>
+      <c xml:id="xd1_co419" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se16">
+      <w xml:id="xd1_wo420" lemma="der" type="ART" function="pro">Der</w>
+      <c xml:id="xd1_co421"> </c>
+      <w xml:id="xd1_wo422" lemma="Boden" type="NN" function="dic">Boden</w>
+      <c xml:id="xd1_co423"> </c>
+      <w xml:id="xd1_wo424" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co425"> </c>
+      <w xml:id="xd1_wo426" lemma="ganz" type="ADJA" function="dic">ganzen</w>
+      <c xml:id="xd1_co427"> </c>
+      <w xml:id="xd1_wo428" lemma="Insel" type="NN" function="dic">Insel</w>
+      <c xml:id="xd1_co429"> </c>
+      <w xml:id="xd1_wo430" lemma="mit" type="APPR" function="dic">mit</w>
+      <c xml:id="xd1_co431"> </c>
+      <w xml:id="xd1_wo432" lemma="Ausnahme" type="NN" function="dic">Ausnahme</w>
+      <c xml:id="xd1_co433"> </c>
+      <w xml:id="xd1_wo434" lemma="jen" type="PDAT" function="dic">jenes</w>
+      <c xml:id="xd1_co435"> </c>
+      <w xml:id="xd1_wo436" lemma="westlich" type="ADJA" function="dic">westlichen</w>
+      <c xml:id="xd1_co437"> </c>
+      <w xml:id="xd1_wo438" lemma="Teil" type="NN" function="dic">Teiles</w>
+      <c xml:id="xd1_co439"> </c>
+      <w xml:id="xd1_wo440" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co441"> </c>
+      <w xml:id="xd1_wo442" lemma="der" type="ART" function="dic">des</w>
+      <c xml:id="xd1_co443"> </c>
+      <w xml:id="xd1_wo444" lemma="weiß" type="ADJA" function="dic">weißen</w>
+      <c xml:id="xd1_co445"> </c>
+      <w xml:id="xd1_wo446" lemma="hart" type="ADJA" function="dic">harten</w>
+      <c xml:id="xd1_co447"> </c>
+      <w xml:id="xd1_wo448" lemma="Streifen" type="NN" function="dic">Streifens</w>
+      <c xml:id="xd1_co449"> </c>
+      <w xml:id="xd1_wo450" lemma="um" type="APPR" function="dic">um</w>
+      <c xml:id="xd1_co451"> </c>
+      <w xml:id="xd1_wo452" lemma="der" type="ART" function="pro">die</w>
+      <c xml:id="xd1_co453"> </c>
+      <w xml:id="xd1_wo454" lemma="Küste" type="NN" function="dic">Küste</w>
+      <c xml:id="xd1_co455"> </c>
+      <w xml:id="xd1_wo456" lemma="sein" type="VAFIN" function="dic">ist</w>
+      <c xml:id="xd1_co457"> </c>
+      <w xml:id="xd1_wo458" lemma="mit" type="APPR" function="dic">mit</w>
+      <c xml:id="xd1_co459"> </c>
+      <w xml:id="xd1_wo460" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co461"> </c>
+      <w xml:id="xd1_wo462" lemma="wuchernd" type="ADJA" function="dic">wuchernden</w>
+      <c xml:id="xd1_co463" type="$(">,</c>
+      <c xml:id="xd1_co464"> </c>
+      <w xml:id="xd1_wo465" lemma="süßduftend" type="ADJA" function="dic">süßduftenden</w>
+      <c xml:id="xd1_co466"> </c>
+      <w xml:id="xd1_wo467" lemma="Myrte" type="NN" function="dic">Myrte</w>
+      <c xml:id="xd1_co468"> </c>
+      <w xml:id="xd1_wo469" lemma="bedecken" type="VVPP" function="dic">bedeckt</w>
+      <c xml:id="xd1_co470" type="$,">,</c>
+      <c xml:id="xd1_co471"> </c>
+      <w xml:id="xd1_wo472" lemma="der" type="PRELS" function="pro">die</w>
+      <c xml:id="xd1_co473"> </c>
+      <w xml:id="xd1_wo474" lemma="von" type="APPR" function="dic">von</w>
+      <c xml:id="xd1_co475"> </c>
+      <w xml:id="xd1_wo476" lemma="der" type="ART" function="dic">den</w>
+      <c xml:id="xd1_co477"> </c>
+      <w xml:id="xd1_wo478" lemma="englisch" type="ADJA" function="dic">englischen</w>
+      <c xml:id="xd1_co479"> </c>
+      <w xml:id="xd1_wo480" lemma="Gärtner" type="NN" function="dic">Gärtnern</w>
+      <c xml:id="xd1_co481"> </c>
+      <w xml:id="xd1_wo482" lemma="so" type="ADV" function="pro">so</w>
+      <c xml:id="xd1_co483"> </c>
+      <w xml:id="xd1_wo484" lemma="sehr" type="ADV" function="dic">sehr</w>
+      <c xml:id="xd1_co485"> </c>
+      <w xml:id="xd1_wo486" lemma="schätzen" type="VVPP" function="dic">geschätzt</w>
+      <c xml:id="xd1_co487"> </c>
+      <w xml:id="xd1_wo488" lemma="werden" type="VAFIN" function="dic">wird</w>
+      <c xml:id="xd1_co489" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se17">
+      <w xml:id="xd1_wo490" lemma="der" type="ART" function="dic">Das</w>
+      <c xml:id="xd1_co491"> </c>
+      <w xml:id="xd1_wo492" lemma="Myrtengestrüpp" type="NN" function="unk">Myrtengestrüpp</w>
+      <c xml:id="xd1_co493"> </c>
+      <w xml:id="xd1_wo494" lemma="erreichen" type="VVFIN" function="dic">erreicht</w>
+      <c xml:id="xd1_co495"> </c>
+      <w xml:id="xd1_wo496" lemma="oft" type="ADV" function="pro">oft</w>
+      <c xml:id="xd1_co497"> </c>
+      <w xml:id="xd1_wo498" lemma="ein" type="ART" function="pro">eine</w>
+      <c xml:id="xd1_co499"> </c>
+      <w xml:id="xd1_wo500" lemma="Höhe" type="NN" function="dic">Höhe</w>
+      <c xml:id="xd1_co501"> </c>
+      <w xml:id="xd1_wo502" lemma="von" type="APPR" function="dic">von</w>
+      <c xml:id="xd1_co503"> </c>
+      <w xml:id="xd1_wo504" lemma="fünfzehn" type="CARD" function="dic">fünfzehn</w>
+      <c xml:id="xd1_co505"> </c>
+      <w xml:id="xd1_wo506" lemma="bis" type="APPR" function="dic">bis</w>
+      <c xml:id="xd1_co507"> </c>
+      <w xml:id="xd1_wo508" lemma="zwanzig" type="CARD" function="dic">zwanzig</w>
+      <c xml:id="xd1_co509"> </c>
+      <w xml:id="xd1_wo510" lemma="Fuß" type="NN" function="dic">Fuß</w>
+      <c xml:id="xd1_co511"> </c>
+      <w xml:id="xd1_wo512" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co513"> </c>
+      <w xml:id="xd1_wo514" lemma="bilden" type="VVFIN" function="dic">bildet</w>
+      <c xml:id="xd1_co515"> </c>
+      <w xml:id="xd1_wo516" lemma="ein" type="ART" function="pro">ein</w>
+      <c xml:id="xd1_co517"> </c>
+      <w xml:id="xd1_wo518" lemma="fast" type="ADV" function="pro">fast</w>
+      <c xml:id="xd1_co519"> </c>
+      <w xml:id="xd1_wo520" lemma="undurchdringlich" type="ADJA" function="dic">undurchdringliches</w>
+      <c xml:id="xd1_co521"> </c>
+      <w xml:id="xd1_wo522" lemma="Dickicht" type="NN" function="dic">Dickicht</w>
+      <c xml:id="xd1_co523" type="$,">,</c>
+      <c xml:id="xd1_co524"> </c>
+      <w xml:id="xd1_wo525" lemma="der" type="PRELS" function="pro">das</w>
+      <c xml:id="xd1_co526"> </c>
+      <w xml:id="xd1_wo527" lemma="der" type="ART" function="pro">die</w>
+      <c xml:id="xd1_co528"> </c>
+      <w xml:id="xd1_wo529" lemma="Luft" type="NN" function="dic">Luft</w>
+      <c xml:id="xd1_co530"> </c>
+      <w xml:id="xd1_wo531" lemma="mit" type="APPR" function="dic">mit</w>
+      <c xml:id="xd1_co532"> </c>
+      <w xml:id="xd1_wo533" lemma="schwer" type="ADJA" function="dic">schwerem</w>
+      <c xml:id="xd1_co534"> </c>
+      <w xml:id="xd1_wo535" lemma="Wohlgeruch" type="NN" function="dic">Wohlgeruch</w>
+      <c xml:id="xd1_co536"> </c>
+      <w xml:id="xd1_wo537" lemma="beladen" type="VVFIN" function="dic">belädt</w>
+      <c xml:id="xd1_co538" type="$.">.</c>
+     </s>
+    </p>
+    <p xml:id="xd1_pa5">
+     <s xml:id="xd1_se18">
+      <w xml:id="xd1_wo539" lemma="in" type="APPR" function="dic">In</w>
+      <c xml:id="xd1_co540"> </c>
+      <w xml:id="xd1_wo541" lemma="der" type="ART" function="pro">dem</w>
+      <c xml:id="xd1_co542"> </c>
+      <w xml:id="xd1_wo543" lemma="inner" type="ADJA" function="pro">innersten</w>
+      <c xml:id="xd1_co544"> </c>
+      <w xml:id="xd1_wo545" lemma="Schlupfwinkel" type="NN" function="dic">Schlupfwinkel</w>
+      <c xml:id="xd1_co546"> </c>
+      <w xml:id="xd1_wo547" lemma="ein" type="ART" function="pro">eines</w>
+      <c xml:id="xd1_co548"> </c>
+      <w xml:id="xd1_wo549" lemma="solch" type="PIDAT" function="dic">solchen</w>
+      <c xml:id="xd1_co550"> </c>
+      <w xml:id="xd1_wo551" lemma="Dickicht" type="NN" function="dic">Dickichts</w>
+      <c xml:id="xd1_co552"> </c>
+      <w xml:id="xd1_wo553" lemma="am" type="APPRART" function="pro">am</w>
+      <c xml:id="xd1_co554"> </c>
+      <w xml:id="xd1_wo555" lemma="östlich" type="ADJA" function="dic">östlichen</w>
+      <c xml:id="xd1_co556"> </c>
+      <w xml:id="xd1_wo557" lemma="Ende" type="NN" function="dic">Ende</w>
+      <c xml:id="xd1_co558"> </c>
+      <w xml:id="xd1_wo559" lemma="der" type="ART" function="dic">des</w>
+      <c xml:id="xd1_co560"> </c>
+      <w xml:id="xd1_wo561" lemma="Eiland" type="NN" function="dic">Eilandes</w>
+      <c xml:id="xd1_co562"> </c>
+      <w xml:id="xd1_wo563" lemma="haben" type="VAFIN" function="dic">hatte</w>
+      <c xml:id="xd1_co564"> </c>
+      <w xml:id="xd1_wo565" lemma="sich" type="PRF" function="dic">sich</w>
+      <c xml:id="xd1_co566"> </c>
+      <w xml:id="xd1_wo567" lemma="Legrand" subtype="personName" type="NE" function="dic">Legrand</w>
+      <c xml:id="xd1_co568"> </c>
+      <w xml:id="xd1_wo569" lemma="ein" type="ART" function="pro">eine</w>
+      <c xml:id="xd1_co570"> </c>
+      <w xml:id="xd1_wo571" lemma="klein" type="ADJA" function="dic">kleine</w>
+      <c xml:id="xd1_co572"> </c>
+      <w xml:id="xd1_wo573" lemma="Hütte" type="NN" function="dic">Hütte</w>
+      <c xml:id="xd1_co574"> </c>
+      <w xml:id="xd1_wo575" lemma="erbauen" type="VVPP" function="dic">erbaut</w>
+      <c xml:id="xd1_co576" type="$,">,</c>
+      <c xml:id="xd1_co577"> </c>
+      <w xml:id="xd1_wo578" lemma="der" type="PRELS" function="pro">die</w>
+      <c xml:id="xd1_co579"> </c>
+      <w xml:id="xd1_wo580" lemma="ich" type="PPER" function="pro">er</w>
+      <c xml:id="xd1_co581" type="$,">,</c>
+      <c xml:id="xd1_co582"> </c>
+      <w xml:id="xd1_wo583" lemma="als" type="KOUS" function="dic">als</w>
+      <c xml:id="xd1_co584"> </c>
+      <w xml:id="xd1_wo585" lemma="ich" type="PPER" function="dic">ich</w>
+      <c xml:id="xd1_co586"> </c>
+      <w xml:id="xd1_wo587" lemma="durch" type="APPR" function="dic">durch</w>
+      <c xml:id="xd1_co588"> </c>
+      <w xml:id="xd1_wo589" lemma="Zufall" type="NN" function="dic">Zufall</w>
+      <c xml:id="xd1_co590"> </c>
+      <w xml:id="xd1_wo591" lemma="mit" type="APPR" function="dic">mit</w>
+      <c xml:id="xd1_co592"> </c>
+      <w xml:id="xd1_wo593" lemma="es" type="PPER" function="pro">ihm</w>
+      <c xml:id="xd1_co594"> </c>
+      <w xml:id="xd1_wo595" lemma="bekannt" type="ADJD" function="pro">bekannt</w>
+      <c xml:id="xd1_co596"> </c>
+      <w xml:id="xd1_wo597" lemma="werden" type="VAFIN" function="dic">wurde</w>
+      <c xml:id="xd1_co598" type="$,">,</c>
+      <c xml:id="xd1_co599"> </c>
+      <w xml:id="xd1_wo600" lemma="im" type="APPRART" function="dic">im</w>
+      <c xml:id="xd1_co601"> </c>
+      <w xml:id="xd1_wo602" lemma="Sommer" type="NN" function="dic">Sommer</w>
+      <c xml:id="xd1_co603"> </c>
+      <w xml:id="xd1_wo604" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co605"> </c>
+      <w xml:id="xd1_wo606" lemma="Winter" type="NN" function="dic">Winter</w>
+      <c xml:id="xd1_co607"> </c>
+      <w xml:id="xd1_wo608" lemma="bewohnen" type="VVFIN" function="dic">bewohnte</w>
+      <c xml:id="xd1_co609" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se19">
+      <w xml:id="xd1_wo610" lemma="unser" type="PPOSAT" function="dic">Unsere</w>
+      <c xml:id="xd1_co611"> </c>
+      <w xml:id="xd1_wo612" lemma="Beziehung" type="NN" function="dic">Beziehungen</w>
+      <c xml:id="xd1_co613"> </c>
+      <w xml:id="xd1_wo614" lemma="vertiefen" type="VVFIN" function="dic">vertieften</w>
+      <c xml:id="xd1_co615"> </c>
+      <w xml:id="xd1_wo616" lemma="sich" type="PRF" function="dic">sich</w>
+      <c xml:id="xd1_co617"> </c>
+      <w xml:id="xd1_wo618" lemma="bald" type="ADV" function="pro">bald</w>
+      <c xml:id="xd1_co619"> </c>
+      <w xml:id="xd1_wo620" lemma="zu" type="APPR" function="dic">zu</w>
+      <c xml:id="xd1_co621"> </c>
+      <w xml:id="xd1_wo622" lemma="ein" type="ART" function="pro">einer</w>
+      <c xml:id="xd1_co623"> </c>
+      <w xml:id="xd1_wo624" lemma="Freundschaft" type="NN" function="dic">Freundschaft</w>
+      <c xml:id="xd1_co625" type="$(">,</c>
+      <c xml:id="xd1_co626"> </c>
+      <w xml:id="xd1_wo627" lemma="denn" type="KON" function="dic">denn</w>
+      <c xml:id="xd1_co628"> </c>
+      <w xml:id="xd1_wo629" lemma="viel" type="PIDAT" function="pro">viele</w>
+      <c xml:id="xd1_co630"> </c>
+      <w xml:id="xd1_wo631" lemma="Zug" type="NN" function="dic">Züge</w>
+      <c xml:id="xd1_co632"> </c>
+      <w xml:id="xd1_wo633" lemma="im" type="APPRART" function="dic">im</w>
+      <c xml:id="xd1_co634"> </c>
+      <w xml:id="xd1_wo635" lemma="Wesen" subtype="geoCity" type="NE" function="pro">Wesen</w>
+     </s>
+    </p>
+    <p xml:id="xd1_pa6">
+     <s xml:id="xd1_se20">
+      <w xml:id="xd1_wo636" lemma="der" type="ART" function="dic">des</w>
+      <c xml:id="xd1_co637"> </c>
+      <w xml:id="xd1_wo638" lemma="Einsiedler" type="NN" function="dic">Einsiedlers</w>
+      <c xml:id="xd1_co639"> </c>
+      <w xml:id="xd1_wo640" lemma="erwecken" type="VVFIN" function="dic">erweckten</w>
+      <c xml:id="xd1_co641"> </c>
+      <w xml:id="xd1_wo642" lemma="mein" type="PPOSAT" function="pro">mein</w>
+      <c xml:id="xd1_co643"> </c>
+      <w xml:id="xd1_wo644" lemma="Interesse" type="NN" function="dic">Interesse</w>
+      <c xml:id="xd1_co645"> </c>
+      <w xml:id="xd1_wo646" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co647"> </c>
+      <w xml:id="xd1_wo648" lemma="erfüllen" type="VVFIN" function="dic">erfüllten</w>
+      <c xml:id="xd1_co649"> </c>
+      <w xml:id="xd1_wo650" lemma="mich" type="PRF" function="dic">mich</w>
+      <c xml:id="xd1_co651"> </c>
+      <w xml:id="xd1_wo652" lemma="mit" type="APPR" function="dic">mit</w>
+      <c xml:id="xd1_co653"> </c>
+      <w xml:id="xd1_wo654" lemma="Hochachtung" type="NN" function="dic">Hochachtung</w>
+      <c xml:id="xd1_co655"> </c>
+      <w xml:id="xd1_wo656" lemma="für" type="APPR" function="dic">für</w>
+      <c xml:id="xd1_co657"> </c>
+      <w xml:id="xd1_wo658" lemma="er" type="PPER" function="dic">ihn</w>
+      <c xml:id="xd1_co659" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se21">
+      <w xml:id="xd1_wo660" lemma="ich" type="PPER" function="dic">Ich</w>
+      <c xml:id="xd1_co661"> </c>
+      <w xml:id="xd1_wo662" lemma="finden" type="VVFIN" function="dic">fand</w>
+      <c xml:id="xd1_co663"> </c>
+      <w xml:id="xd1_wo664" lemma="in" type="APPR" function="dic">in</w>
+      <c xml:id="xd1_co665"> </c>
+      <w xml:id="xd1_wo666" lemma="es" type="PPER" function="pro">ihm</w>
+      <c xml:id="xd1_co667"> </c>
+      <w xml:id="xd1_wo668" lemma="ein" type="ART" function="pro">einen</w>
+      <c xml:id="xd1_co669"> </c>
+      <w xml:id="xd1_wo670" lemma="gebildet" type="ADJA" function="dic">gebildeten</w>
+      <c xml:id="xd1_co671"> </c>
+      <w xml:id="xd1_wo672" lemma="Mann" type="NN" function="dic">Mann</w>
+      <c xml:id="xd1_co673"> </c>
+      <w xml:id="xd1_wo674" lemma="von" type="APPR" function="dic">von</w>
+      <c xml:id="xd1_co675"> </c>
+      <w xml:id="xd1_wo676" lemma="ganz" type="ADV" function="pro">ganz</w>
+      <c xml:id="xd1_co677"> </c>
+      <w xml:id="xd1_wo678" lemma="ungewöhnlich" type="ADJA" function="dic">ungewöhnlichen</w>
+      <c xml:id="xd1_co679"> </c>
+      <w xml:id="xd1_wo680" lemma="Geistesgabe" type="NN" function="dic">Geistesgaben</w>
+      <c xml:id="xd1_co681" type="$(">;</c>
+     </s>
+     <s xml:id="xd1_se22">
+      <w xml:id="xd1_wo682" lemma="doch" type="KON" function="dic">doch</w>
+      <c xml:id="xd1_co683"> </c>
+      <w xml:id="xd1_wo684" lemma="leiden" type="VVFIN" function="dic">litt</w>
+      <c xml:id="xd1_co685"> </c>
+      <w xml:id="xd1_wo686" lemma="ich" type="PPER" function="pro">er</w>
+      <c xml:id="xd1_co687"> </c>
+      <w xml:id="xd1_wo688" lemma="an" type="APPR" function="dic">an</w>
+      <c xml:id="xd1_co689"> </c>
+      <w xml:id="xd1_wo690" lemma="Misanthropie" type="NN" function="unk">Misanthropie</w>
+      <c xml:id="xd1_co691"> </c>
+      <w xml:id="xd1_wo692" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co693"> </c>
+      <w xml:id="xd1_wo694" lemma="sein" type="VAFIN" function="dic">war</w>
+      <c xml:id="xd1_co695"> </c>
+      <w xml:id="xd1_wo696" lemma="abwechselnd" type="ADJD" function="dic">abwechselnd</w>
+      <c xml:id="xd1_co697"> </c>
+      <w xml:id="xd1_wo698" lemma="krankhaft" type="ADJA" function="dic">krankhaften</w>
+      <c xml:id="xd1_co699"> </c>
+      <w xml:id="xd1_wo700" lemma="Ausbruch" type="NN" function="dic">Ausbrüchen</w>
+      <c xml:id="xd1_co701"> </c>
+      <w xml:id="xd1_wo702" lemma="von" type="APPR" function="dic">von</w>
+      <c xml:id="xd1_co703"> </c>
+      <w xml:id="xd1_wo704" lemma="Begeisterung" type="NN" function="dic">Begeisterung</w>
+      <c xml:id="xd1_co705"> </c>
+      <w xml:id="xd1_wo706" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co707"> </c>
+      <w xml:id="xd1_wo708" lemma="Trübsinn" type="NN" function="dic">Trübsinn</w>
+      <c xml:id="xd1_co709"> </c>
+      <w xml:id="xd1_wo710" lemma="aussetzen" type="VVPP" function="dic">ausgesetzt</w>
+      <c xml:id="xd1_co711" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se23">
+      <w xml:id="xd1_wo712" lemma="ich" type="PPER" function="pro">Er</w>
+      <c xml:id="xd1_co713"> </c>
+      <w xml:id="xd1_wo714" lemma="besitzen" type="VVFIN" function="dic">besaß</w>
+      <c xml:id="xd1_co715"> </c>
+      <w xml:id="xd1_wo716" lemma="ein" type="ART" function="pro">eine</w>
+      <c xml:id="xd1_co717"> </c>
+      <w xml:id="xd1_wo718" lemma="groß" type="ADJA" function="dic">große</w>
+      <c xml:id="xd1_co719"> </c>
+      <w xml:id="xd1_wo720" lemma="Menge" type="NN" function="dic">Menge</w>
+      <c xml:id="xd1_co721"> </c>
+      <w xml:id="xd1_wo722" lemma="Buch" type="NN" function="dic">Bücher</w>
+      <c xml:id="xd1_co723" type="$,">,</c>
+      <c xml:id="xd1_co724"> </c>
+      <w xml:id="xd1_wo725" lemma="lesen" type="VVFIN" function="dic">las</w>
+      <c xml:id="xd1_co726"> </c>
+      <w xml:id="xd1_wo727" lemma="jedoch" type="ADV" function="pro">jedoch</w>
+      <c xml:id="xd1_co728"> </c>
+      <w xml:id="xd1_wo729" lemma="nur" type="ADV" function="pro">nur</w>
+      <c xml:id="xd1_co730"> </c>
+      <w xml:id="xd1_wo731" lemma="sehr" type="ADV" function="dic">sehr</w>
+      <c xml:id="xd1_co732"> </c>
+      <w xml:id="xd1_wo733" lemma="selten" type="ADJD" function="dic">selten</w>
+      <c xml:id="xd1_co734"> </c>
+      <w xml:id="xd1_wo735" lemma="in" type="APPR" function="dic">in</w>
+      <c xml:id="xd1_co736"> </c>
+      <w xml:id="xd1_wo737" lemma="sie" type="PPER" function="dic">ihnen</w>
+      <c xml:id="xd1_co738" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se24">
+      <w xml:id="xd1_wo739" lemma="sein" type="PPOSAT" function="pro">Sein</w>
+      <c xml:id="xd1_co740"> </c>
+      <w xml:id="xd1_wo741" lemma="Hauptvergnügen" type="NN" function="dic">Hauptvergnügen</w>
+      <c xml:id="xd1_co742"> </c>
+      <w xml:id="xd1_wo743" lemma="bestehen" type="VVFIN" function="dic">bestand</w>
+      <c xml:id="xd1_co744"> </c>
+      <w xml:id="xd1_wo745" lemma="im" type="APPRART" function="dic">im</w>
+      <c xml:id="xd1_co746"> </c>
+      <w xml:id="xd1_wo747" lemma="jagen" type="VVINF" function="dic">Jagen</w>
+      <c xml:id="xd1_co748"> </c>
+      <w xml:id="xd1_wo749" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co750"> </c>
+      <w xml:id="xd1_wo751" lemma="Fisch" type="NN" function="dic">Fischen</w>
+      <c xml:id="xd1_co752"> </c>
+      <w xml:id="xd1_wo753" lemma="oder" type="KON" function="dic">oder</w>
+      <c xml:id="xd1_co754"> </c>
+      <w xml:id="xd1_wo755" lemma="in" type="APPR" function="dic">in</w>
+      <c xml:id="xd1_co756"> </c>
+      <w xml:id="xd1_wo757" lemma="ziellos" type="ADJA" function="dic">ziellosem</w>
+      <c xml:id="xd1_co758"> </c>
+      <w xml:id="xd1_wo759" lemma="Umherstreifen" type="NN" function="dic">Umherstreifen</w>
+      <c xml:id="xd1_co760"> </c>
+      <w xml:id="xd1_wo761" lemma="durch" type="APPR" function="dic">durch</w>
+      <c xml:id="xd1_co762"> </c>
+      <w xml:id="xd1_wo763" lemma="der" type="ART" function="dic">das</w>
+      <c xml:id="xd1_co764"> </c>
+      <w xml:id="xd1_wo765" lemma="Myrtengestrüpp" type="NN" function="unk">Myrtengestrüpp</w>
+      <c xml:id="xd1_co766"> </c>
+      <w xml:id="xd1_wo767" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co768"> </c>
+      <w xml:id="xd1_wo769" lemma="am" type="APPRART" function="pro">am</w>
+      <c xml:id="xd1_co770"> </c>
+      <w xml:id="xd1_wo771" lemma="Ufer" type="NN" function="dic">Ufer</w>
+      <c xml:id="xd1_co772"> </c>
+      <w xml:id="xd1_wo773" lemma="entlang" type="APPO" function="pro">entlang</w>
+      <c xml:id="xd1_co774" type="$,">,</c>
+      <c xml:id="xd1_co775"> </c>
+      <w xml:id="xd1_wo776" lemma="wo" type="PWAV" function="dic">wo</w>
+      <c xml:id="xd1_co777"> </c>
+      <w xml:id="xd1_wo778" lemma="ich" type="PPER" function="pro">er</w>
+      <c xml:id="xd1_co779"> </c>
+      <w xml:id="xd1_wo780" lemma="Muschel" type="NN" function="dic">Muscheln</w>
+      <c xml:id="xd1_co781"> </c>
+      <w xml:id="xd1_wo782" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co783"> </c>
+      <w xml:id="xd1_wo784" lemma="Insekt" type="NN" function="dic">Insekten</w>
+      <c xml:id="xd1_co785"> </c>
+      <w xml:id="xd1_wo786" lemma="für" type="APPR" function="dic">für</w>
+      <c xml:id="xd1_co787"> </c>
+      <w xml:id="xd1_wo788" lemma="mein" type="PPOSAT" function="pro">seine</w>
+      <c xml:id="xd1_co789"> </c>
+      <w xml:id="xd1_wo790" lemma="höchst" type="ADV" function="dic">höchst</w>
+      <c xml:id="xd1_co791"> </c>
+      <w xml:id="xd1_wo792" lemma="reichhaltig" type="ADJA" function="dic">reichhaltige</w>
+      <c xml:id="xd1_co793"> </c>
+      <w xml:id="xd1_wo794" lemma="Sammlung" type="NN" function="dic">Sammlung</w>
+      <c xml:id="xd1_co795"> </c>
+      <w xml:id="xd1_wo796" lemma="suchen" type="VVFIN" function="dic">suchte</w>
+      <c xml:id="xd1_co797" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se25">
+      <w xml:id="xd1_wo798" lemma="bei" type="APPR" function="dic">Bei</w>
+      <c xml:id="xd1_co799"> </c>
+      <w xml:id="xd1_wo800" lemma="dies" type="PDAT" function="pro">diesen</w>
+      <c xml:id="xd1_co801"> </c>
+      <w xml:id="xd1_wo802" lemma="Ausflug" type="NN" function="dic">Ausflügen</w>
+      <c xml:id="xd1_co803"> </c>
+      <w xml:id="xd1_wo804" lemma="begleiten" type="VVFIN" function="dic">begleitete</w>
+      <c xml:id="xd1_co805"> </c>
+      <w xml:id="xd1_wo806" lemma="er" type="PPER" function="dic">ihn</w>
+      <c xml:id="xd1_co807"> </c>
+      <w xml:id="xd1_wo808" lemma="gewöhnlich" type="ADJD" function="dic">gewöhnlich</w>
+      <c xml:id="xd1_co809"> </c>
+      <w xml:id="xd1_wo810" lemma="ein" type="ART" function="pro">ein</w>
+      <c xml:id="xd1_co811"> </c>
+      <w xml:id="xd1_wo812" lemma="alt" type="ADJA" function="pro">alter</w>
+      <c xml:id="xd1_co813"> </c>
+      <w xml:id="xd1_wo814" lemma="Neger" type="NN" function="dic">Neger</w>
+      <c xml:id="xd1_co815"> </c>
+      <w xml:id="xd1_wo816" lemma="namens" type="APPR" function="dic">namens</w>
+      <c xml:id="xd1_co817"> </c>
+      <w xml:id="xd1_wo818" lemma="Jupiter" type="NN" function="unk">Jupiter</w>
+      <c xml:id="xd1_co819" type="$(">,</c>
+      <c xml:id="xd1_co820"> </c>
+      <w xml:id="xd1_wo821" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co822" type="$(">,</c>
+      <c xml:id="xd1_co823"> </c>
+      <w xml:id="xd1_wo824" lemma="bevor" type="KOUS" function="pro">bevor</w>
+      <c xml:id="xd1_co825"> </c>
+      <w xml:id="xd1_wo826" lemma="der" type="ART" function="pro">die</w>
+      <c xml:id="xd1_co827"> </c>
+      <w xml:id="xd1_wo828" lemma="Familie" type="NN" function="dic">Familie</w>
+      <c xml:id="xd1_co829"> </c>
+      <w xml:id="xd1_wo830" lemma="verarmen" type="VVFIN" function="dic">verarmte</w>
+      <c xml:id="xd1_co831" type="$,">,</c>
+      <c xml:id="xd1_co832"> </c>
+      <w xml:id="xd1_wo833" lemma="mein" type="PPOSAT" function="pro">seine</w>
+      <c xml:id="xd1_co834"> </c>
+      <w xml:id="xd1_wo835" lemma="Freiheit" type="NN" function="dic">Freiheit</w>
+      <c xml:id="xd1_co836"> </c>
+      <w xml:id="xd1_wo837" lemma="erhalten" type="VVPP" function="dic">erhalten</w>
+      <c xml:id="xd1_co838"> </c>
+      <w xml:id="xd1_wo839" lemma="haben" type="VAFIN" function="dic">hatte</w>
+      <c xml:id="xd1_co840" type="$,">,</c>
+      <c xml:id="xd1_co841"> </c>
+      <w xml:id="xd1_wo842" lemma="jedoch" type="ADV" function="pro">jedoch</w>
+      <c xml:id="xd1_co843"> </c>
+      <w xml:id="xd1_wo844" lemma="weder" type="KON" function="dic">weder</w>
+      <c xml:id="xd1_co845"> </c>
+      <w xml:id="xd1_wo846" lemma="durch" type="APPR" function="dic">durch</w>
+      <c xml:id="xd1_co847"> </c>
+      <w xml:id="xd1_wo848" lemma="Drohung" type="NN" function="dic">Drohungen</w>
+      <c xml:id="xd1_co849"> </c>
+      <w xml:id="xd1_wo850" lemma="noch" type="ADV" function="dic">noch</w>
+      <c xml:id="xd1_co851"> </c>
+      <w xml:id="xd1_wo852" lemma="durch" type="APPR" function="dic">durch</w>
+      <c xml:id="xd1_co853"> </c>
+      <w xml:id="xd1_wo854" lemma="Versprechen" type="NN" function="dic">Versprechen</w>
+      <c xml:id="xd1_co855"> </c>
+      <w xml:id="xd1_wo856" lemma="zu" type="PTKZU" function="dic">zu</w>
+      <c xml:id="xd1_co857"> </c>
+      <w xml:id="xd1_wo858" lemma="bewegen" type="VVINF" function="dic">bewegen</w>
+      <c xml:id="xd1_co859"> </c>
+      <w xml:id="xd1_wo860" lemma="sein" type="VAPP" function="dic">gewesen</w>
+      <c xml:id="xd1_co861"> </c>
+      <w xml:id="xd1_wo862" lemma="sein" type="VAFIN" function="dic">war</w>
+      <c xml:id="xd1_co863" type="$,">,</c>
+      <c xml:id="xd1_co864"> </c>
+      <w xml:id="xd1_wo865" lemma="mein" type="PPOSAT" function="pro">sein</w>
+      <c xml:id="xd1_co866"> </c>
+      <w xml:id="xd1_wo867" lemma="Recht" type="NN" function="dic">Recht</w>
+      <c xml:id="xd1_co868" type="$(">,</c>
+      <c xml:id="xd1_co869"> </c>
+      <w xml:id="xd1_wo870" lemma="über" type="APPR" function="dic">über</w>
+      <c xml:id="xd1_co871"> </c>
+      <w xml:id="xd1_wo872" lemma="jed" type="PIDAT" function="dic">jeden</w>
+      <c xml:id="xd1_co873"> </c>
+      <w xml:id="xd1_wo874" lemma="Schritt" type="NN" function="dic">Schritt</w>
+      <c xml:id="xd1_co875"> </c>
+      <w xml:id="xd1_wo876" lemma="mein" type="PPOSAT" function="pro">seines</w>
+      <c xml:id="xd1_co877"> </c>
+      <w xml:id="xd1_wo878" lemma="jung" type="ADJA" function="dic">jungen</w>
+      <c xml:id="xd1_co879"> </c>
+      <c xml:id="xd1_co880" type="$.">.</c>
+      <seg xml:id="xd1_segm4">
+       <w xml:id="xd1_wo881" lemma="Massa" type="NN" function="dic">Massa</w>
+       <c xml:id="xd1_co882"> </c>
+       <w xml:id="xd1_wo883" lemma="wollen" type="VMFIN" function="dic">Will</w>
+      </seg>
+      <c xml:id="xd1_co884" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se26">
+      <w xml:id="xd1_wo885" lemma="zu" type="PTKZU" function="dic">zu</w>
+      <c xml:id="xd1_co886"> </c>
+      <w xml:id="xd1_wo887" lemma="wachen" type="VVINF" function="dic">wachen</w>
+      <c xml:id="xd1_co888" type="$(">,</c>
+      <c xml:id="xd1_co889"> </c>
+      <w xml:id="xd1_wo890" lemma="aufgeben" type="VVIZU" function="dic">aufzugeben</w>
+      <c xml:id="xd1_co891" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se27">
+      <w xml:id="xd1_wo892" lemma="es" type="PPER" function="pro">Es</w>
+      <c xml:id="xd1_co893"> </c>
+      <w xml:id="xd1_wo894" lemma="sein" type="VAFIN" function="dic">ist</w>
+      <c xml:id="xd1_co895"> </c>
+      <w xml:id="xd1_wo896" lemma="nicht" type="PTKNEG" function="dic">nicht</w>
+      <c xml:id="xd1_co897"> </c>
+      <w xml:id="xd1_wo898" lemma="unwahrscheinlich" type="ADJD" function="dic">unwahrscheinlich</w>
+      <c xml:id="xd1_co899" type="$,">,</c>
+      <c xml:id="xd1_co900"> </c>
+      <w xml:id="xd1_wo901" lemma="daß" type="KOUS" function="dic">daß</w>
+      <c xml:id="xd1_co902"> </c>
+      <w xml:id="xd1_wo903" lemma="der" type="ART" function="pro">die</w>
+      <c xml:id="xd1_co904"> </c>
+      <w xml:id="xd1_wo905" lemma="Verwandte" type="NN" function="dic">Verwandten</w>
+      <c xml:id="xd1_co906"> </c>
+      <w xml:id="xd1_wo907" lemma="Legrand" subtype="personName" type="NE" function="dic">Legrands</w>
+      <c xml:id="xd1_co908"> </c>
+      <w xml:id="xd1_wo909" lemma="der" type="ART" function="pro">die</w>
+      <c xml:id="xd1_co910"> </c>
+      <w xml:id="xd1_wo911" lemma="Hartnäckigkeit" type="NN" function="dic">Hartnäckigkeit</w>
+      <c xml:id="xd1_co912"> </c>
+      <w xml:id="xd1_wo913" lemma="Jupiter" subtype="" type="NE" function="dic">Jupiters</w>
+      <c xml:id="xd1_co914"> </c>
+      <w xml:id="xd1_wo915" lemma="noch" type="ADV" function="dic">noch</w>
+      <c xml:id="xd1_co916"> </c>
+      <w xml:id="xd1_wo917" lemma="bestärken" type="VVFIN" function="dic">bestärkten</w>
+      <c xml:id="xd1_co918" type="$,">,</c>
+      <c xml:id="xd1_co919"> </c>
+      <w xml:id="xd1_wo920" lemma="damit" type="KOUS" function="pro">damit</w>
+      <c xml:id="xd1_co921"> </c>
+      <w xml:id="xd1_wo922" lemma="mein" type="PPOSAT" function="pro">sein</w>
+      <c xml:id="xd1_co923"> </c>
+      <w xml:id="xd1_wo924" lemma="Herr" type="NN" function="dic">Herr</w>
+      <c xml:id="xd1_co925" type="$,">,</c>
+      <c xml:id="xd1_co926"> </c>
+      <w xml:id="xd1_wo927" lemma="der" type="PRELS" function="pro">den</w>
+      <c xml:id="xd1_co928"> </c>
+      <w xml:id="xd1_wo929" lemma="sie" type="PPER" function="dic">sie</w>
+      <c xml:id="xd1_co930"> </c>
+      <w xml:id="xd1_wo931" lemma="für" type="APPR" function="dic">für</w>
+      <c xml:id="xd1_co932"> </c>
+      <w xml:id="xd1_wo933" lemma="nicht" type="PTKNEG" function="dic">nicht</w>
+      <c xml:id="xd1_co934"> </c>
+      <w xml:id="xd1_wo935" lemma="ganz" type="ADV" function="pro">ganz</w>
+      <c xml:id="xd1_co936"> </c>
+      <w xml:id="xd1_wo937" lemma="zurechnungsfähig" type="ADJD" function="dic">zurechnungsfähig</w>
+      <c xml:id="xd1_co938"> </c>
+      <w xml:id="xd1_wo939" lemma="halten" type="VVFIN" function="dic">hielten</w>
+      <c xml:id="xd1_co940" type="$,">,</c>
+      <c xml:id="xd1_co941"> </c>
+      <w xml:id="xd1_wo942" lemma="kein" type="PIAT" function="pro">keinen</w>
+      <c xml:id="xd1_co943"> </c>
+      <w xml:id="xd1_wo944" lemma="Augenblick" type="NN" function="dic">Augenblick</w>
+      <c xml:id="xd1_co945"> </c>
+      <w xml:id="xd1_wo946" lemma="ohne" type="APPR" function="pro">ohne</w>
+      <c xml:id="xd1_co947"> </c>
+      <w xml:id="xd1_wo948" lemma="Aufsicht" type="NN" function="dic">Aufsicht</w>
+      <c xml:id="xd1_co949"> </c>
+      <w xml:id="xd1_wo950" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co951"> </c>
+      <w xml:id="xd1_wo952" lemma="Schutz" type="NN" function="dic">Schutz</w>
+      <c xml:id="xd1_co953"> </c>
+      <w xml:id="xd1_wo954" lemma="sein" type="VAFIN" function="dic">sei</w>
+      <c xml:id="xd1_co955" type="$.">.</c>
+     </s>
+    </p>
+    <p xml:id="xd1_pa7">
+     <s xml:id="xd1_se28">
+      <w xml:id="xd1_wo956" lemma="der" type="ART" function="pro">Der</w>
+      <c xml:id="xd1_co957"> </c>
+      <w xml:id="xd1_wo958" lemma="Winter" type="NN" function="dic">Winter</w>
+      <c xml:id="xd1_co959"> </c>
+      <w xml:id="xd1_wo960" lemma="sein" type="VAFIN" function="dic">ist</w>
+      <c xml:id="xd1_co961"> </c>
+      <w xml:id="xd1_wo962" lemma="auf" type="APPR" function="dic">auf</w>
+      <c xml:id="xd1_co963"> </c>
+      <w xml:id="xd1_wo964" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co965"> </c>
+      <w xml:id="xd1_wo966" lemma="Sullivans-Insel" type="NN" function="unk">Sullivans-Insel</w>
+      <c xml:id="xd1_co967"> </c>
+      <w xml:id="xd1_wo968" lemma="gewöhnlich" type="ADJD" function="dic">gewöhnlich</w>
+      <c xml:id="xd1_co969"> </c>
+      <w xml:id="xd1_wo970" lemma="sehr" type="ADV" function="dic">sehr</w>
+      <c xml:id="xd1_co971"> </c>
+      <w xml:id="xd1_wo972" lemma="mild" type="ADJA" function="dic">milde</w>
+      <c xml:id="xd1_co973" type="$(">,</c>
+      <c xml:id="xd1_co974"> </c>
+      <w xml:id="xd1_wo975" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co976"> </c>
+      <w xml:id="xd1_wo977" lemma="selbst" type="ADV" function="dic">selbst</w>
+      <c xml:id="xd1_co978"> </c>
+      <w xml:id="xd1_wo979" lemma="im" type="APPRART" function="dic">im</w>
+      <c xml:id="xd1_co980"> </c>
+      <w xml:id="xd1_wo981" lemma="tief" type="ADJA" function="dic">tiefen</w>
+      <c xml:id="xd1_co982"> </c>
+      <w xml:id="xd1_wo983" lemma="Herbst" type="NN" function="dic">Herbst</w>
+      <c xml:id="xd1_co984"> </c>
+      <w xml:id="xd1_wo985" lemma="kommen" type="VVFIN" function="dic">kommt</w>
+      <c xml:id="xd1_co986"> </c>
+      <w xml:id="xd1_wo987" lemma="es" type="PPER" function="pro">es</w>
+      <c xml:id="xd1_co988"> </c>
+      <w xml:id="xd1_wo989" lemma="nur" type="ADV" function="pro">nur</w>
+      <c xml:id="xd1_co990"> </c>
+      <w xml:id="xd1_wo991" lemma="sehr" type="ADV" function="dic">sehr</w>
+      <c xml:id="xd1_co992"> </c>
+      <w xml:id="xd1_wo993" lemma="selten" type="ADJD" function="dic">selten</w>
+      <c xml:id="xd1_co994"> </c>
+      <w xml:id="xd1_wo995" lemma="vor" type="PTKVZ" function="dic">vor</w>
+      <c xml:id="xd1_co996" type="$,">,</c>
+      <c xml:id="xd1_co997"> </c>
+      <w xml:id="xd1_wo998" lemma="daß" type="KOUS" function="dic">daß</w>
+      <c xml:id="xd1_co999"> </c>
+      <w xml:id="xd1_wo1000" lemma="man" type="PIS" function="pro">man</w>
+      <c xml:id="xd1_co1001"> </c>
+      <w xml:id="xd1_wo1002" lemma="heizen" type="VVINF" function="dic">heizen</w>
+      <c xml:id="xd1_co1003"> </c>
+      <w xml:id="xd1_wo1004" lemma="müssen" type="VMFIN" function="dic">muß</w>
+      <c xml:id="xd1_co1005" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se29">
+      <w xml:id="xd1_wo1006" lemma="Mitte" type="NN" function="dic">Mitte</w>
+      <c xml:id="xd1_co1007"> </c>
+      <w xml:id="xd1_wo1008" lemma="Oktober" type="NN" function="dic">Oktober</w>
+      <c xml:id="xd1_co1009"> </c>
+      <w xml:id="xd1_wo1010" lemma="18" type="CARD" function="dic">18</w>
+      <c xml:id="xd1_co1011" type="$.">.</c>
+      <c xml:id="xd1_co1012" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se30">
+      <w xml:id="xd1_wo1013" lemma="jedoch" type="ADV" function="pro">jedoch</w>
+      <c xml:id="xd1_co1014"> </c>
+      <w xml:id="xd1_wo1015" lemma="haben" type="VAFIN" function="dic">hatte</w>
+      <c xml:id="xd1_co1016"> </c>
+      <w xml:id="xd1_wo1017" lemma="man" type="PIS" function="pro">man</w>
+      <c xml:id="xd1_co1018"> </c>
+      <w xml:id="xd1_wo1019" lemma="auf" type="APPR" function="dic">auf</w>
+      <c xml:id="xd1_co1020"> </c>
+      <w xml:id="xd1_wo1021" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co1022"> </c>
+      <w xml:id="xd1_wo1023" lemma="Insel" type="NN" function="dic">Insel</w>
+      <c xml:id="xd1_co1024"> </c>
+      <w xml:id="xd1_wo1025" lemma="ein" type="ART" function="pro">einen</w>
+      <c xml:id="xd1_co1026"> </c>
+      <w xml:id="xd1_wo1027" lemma="ungewöhnlich" type="ADJD" function="dic">ungewöhnlich</w>
+      <c xml:id="xd1_co1028"> </c>
+      <w xml:id="xd1_wo1029" lemma="kalt" type="ADJA" function="dic">kalten</w>
+      <c xml:id="xd1_co1030"> </c>
+      <w xml:id="xd1_wo1031" lemma="Tag" type="NN" function="dic">Tag</w>
+      <c xml:id="xd1_co1032" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se31">
+      <w xml:id="xd1_wo1033" lemma="kurz" type="ADJD" function="dic">Kurz</w>
+      <c xml:id="xd1_co1034"> </c>
+      <w xml:id="xd1_wo1035" lemma="vor" type="APPR" function="dic">vor</w>
+      <c xml:id="xd1_co1036"> </c>
+      <w xml:id="xd1_wo1037" lemma="Sonnenuntergang" type="NN" function="dic">Sonnenuntergang</w>
+      <c xml:id="xd1_co1038"> </c>
+      <w xml:id="xd1_wo1039" lemma="bahnen" type="VVFIN" function="dic">bahnte</w>
+      <c xml:id="xd1_co1040"> </c>
+      <w xml:id="xd1_wo1041" lemma="ich" type="PPER" function="dic">ich</w>
+      <c xml:id="xd1_co1042"> </c>
+      <w xml:id="xd1_wo1043" lemma="sich" type="PRF" function="dic">mir</w>
+      <c xml:id="xd1_co1044"> </c>
+      <w xml:id="xd1_wo1045" lemma="mühsam" type="ADJD" function="dic">mühsam</w>
+      <c xml:id="xd1_co1046"> </c>
+      <w xml:id="xd1_wo1047" lemma="mein" type="PPOSAT" function="dic">meinen</w>
+      <c xml:id="xd1_co1048"> </c>
+      <w xml:id="xd1_wo1049" lemma="Weg" type="NN" function="dic">Weg</w>
+      <c xml:id="xd1_co1050"> </c>
+      <w xml:id="xd1_wo1051" lemma="durch" type="APPR" function="dic">durch</w>
+      <c xml:id="xd1_co1052"> </c>
+      <w xml:id="xd1_wo1053" lemma="der" type="ART" function="dic">das</w>
+      <c xml:id="xd1_co1054"> </c>
+      <w xml:id="xd1_wo1055" lemma="Immergrün" type="NN" function="dic">Immergrün</w>
+      <c xml:id="xd1_co1056"> </c>
+      <w xml:id="xd1_wo1057" lemma="zu" type="APPR" function="dic">zu</w>
+      <c xml:id="xd1_co1058"> </c>
+      <w xml:id="xd1_wo1059" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co1060"> </c>
+      <w xml:id="xd1_wo1061" lemma="Hütte" type="NN" function="dic">Hütte</w>
+      <c xml:id="xd1_co1062"> </c>
+      <w xml:id="xd1_wo1063" lemma="mein" type="PPOSAT" function="dic">meines</w>
+      <c xml:id="xd1_co1064"> </c>
+      <w xml:id="xd1_wo1065" lemma="Freund" type="NN" function="dic">Freundes</w>
+      <c xml:id="xd1_co1066" type="$,">,</c>
+      <c xml:id="xd1_co1067"> </c>
+      <w xml:id="xd1_wo1068" lemma="der" type="PRELS" function="pro">den</w>
+      <c xml:id="xd1_co1069"> </c>
+      <w xml:id="xd1_wo1070" lemma="ich" type="PPER" function="dic">ich</w>
+      <c xml:id="xd1_co1071"> </c>
+      <w xml:id="xd1_wo1072" lemma="seit" type="APPR" function="pro">seit</w>
+      <c xml:id="xd1_co1073"> </c>
+      <w xml:id="xd1_wo1074" lemma="mehrer" type="PIAT" function="pro">mehreren</w>
+      <c xml:id="xd1_co1075"> </c>
+      <w xml:id="xd1_wo1076" lemma="Woche" type="NN" function="dic">Wochen</w>
+      <c xml:id="xd1_co1077"> </c>
+      <w xml:id="xd1_wo1078" lemma="nicht" type="PTKNEG" function="dic">nicht</w>
+      <c xml:id="xd1_co1079"> </c>
+      <w xml:id="xd1_wo1080" lemma="besuchen" type="VVPP" function="dic">besucht</w>
+      <c xml:id="xd1_co1081"> </c>
+      <w xml:id="xd1_wo1082" lemma="haben" type="VAFIN" function="dic">hatte</w>
+      <c xml:id="xd1_co1083" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se32">
+      <c xml:id="xd1_co1084" type="$.">.</c>
+      <c xml:id="xd1_co1085"> </c>
+      <w xml:id="xd1_wo1086" lemma="ich" type="PPER" function="pro">Ich</w>
+      <c xml:id="xd1_co1087"> </c>
+      <w xml:id="xd1_wo1088" lemma="wohnen" type="VVFIN" function="dic">wohnte</w>
+      <c xml:id="xd1_co1089"> </c>
+      <w xml:id="xd1_wo1090" lemma="zu" type="APPR" function="dic">zu</w>
+      <c xml:id="xd1_co1091"> </c>
+      <seg xml:id="xd1_segm5">
+       <w xml:id="xd1_wo1092" lemma="jen" type="PDAT" function="dic">jener</w>
+       <c xml:id="xd1_co1093"> </c>
+       <w xml:id="xd1_wo1094" lemma="Zeit" type="NN" function="dic">Zeit</w>
+      </seg>
+      <c xml:id="xd1_co1095"> </c>
+      <w xml:id="xd1_wo1096" lemma="in" type="APPR" function="dic">in</w>
+      <c xml:id="xd1_co1097"> </c>
+      <w xml:id="xd1_wo1098" lemma="Charleston" subtype="geoCity" type="NE" function="pro">Charleston</w>
+      <c xml:id="xd1_co1099" type="$(">,</c>
+      <c xml:id="xd1_co1100"> </c>
+      <w xml:id="xd1_wo1101" lemma="also" type="ADV" function="pro">also</w>
+      <c xml:id="xd1_co1102"> </c>
+      <w xml:id="xd1_wo1103" lemma="etwa" type="ADV" function="dic">etwa</w>
+      <c xml:id="xd1_co1104"> </c>
+      <seg xml:id="xd1_segm6">
+       <w xml:id="xd1_wo1105" lemma="neun" type="CARD" function="dic">neun</w>
+       <c xml:id="xd1_co1106"> </c>
+       <w xml:id="xd1_wo1107" lemma="Meile" type="NN" function="dic">Meilen</w>
+      </seg>
+      <c xml:id="xd1_co1108"> </c>
+      <w xml:id="xd1_wo1109" lemma="von" type="APPR" function="dic">von</w>
+      <c xml:id="xd1_co1110"> </c>
+      <w xml:id="xd1_wo1111" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co1112"> </c>
+      <w xml:id="xd1_wo1113" lemma="Insel" type="NN" function="dic">Insel</w>
+      <c xml:id="xd1_co1114"> </c>
+      <w xml:id="xd1_wo1115" lemma="entfernen" type="VVPP" function="dic">entfernt</w>
+      <c xml:id="xd1_co1116" type="$,">,</c>
+      <c xml:id="xd1_co1117"> </c>
+      <w xml:id="xd1_wo1118" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co1119"> </c>
+      <w xml:id="xd1_wo1120" lemma="der" type="ART" function="pro">die</w>
+      <c xml:id="xd1_co1121"> </c>
+      <w xml:id="xd1_wo1122" lemma="Gelegenheit" type="NN" function="dic">Gelegenheiten</w>
+      <c xml:id="xd1_co1123" type="$(">,</c>
+      <c xml:id="xd1_co1124"> </c>
+      <w xml:id="xd1_wo1125" lemma="vom" type="APPRART" function="dic">vom</w>
+      <c xml:id="xd1_co1126"> </c>
+      <w xml:id="xd1_wo1127" lemma="Festland" type="NN" function="dic">Festland</w>
+      <c xml:id="xd1_co1128"> </c>
+      <w xml:id="xd1_wo1129" lemma="auf" type="APPR" function="dic">auf</w>
+      <c xml:id="xd1_co1130"> </c>
+      <w xml:id="xd1_wo1131" lemma="der" type="ART" function="pro">die</w>
+      <c xml:id="xd1_co1132"> </c>
+      <w xml:id="xd1_wo1133" lemma="Insel" type="NN" function="dic">Insel</w>
+      <c xml:id="xd1_co1134"> </c>
+      <w xml:id="xd1_wo1135" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co1136"> </c>
+      <w xml:id="xd1_wo1137" lemma="wieder" type="ADV" function="dic">wieder</w>
+      <c xml:id="xd1_co1138"> </c>
+      <w xml:id="xd1_wo1139" lemma="zurückkommen" type="VVPP" function="pro">zurückzukommen</w>
+      <c xml:id="xd1_co1140" type="$,">,</c>
+      <c xml:id="xd1_co1141"> </c>
+      <w xml:id="xd1_wo1142" lemma="sein" type="VAFIN" function="dic">waren</w>
+      <c xml:id="xd1_co1143"> </c>
+      <w xml:id="xd1_wo1144" lemma="weit" type="ADJD" function="dic">weit</w>
+      <c xml:id="xd1_co1145"> </c>
+      <w xml:id="xd1_wo1146" lemma="wenig" type="ADV" function="pro">weniger</w>
+      <c xml:id="xd1_co1147"> </c>
+      <w xml:id="xd1_wo1148" lemma="häufig" type="ADJD" function="dic">häufig</w>
+      <c xml:id="xd1_co1149"> </c>
+      <w xml:id="xd1_wo1150" lemma="als" type="KOKOM" function="pro">als</w>
+      <c xml:id="xd1_co1151"> </c>
+      <w xml:id="xd1_wo1152" lemma="heutzutage" type="ADV" function="dic">heutzutage</w>
+      <c xml:id="xd1_co1153" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se33">
+      <w xml:id="xd1_wo1154" lemma="als" type="KOKOM" function="pro">Als</w>
+      <c xml:id="xd1_co1155"> </c>
+      <w xml:id="xd1_wo1156" lemma="ich" type="PPER" function="dic">ich</w>
+      <c xml:id="xd1_co1157"> </c>
+      <w xml:id="xd1_wo1158" lemma="an" type="APPR" function="dic">an</w>
+      <c xml:id="xd1_co1159"> </c>
+      <w xml:id="xd1_wo1160" lemma="der" type="ART" function="pro">der</w>
+      <c xml:id="xd1_co1161"> </c>
+      <w xml:id="xd1_wo1162" lemma="Hütte" type="NN" function="dic">Hütte</w>
+      <c xml:id="xd1_co1163"> </c>
+      <w xml:id="xd1_wo1164" lemma="anlangen" type="VVPP" function="dic">angelangt</w>
+      <c xml:id="xd1_co1165"> </c>
+      <w xml:id="xd1_wo1166" lemma="sein" type="VAFIN" function="dic">war</w>
+      <c xml:id="xd1_co1167" type="$,">,</c>
+      <c xml:id="xd1_co1168"> </c>
+      <w xml:id="xd1_wo1169" lemma="klopfen" type="VVFIN" function="dic">klopfte</w>
+      <c xml:id="xd1_co1170"> </c>
+      <w xml:id="xd1_wo1171" lemma="ich" type="PPER" function="dic">ich</w>
+      <c xml:id="xd1_co1172"> </c>
+      <w xml:id="xd1_wo1173" lemma="wie" type="KOKOM" function="dic">wie</w>
+      <c xml:id="xd1_co1174"> </c>
+      <w xml:id="xd1_wo1175" lemma="gewöhnlich" type="ADJD" function="dic">gewöhnlich</w>
+      <c xml:id="xd1_co1176"> </c>
+      <w xml:id="xd1_wo1177" lemma="an" type="PTKVZ" function="dic">an</w>
+      <c xml:id="xd1_co1178" type="$,">,</c>
+      <c xml:id="xd1_co1179"> </c>
+      <w xml:id="xd1_wo1180" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co1181"> </c>
+      <w xml:id="xd1_wo1182" lemma="als" type="KOUS" function="dic">als</w>
+      <c xml:id="xd1_co1183"> </c>
+      <w xml:id="xd1_wo1184" lemma="ich" type="PPER" function="dic">ich</w>
+      <c xml:id="xd1_co1185"> </c>
+      <w xml:id="xd1_wo1186" lemma="kein" type="PIAT" function="pro">keine</w>
+      <c xml:id="xd1_co1187"> </c>
+      <w xml:id="xd1_wo1188" lemma="Antwort" type="NN" function="dic">Antwort</w>
+      <c xml:id="xd1_co1189"> </c>
+      <w xml:id="xd1_wo1190" lemma="bekommen" type="VVFIN" function="dic">bekam</w>
+      <c xml:id="xd1_co1191" type="$,">,</c>
+      <c xml:id="xd1_co1192"> </c>
+      <w xml:id="xd1_wo1193" lemma="holen" type="VVFIN" function="dic">holte</w>
+      <c xml:id="xd1_co1194"> </c>
+      <w xml:id="xd1_wo1195" lemma="ich" type="PPER" function="dic">ich</w>
+      <c xml:id="xd1_co1196"> </c>
+      <w xml:id="xd1_wo1197" lemma="der" type="ART" function="dic">den</w>
+      <c xml:id="xd1_co1198"> </c>
+      <w xml:id="xd1_wo1199" lemma="Schlüssel" type="NN" function="dic">Schlüssel</w>
+      <c xml:id="xd1_co1200"> </c>
+      <w xml:id="xd1_wo1201" lemma="aus" type="APPR" function="dic">aus</w>
+      <c xml:id="xd1_co1202"> </c>
+      <w xml:id="xd1_wo1203" lemma="sein" type="PPOSAT" function="dic">seinem</w>
+      <c xml:id="xd1_co1204"> </c>
+      <w xml:id="xd1_wo1205" lemma="ich" type="PPER" function="pro">mir</w>
+      <c xml:id="xd1_co1206"> </c>
+      <w xml:id="xd1_wo1207" lemma="bekannt" type="ADJA" function="pro">bekannten</w>
+      <c xml:id="xd1_co1208"> </c>
+      <w xml:id="xd1_wo1209" lemma="Versteck" type="NN" function="dic">Versteck</w>
+      <c xml:id="xd1_co1210"> </c>
+      <w xml:id="xd1_wo1211" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co1212"> </c>
+      <w xml:id="xd1_wo1213" lemma="schließen" type="VVFIN" function="dic">schloß</w>
+      <c xml:id="xd1_co1214"> </c>
+      <w xml:id="xd1_wo1215" lemma="auf" type="PTKVZ" function="dic">auf</w>
+      <c xml:id="xd1_co1216" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se34">
+      <w xml:id="xd1_wo1217" lemma="im" type="APPRART" function="dic">Im</w>
+      <c xml:id="xd1_co1218"> </c>
+      <w xml:id="xd1_wo1219" lemma="Kamin" subtype="geoCity" type="NE" function="pro">Kamin</w>
+      <c xml:id="xd1_co1220"> </c>
+      <w xml:id="xd1_wo1221" lemma="brennen" type="VVFIN" function="dic">brannte</w>
+      <c xml:id="xd1_co1222"> </c>
+      <w xml:id="xd1_wo1223" lemma="ein" type="ART" function="pro">ein</w>
+      <c xml:id="xd1_co1224"> </c>
+      <w xml:id="xd1_wo1225" lemma="lustig" type="ADJA" function="dic">lustiges</w>
+      <c xml:id="xd1_co1226"> </c>
+      <w xml:id="xd1_wo1227" lemma="Feuer" type="NN" function="dic">Feuer</w>
+      <c xml:id="xd1_co1228" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se35">
+      <w xml:id="xd1_wo1229" lemma="der" type="PDS" function="pro">Das</w>
+      <c xml:id="xd1_co1230"> </c>
+      <w xml:id="xd1_wo1231" lemma="sein" type="VAFIN" function="dic">war</w>
+      <c xml:id="xd1_co1232"> </c>
+      <w xml:id="xd1_wo1233" lemma="etwas" type="PIAT" function="pro">etwas</w>
+      <c xml:id="xd1_co1234"> </c>
+      <w xml:id="xd1_wo1235" lemma="neu" type="NN" function="pro">Neues</w>
+      <c xml:id="xd1_co1236" type="$(">,</c>
+      <c xml:id="xd1_co1237"> </c>
+      <w xml:id="xd1_wo1238" lemma="aber" type="KON" function="dic">aber</w>
+      <c xml:id="xd1_co1239"> </c>
+      <w xml:id="xd1_wo1240" lemma="durchaus" type="ADV" function="dic">durchaus</w>
+      <c xml:id="xd1_co1241"> </c>
+      <w xml:id="xd1_wo1242" lemma="nichts" type="PIAT" function="pro">nichts</w>
+      <c xml:id="xd1_co1243"> </c>
+      <w xml:id="xd1_wo1244" lemma="unangenehm" type="NN" function="pro">Unangenehmes</w>
+      <c xml:id="xd1_co1245" type="$.">.</c>
+     </s>
+     <s xml:id="xd1_se36">
+      <w xml:id="xd1_wo1246" lemma="ich" type="PPER" function="dic">Ich</w>
+      <c xml:id="xd1_co1247"> </c>
+      <w xml:id="xd1_wo1248" lemma="legen" type="VVFIN" function="dic">legte</w>
+      <c xml:id="xd1_co1249"> </c>
+      <w xml:id="xd1_wo1250" lemma="mein" type="PPOSAT" function="dic">meinen</w>
+      <c xml:id="xd1_co1251"> </c>
+      <w xml:id="xd1_wo1252" lemma="Überrock" type="NN" function="dic">Überrock</w>
+      <c xml:id="xd1_co1253"> </c>
+      <w xml:id="xd1_wo1254" lemma="ab" type="PTKVZ" function="dic">ab</w>
+      <c xml:id="xd1_co1255" type="$,">,</c>
+      <c xml:id="xd1_co1256"> </c>
+      <w xml:id="xd1_wo1257" lemma="werfen" type="VVFIN" function="dic">warf</w>
+      <c xml:id="xd1_co1258"> </c>
+      <w xml:id="xd1_wo1259" lemma="mich" type="PRF" function="dic">mich</w>
+      <c xml:id="xd1_co1260"> </c>
+      <w xml:id="xd1_wo1261" lemma="recht" type="ADJD" function="dic">recht</w>
+      <c xml:id="xd1_co1262"> </c>
+      <w xml:id="xd1_wo1263" lemma="nah" type="ADJD" function="pro">nahe</w>
+      <c xml:id="xd1_co1264"> </c>
+      <w xml:id="xd1_wo1265" lemma="bei" type="APPR" function="dic">bei</w>
+      <c xml:id="xd1_co1266"> </c>
+      <w xml:id="xd1_wo1267" lemma="der" type="ART" function="dic">den</w>
+      <c xml:id="xd1_co1268"> </c>
+      <w xml:id="xd1_wo1269" lemma="knisternd" type="ADJA" function="dic">knisternden</w>
+      <c xml:id="xd1_co1270"> </c>
+      <w xml:id="xd1_wo1271" lemma="Holzblock" type="NN" function="dic">Holzblöcken</w>
+      <c xml:id="xd1_co1272"> </c>
+      <w xml:id="xd1_wo1273" lemma="in" type="APPR" function="dic">in</w>
+      <c xml:id="xd1_co1274"> </c>
+      <w xml:id="xd1_wo1275" lemma="ein" type="ART" function="pro">einen</w>
+      <c xml:id="xd1_co1276"> </c>
+      <w xml:id="xd1_wo1277" lemma="Armstuhl" type="NN" function="dic">Armstuhl</w>
+      <c xml:id="xd1_co1278"> </c>
+      <w xml:id="xd1_wo1279" lemma="und" type="KON" function="dic">und</w>
+      <c xml:id="xd1_co1280"> </c>
+      <w xml:id="xd1_wo1281" lemma="erwarten" type="VVFIN" function="dic">erwartete</w>
+      <c xml:id="xd1_co1282"> </c>
+      <w xml:id="xd1_wo1283" lemma="der" type="ART" function="pro">die</w>
+      <c xml:id="xd1_co1284"> </c>
+      <w xml:id="xd1_wo1285" lemma="Ankunft" type="NN" function="dic">Ankunft</w>
+      <c xml:id="xd1_co1286"> </c>
+      <w xml:id="xd1_wo1287" lemma="mein" type="PPOSAT" function="dic">meines</w>
+      <c xml:id="xd1_co1288"> </c>
+      <w xml:id="xd1_wo1289" lemma="Wirt" type="NN" function="dic">Wirtes</w>
+      <c xml:id="xd1_co1290" type="$.">.</c>
+     </s>
+    </p>
+   </div>
+  </body>
+ </text>
+</TEI>
+

@@ -2,8 +2,11 @@ package texttechno.task3.ortograph;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.jsoup.nodes.Document;
 
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
@@ -23,12 +26,38 @@ public class TxT_TaskRunner3 {
 	 *            Only args[0] - Link to a german wiki article.
 	 */
 	public static void main(String[] args) {
+		System.out.println("key");
 		arg = args;
 		validateAmountOfGivenInput();
+		checkIfFileExists(arg[0]);
 		cleanResultDir(resultDir);
+
+		RawData docTei = new RawData(new File(arg[0]));
+		ArrayList<StringTupel3> transformToTupleOfThree = docTei.transformToTupleOfThree();
+		docTei.generateMatrix();
+		
+		for (StringTupel3 stringTupel3 : transformToTupleOfThree) {
+			String result = stringTupel3.item01 +" "+ stringTupel3.item02 + " "+stringTupel3.item03;
+			try {
+				FileUtils.write(new File("test.txt"), result+System.lineSeparator(), Encoding.getDefaultEncoding(), true);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 		
 		/* FINISH */
 		printFinish();
+	}
+
+	private static void checkIfFileExists(String pathToFile) {
+		File file = new File(pathToFile);
+		System.out.println();
+		if(!file.exists()){
+			SystemMessage.eMessage("File doesn't exists. Path given <"+pathToFile+">");
+			System.exit(1);
+		}
 	}
 
 	/**
