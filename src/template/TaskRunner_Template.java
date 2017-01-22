@@ -9,7 +9,7 @@ public class TaskRunner_Template {
 	static String encoding = Encoding.getDefaultEncoding();
 
 	/**
-	 * Entry-point of application. TODO
+	 * Entry-point of application. 
 	 * 
 	 * @param args
 	 */

@@ -16,7 +16,7 @@ public class CH_TaskRunner2 {
 	static String resultDir="CompHuman/result";
 
 	/**
-	 * Entry-point of application. TODO
+	 * Entry-point of application.
 	 * 
 	 * @param args
 	 */
@@ -38,7 +38,6 @@ public class CH_TaskRunner2 {
 		try {
 			FileUtils.cleanDirectory(new File(dir));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

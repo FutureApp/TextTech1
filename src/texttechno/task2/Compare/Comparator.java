@@ -136,7 +136,7 @@ public class Comparator {
 	 * message.
 	 * 
 	 * This method will also create the indices for each category's. This
-	 * indices will be used to populate the matrix. TODO
+	 * indices will be used to populate the matrix.
 	 * 
 	 * @param filePath
 	 *            Location of the file which the line is from. Matters only for

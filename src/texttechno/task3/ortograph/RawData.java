@@ -72,7 +72,7 @@ public class RawData {
 
 		ArrayList<StringTupel3> mergedNeighbors = mergeNeighbors(leftSide, rightSide);
 		
-		// Update-Step.
+		// Update-Step. TODO
 		/*
 		 * Checke was on prime angeschaut werden muss. 
 		 * lösche alles aus merge was nicht gebraucht wird.

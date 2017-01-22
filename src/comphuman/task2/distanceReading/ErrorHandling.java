@@ -8,7 +8,6 @@ public class ErrorHandling {
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		SystemMessage.wMessage("Section<"+string+">Doesn't flows");
