@@ -23,7 +23,7 @@ public class RawData {
 	File teiFile;
 	List<String> teiFileAsList;
 	private LemmaAbstractor lemmaFilter;
-	private ArrayList<StringTupel3> fileAsTuple;
+	private ArrayList<StringTuple3> fileAsTuple;
 
 	public RawData() {
 	}
@@ -49,38 +49,94 @@ public class RawData {
 	}
 
 	public ArrayList<ArrayList<Integer>> generateMatrix() {
-		ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
-		HashMap<String, Integer> xAxis = new HashMap<>();
-		HashMap<String, Integer> yAxis = new HashMap<>();
+		HashMap<String, Integer> xAxis = generateMatrixHeader();
+		ArrayList<ArrayList<Integer>> matrix = populateMatrixSize(xAxis);
 
-		Integer scope = 3;
-		Integer maxSize = fileAsTuple.size();
-		for (int i = 0; i < maxSize; i++) {
+		int size = matrix.size();
+		System.out.println(size);
+		System.out.println(matrix);
+//
+//		Integer scope = 3;
+//		Integer maxSize = fileAsTuple.size();
+//
+//		for (int i = 0; i < maxSize; i++) {
+//
+//			ArrayList<StringTuple3> leftSide = calcLeftSide(i, fileAsTuple);
+//			ArrayList<StringTuple3> rightSide = calcRightSide(i, fileAsTuple);
+//			StringTuple3 primeTuple = fileAsTuple.get(i);
+//			updateMatrix(matrix, xAxis, primeTuple, mergeNeighbors(leftSide, rightSide));
+//		}
+		return matrix;
+	}
 
-			ArrayList<StringTupel3> leftSide = calcLeftSide(i, fileAsTuple);
-			ArrayList<StringTupel3> rightSide = calcRightSide(i, fileAsTuple);
-			StringTupel3 primeTuple = fileAsTuple.get(i);
-			updateMatrix(matrix, xAxis, primeTuple, leftSide, rightSide);
-
+	private HashMap<String, Integer> generateMatrixHeader() {
+		HashMap<String, Integer> map = new HashMap<>();
+		for (StringTuple3 stringTuple3 : fileAsTuple) {
+			String lemma = stringTuple3.getItem01();
+			String lemmaType = stringTuple3.getItem02();
+			if (lemmaFilter.containsSpecialLemma(lemmaType)) {
+				if (!map.containsKey(lemma)) {
+					map.put(lemma, map.size());
+				}
+			}
 		}
+		return map;
+	}
 
+	private ArrayList<ArrayList<Integer>> populateMatrixSize(HashMap<String, Integer> xAxis) {
+		ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
+
+		for (int i = 0; i < xAxis.size(); i++) {
+			ArrayList<Integer> row = new ArrayList<>();
+			for (int j = 0; j < xAxis.size(); j++) {
+				row.add(0);
+			}
+			matrix.add(row);
+		}
 		return matrix;
 	}
 
 	private void updateMatrix(ArrayList<ArrayList<Integer>> matrix, HashMap<String, Integer> xAxis,
-			StringTupel3 primeTuple, ArrayList<StringTupel3> leftSide, ArrayList<StringTupel3> rightSide) {
+			StringTuple3 primeTuple, ArrayList<StringTuple3> mergedNeighbors) {
+		String lemma = primeTuple.getItem01();
+		String lemmaType = primeTuple.getItem02();
+		String word = primeTuple.getItem03();
+		if (lemmaFilter.containsSpecialLemma(lemmaType)) {
+			System.out.println("Searhed <" + lemmaType + "> lemma <" + lemma + ">");
 
-		ArrayList<StringTupel3> mergedNeighbors = mergeNeighbors(leftSide, rightSide);
-		
+			/*
+			 * If header doesn't contain key then add it.
+			 */
+			if (!xAxis.containsKey(lemma)) {
+				Integer index = xAxis.size();
+				xAxis.put(lemma, index);
+			}
+			lemmaFilter.filterUnneadedElements(mergedNeighbors);
+			for (StringTuple3 stringTuple3 : mergedNeighbors) {
+				if (!xAxis.containsKey(stringTuple3.getItem01())) {
+					xAxis.put(stringTuple3.getItem01(), xAxis.size());
+				}
+			}
+		}
+
 		// Update-Step. TODO
 		/*
-		 * Checke was on prime angeschaut werden muss. 
-		 * lösche alles aus merge was nicht gebraucht wird.
-		 * füge alle lemma in hash ein wenn nötig. 
-		 * besorge dir für jedes lemma die pose und date das prime element ab.		
+		 * Checke was on prime angeschaut werden muss. lösche alles aus merge
+		 * was nicht gebraucht wird. füge alle lemma in hash ein wenn nötig.
+		 * besorge dir für jedes lemma die pose und date das prime element ab.
 		 */
-		
-		
+
+	}
+
+	private void popNewEntryToMatrix(ArrayList<ArrayList<Integer>> matrix) {
+		Integer size = matrix.size();
+
+		for (int i = 0; i < matrix.size(); i++) {
+			ArrayList<Integer> row = matrix.get(i);
+			for (int j = row.size(); j < size; j++) {
+				row.add(0);
+			}
+		}
 	}
 
 	/**
@@ -92,8 +148,8 @@ public class RawData {
 	 *            List to merge(2).
 	 * @return The merge of both lists.
 	 */
-	private ArrayList<StringTupel3> mergeNeighbors(ArrayList<StringTupel3> leftSide,
-			ArrayList<StringTupel3> rightSide) {
+	private ArrayList<StringTuple3> mergeNeighbors(ArrayList<StringTuple3> leftSide,
+			ArrayList<StringTuple3> rightSide) {
 		leftSide.addAll(rightSide);
 		return leftSide;
 	}
@@ -108,8 +164,8 @@ public class RawData {
 	 *            The list where the members could be find.
 	 * @return All member left from the actual position.
 	 */
-	private ArrayList<StringTupel3> calcRightSide(int i, ArrayList<StringTupel3> fileAsTuple2) {
-		ArrayList<StringTupel3> rightSide = new ArrayList<>();
+	private ArrayList<StringTuple3> calcRightSide(int i, ArrayList<StringTuple3> fileAsTuple2) {
+		ArrayList<StringTuple3> rightSide = new ArrayList<>();
 		if ((i + 3 < fileAsTuple2.size()))
 			rightSide.add(fileAsTuple.get(i + 3));
 		if ((i + 2 < fileAsTuple2.size()))
@@ -129,8 +185,8 @@ public class RawData {
 	 *            The list where the members could be find.
 	 * @return All member left from the actual position.
 	 */
-	private ArrayList<StringTupel3> calcLeftSide(int i, ArrayList<StringTupel3> fileAsTuple2) {
-		ArrayList<StringTupel3> leftSide = new ArrayList<>();
+	private ArrayList<StringTuple3> calcLeftSide(int i, ArrayList<StringTuple3> fileAsTuple2) {
+		ArrayList<StringTuple3> leftSide = new ArrayList<>();
 		if (!(i - 3 < 0))
 			leftSide.add(fileAsTuple.get(i - 3));
 		if (!(i - 2 < 0))
@@ -172,8 +228,8 @@ public class RawData {
 	 * 
 	 * @return List containing tupleOf3;
 	 */
-	public ArrayList<StringTupel3> transformToTupleOfThree() {
-		fileAsTuple = lemmaFilter.extractTupeOfThree(teiFileAsList);
+	public ArrayList<StringTuple3> transformToTupleOfThree() {
+		fileAsTuple = lemmaFilter.extractTupleOfThree(teiFileAsList);
 		return fileAsTuple;
 	}
 }

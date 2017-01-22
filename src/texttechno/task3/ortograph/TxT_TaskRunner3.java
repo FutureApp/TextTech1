@@ -33,10 +33,10 @@ public class TxT_TaskRunner3 {
 		cleanResultDir(resultDir);
 
 		RawData docTei = new RawData(new File(arg[0]));
-		ArrayList<StringTupel3> transformToTupleOfThree = docTei.transformToTupleOfThree();
+		ArrayList<StringTuple3> transformToTupleOfThree = docTei.transformToTupleOfThree();
 		docTei.generateMatrix();
 		
-		for (StringTupel3 stringTupel3 : transformToTupleOfThree) {
+		for (StringTuple3 stringTupel3 : transformToTupleOfThree) {
 			String result = stringTupel3.item01 +" "+ stringTupel3.item02 + " "+stringTupel3.item03;
 			try {
 				FileUtils.write(new File("test.txt"), result+System.lineSeparator(), Encoding.getDefaultEncoding(), true);

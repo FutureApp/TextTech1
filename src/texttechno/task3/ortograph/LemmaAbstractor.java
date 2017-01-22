@@ -11,7 +11,7 @@ public class LemmaAbstractor {
 
 	private String indiNomen = "N";
 	private String indiVerb = "V";
-	private String indiAdje = "ADJ ";
+	private String indiAdje = "ADJ";
 
 	private String[] indisOfSpecialLemma = { indiAdje, indiVerb, indiNomen };
 	private String indiLineHasLemma = "lemma=";
@@ -30,7 +30,7 @@ public class LemmaAbstractor {
 	public Boolean containsSpecialLemma(String line) {
 		Boolean hasContent = false;
 		loop: for (int i = 0; i < indisOfSpecialLemma.length; i++) {
-			if (line.contains(indisOfSpecialLemma[i])) {
+			if (line.startsWith(indisOfSpecialLemma[i])) {
 				hasContent = true;
 				break loop;
 			}
@@ -38,18 +38,18 @@ public class LemmaAbstractor {
 		return hasContent;
 	}
 
-	public ArrayList<StringTupel3> extractTupeOfThree(List<String> teiFileAsList) {
-		ArrayList<StringTupel3> listOfTupel3 = new ArrayList<>();
+	public ArrayList<StringTuple3> extractTupleOfThree(List<String> teiFileAsList) {
+		ArrayList<StringTuple3> listOfTupel3 = new ArrayList<>();
 		for (String line : teiFileAsList) {
 			if (containsLemmaLine(line)) {
-				StringTupel3 tupel;
+				StringTuple3 tupel;
 				System.out.println(line);
 				String lemma = extractLemma(line);
 				String type = extractType(line);
 				String word = extractWord(line);
 				System.out.printf(" %s %s %s", lemma, type, word);
 				System.out.println();
-				tupel = new StringTupel3(lemma, type, word);
+				tupel = new StringTuple3(lemma, type, word);
 				listOfTupel3.add(tupel);
 			}
 		}
@@ -69,6 +69,18 @@ public class LemmaAbstractor {
 		return extract(line, "lemma", "type=\"");
 	}
 
+	/**
+	 * Extracts the value of the given attributes.
+	 * 
+	 * @param line
+	 *            line which contains the needed att. and needed att.-value.
+	 * @param attName
+	 *            Name of the att.
+	 * @param followedAttrName
+	 *            Name of next att. to det. where the value-description is
+	 *            finished.
+	 * @return the value of the given att.
+	 */
 	private String extract(String line, String attName, String followedAttrName) {
 		String result = "";
 		String firstIndi = attName;
@@ -91,4 +103,25 @@ public class LemmaAbstractor {
 		}
 		return result;
 	}
+
+	/**
+	 * Deletes every element(tuple) which not contains the special lemma. See
+	 * {@link #indisOfSpecialLemma};
+	 * 
+	 * @param mergedNeighbors
+	 *            List of StringTuple3 element where to apply the
+	 *            filter-function.
+	 * @return A cleaned list where every element is important for the analysis.
+	 */
+	public ArrayList<StringTuple3> filterUnneadedElements(ArrayList<StringTuple3> mergedNeighbors) {
+		ArrayList<StringTuple3> newList = new ArrayList<>();
+		for (StringTuple3 stringTupel3 : newList) {
+			String lemma = stringTupel3.getItem01();
+			Boolean append = containsSpecialLemma(lemma);
+			if (append)
+				newList.add(stringTupel3);
+		}
+		return newList;
+	}
+
 }
