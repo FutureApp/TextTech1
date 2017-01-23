@@ -33,12 +33,13 @@ public class TxT_TaskRunner3 {
 		cleanResultDir(resultDir);
 
 		RawData docTei = new RawData(new File(arg[0]));
-		ArrayList<StringTuple3> transformToTupleOfThree = docTei.transformToTupleOfThree();
+		docTei.transformToTupleOfThree();
 		docTei.generateMatrix();
 		
-		System.out.println("Hallo " +docTei.calcSumForRow(0));
+
+		System.out.println("One row " + docTei.calcSumForRow(0));
 		docTei.printMatrix();
-		
+
 		/* FINISH */
 		printFinish();
 	}
@@ -46,8 +47,8 @@ public class TxT_TaskRunner3 {
 	private static void checkIfFileExists(String pathToFile) {
 		File file = new File(pathToFile);
 		System.out.println();
-		if(!file.exists()){
-			SystemMessage.eMessage("File doesn't exists. Path given <"+pathToFile+">");
+		if (!file.exists()) {
+			SystemMessage.eMessage("File doesn't exists. Path given <" + pathToFile + ">");
 			System.exit(1);
 		}
 	}
@@ -107,5 +108,3 @@ public class TxT_TaskRunner3 {
 		System.out.println("java -jar <name of jar>.jar <wikipedia url to article>");
 	}
 }
-
-

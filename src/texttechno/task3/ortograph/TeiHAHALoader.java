@@ -23,13 +23,19 @@ public class TeiHAHALoader {
 		super();
 	}
 
-	public ArrayList<StringTuple3> abstractTuplesOf3(String pathToTeiFile) {
+	/**
+	 * Abstracts all need information from the <textImager>.tei and returns need
+	 * information in the data-type StringTupleOf3. See {@link StringTuple3}
+	 * 
+	 * @param teiFile
+	 *            Location of the <textImager>.tei file.
+	 * @return List of StringTupleOf3.
+	 */
+	public ArrayList<StringTuple3> abstractTuplesOf3(File teiFile) {
 		ArrayList<StringTuple3> fileAsListOfTuple = new ArrayList<>();
-		File file = new File(pathToTeiFile);
-
 		String readFileToString = null;
 		try {
-			readFileToString = FileUtils.readFileToString(file, Encoding.getDefaultEncoding());
+			readFileToString = FileUtils.readFileToString(teiFile, Encoding.getDefaultEncoding());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -93,6 +99,13 @@ public class TeiHAHALoader {
 		return tagValues.get(0);
 	}
 
+	/**
+	 * Abstracts the information included in <w>...</w> tags.
+	 * 
+	 * @param str
+	 *            Line containing <w>...</w> tags.
+	 * @return List of strings which are containing the <w>...</w> tags (ONLY!).
+	 */
 	private static List<String> getWTagValues(String str) {
 		List<String> tagValues = new ArrayList<String>();
 		Matcher matcher = W_TAG_REGEX.matcher(str);

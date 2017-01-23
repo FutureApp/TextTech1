@@ -28,7 +28,7 @@ public class RawData {
 	private ArrayList<StringTuple3> fileAsTuple;
 	private HashMap<String, Integer> xAxis;
 	private ArrayList<ArrayList<Integer>> matrix;
-
+	TeiHAHALoader loader = new TeiHAHALoader();
 	public RawData() {
 	}
 
@@ -63,7 +63,8 @@ public class RawData {
 			updateMatrix(matrix, xAxis, primeTuple, mergeNeighbors(leftSide, rightSide));
 		}
 
-		System.out.println("hallo " + matrix);
+		//DEBGUG
+//		System.out.println("hallo " + matrix);
 		return matrix;
 	}
 
@@ -207,7 +208,8 @@ public class RawData {
 	 * @return List containing tupleOf3;
 	 */
 	public ArrayList<StringTuple3> transformToTupleOfThree() {
-		fileAsTuple = lemmaFilter.extractTupleOfThree(teiFileAsList);
+		
+		fileAsTuple = loader.abstractTuplesOf3(teiFile);
 		return fileAsTuple;
 	}
 
@@ -224,8 +226,9 @@ public class RawData {
 		}
 		header = header + stringUtils.fillLeftWithWhiteSpaces("SUM", space);
 		header = header + System.lineSeparator();
-
 		String content = "";
+		/*
+		 */
 		for (int i = 0; i < matrix.size(); i++) {
 			String leftSide = stringUtils.fillRightWithWhiteSpaces(indexHolder.get(i), space);
 			content = content + leftSide;
@@ -254,15 +257,17 @@ public class RawData {
 				col += fieldValue;
 			}
 			content = content + stringUtils.fillLeftWithWhiteSpaces(col + "", space);
+//			System.out.println(content);
+			content = new String();
 		}
 		// CalcEntrys
 		
 		Double sumOverallRows = sumOverAllRows(matrix); 
 		Double sumOverallCols = sumOverAllColumns(matrix); 
-		System.out.println("Rows " + sumOverallRows);
-		System.out.println("Cols " + sumOverallCols);
+//		System.out.println("Rows " + sumOverallRows);
+//		System.out.println("Cols " + sumOverallCols);
 		
-		if((sumOverallCols - sumOverallRows == 0 )){
+		if(!(sumOverallCols - sumOverallRows == 0 )){
 			SystemMessage.eMessage("Sums doesn't matches");
 			content = content + stringUtils.fillLeftWithWhiteSpaces(" ?", space);
 		}
@@ -272,8 +277,9 @@ public class RawData {
 		}
 
 		String matrixAsString = header + content;
-		System.out.println(matrixAsString);
+//		System.out.println(matrixAsString);
 		try {
+			System.out.println("Writing");
 			FileUtils.write(new File("textMatrix"), matrixAsString, Encoding.getDefaultEncoding(), true);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
