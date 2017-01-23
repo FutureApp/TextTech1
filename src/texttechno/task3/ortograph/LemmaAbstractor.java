@@ -27,7 +27,7 @@ public class LemmaAbstractor {
 		return hasContent;
 	}
 
-	public Boolean containsSpecialLemma(String line) {
+	public Boolean startsWithSpecialLemma(String line) {
 		Boolean hasContent = false;
 		loop: for (int i = 0; i < indisOfSpecialLemma.length; i++) {
 			if (line.startsWith(indisOfSpecialLemma[i])) {
@@ -115,11 +115,10 @@ public class LemmaAbstractor {
 	 */
 	public ArrayList<StringTuple3> filterUnneadedElements(ArrayList<StringTuple3> mergedNeighbors) {
 		ArrayList<StringTuple3> newList = new ArrayList<>();
-		for (StringTuple3 stringTupel3 : newList) {
-			String lemma = stringTupel3.getItem01();
-			Boolean append = containsSpecialLemma(lemma);
-			if (append)
-				newList.add(stringTupel3);
+		for (int i = 0; i < mergedNeighbors.size(); i++) {
+			String lemmaType = mergedNeighbors.get(i).item02;
+//			System.out.println(lemmaType +" "+startsWithSpecialLemma(lemmaType));
+			if(startsWithSpecialLemma(lemmaType)) newList.add(mergedNeighbors.get(i));
 		}
 		return newList;
 	}
