@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 import org.apache.commons.io.FileUtils;
 
 import xgeneral.modules.Encoding;
+import xgeneral.modules.MyMathLib;
 import xgeneral.modules.SystemMessage;
 import xgeneral.modules.UtilsStrings_SingleTone;
 
@@ -29,6 +30,7 @@ public class RawData {
 	private HashMap<String, Integer> xAxis;
 	private ArrayList<ArrayList<Integer>> matrix;
 	TeiHAHALoader loader = new TeiHAHALoader();
+	private Integer precision = 4;
 	public RawData() {
 	}
 
@@ -182,8 +184,46 @@ public class RawData {
 	 */
 	public Double calcUnweightClusterValue() {
 		Double value = 0d;
+		
+		Double secTermHolder =0d;
+		for (int vertexIndexInMatrix = 0; vertexIndexInMatrix < matrix.size(); vertexIndexInMatrix++) {
+			Double secTermHolderBefore = secTermHolder;
+			Double calcAdjOfVertex = calcAdjOfVertex(vertexIndexInMatrix);
+			Double degreeOfVertex = calcDegreeOfVertex(vertexIndexInMatrix);
+			Double secTermValue = calcSecondTermValueUnweightClusterValue(calcAdjOfVertex,degreeOfVertex);
 
+			
+			secTermHolder += secTermValue;
+			System.out.println(vertexIndexInMatrix+": "+secTermHolder +" > "+secTermHolderBefore +" = "+secTermHolder);
+			System.out.println(secTermHolder +" > "+secTermHolder);
+			MyMathLib.round(secTermHolder, precision );
+		}
+		value = secTermHolder/(double)matrix.size();
 		return value;
+	}
+
+	private Double calcSecondTermValueUnweightClusterValue(Double calcAdjOfVertex, Double degreeOfVertex) {
+		Double value  = 0d;
+		value = calcAdjOfVertex / MyMathLib.choose(degreeOfVertex, 2d);
+		return MyMathLib.round(value, precision );
+	}
+
+	private Double calcAdjOfVertex(Integer vertexIndexInMatrix) {
+		Double valueDegree = 0d;
+		Double calcSumForColumn = calcSumForColumn(vertexIndexInMatrix);
+		
+		valueDegree = calcSumForColumn;
+		return valueDegree;
+		
+	}
+
+	private Double calcDegreeOfVertex(Integer vertexIndexInMatrix) {
+		Double valueDegree = 0d;
+		Double calcSumForColumn = calcSumForColumn(vertexIndexInMatrix);
+		
+		valueDegree = calcSumForColumn;
+		return valueDegree;
+		
 	}
 
 	/**
@@ -282,7 +322,6 @@ public class RawData {
 			System.out.println("Writing");
 			FileUtils.write(new File("textMatrix"), matrixAsString, Encoding.getDefaultEncoding(), true);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		// return matrixAsString;

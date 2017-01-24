@@ -35,11 +35,11 @@ public class TxT_TaskRunner3 {
 		RawData docTei = new RawData(new File(arg[0]));
 		docTei.transformToTupleOfThree();
 		docTei.generateMatrix();
-		
 
 		System.out.println("One row " + docTei.calcSumForRow(0));
-		docTei.printMatrix();
+		System.out.println(docTei.calcUnweightClusterValue());
 
+		// docTei.printMatrix();
 		/* FINISH */
 		printFinish();
 	}
