@@ -33,13 +33,18 @@ public class TxT_TaskRunner3 {
 		cleanResultDir(resultDir);
 
 		RawData docTei = new RawData(new File(arg[0]));
-		docTei.transformToTupleOfThree();
-		docTei.generateMatrix();
-
-		System.out.println("One row " + docTei.calcSumForRow(0));
-		System.out.println(docTei.calcUnweightClusterValue());
-
+		NetworkMatrix matrix = new NetworkMatrix(docTei.transformToTupleOfThree());
+		matrix.printMatrixRawData();
+		matrix.writeMatrixRawData(new File("matrixRawData.txt"));
+		
+		
+		
+		
 		// docTei.printMatrix();
+		// docTei.generateMatrix();
+		//
+		// System.out.println("One row " + docTei.calcSumForRow(0));
+		// System.out.println(docTei.calcUnweightClusterValue());
 		/* FINISH */
 		printFinish();
 	}
