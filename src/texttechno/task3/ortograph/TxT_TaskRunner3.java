@@ -35,11 +35,18 @@ public class TxT_TaskRunner3 {
 		RawData docTei = new RawData(new File(arg[0]));
 		NetworkMatrix matrix = new NetworkMatrix(docTei.transformToTupleOfThree());
 		matrix.printMatrixRawData();
+		matrix.unweighetClusterValue(matrix.cleanMatrix);
 		matrix.writeMatrixRawData(new File("matrixRawData.txt"));
+		matrix.writeMatrixRawDataCleanedVersion(new File("matrixRawDataCleaned.txt"));
+		matrix.printMatrix(matrix.cleanMatrix);
+		Double unweighetClusterValue = matrix.unweighetClusterValue(matrix.cleanMatrix);
+		ArrayList<ArrayList<Double>> expecMatrix = matrix.generateExpectedMatrix(matrix.cleanMatrix);
+		ArrayList<ArrayList<Double>> logLiklyhood = matrix.generateLogLiklyHoodMatrix(matrix.cleanMatrix ,expecMatrix);
 		
-		
-		
-		
+		matrix.printNandNMatrix(expecMatrix);
+
+		System.out.println("Cuw: " + unweighetClusterValue);
+
 		// docTei.printMatrix();
 		// docTei.generateMatrix();
 		//
