@@ -71,10 +71,13 @@ public class NetworkMatrix {
 			Integer adjaDegree = calcVertexAdja(matrix, i);
 			System.out.println("VertexDegree of " + indexHolder.get(i) + ": " + vertexDegree);
 			System.out.println("ADJADegree of " + indexHolder.get(i) + ": " + adjaDegree);
-			secondTerm += adjaDegree / CombinatoricsUtils.binomialCoefficientDouble(vertexDegree, 2);
+			if(vertexDegree == 0 && adjaDegree == 0) secondTerm += 0;
+			else{
+				secondTerm += adjaDegree / CombinatoricsUtils.binomialCoefficientDouble(vertexDegree, 2);
+			}
 		}
 		value = secondTerm / matrix.size();
-
+		System.out.println("Cluser Value Calc is finished!");
 		return value;
 
 	}
@@ -329,18 +332,23 @@ public class NetworkMatrix {
 	}
 
 	public ArrayList<ArrayList<Double>> generateExpectedMatrix(ArrayList<ArrayList<Integer>> matrix) {
+		System.out.println("Starting calc of expected Matrix.");
 		ArrayList<ArrayList<Double>> preMatrix = populateMatrixSizeFeldDouble(matrix.size());
 		for (int i = 0; i < preMatrix.size(); i++) {
 			for (int j = 0; j < preMatrix.size(); j++) {
+				System.out.printf("%d-%d / &d-%d", i,j,preMatrix.size(),preMatrix.size());
+				System.out.println();
+				//TODO Speed Up this section!
 				preMatrix.get(i).set(j, calcExpectedValueForCell(matrix, i, j));
 			}
 		}
 		expectedMatrix = preMatrix;
+		System.out.println("Finished calc of expected matrix.");
 		return preMatrix;
 	}
 
 	public void printNandNMatrix(ArrayList<ArrayList<Double>> expecMatrix) {
-
+		System.out.println("-- Start Printing --");
 		for (int i = 0; i < expecMatrix.size(); i++) {
 			for (int j = 0; j < expecMatrix.size(); j++) {
 				System.out.print(expecMatrix.get(i).get(j) + "   ");
@@ -352,19 +360,29 @@ public class NetworkMatrix {
 
 	public ArrayList<ArrayList<Double>> generateLogLiklyHoodMatrix(ArrayList<ArrayList<Integer>> cleanMatrix2,
 			ArrayList<ArrayList<Double>> expecMatrix) {
+
 		ArrayList<ArrayList<Double>> logLiMatrix = populateMatrixSizeFeldDouble(expecMatrix.size());
-		Double valueSecondTerm = 0d;
+		Double logLikelihood = 0d;
 		for (int i = 0; i < expecMatrix.size(); i++) {
 			for (int j = 0; j < expecMatrix.size(); j++) {
-				Double valueCleanMatrix = (double) cleanMatrix2.get(i).get(j);
-				Double valueExpectedMatrix = expecMatrix.get(i).get(j);
-				Double log = Math.log(2d);
-				double thirdTerm = (Math.log(valueCleanMatrix/valueExpectedMatrix) / Math.log(2));
-				valueSecondTerm = valueCleanMatrix + thirdTerm;
+				Double orginialRate = (double) cleanMatrix2.get(i).get(j);
+				Double expectedRate = expecMatrix.get(i).get(j);
+
+				if (orginialRate == 0d) {
+					logLiMatrix.get(i).set(j, 0d);
+					logLikelihood += 0d;
+				} else {
+					Double resultEntry = 0d;
+					Double resultLog = Math.log(orginialRate / expectedRate) / Math.log(2);
+					resultLog = Precision.round(resultLog, 4);
+					resultEntry= 2*(orginialRate * resultLog);
+					resultEntry = Precision.round(resultEntry, 4);
+					
+					logLiMatrix.get(i).set(j, resultEntry);
+					logLikelihood += resultEntry;
+				}
 			}
-			
 		}
-		valueSecondTerm = 2 * valueSecondTerm;
 		return logLiMatrix;
 	}
 }
