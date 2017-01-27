@@ -71,8 +71,9 @@ public class NetworkMatrix {
 			Integer adjaDegree = calcVertexAdja(matrix, i);
 			System.out.println("VertexDegree of " + indexHolder.get(i) + ": " + vertexDegree);
 			System.out.println("ADJADegree of " + indexHolder.get(i) + ": " + adjaDegree);
-			if(vertexDegree == 0 && adjaDegree == 0) secondTerm += 0;
-			else{
+			if (vertexDegree == 0 && adjaDegree == 0)
+				secondTerm += 0;
+			else {
 				secondTerm += adjaDegree / CombinatoricsUtils.binomialCoefficientDouble(vertexDegree, 2);
 			}
 		}
@@ -312,15 +313,23 @@ public class NetworkMatrix {
 		return matrix;
 	}
 
-	public Double calcExpectedValueForCell(ArrayList<ArrayList<Integer>> matrix, Integer x, Integer y) {
+	/**
+	 * Calcs. the expected value at a given position.
+	 * 
+	 * @param matrix
+	 *            Matrix to extract from.
+	 * @param columnSum
+	 *            Specifies the sum of the given column.
+	 * @param rowSum
+	 *            Specifies the sum of the given row.
+	 * @return The expected value for the given entry.
+	 */
+	public Double calcExpectedValueForCell(ArrayList<ArrayList<Integer>> matrix, Double columnSum, Double rowSum,
+			Integer sumOfAllEdges) {
 		Double value = 0d;
-		Integer rowCount = countRowSum(matrix, y);
-		Integer columnCount = countColumnSum(matrix, x);
-		Integer totalRowCount = countTotalRawCount(matrix);
-		Double calcRelativValue = (double) rowCount * (double) columnCount / (double) totalRowCount;
+		Double calcRelativValue = (double) rowSum * (double) columnSum / (double) sumOfAllEdges;
 		value = Precision.round(calcRelativValue, 4);
 		return value;
-
 	}
 
 	private Integer countTotalRawCount(ArrayList<ArrayList<Integer>> matrix) {
@@ -334,17 +343,64 @@ public class NetworkMatrix {
 	public ArrayList<ArrayList<Double>> generateExpectedMatrix(ArrayList<ArrayList<Integer>> matrix) {
 		System.out.println("Starting calc of expected Matrix.");
 		ArrayList<ArrayList<Double>> preMatrix = populateMatrixSizeFeldDouble(matrix.size());
+
+		ArrayList<Double> listOfSumRows = new ArrayList<>();
+		ArrayList<Double> listOfSumCols = new ArrayList<>();
+		Integer countTotalRawCount = 0;
+
 		for (int i = 0; i < preMatrix.size(); i++) {
+			System.out.printf("Calc-RandSums: %d/%d", i, preMatrix.size());
+			System.out.println();
+			Double rowCount = calcSumForRow(matrix, i);
+			Double colCount = calcSumForColumn(matrix, i);
+			listOfSumRows.add((double) rowCount);
+			listOfSumCols.add((double) colCount);
+		}
+		countTotalRawCount = countTotalRawCount(matrix);
+
+		for (int i = 0; i < preMatrix.size(); i++) {
+			Double rowSumToPass = listOfSumRows.get(i);
 			for (int j = 0; j < preMatrix.size(); j++) {
-				System.out.printf("%d-%d / &d-%d", i,j,preMatrix.size(),preMatrix.size());
+				System.out.printf("%d-%d / &d-%d", i, j, preMatrix.size(), preMatrix.size());
 				System.out.println();
-				//TODO Speed Up this section!
-				preMatrix.get(i).set(j, calcExpectedValueForCell(matrix, i, j));
+				Double columnSumToPass = listOfSumCols.get(j);
+				// TODO Speed up.
+				preMatrix.get(i).set(j, calcExpectedValueForCell(matrix, columnSumToPass, rowSumToPass , countTotalRawCount));
 			}
 		}
 		expectedMatrix = preMatrix;
 		System.out.println("Finished calc of expected matrix.");
 		return preMatrix;
+	}
+
+	/**
+	 * Calcs the sum of the given index. Fields need to be Integers.
+	 * 
+	 * @param index
+	 *            Index of row.
+	 * @return Sum over row as double.
+	 */
+	public Double calcSumForRow(ArrayList<ArrayList<Integer>> matrix, Integer index) {
+		Double value = 0d;
+		for (int j = 0; j < matrix.size(); j++) {
+			value += matrix.get(j).get(index);
+		}
+		return value;
+	}
+
+	/**
+	 * Calcs the sum of the given index. Fields need to be Integers.
+	 * 
+	 * @param index
+	 *            Index of calcSumForColumn.
+	 * @return Sum of the calcSumForColumn as double.
+	 */
+	public Double calcSumForColumn(ArrayList<ArrayList<Integer>> matrix, Integer index) {
+		Double value = 0d;
+			for (int j = 0; j < matrix.size(); j++) {
+				value += matrix.get(index).get(j);
+			}
+		return value;
 	}
 
 	public void printNandNMatrix(ArrayList<ArrayList<Double>> expecMatrix) {
@@ -375,9 +431,9 @@ public class NetworkMatrix {
 					Double resultEntry = 0d;
 					Double resultLog = Math.log(orginialRate / expectedRate) / Math.log(2);
 					resultLog = Precision.round(resultLog, 4);
-					resultEntry= 2*(orginialRate * resultLog);
+					resultEntry = 2 * (orginialRate * resultLog);
 					resultEntry = Precision.round(resultEntry, 4);
-					
+
 					logLiMatrix.get(i).set(j, resultEntry);
 					logLikelihood += resultEntry;
 				}
