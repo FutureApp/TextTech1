@@ -42,32 +42,6 @@ Vorgehen:
 											 
 		
 ___
-S.Analyse Vs. Byte.Analyse		
-
-
-
-	
-S.Analyse steht simpleRanking Analyse ->
-
-	a) Content-Anreicherung(positiv)		– Aktionswert +1  || 	User ist im Konsens mit dem Autor.
-	b) Content-Vernichtung(negativ/Delete)  – Aktionswert -1  || 	User ist nicht im Konsens mit dem vorherigen Content bzw. dem Autor.
-	c) Content-Manipulation(neutral) 		– Aktionswert 0.1 || 	Anzahl an Artikelbytes unverändert.  
-																    User hat lediglich Rechtschreibung und/oder Grammatik verbessert. 
-																    Insgesamt positive Stimmung auf Content bzw. Autor. Beachte Sie den Hinweis am Ende der Sektion.
-
-Zusammenfassung: 
-Mapping der Bytezahlen gemäß dem Vorzeichen der Bytezahl-veränderung auf {-1,0.1,1}
-
-ByteAnalyse -
-Mapping analog zu S.Analyse. Unterschied besteht durch das Mapping der Aktionswerten. 
-Aktionswerten stimmen mit der tatsächlichen Bytezahl-veränderung überein. 
-Bei 0 Byte Veränderung, wird der Aktionswert 0.1 vergeben.
-
-
-
-Fazit: 
-S.Analyse bietet eine gute abstrakte Übersicht der Beziehungen. 
-Byte-Analyse hingegen bietet genauere Informationsauskunft, allerdings auf Kosten der Übersichtlichkeit.
 
 Hinweise: 
 + 	yEd bildet beim Importieren die 0.1 auf 1.0 automatisch ab. -> Kein Problem: 
@@ -99,16 +73,19 @@ Zusätlich:
 
 
 ___
-Getestet mit:
-https://de.wikipedia.org/wiki/Lindentunnel 		-- ./bsp/lindentunnel/.
-https://de.wikipedia.org/wiki/Kleiner_Rohrplan  -- ./bsp/kleinerRohrplan/.
 
-yEd-Version - V 3.16.2.1
 
 
 ___
 Allgemeiner Hinweis:
-1) Programm ist nur für die deutsche Wikipedia konzipiert. Keine Angabe zum Progammoutput für anderssprachige Wikipedia-Artikel.
+1) Ohne das genauere Verfahren wird beispielsweise das Lemma Brauchst (VVFIN) in Relation mit :
+ (A)(»,NE,»)
+ (B)(Gregor,NE,Gregor)
+ (C)(sein,VAFIN,Ist)
+ (a)(Seite,NN,Seiten)
+ (b)(antworten,VVFIN,antwortete)
+ (c)(Gregor,NE,Gregor)
+ gesetzt. Diese Relation ist in aus den Rohdaten nicht existent. Alles in allem wird eine wesentlich bessere Aussage über die "wirklichen" Beziehungen offeriert.
 
 ___
 Code

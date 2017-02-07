@@ -1,4 +1,4 @@
-package texttechno.task3.ortograph;
+package texttechno.task3.ortograph.old;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,11 +17,11 @@ import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
 import xgeneral.modules.UtilsStrings_SingleTone;
 
-public class NetworkMatrix {
-	ArrayList<StringTuple3> tuples;
-	ArrayList<StringTuple3> cleandTuples;
+public class NetworkMatrixOLD {
+	ArrayList<StringTuple3OLD> tuples;
+	ArrayList<StringTuple3OLD> cleandTuples;
 
-	private LemmaAbstractor lemmaFilter = new LemmaAbstractor();
+	private LemmaAbstractorOLD lemmaFilter = new LemmaAbstractorOLD();
 
 	private HashMap<String, Integer> xAxis;
 	public ArrayList<ArrayList<Integer>> orginialMatrix;
@@ -29,7 +29,7 @@ public class NetworkMatrix {
 	private ArrayList<String> indexHolder;
 	private ArrayList<ArrayList<Double>> expectedMatrix;
 
-	public NetworkMatrix(ArrayList<StringTuple3> tuples) {
+	public NetworkMatrixOLD(ArrayList<StringTuple3OLD> tuples) {
 		super();
 		this.tuples = tuples;
 		this.xAxis = generateMatrixHeader();
@@ -39,15 +39,15 @@ public class NetworkMatrix {
 		this.cleanMatrix = generateMatrix(this.cleandTuples);
 	}
 
-	public ArrayList<ArrayList<Integer>> generateMatrix(ArrayList<StringTuple3> tuples) {
+	public ArrayList<ArrayList<Integer>> generateMatrix(ArrayList<StringTuple3OLD> tuples) {
 		xAxis = generateMatrixHeader();
 		orginialMatrix = populateMatrixSize(xAxis);
 
 		for (int i = 0; i < tuples.size(); i++) {
-			ArrayList<StringTuple3> leftSide = NetworkUtils.calcLeftSide(i, tuples);
-			ArrayList<StringTuple3> rightSide = NetworkUtils.calcRightSide(i, tuples);
-			StringTuple3 primeTuple = tuples.get(i);
-			updateMatrix(orginialMatrix, xAxis, primeTuple, NetworkUtils.mergeNeighbors(leftSide, rightSide));
+			ArrayList<StringTuple3OLD> leftSide = NetworkUtilsOLD.calcLeftSide(i, tuples);
+			ArrayList<StringTuple3OLD> rightSide = NetworkUtilsOLD.calcRightSide(i, tuples);
+			StringTuple3OLD primeTuple = tuples.get(i);
+			updateMatrix(orginialMatrix, xAxis, primeTuple, NetworkUtilsOLD.mergeNeighbors(leftSide, rightSide));
 		}
 		return orginialMatrix;
 	}
@@ -226,8 +226,8 @@ public class NetworkMatrix {
 		return result;
 	}
 
-	private ArrayList<StringTuple3> cleanTuples(ArrayList<StringTuple3> tuples2) {
-		ArrayList<StringTuple3> cleanTuples = new ArrayList<>();
+	private ArrayList<StringTuple3OLD> cleanTuples(ArrayList<StringTuple3OLD> tuples2) {
+		ArrayList<StringTuple3OLD> cleanTuples = new ArrayList<>();
 		for (int i = 0; i < tuples2.size(); i++) {
 			if (!tuples2.get(i).item01.equalsIgnoreCase("--"))
 				cleanTuples.add(tuples2.get(i));
@@ -237,7 +237,7 @@ public class NetworkMatrix {
 
 	private HashMap<String, Integer> generateMatrixHeader() {
 		HashMap<String, Integer> map = new HashMap<>();
-		for (StringTuple3 stringTuple3 : tuples) {
+		for (StringTuple3OLD stringTuple3 : tuples) {
 			String lemma = stringTuple3.getItem01();
 			String lemmaType = stringTuple3.getItem02();
 			if (lemmaFilter.startsWithSpecialLemma(lemmaType)) {
@@ -257,7 +257,7 @@ public class NetworkMatrix {
 	 * @return An Arraylist containing the keywords, sorted by their indexes.
 	 */
 	private ArrayList<String> generateIndexHolder(HashMap<String, Integer> xAxis2) {
-		Map<String, Integer> sortByValue = NetworkUtils.sortByValue(xAxis2);
+		Map<String, Integer> sortByValue = NetworkUtilsOLD.sortByValue(xAxis2);
 		ArrayList<String> indexSorted = new ArrayList<>();
 		for (Entry<String, Integer> entry : sortByValue.entrySet()) {
 			indexSorted.add(entry.getKey());
@@ -266,16 +266,16 @@ public class NetworkMatrix {
 	}
 
 	private void updateMatrix(ArrayList<ArrayList<Integer>> matrix, HashMap<String, Integer> xAxis,
-			StringTuple3 primeTuple, ArrayList<StringTuple3> mergedNeighbors) {
+			StringTuple3OLD primeTuple, ArrayList<StringTuple3OLD> mergedNeighbors) {
 		String lemma = primeTuple.getItem01();
 		String lemmaType = primeTuple.getItem02();
 		if (lemmaFilter.startsWithSpecialLemma(lemmaType)) {
-			ArrayList<StringTuple3> filterUnneadedElements = lemmaFilter.filterUnneadedElements(mergedNeighbors);
+			ArrayList<StringTuple3OLD> filterUnneadedElements = lemmaFilter.filterUnneadedElements(mergedNeighbors);
 			Integer matrixIndexPrime = xAxis.get(lemma);
 			System.out.println("prim - " + matrixIndexPrime + " primeValue " + lemma);
 			System.out.println("SIZE list " + filterUnneadedElements.size());
 			for (int i = 0; i < filterUnneadedElements.size(); i++) {
-				StringTuple3 tuple = filterUnneadedElements.get(i);
+				StringTuple3OLD tuple = filterUnneadedElements.get(i);
 				String lemmaNeighbor = tuple.getItem01();
 				Integer indexNeighbor = xAxis.get(lemmaNeighbor);
 				Integer currentValueInMatrix = matrix.get(matrixIndexPrime).get(indexNeighbor);

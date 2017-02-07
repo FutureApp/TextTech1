@@ -1,4 +1,4 @@
-package texttechno.task3.ortograph;
+package texttechno.task3.ortograph.old;
 
 import java.io.File;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -8,7 +8,7 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 
-public class XMLPaser {
+public class XMLPaserOLD {
 	public static void main(String[] args){
 
 	      try {	

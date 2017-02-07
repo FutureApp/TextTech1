@@ -1,4 +1,4 @@
-package texttechno.task3.ortograph;
+package texttechno.task3.ortograph.old;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import org.jsoup.nodes.Document;
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
 
-public class TxT_TaskRunner3 {
+public class TxT_TaskRunner3OLD {
 
 	static String[] arg;
 	static String encoding = Encoding.getDefaultEncoding();
@@ -32,21 +32,21 @@ public class TxT_TaskRunner3 {
 		checkIfFileExists(arg[0]);
 		cleanResultDir(resultDir);
 
-		RawData docTei = new RawData(new File(arg[0]));
-		NetworkMatrix matrix = new NetworkMatrix(docTei.transformToTupleOfThree());
+		RawDataNewOLD docTei = new RawDataNewOLD(new File(arg[0]));
+		NetworkMatrixOLD matrix = new NetworkMatrixOLD(docTei.transformToTupleOfThree());
 //		matrix.printMatrixRawData();
 		matrix.writeMatrixRawData(new File("matrixRawData.txt"));
 		matrix.writeMatrixRawDataCleanedVersion(new File("matrixRawDataCleaned.txt"));
 
 //		matrix.printMatrix(matrix.cleanMatrix);
-		matrix.unweighetClusterValue(matrix.cleanMatrix);
-		Double unweighetClusterValue = matrix.unweighetClusterValue(matrix.cleanMatrix);
-		ArrayList<ArrayList<Double>> expecMatrix = matrix.generateExpectedMatrix(matrix.cleanMatrix);
-		matrix.printNandNMatrix(expecMatrix);
-		System.out.println("Cuw: " + unweighetClusterValue);
-		ArrayList<ArrayList<Double>> logLiklyhood = matrix.generateLogLiklyHoodMatrix(matrix.cleanMatrix, expecMatrix);
-		System.out.println("Liklyhood Matrix:");
-		matrix.printNandNMatrix(logLiklyhood);
+//		matrix.unweighetClusterValue(matrix.cleanMatrix);
+//		Double unweighetClusterValue = matrix.unweighetClusterValue(matrix.cleanMatrix);
+//		ArrayList<ArrayList<Double>> expecMatrix = matrix.generateExpectedMatrix(matrix.cleanMatrix);
+//		matrix.printNandNMatrix(expecMatrix);
+//		System.out.println("Cuw: " + unweighetClusterValue);
+//		ArrayList<ArrayList<Double>> logLiklyhood = matrix.generateLogLiklyHoodMatrix(matrix.cleanMatrix, expecMatrix);
+//		System.out.println("Liklyhood Matrix:");
+//		matrix.printNandNMatrix(logLiklyhood);
 		// docTei.printMatrix();
 		// docTei.generateMatrix();
 		//

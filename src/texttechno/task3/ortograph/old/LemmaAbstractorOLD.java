@@ -1,4 +1,4 @@
-package texttechno.task3.ortograph;
+package texttechno.task3.ortograph.old;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.sound.midi.SysexMessage;
 
 import xgeneral.modules.SystemMessage;
 
-public class LemmaAbstractor {
+public class LemmaAbstractorOLD {
 
 	private String indiNomen = "N";
 	private String indiVerb = "V";
@@ -16,7 +16,7 @@ public class LemmaAbstractor {
 	private String[] indisOfSpecialLemma = { indiAdje, indiVerb, indiNomen };
 	private String indiLineHasLemma = "lemma=";
 
-	public LemmaAbstractor() {
+	public LemmaAbstractorOLD() {
 		super();
 	}
 
@@ -38,18 +38,18 @@ public class LemmaAbstractor {
 		return hasContent;
 	}
 
-	public ArrayList<StringTuple3> extractTupleOfThree(List<String> teiFileAsList) {
-		ArrayList<StringTuple3> listOfTupel3 = new ArrayList<>();
+	public ArrayList<StringTuple3OLD> extractTupleOfThree(List<String> teiFileAsList) {
+		ArrayList<StringTuple3OLD> listOfTupel3 = new ArrayList<>();
 		for (String line : teiFileAsList) {
 			if (containsLemmaLine(line)) {
-				StringTuple3 tupel;
+				StringTuple3OLD tupel;
 				System.out.println(line);
 				String lemma = extractLemma(line);
 				String type = extractType(line);
 				String word = extractWord(line);
 				System.out.printf(" %s %s %s", lemma, type, word);
 				System.out.println();
-				tupel = new StringTuple3(lemma, type, word);
+				tupel = new StringTuple3OLD(lemma, type, word);
 				listOfTupel3.add(tupel);
 			}
 		}
@@ -113,8 +113,8 @@ public class LemmaAbstractor {
 	 *            filter-function.
 	 * @return A cleaned list where every element is important for the analysis.
 	 */
-	public ArrayList<StringTuple3> filterUnneadedElements(ArrayList<StringTuple3> mergedNeighbors) {
-		ArrayList<StringTuple3> newList = new ArrayList<>();
+	public ArrayList<StringTuple3OLD> filterUnneadedElements(ArrayList<StringTuple3OLD> mergedNeighbors) {
+		ArrayList<StringTuple3OLD> newList = new ArrayList<>();
 		for (int i = 0; i < mergedNeighbors.size(); i++) {
 			String lemmaType = mergedNeighbors.get(i).item02;
 //			System.out.println(lemmaType +" "+startsWithSpecialLemma(lemmaType));

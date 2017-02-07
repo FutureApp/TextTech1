@@ -1,4 +1,4 @@
-package texttechno.task3.ortograph;
+package texttechno.task3.ortograph.old;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,11 +26,11 @@ public class RawDataOLD {
 
 	File teiFile;
 	List<String> teiFileAsList;
-	private LemmaAbstractor lemmaFilter;
-	private ArrayList<StringTuple3> fileAsTuple;
+	private LemmaAbstractorOLD lemmaFilter;
+	private ArrayList<StringTuple3OLD> fileAsTuple;
 	private HashMap<String, Integer> xAxis;
 	private ArrayList<ArrayList<Integer>> matrix;
-	TeiHAHALoader loader = new TeiHAHALoader();
+	TeiHAHALoaderOLD loader = new TeiHAHALoaderOLD();
 	private Integer precision = 4;
 	private ArrayList<String> indexHolder;
 	public RawDataOLD() {
@@ -39,7 +39,7 @@ public class RawDataOLD {
 	public RawDataOLD(File file) {
 		this.teiFile = file;
 		this.teiFileAsList = loadFile();
-		this.lemmaFilter = new LemmaAbstractor();
+		this.lemmaFilter = new LemmaAbstractorOLD();
 	}
 
 	public List<String> loadFile() {
@@ -62,9 +62,9 @@ public class RawDataOLD {
 		matrix = populateMatrixSize(xAxis);
 
 		for (int i = 0; i < fileAsTuple.size(); i++) {
-			ArrayList<StringTuple3> leftSide = calcLeftSide(i, fileAsTuple);
-			ArrayList<StringTuple3> rightSide = calcRightSide(i, fileAsTuple);
-			StringTuple3 primeTuple = fileAsTuple.get(i);
+			ArrayList<StringTuple3OLD> leftSide = calcLeftSide(i, fileAsTuple);
+			ArrayList<StringTuple3OLD> rightSide = calcRightSide(i, fileAsTuple);
+			StringTuple3OLD primeTuple = fileAsTuple.get(i);
 			updateMatrix(matrix, xAxis, primeTuple, mergeNeighbors(leftSide, rightSide));
 		}
 
@@ -75,7 +75,7 @@ public class RawDataOLD {
 
 	private HashMap<String, Integer> generateMatrixHeader() {
 		HashMap<String, Integer> map = new HashMap<>();
-		for (StringTuple3 stringTuple3 : fileAsTuple) {
+		for (StringTuple3OLD stringTuple3 : fileAsTuple) {
 			String lemma = stringTuple3.getItem01();
 			String lemmaType = stringTuple3.getItem02();
 			if (lemmaFilter.startsWithSpecialLemma(lemmaType)) {
@@ -101,16 +101,16 @@ public class RawDataOLD {
 	}
 
 	private void updateMatrix(ArrayList<ArrayList<Integer>> matrix, HashMap<String, Integer> xAxis,
-			StringTuple3 primeTuple, ArrayList<StringTuple3> mergedNeighbors) {
+			StringTuple3OLD primeTuple, ArrayList<StringTuple3OLD> mergedNeighbors) {
 		String lemma = primeTuple.getItem01();
 		String lemmaType = primeTuple.getItem02();
 		if (lemmaFilter.startsWithSpecialLemma(lemmaType)) {
-			ArrayList<StringTuple3> filterUnneadedElements = lemmaFilter.filterUnneadedElements(mergedNeighbors);
+			ArrayList<StringTuple3OLD> filterUnneadedElements = lemmaFilter.filterUnneadedElements(mergedNeighbors);
 			Integer matrixIndexPrime = xAxis.get(lemma);
 			System.out.println("prim - " + matrixIndexPrime + " primeValue " + lemma);
 			System.out.println("SIZE list " + filterUnneadedElements.size());
 			for (int i = 0; i < filterUnneadedElements.size(); i++) {
-				StringTuple3 tuple = filterUnneadedElements.get(i);
+				StringTuple3OLD tuple = filterUnneadedElements.get(i);
 				String lemmaNeighbor = tuple.getItem01();
 				Integer indexNeighbor = xAxis.get(lemmaNeighbor);
 				Integer currentValueInMatrix = matrix.get(matrixIndexPrime).get(indexNeighbor);
@@ -132,8 +132,8 @@ public class RawDataOLD {
 	 *            List to merge(2).
 	 * @return The merge of both lists.
 	 */
-	private ArrayList<StringTuple3> mergeNeighbors(ArrayList<StringTuple3> leftSide,
-			ArrayList<StringTuple3> rightSide) {
+	private ArrayList<StringTuple3OLD> mergeNeighbors(ArrayList<StringTuple3OLD> leftSide,
+			ArrayList<StringTuple3OLD> rightSide) {
 		leftSide.addAll(rightSide);
 		return leftSide;
 	}
@@ -148,8 +148,8 @@ public class RawDataOLD {
 	 *            The list where the members could be find.
 	 * @return All member left from the actual position.
 	 */
-	private ArrayList<StringTuple3> calcRightSide(int i, ArrayList<StringTuple3> fileAsTuple2) {
-		ArrayList<StringTuple3> rightSide = new ArrayList<>();
+	private ArrayList<StringTuple3OLD> calcRightSide(int i, ArrayList<StringTuple3OLD> fileAsTuple2) {
+		ArrayList<StringTuple3OLD> rightSide = new ArrayList<>();
 		if ((i + 3 < fileAsTuple2.size()))
 			rightSide.add(fileAsTuple.get(i + 3));
 		if ((i + 2 < fileAsTuple2.size()))
@@ -169,8 +169,8 @@ public class RawDataOLD {
 	 *            The list where the members could be find.
 	 * @return All member left from the actual position.
 	 */
-	private ArrayList<StringTuple3> calcLeftSide(int i, ArrayList<StringTuple3> fileAsTuple2) {
-		ArrayList<StringTuple3> leftSide = new ArrayList<>();
+	private ArrayList<StringTuple3OLD> calcLeftSide(int i, ArrayList<StringTuple3OLD> fileAsTuple2) {
+		ArrayList<StringTuple3OLD> leftSide = new ArrayList<>();
 		if (!(i - 3 < 0))
 			leftSide.add(fileAsTuple.get(i - 3));
 		if (!(i - 2 < 0))
@@ -261,7 +261,7 @@ public class RawDataOLD {
 	 * 
 	 * @return List containing tupleOf3;
 	 */
-	public ArrayList<StringTuple3> transformToTupleOfThree() {
+	public ArrayList<StringTuple3OLD> transformToTupleOfThree() {
 		
 		fileAsTuple = loader.abstractTuplesOf3(teiFile);
 		return fileAsTuple;

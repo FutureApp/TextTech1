@@ -1,4 +1,4 @@
-package texttechno.task3.ortograph;
+package texttechno.task3.ortograph.old;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,17 +15,17 @@ import xgeneral.modules.SystemMessage;
  * @author Michael Czaja
  *
  */
-public class RawData {
+public class RawDataNewOLD {
 
 	File teiFile;
 	List<String> teiFileAsList;
-	private ArrayList<StringTuple3> fileAsTuple;
-	TeiHAHALoader loader = new TeiHAHALoader();
+	private ArrayList<StringTuple3OLD> fileAsTuple;
+	TeiHAHALoaderOLD loader = new TeiHAHALoaderOLD();
 
-	public RawData() {
+	public RawDataNewOLD() {
 	}
 
-	public RawData(File file) {
+	public RawDataNewOLD(File file) {
 		this.teiFile = file;
 		this.teiFileAsList = loadFile();
 	}
@@ -54,7 +54,7 @@ public class RawData {
 	 * 
 	 * @return List containing tupleOf3;
 	 */
-	public ArrayList<StringTuple3> transformToTupleOfThree() {
+	public ArrayList<StringTuple3OLD> transformToTupleOfThree() {
 		
 		fileAsTuple = loader.abstractTuplesOf3(teiFile);
 		return fileAsTuple;

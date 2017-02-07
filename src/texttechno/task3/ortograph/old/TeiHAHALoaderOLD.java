@@ -1,4 +1,4 @@
-package texttechno.task3.ortograph;
+package texttechno.task3.ortograph.old;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,26 +13,26 @@ import org.apache.commons.io.FileUtils;
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
 
-public class TeiHAHALoader {
+public class TeiHAHALoaderOLD {
 	private static final Pattern W_TAG_REGEX = Pattern.compile("<w(.+?)</w>");
 	private static final Pattern Text_REGEX = Pattern.compile(">(.+?)</w>");
 	private static final Pattern LEMMA_PATTERN = Pattern.compile("lemma=\"(.+?)\" ");
 	private static final Pattern LEMMA_TYPE_PATTERN = Pattern.compile("type=\"(.+?)\" ");
 
-	public TeiHAHALoader() {
+	public TeiHAHALoaderOLD() {
 		super();
 	}
 
 	/**
 	 * Abstracts all need information from the <textImager>.tei and returns need
-	 * information in the data-type StringTupleOf3. See {@link StringTuple3}
+	 * information in the data-type StringTupleOf3. See {@link StringTuple3OLD}
 	 * 
 	 * @param teiFile
 	 *            Location of the <textImager>.tei file.
 	 * @return List of StringTupleOf3.
 	 */
-	public ArrayList<StringTuple3> abstractTuplesOf3(File teiFile) {
-		ArrayList<StringTuple3> fileAsListOfTuple = new ArrayList<>();
+	public ArrayList<StringTuple3OLD> abstractTuplesOf3(File teiFile) {
+		ArrayList<StringTuple3OLD> fileAsListOfTuple = new ArrayList<>();
 		String readFileToString = null;
 		try {
 			readFileToString = FileUtils.readFileToString(teiFile, Encoding.getDefaultEncoding());
@@ -44,7 +44,7 @@ public class TeiHAHALoader {
 		for (int i = 0; i < tagValues.size(); i++) {
 			System.out.println("IN: " + tagValues.get(i));
 			String indiTag = tagValues.get(i);
-			StringTuple3 tupleOf3 = abstractTupleOf3(indiTag);
+			StringTuple3OLD tupleOf3 = abstractTupleOf3(indiTag);
 			fileAsListOfTuple.add(tupleOf3);
 		}
 		return fileAsListOfTuple;
@@ -52,18 +52,18 @@ public class TeiHAHALoader {
 
 	/**
 	 * Abstracts the information from a line to build a tupleOf3 -object. See
-	 * {@link StringTuple3}.
+	 * {@link StringTuple3OLD}.
 	 * 
 	 * @param line
 	 *            line containing the information to bould a StringTupleOf3.
 	 * @return The information as StringTupleOf3.
 	 */
-	private StringTuple3 abstractTupleOf3(String line) {
+	private StringTuple3OLD abstractTupleOf3(String line) {
 		String lemma = abstractPattern(line, LEMMA_PATTERN, "lemma");
 		String lemmaType = abstractPattern(line, LEMMA_TYPE_PATTERN, "lemma-type");
 		String word = abstractPattern(line, Text_REGEX, "word");
 
-		return new StringTuple3(lemma, lemmaType, word);
+		return new StringTuple3OLD(lemma, lemmaType, word);
 	}
 
 	/**
