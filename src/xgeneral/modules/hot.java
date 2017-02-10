@@ -16,6 +16,12 @@ public class hot {
 		
 		Double log = Math.log(8d)/Math.log(2);
 		System.out.println("log "+log);
+		
+		
+		Float ax = 5f;
+		Double dax = (double)ax;
+		System.out.println(ax);
+		System.out.println(dax);
 	}
 
 }

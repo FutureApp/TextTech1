@@ -3,20 +3,23 @@ package texttechno.task3.ortograph.newImp;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
 
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
+import xgeneral.modules.Writer;
 
 public class TxT_TaskRunner3 {
 
-	
 	// ---
 	// Change that TODO
-	static String[] arg = {"TextTechno/03Task/ressources/testSmall.tei"};
+	// static String[] arg = {"TextTechno/03Task/ressources/testSmall.tei"};
+	 static String[] arg = { "TextTechno/03Task/ressources/kafkaTextImagerOut.tei" };
+//	static String[] arg = { "TextTechno/03Task/ressources/test.tei" };
 	// ----
-	
+
 	static String encoding = Encoding.getDefaultEncoding();
 
 	static String resultDir = "txt/result";
@@ -30,18 +33,47 @@ public class TxT_TaskRunner3 {
 	 */
 	public static void main(String[] args) {
 		System.out.println("New Runner");
-//		arg = args;
+		String hot = new File("test").getAbsolutePath();
+		// arg = args;
 		validateAmountOfGivenInput();
 		checkIfFileExists(arg[0]);
 		cleanResultDir(resultDir);
 
 		RawDataTei rawData = new RawDataTei(new File(arg[0]));
 		ArrayList<StringTuple3> dataOfInterest = rawData.getDataOfInterest();
-		NetworkMatrix matrix = new NetworkMatrix(dataOfInterest);
-		matrix.generateMatrix(dataOfInterest);
+		KokkurenzList list = new KokkurenzList(dataOfInterest);
+		String showTuples = list.showTuples();
+		list.genereateWordList();
+		HashMap<String, IntegerSignature> calcRateSignatureForAllWords = list.calcRateSignatureForAllWords();
+
+		Writer.delAndWrite(new File(hot + "Tuples.txt"), showTuples);
+		Writer.delAndWrite(new File(hot + "test.txt"), list.showEntry() + System.lineSeparator());
+		Writer.delAndWrite(new File(hot + "rate.txt"), calcRateSignatureForAllWords);
+		HashMap<String, IntegerSignature> calcContingencyTable = list
+				.calcContingencyTable(calcRateSignatureForAllWords.keySet());
+		HashMap<String, FloatSignature> calcExpectedValue = list.calcExpectedValue(calcContingencyTable);
+		HashMap<String, Double> calcLogLikelihoodValues = list.calcLogLikelihoodValues(calcContingencyTable,
+				calcExpectedValue);
+		Writer.delAndWriteHash(new File(hot + "LogLike.txt"), calcLogLikelihoodValues);
+		Double avgWeight = list.calcAvgWeight(calcLogLikelihoodValues);
 		
-		System.out.println(matrix.orginialMatrix.size());
-		matrix.printMatrix(matrix.orginialMatrix);
+		NetworkMatrix matrix = new NetworkMatrix(calcLogLikelihoodValues, list);
+		matrix.generateNetworkMatrix();
+		matrix.calcClusterWeight();
+		System.out.println(avgWeight);
+//		matrix.showNetworkMatrix();
+		
+		
+		
+		// NetworkMatrix matrix = new NetworkMatrix(dataOfInterest);
+		// 7 matrix.generateMatrix(dataOfInterest);
+		// matrix.generateShrinkMatrix();
+		// matrix.calcRateSignatureBasedOnShrinkMatrix();
+		// matrix.printMatrix(matrix.originalMatrix);
+		// System.out.println(matrix.originalMatrix.size());
+		// matrix.calcRateSignatureBasedOnOriginalMatrix();
+		// matrix.printMatrix(matrix.shrinkMatrix);
+		// System.out.println(matrix.shrinkMatrix.size());
 		printFinish();
 	}
 
