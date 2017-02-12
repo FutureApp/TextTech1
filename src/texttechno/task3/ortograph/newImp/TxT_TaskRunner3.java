@@ -16,8 +16,9 @@ public class TxT_TaskRunner3 {
 	// ---
 	// Change that TODO
 	// static String[] arg = {"TextTechno/03Task/ressources/testSmall.tei"};
-	 static String[] arg = { "TextTechno/03Task/ressources/kafkaTextImagerOut.tei" };
-//	static String[] arg = { "TextTechno/03Task/ressources/test.tei" };
+	// static String[] arg = {
+	// "TextTechno/03Task/ressources/kafkaTextImagerOut.tei" };
+	static String[] arg = { "TextTechno/03Task/ressources/test.tei" };
 	// ----
 
 	static String encoding = Encoding.getDefaultEncoding();
@@ -33,7 +34,7 @@ public class TxT_TaskRunner3 {
 	 */
 	public static void main(String[] args) {
 		System.out.println("New Runner");
-		String hot = new File("test").getAbsolutePath();
+		String hot = new File("TXT1_").getAbsolutePath();
 		// arg = args;
 		validateAmountOfGivenInput();
 		checkIfFileExists(arg[0]);
@@ -46,34 +47,25 @@ public class TxT_TaskRunner3 {
 		list.genereateWordList();
 		HashMap<String, IntegerSignature> calcRateSignatureForAllWords = list.calcRateSignatureForAllWords();
 
-		Writer.delAndWrite(new File(hot + "Tuples.txt"), showTuples);
-		Writer.delAndWrite(new File(hot + "test.txt"), list.showEntry() + System.lineSeparator());
-		Writer.delAndWrite(new File(hot + "rate.txt"), calcRateSignatureForAllWords);
 		HashMap<String, IntegerSignature> calcContingencyTable = list
 				.calcContingencyTable(calcRateSignatureForAllWords.keySet());
 		HashMap<String, FloatSignature> calcExpectedValue = list.calcExpectedValue(calcContingencyTable);
 		HashMap<String, Double> calcLogLikelihoodValues = list.calcLogLikelihoodValues(calcContingencyTable,
 				calcExpectedValue);
-		Writer.delAndWriteHash(new File(hot + "LogLike.txt"), calcLogLikelihoodValues);
-		Double avgWeight = list.calcAvgWeight(calcLogLikelihoodValues);
-		
+
+//		Double avgWeight = list.calcAvgWeight(calcLogLikelihoodValues);
+
 		NetworkMatrix matrix = new NetworkMatrix(calcLogLikelihoodValues, list);
 		matrix.generateNetworkMatrix();
-		matrix.calcClusterWeight();
-		System.out.println(avgWeight);
-//		matrix.showNetworkMatrix();
+		ArrayList<Nodes> nodes = matrix.calcNodesClusterWeight();
+	
 		
-		
-		
-		// NetworkMatrix matrix = new NetworkMatrix(dataOfInterest);
-		// 7 matrix.generateMatrix(dataOfInterest);
-		// matrix.generateShrinkMatrix();
-		// matrix.calcRateSignatureBasedOnShrinkMatrix();
-		// matrix.printMatrix(matrix.originalMatrix);
-		// System.out.println(matrix.originalMatrix.size());
-		// matrix.calcRateSignatureBasedOnOriginalMatrix();
-		// matrix.printMatrix(matrix.shrinkMatrix);
-		// System.out.println(matrix.shrinkMatrix.size());
+//		Double calcClusterWeight = matrix.calcClusterWeight(nodes);
+
+		Writer.delAndWrite(new File(hot + "IdentData.txt"), showTuples);
+		Writer.delAndWrite(new File(hot + "RateSignature.txt"), calcRateSignatureForAllWords);
+		Writer.delAndWriteHash(new File(hot + "LogLike.txt"), calcLogLikelihoodValues);
+		Writer.delAndWriteNodeList(new File(hot + "ClusterNodes.txt"), nodes);
 		printFinish();
 	}
 

@@ -2,12 +2,14 @@ package xgeneral.modules;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 import org.apache.commons.io.FileUtils;
 
 import texttechno.task3.ortograph.newImp.IntegerSignature;
+import texttechno.task3.ortograph.newImp.Nodes;
 
 public class Writer {
 
@@ -55,7 +57,29 @@ public class Writer {
 			System.out.println(content);
 			write(location, content);
 		}
-		
+
 	}
-	
+
+	public static void writeOnly(File file, String content) {
+		try {
+			FileUtils.write(file, content, Encoding.getDefaultEncoding(), true);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void delAndWriteNodeList(File file, ArrayList<Nodes> nodes) {
+		if (file.exists())
+			file.delete();
+
+		for (Nodes nodez : nodes) {
+			String data = nodez.getNodeName() + " CW:" + nodez.getNodeCwValue() + " Nodes:[ ";
+			writeOnly(file, data);
+			for (Entry<String, Double> entry : nodez.getNodeMapEdgeWeight().entrySet()) {
+				String resultFormate = String.format("(%s|%.4f) ", entry.getKey(), entry.getValue());
+				writeOnly(file, resultFormate);
+			}
+			write(file, "]");
+		}
+	}
 }
