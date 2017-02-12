@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
-import org.w3c.dom.traversal.NodeFilter;
 
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
@@ -82,10 +81,11 @@ public class TxT_TaskRunner3 {
 		 * ------------------ Viz. of results --------------------
 		 */
 
-		NodeFilter nodeFilter;
+		NodeFilter nodeFilter = new NodeFilter(nodes);
+		ArrayList<Nodes> filter = nodeFilter.filter(0,10);
 		
-		VizResults viz = new VizResults(10, 10, new File(hot), nodes);
-		viz.startViz();
+//		VizResults viz = new VizResults(10, 10, new File(hot), nodes);
+//		viz.startViz();
 		printFinish();
 	}
 
