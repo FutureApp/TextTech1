@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
+import org.w3c.dom.traversal.NodeFilter;
 
 import xgeneral.modules.Encoding;
 import xgeneral.modules.SystemMessage;
@@ -33,39 +34,58 @@ public class TxT_TaskRunner3 {
 	 *            Only args[0] - Link to a german wiki article.
 	 */
 	public static void main(String[] args) {
-		System.out.println("New Runner");
+		// Verify-Input
 		String hot = new File("TXT1_").getAbsolutePath();
 		// arg = args;
 		validateAmountOfGivenInput();
 		checkIfFileExists(arg[0]);
 		cleanResultDir(resultDir);
 
+		/*
+		 * --------------------- Start of analysis --------------------
+		 */
+
+		// Start of preparation
 		RawDataTei rawData = new RawDataTei(new File(arg[0]));
 		ArrayList<StringTuple3> dataOfInterest = rawData.getDataOfInterest();
 		KokkurenzList list = new KokkurenzList(dataOfInterest);
 		String showTuples = list.showTuples();
 		list.genereateWordList();
-		HashMap<String, IntegerSignature> calcRateSignatureForAllWords = list.calcRateSignatureForAllWords();
 
+		// Start of 'heavy' analysis
+		HashMap<String, IntegerSignature> calcRateSignatureForAllWords = list.calcRateSignatureForAllWords();
 		HashMap<String, IntegerSignature> calcContingencyTable = list
 				.calcContingencyTable(calcRateSignatureForAllWords.keySet());
 		HashMap<String, FloatSignature> calcExpectedValue = list.calcExpectedValue(calcContingencyTable);
 		HashMap<String, Double> calcLogLikelihoodValues = list.calcLogLikelihoodValues(calcContingencyTable,
 				calcExpectedValue);
 
-//		Double avgWeight = list.calcAvgWeight(calcLogLikelihoodValues);
+		Double avgWeight = list.calcAvgWeight(calcLogLikelihoodValues);
 
+		// Generation of network-matrix
 		NetworkMatrix matrix = new NetworkMatrix(calcLogLikelihoodValues, list);
 		matrix.generateNetworkMatrix();
 		ArrayList<Nodes> nodes = matrix.calcNodesClusterWeight();
-	
-		
-//		Double calcClusterWeight = matrix.calcClusterWeight(nodes);
 
-		Writer.delAndWrite(new File(hot + "IdentData.txt"), showTuples);
-		Writer.delAndWrite(new File(hot + "RateSignature.txt"), calcRateSignatureForAllWords);
-		Writer.delAndWriteHash(new File(hot + "LogLike.txt"), calcLogLikelihoodValues);
-		Writer.delAndWriteNodeList(new File(hot + "ClusterNodes.txt"), nodes);
+		// Double calcClusterWeight = matrix.calcClusterWeight(nodes);
+
+		/*
+		 * ------------------ Saving all informations --------------------
+		 */
+		Writer.delAndWrite(new File("log/IdentData.txt"), showTuples);
+		Writer.delAndWrite(new File("log/RateSignature.txt"), calcRateSignatureForAllWords);
+		Writer.delAndWriteHash(new File("log/LogLike.txt"), calcLogLikelihoodValues);
+		Writer.delAndWriteNodeList(new File("log/ClusterNodes.txt"), nodes);
+		Writer.saveResult(new File("results.txt"),matrix);
+
+		/*
+		 * ------------------ Viz. of results --------------------
+		 */
+
+		NodeFilter nodeFilter;
+		
+		VizResults viz = new VizResults(10, 10, new File(hot), nodes);
+		viz.startViz();
 		printFinish();
 	}
 

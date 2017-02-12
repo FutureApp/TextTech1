@@ -16,7 +16,7 @@ public class NetworkMatrix {
 	HashMap<String, Integer> headerIndex;
 	ArrayList<ArrayList<Double>> networkMatrixLog;
 	KokkurenzList list;
-	private Double cwValueForCluster;
+	Double cwValueForCluster;
 
 	public NetworkMatrix(HashMap<String, Double> networkData, KokkurenzList list) {
 		super();
@@ -24,8 +24,14 @@ public class NetworkMatrix {
 		this.list = list;
 	}
 
+	public NetworkMatrix(KokkurenzList list) {
+		super();
+		this.list = list;
+	}
+
 	public ArrayList<ArrayList<Double>> generateNetworkMatrix() {
 		generateHeader();
+
 		networkMatrixLog = generateBaseMatrix();
 
 		for (Entry<String, Double> entry : networkData.entrySet()) {
@@ -154,24 +160,18 @@ public class NetworkMatrix {
 
 			for (int i = 0; i < primeNodesAreContaining.size(); i++) {
 				String secondNodeName = primeNodesAreContaining.get(i);
-				String var1 = namePrime + "@" + secondNodeName;
-				String var2 = secondNodeName + "@" + namePrime;
-				Double weightwij = extractNeededWeight(var1, var2);
+				Double weightwij = lookUpWeight(namePrime, secondNodeName);
 
 				for (int j = i + 1; j < primeNodesAreContaining.size(); j++) {
 					String thirdNodeName = primeNodesAreContaining.get(j);
-					String vark1 = namePrime + "@" + thirdNodeName;
-					String vark2 = thirdNodeName + "@" + namePrime;
 					Double weightwik;
-					weightwik = extractNeededWeight(vark1, vark2);
+					weightwik = lookUpWeight(namePrime, thirdNodeName);
 
-					String varl1 = secondNodeName + "@" + thirdNodeName;
-					String varl2 = thirdNodeName + "@" + secondNodeName;
-					Double weightwil = extractNeededWeight(varl1, varl2);
+					Double weightwil = lookUpWeight(secondNodeName, thirdNodeName);
 					weightProduct += weightwij * weightwik * weightwil;
 				}
 			}
-			
+
 			Double graphAVGWeightPot3 = Math.pow(avgWeight, 3);
 			Double valueBot = (graphAVGWeightPot3 * nodeDegree * (nodeDegree - 1)) / 2;
 			Double leftArgument = 1d / valueBot;
@@ -191,8 +191,8 @@ public class NetworkMatrix {
 			}
 			cwValueForCluster += CwValueOfNode;
 			System.out.println("CW: " + cwValueForCluster);
-			HashMap<String, Double> lookUpAllWeights = lookUpAllWeights(namePrime, primeNodesAreContaining);
-			Nodes node = new Nodes(namePrime, CwValueOfNode, lookUpAllWeights);
+			HashMap<String, Double> edgeWeights = lookUpAllWeights(namePrime, primeNodesAreContaining);
+			Nodes node = new Nodes(namePrime, CwValueOfNode, edgeWeights);
 			nodesList.add(node);
 		}
 		cwValueForCluster = (1d / (double) headerNames.size()) * cwValueForCluster;
@@ -200,11 +200,11 @@ public class NetworkMatrix {
 		return nodesList;
 	}
 
-	public Double lookUpWeight(String comp1,String comp2) {
+	public Double lookUpWeight(String comp1, String comp2) {
 		Double weight = 0d;
 		String var1 = comp1 + "@" + comp2;
 		String var2 = comp2 + "@" + comp1;
-		
+
 		if (networkData.containsKey(var1))
 			weight = networkData.get(var1);
 		else if (networkData.containsKey(var2))
@@ -215,8 +215,8 @@ public class NetworkMatrix {
 		}
 		return weight;
 
-		
 	}
+
 	private Double extractNeededWeight(String var1, String var2) {
 		Double weightwij = 0d;
 		if (networkData.containsKey(var1))
@@ -243,12 +243,19 @@ public class NetworkMatrix {
 	public HashMap<String, Double> lookUpAllWeights(String nodeName, ArrayList<String> nodeNamesFollowed) {
 		HashMap<String, Double> resultMap = new HashMap<>();
 		for (int i = 0; i < nodeNamesFollowed.size(); i++) {
-			System.out.println("LookUp "+ nodeName +" "+ nodeNamesFollowed +" ");
-			String folNode = nodeNamesFollowed.get(0);
-			Double extractNeedWeight = extractNeededWeight(nodeName, folNode);
+			System.out.println("LookUp " + nodeName + " " + nodeNamesFollowed + " ");
+			String folNode = nodeNamesFollowed.get(i);
+			Double extractNeedWeight = lookUpWeight(nodeName, folNode);
 			resultMap.put(folNode, extractNeedWeight);
 		}
 		return resultMap;
 	}
 
+	public Double getCWValue() {
+		return cwValueForCluster;
+	}
+
+	public Double getLikeAVG() {
+		return list.calcAvgWeight(networkData);
+	}
 }

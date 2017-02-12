@@ -9,6 +9,7 @@ import java.util.Map.Entry;
 import org.apache.commons.io.FileUtils;
 
 import texttechno.task3.ortograph.newImp.IntegerSignature;
+import texttechno.task3.ortograph.newImp.NetworkMatrix;
 import texttechno.task3.ortograph.newImp.Nodes;
 
 public class Writer {
@@ -76,10 +77,24 @@ public class Writer {
 			String data = nodez.getNodeName() + " CW:" + nodez.getNodeCwValue() + " Nodes:[ ";
 			writeOnly(file, data);
 			for (Entry<String, Double> entry : nodez.getNodeMapEdgeWeight().entrySet()) {
+				System.out.println(entry.getKey());
 				String resultFormate = String.format("(%s|%.4f) ", entry.getKey(), entry.getValue());
 				writeOnly(file, resultFormate);
 			}
 			write(file, "]");
 		}
+	}
+
+	public static void saveResult(File file, NetworkMatrix matrix) {
+		if (file.exists())
+			file.delete();
+		String clusterCWVALUE = "CW-Value cluster : "+matrix.getCWValue() ;
+		String avgLike = "AVG-Value log-likelihood : "+matrix.getLikeAVG() ;
+		
+		
+		
+		write(file, clusterCWVALUE);
+		write(file, avgLike);
+		
 	}
 }
