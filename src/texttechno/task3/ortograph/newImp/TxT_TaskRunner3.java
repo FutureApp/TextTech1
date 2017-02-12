@@ -16,9 +16,8 @@ public class TxT_TaskRunner3 {
 	// ---
 	// Change that TODO
 	// static String[] arg = {"TextTechno/03Task/ressources/testSmall.tei"};
-	// static String[] arg = {
-	// "TextTechno/03Task/ressources/kafkaTextImagerOut.tei" };
-	static String[] arg = { "TextTechno/03Task/ressources/test.tei" };
+//	static String[] arg = { "TextTechno/03Task/ressources/kafkaTextImagerOut.tei" };
+	 static String[] arg = { "TextTechno/03Task/ressources/test.tei" };
 	// ----
 
 	static String encoding = Encoding.getDefaultEncoding();
@@ -75,20 +74,26 @@ public class TxT_TaskRunner3 {
 		Writer.delAndWrite(new File("log/RateSignature.txt"), calcRateSignatureForAllWords);
 		Writer.delAndWriteHash(new File("log/LogLike.txt"), calcLogLikelihoodValues);
 		Writer.delAndWriteNodeList(new File("log/ClusterNodes.txt"), nodes);
-		Writer.saveResult(new File("results.txt"),matrix);
+		Writer.saveResult(new File("results.txt"), matrix);
 
 		/*
 		 * ------------------ Viz. of results --------------------
 		 */
 
 		NodeFilter nodeFilter = new NodeFilter(nodes);
-		ArrayList<Nodes> filter = nodeFilter.filter(0,10);
-		
-//		VizResults viz = new VizResults(10, 10, new File(hot), nodes);
-//		viz.startViz();
+		ArrayList<Nodes> filteredNodes = nodeFilter.filter(0, 0);
+
+		System.out.println("--- Starting visualisation ---");
+		System.out.println(filteredNodes.size());
+		VizResults viz = new VizResults(filteredNodes, new File("resultGraph"),nodes);
+		viz.startViz();
 		printFinish();
 	}
 
+	/**
+	 * Checks if a given path correlate to a file.
+	 * @param pathToFile Path to file.
+	 */
 	private static void checkIfFileExists(String pathToFile) {
 		File file = new File(pathToFile);
 		System.out.println();

@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class NodeFilter {
@@ -20,22 +21,39 @@ public class NodeFilter {
 
 		ArrayList<Nodes> sortNodes = sortNodes(nodes);
 		ArrayList<Nodes> applyCWFilter = applyCWFilter(sortNodes, i);
-		applyEdgeFilter(sortNodes,j);
+		ArrayList<Nodes> applyEdgeFilter = applyEdgeFilter(applyCWFilter, j);
 
-		applyCWFilter.forEach((a -> {
-			System.out.println("Name: " + a.nodeName + " " + a.nodeCwValue);
+		applyEdgeFilter.forEach((a -> {
+			System.out.println("Name: " + a.nodeName + " " + a.nodeCwValue +" "+a.nodeMapEdgeWeight);
 		}));
-		return null;
+		return applyEdgeFilter;
 	}
 
 	private ArrayList<Nodes> applyEdgeFilter(ArrayList<Nodes> sortNodes, int j) {
 		ArrayList<Nodes> resultList = new ArrayList<>();
-		
-		
-		
-		
+		for (int i = 0; i < sortNodes.size(); i++) {
+			Nodes node = sortNodes.get(i);
+			HashMap<String, Double> nodeMapEdgeWeight = node.nodeMapEdgeWeight;
+			Map<String, Double> sortByValue = sortByValue(nodeMapEdgeWeight);
+			HashMap<String, Double> resultMap = new HashMap<>();
+			Integer counter = 0;
+
+			for (Entry<String, Double> entry : sortByValue.entrySet()) {
+				if (j == 0)
+					resultMap.put(entry.getKey(), entry.getValue());
+				else {
+					if (counter < j) {
+						resultMap.put(entry.getKey(), entry.getValue());
+						counter++;
+					}
+				}
+			}
+			node.nodeMapEdgeWeight = resultMap;
+			resultList.add(node);
+		}
+
 		return resultList;
-		
+
 	}
 
 	private ArrayList<Nodes> applyCWFilter(ArrayList<Nodes> sortNodes, Integer filterValue) {
