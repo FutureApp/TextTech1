@@ -174,7 +174,7 @@ public class KokkurenzList {
 		HashMap<String, FloatSignature> resultMap = new HashMap<>();
 		for (Entry<String, IntegerSignature> entry : theContingencyTable.entrySet()) {
 			IntegerSignature values = entry.getValue();
-			
+
 			// All field-values
 			Float field00 = (float) values.kookkuRate;
 			Float field01 = (float) values.randsumf1;
@@ -186,7 +186,7 @@ public class KokkurenzList {
 			Float R2 = field10 + field11;
 			Float C1 = field00 + field10;
 			Float C2 = field01 + field11;
-			
+
 			Float summN = R1 + R2;
 			Float SummX = C1 + C2;
 			if (!(summN - SummX == 0f)) {
@@ -194,14 +194,13 @@ public class KokkurenzList {
 				System.out.println(summN + "=" + SummX);
 				System.exit(1);
 			}
-			
+
 			// Expected values for each field.
 			Float E00 = R1 * C1 / summN;
 			Float E01 = R1 * C2 / summN;
 			Float E10 = R2 * C1 / summN;
 			Float E11 = R2 * C2 / summN;
 
-			
 			// Prints infos to the console
 			String current = String.format("(%s.%.2f.%.2f.%.2f.%.2f)", entry.getKey(), field00, field01, field10,
 					field11);
@@ -217,13 +216,23 @@ public class KokkurenzList {
 
 	}
 
-	public HashMap<String, Double> calcLogLikelihoodValues(HashMap<String, IntegerSignature> calcContingencyTable,
-			HashMap<String, FloatSignature> calcExpectedValue) {
+	/**
+	 * Calcs. the Log Likelihood Values for each connection between words.
+	 * 
+	 * @param ContingencyTable
+	 *            The contingency table(map)
+	 * @param ExpectedValue
+	 *            The Expected values map.
+	 * @return Map containing the LogLikelihoodValues for each word. Base
+	 *         word(prime) is given throw unique word.
+	 */
+	public HashMap<String, Double> calcLogLikelihoodValues(HashMap<String, IntegerSignature> ContingencyTable,
+			HashMap<String, FloatSignature> ExpectedValue) {
 		HashMap<String, Double> result = new HashMap<>();
-		for (Entry<String, IntegerSignature> entry : calcContingencyTable.entrySet()) {
+		for (Entry<String, IntegerSignature> entry : ContingencyTable.entrySet()) {
 			String key = entry.getKey();
 			IntegerSignature contingencySignature = entry.getValue();
-			FloatSignature expectedSignature = calcExpectedValue.get(key);
+			FloatSignature expectedSignature = ExpectedValue.get(key);
 
 			Double logLikelihoodValue = 0d;
 			for (int i = 0; i < contingencySignature.getValuesAsList().size(); i++) {
@@ -238,35 +247,18 @@ public class KokkurenzList {
 		return result;
 	}
 
-	public Double calcAvgWeight(HashMap<String, Double> calcLogLikelihoodValues) {
+	/**
+	 * Calcs the avg-value on a map.
+	 * @param map Map containing the values.
+	 * @return The avg-value of the map.
+	 */
+	public Double calcAvgWeight(HashMap<String, Double> map) {
 		Double result = 0d;
 		Double counter = 0d;
-		for (Entry<String, Double> entry : calcLogLikelihoodValues.entrySet()) {
+		for (Entry<String, Double> entry : map.entrySet()) {
 			result += entry.getValue();
 			counter++;
 		}
 		return result / counter;
-	}
-
-	public void calcClusterWeight(HashMap<String, Double> calcLogLikelihoodValues) {
-		Double avgWeight = calcAvgWeight(calcLogLikelihoodValues);
-		ArrayList<String> nodes = calcNodes(calcLogLikelihoodValues);
-	}
-
-	private ArrayList<String> calcNodes(HashMap<String, Double> calcLogLikelihoodValues) {
-		ArrayList<String> result = new ArrayList<>();
-		HashMap<String, Integer> map = new HashMap<>();
-		for (Entry<String, Double> entry : calcLogLikelihoodValues.entrySet()) {
-			String[] split = entry.getKey().split("@");
-			if (!map.containsKey(split[0]))
-				map.put(split[0], 1);
-			if (!map.containsKey(split[1]))
-				map.put(split[1], 1);
-		}
-		for (Entry<String, Integer> mapEntry : map.entrySet()) {
-			result.add(mapEntry.getKey());
-		}
-		System.out.println("ResultEntrys " + result.size());
-		return result;
 	}
 }
