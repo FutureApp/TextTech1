@@ -13,15 +13,8 @@ import xgeneral.modules.Writer;
 
 public class TxT_TaskRunner3 {
 
-	// ---
-	// Change that TODO
-	// static String[] arg = {"TextTechno/03Task/ressources/testSmall.tei"};
-//	static String[] arg = { "TextTechno/03Task/ressources/kafkaTextImagerOut.tei" };
-	 static String[] arg = { "TextTechno/03Task/ressources/test.tei" };
-	// ----
-
+	static String[] arg;
 	static String encoding = Encoding.getDefaultEncoding();
-
 	static String resultDir = "txt/result";
 	static String articleName;
 
@@ -34,9 +27,10 @@ public class TxT_TaskRunner3 {
 	public static void main(String[] args) {
 		// Verify-Input
 		String hot = new File("TXT1_").getAbsolutePath();
-		// arg = args;
+		arg = args;
 		validateAmountOfGivenInput();
-		checkIfFileExists(arg[0]);
+		validateInput();
+		checkIfFileExists(arg[2]);
 		cleanResultDir(resultDir);
 
 		/*
@@ -44,13 +38,15 @@ public class TxT_TaskRunner3 {
 		 */
 
 		// Start of preparation
-		RawDataTei rawData = new RawDataTei(new File(arg[0]));
+		System.out.println("--- Prepare-phase ---");
+		RawDataTei rawData = new RawDataTei(new File(arg[2]));
 		ArrayList<StringTuple3> dataOfInterest = rawData.getDataOfInterest();
 		KokkurenzList list = new KokkurenzList(dataOfInterest);
 		String showTuples = list.showTuples();
 		list.genereateWordList();
 
 		// Start of 'heavy' analysis
+		System.out.println("--- Heave-analysis Phase ---");
 		HashMap<String, IntegerSignature> calcRateSignatureForAllWords = list.calcRateSignatureForAllWords();
 		HashMap<String, IntegerSignature> calcContingencyTable = list
 				.calcContingencyTable(calcRateSignatureForAllWords.keySet());
@@ -70,6 +66,7 @@ public class TxT_TaskRunner3 {
 		/*
 		 * ------------------ Saving all informations --------------------
 		 */
+		System.out.println("--- Storing-Phase ---");
 		Writer.delAndWrite(new File("log/IdentData.txt"), showTuples);
 		Writer.delAndWrite(new File("log/RateSignature.txt"), calcRateSignatureForAllWords);
 		Writer.delAndWriteHash(new File("log/LogLike.txt"), calcLogLikelihoodValues);
@@ -80,19 +77,49 @@ public class TxT_TaskRunner3 {
 		 * ------------------ Viz. of results --------------------
 		 */
 
+		System.out.println("--- Visualisation-Phase ---");
 		NodeFilter nodeFilter = new NodeFilter(nodes);
-		ArrayList<Nodes> filteredNodes = nodeFilter.filter(0, 0);
-
-		System.out.println("--- Starting visualisation ---");
-		System.out.println(filteredNodes.size());
-		VizResults viz = new VizResults(filteredNodes, new File("resultGraph"),nodes);
+		ArrayList<Nodes> filteredNodes = nodeFilter.filter(Integer.parseInt(arg[0]), Integer.parseInt(arg[1]));
+		VizResults viz = new VizResults(filteredNodes, new File("resultGraph"), nodes);
 		viz.startViz();
+
 		printFinish();
 	}
 
 	/**
+	 * Checks if the parameter meets the requirements;
+	 */
+	private static void validateInput() {
+		Boolean systemError = false;
+		if (!containsOnlyNumbers(arg[0])) {
+			SystemMessage.eMessage(String.format(
+					"First argument contains more then only number. Execution will stop. Change the value to meet the requirements.Given<%s>",
+					arg[0]));
+			systemError = true;
+		}
+		if (!containsOnlyNumbers(arg[1])) {
+			SystemMessage.eMessage(String.format(
+					"Second argument contains more then only number. Execution will stop. Change the value to meet the requirements.Given<%s>",
+					arg[1]));
+			systemError = true;
+		}
+		if (Integer.parseInt(arg[0]) < 0) {
+			SystemMessage.eMessage(String.format(
+					"First argument is ne negative number.Negative numbers arn't support at this point.Given<%s>",
+					arg[0]));
+			systemError = true;
+		}
+		if (systemError) {
+			SystemMessage.eMessage("Execution is stopped");
+			System.exit(1);
+		}
+	}
+
+	/**
 	 * Checks if a given path correlate to a file.
-	 * @param pathToFile Path to file.
+	 * 
+	 * @param pathToFile
+	 *            Path to file.
 	 */
 	private static void checkIfFileExists(String pathToFile) {
 		File file = new File(pathToFile);
@@ -138,7 +165,7 @@ public class TxT_TaskRunner3 {
 	 * then pass else print usage() and terminate program with exit-code 2.
 	 */
 	private static void validateAmountOfGivenInput() {
-		if (arg.length < 1) {
+		if (arg.length < 3) {
 			SystemMessage.eMessage("More input is needed.");
 			System.out.println();
 			for (int i = 0; i < arg.length; i++) {
@@ -156,5 +183,27 @@ public class TxT_TaskRunner3 {
 	private static void usage() {
 		System.out.println("---------- Usage ----------");
 		System.out.println("java -jar <name of jar>.jar <wikipedia url to article>");
+	}
+
+	/**
+	 * Check if a given string contains only numbers. Supports negativ
+	 * numbers,too.
+	 * 
+	 * @param str
+	 *            String for verification.
+	 * @return True - Contains only numbers.
+	 */
+	private static boolean containsOnlyNumbers(String str) {
+		Boolean isNumber = true;
+		for (int i = 0; i < str.length(); i++) {
+			if (!Character.isDigit(str.charAt(i))) {
+				if (str.startsWith("-")) {
+					isNumber = true;
+				} else {
+					isNumber = false;
+				}
+			}
+		}
+		return isNumber;
 	}
 }

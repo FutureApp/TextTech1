@@ -51,7 +51,9 @@ public class VizResults {
 	}
 
 	/**
-	 * Starts the viz.
+	 * Starts the viz. Parameter disables or enables the edge filter
+	 * 
+	 * @param showEdges
 	 */
 	public void startViz() {
 		String style = "ui.style";
@@ -76,7 +78,7 @@ public class VizResults {
 		System.out.println("Visualisation-Modul: Highest Log " + highestLogLike);
 
 		/*
-		 * Draws all nodes and endges.
+		 * Draws all nodes and edges.
 		 */
 		for (int i = 0; i < filteredNodes.size(); i++) {
 			Nodes node = filteredNodes.get(i);
@@ -85,13 +87,14 @@ public class VizResults {
 			graph.addNode(nodeName).addAttribute("label", nodeName + String.format("[%.3f]", node.nodeCwValue));
 			nodeTouched.put(nodeName, node);
 			for (Entry<String, Double> entry : node.nodeMapEdgeWeight.entrySet()) {
-				//Generating edges.
+				// Generating edges.
 				String edgeID = UUID.randomUUID() + "";
 				String nameOfNode2 = entry.getKey();
 				Double logLikiValue = entry.getValue();
 				Double cwValue = cwValueOfNode(nameOfNode2);
 
 				// If node is new, then add node to graph.
+
 				if (!nodeTouched.containsKey(nameOfNode2)) {
 					String secondNodeName = nameOfNode2;
 					Integer nodeSize = getLightSize("node", cwValue);
@@ -103,18 +106,19 @@ public class VizResults {
 					graph.getNode(secondNodeName).addAttribute(style, secondNodeStyle);
 				}
 
-				// Adds an edge.
-				graph.addEdge(edgeID, nodeName, nameOfNode2, true);
-				graph.getEdge(edgeID).setAttribute("label", String.format("%.3f", logLikiValue));
-
-				// Adds styles to the edge.
-				String edgeStyle = "";
+				// Edge-style definition
 				Integer numberEdgeSize = getLightSize("edge", logLikiValue);
-				String edgeColorStyle = String.format("fill-color: '%s';", PEACHPUFF);
 				Integer arrowSizeStyle = getLightArrowSize(numberEdgeSize);
+				String edgeStyle = "";
+				String edgeColorStyle = String.format("fill-color: '%s';", PEACHPUFF);
 				String edgeArrowSize = String.format("arrow-size: %dpx,%dpx;", arrowSizeStyle, arrowSizeStyle);
 				String edgeSizeStylee = String.format("size: %dpx;", numberEdgeSize);
 				edgeStyle = edgeColorStyle + edgeArrowSize + edgeSizeStylee;
+
+				// Adds an edge.
+				graph.addEdge(edgeID, nodeName, nameOfNode2, true);
+				graph.getEdge(edgeID).setAttribute("label", String.format("%.3f", logLikiValue));
+				// Adds styles to the edge.
 				graph.getEdge(edgeID).setAttribute(style, edgeStyle);
 			}
 		}
@@ -130,46 +134,17 @@ public class VizResults {
 			graph.getNode(nodeName).addAttribute(style, styleo);
 
 		}
-		
-		/*
-		// Connect all cw-nodes if needed
-		for (Entry<String, Nodes> primeTouchedNode : nodeTouched.entrySet()) {
-			String primeTouchedNodeName = primeTouchedNode.getKey();
-			Nodes primeNode = primeTouchedNode.getValue();
-			
-			for (Entry<String, Double> nodesFollowed : primeNode.getNodeMapEdgeWeight().entrySet()) {
-				String nameOfFollowedNode = nodesFollowed.getKey();
-				if(nodeTouched.containsKey(nameOfFollowedNode)){
-					String edgeID = UUID.randomUUID()+"";
-
-					graph.addEdge(edgeID, primeTouchedNodeName, nameOfFollowedNode, true);
-					Double weightConnection = primeNode.getNodeMapEdgeWeight().get(nameOfFollowedNode);
-					graph.getEdge(edgeID).setAttribute("label", String.format("%.3f", weightConnection));
-					
-					// Adds styles to the edge.
-					String edgeStyle = "";
-					Integer numberEdgeSize = getLightSize("edge", weightConnection);
-					String edgeColorStyle = String.format("fill-color: '%s';", RED);
-					Integer arrowSizeStyle = getLightArrowSize(numberEdgeSize);
-					String edgeArrowSize = String.format("arrow-size: %dpx,%dpx;", arrowSizeStyle, arrowSizeStyle);
-					String edgeSizeStylee = String.format("size: %dpx;", numberEdgeSize);
-					edgeStyle = edgeColorStyle + edgeArrowSize + edgeSizeStylee;
-					graph.getEdge(edgeID).setAttribute(style, edgeStyle);
-				}
-			}
-		}*/
 
 		// show graph or not.
 		graph.display(true);
 
-		
 		// Saving graph.
 		FileSinkImages pic = new FileSinkImages(OutputType.JPG, Resolutions.HD720);
 		pic.setAutofit(true);
 		pic.setQuality(Quality.HIGH);
 		pic.setLayoutPolicy(LayoutPolicy.COMPUTED_FULLY_AT_NEW_IMAGE);
 		try {
-			pic.writeAll(graph, location.getAbsolutePath()+".jpg");
+			pic.writeAll(graph, location.getAbsolutePath() + ".jpg");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

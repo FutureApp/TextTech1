@@ -17,11 +17,11 @@ public class NodeFilter {
 		this.nodes = nodes;
 	}
 
-	public ArrayList<Nodes> filter(int i, int j) {
+	public ArrayList<Nodes> filter(int cw_nodes, int edgeWeight) {
 
 		ArrayList<Nodes> sortNodes = sortNodes(nodes);
-		ArrayList<Nodes> applyCWFilter = applyCWFilter(sortNodes, i);
-		ArrayList<Nodes> applyEdgeFilter = applyEdgeFilter(applyCWFilter, j);
+		ArrayList<Nodes> applyCWFilter = applyCWFilter(sortNodes, cw_nodes);
+		ArrayList<Nodes> applyEdgeFilter = applyEdgeFilter(applyCWFilter, edgeWeight);
 
 		applyEdgeFilter.forEach((a -> {
 			System.out.println("Name: " + a.nodeName + " " + a.nodeCwValue +" "+a.nodeMapEdgeWeight);
