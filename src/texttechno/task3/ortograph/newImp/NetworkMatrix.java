@@ -18,22 +18,42 @@ public class NetworkMatrix {
 	KokkurenzList list;
 	Double cwValueForCluster;
 
+	/**
+	 * The network-matrix.
+	 * 
+	 * @param networkData
+	 *            Data containing the informations to generate the
+	 *            network-matrix.
+	 * @param list
+	 *            List containing a {@link KokkurenzList} for look-up's.
+	 */
 	public NetworkMatrix(HashMap<String, Double> networkData, KokkurenzList list) {
 		super();
 		this.networkData = networkData;
 		this.list = list;
 	}
 
+	/**
+	 * The network-matrix.
+	 * 
+	 * @param list
+	 *            List containing a {@link KokkurenzList} for look-up's.
+	 */
 	public NetworkMatrix(KokkurenzList list) {
 		super();
 		this.list = list;
 	}
 
+	/**
+	 * Generates the network-matrix based on the given data. (Constructor)
+	 * 
+	 * @return The network-matrix.
+	 */
 	public ArrayList<ArrayList<Double>> generateNetworkMatrix() {
 		generateHeader();
 
 		networkMatrixLog = generateBaseMatrix();
-
+		// Foreach data-set generate entry-value.
 		for (Entry<String, Double> entry : networkData.entrySet()) {
 			String[] keys = entry.getKey().split("@");
 			Integer indexKey1 = headerIndex.get(keys[0]);
@@ -44,6 +64,11 @@ public class NetworkMatrix {
 		return networkMatrixLog;
 	}
 
+	/**
+	 * Creates and empty matrix. Each value in the matrix is given by 0.
+	 * 
+	 * @return An empty matrix containing 0 only.
+	 */
 	private ArrayList<ArrayList<Double>> generateBaseMatrix() {
 		ArrayList<ArrayList<Double>> popMatrix = new ArrayList<>();
 		for (int i = 0; i < headerNames.size(); i++) {
@@ -58,6 +83,11 @@ public class NetworkMatrix {
 
 	}
 
+	/**
+	 * Creates the columns-names for each column.
+	 * 
+	 * @return A list containing all column-names.
+	 */
 	private ArrayList<String> generateHeader() {
 		headerIndex = new HashMap<>();
 		Integer idCounter = 0;
@@ -79,6 +109,9 @@ public class NetworkMatrix {
 		return headerNames;
 	}
 
+	/**
+	 * Prints the network-matrix.
+	 */
 	public void showNetworkMatrix() {
 		UtilsStrings_SingleTone stringUtils = UtilsStrings_SingleTone.getInstance();
 
@@ -123,30 +156,20 @@ public class NetworkMatrix {
 			}
 			content = content + stringUtils.fillLeftWithWhiteSpaces(String.format("%.3f", col) + "", space);
 		}
-		// CalcEntrys
-
-		// Double sumOverallCols = sumOverAllColumns(matrix);
-		// System.out.println("Rows " + sumOverallRows);
-		// System.out.println("Cols " + sumOverallCols);
-
-		// if(!(sumOverallCols - sumOverallRows == 0 )){
-		// SystemMessage.eMessage("Sums doesn't matches");
-		// content = content + stringUtils.fillLeftWithWhiteSpaces(" ?", space);
-		// }
-		// else{
-		// content = content +
-		// stringUtils.fillLeftWithWhiteSpaces(sumOverallCols+"", space);
-		// content = content + System.lineSeparator();
-		// }
-
 		String matrixAsString = header + content;
 		System.out.println(matrixAsString);
 	}
 
+	/**
+	 * Calcs the cluster-weight value and generates for each(word) a node.
+	 * 
+	 * @return A list of nodes.{@link Nodes}.
+	 */
 	public ArrayList<Nodes> calcNodesClusterWeight() {
 		Double avgWeight = list.calcAvgWeight(networkData);
 		ArrayList<Nodes> nodesList = new ArrayList<>();
 		cwValueForCluster = 0d;
+		// for each header -> unique word
 		for (String nodeName : headerNames) {
 			Word primeWord = list.uWords.get(nodeName);
 			String namePrime = primeWord.name;
@@ -155,9 +178,11 @@ public class NetworkMatrix {
 			ArrayList<String> primeNodesAreContaining = primeWord.getFollowers();
 			Integer nodeDegree = primeNodesAreContaining.size();
 
+			// The counters
 			Double CwValueOfNode = 0d;
 			Double weightProduct = 0d;
 
+			// Calcs the right term of the math formula. wij,wik,wjk
 			for (int i = 0; i < primeNodesAreContaining.size(); i++) {
 				String secondNodeName = primeNodesAreContaining.get(i);
 				Double weightwij = lookUpWeight(namePrime, secondNodeName);
@@ -172,10 +197,13 @@ public class NetworkMatrix {
 				}
 			}
 
+			// The calc of the cluster-weight.
 			Double graphAVGWeightPot3 = Math.pow(avgWeight, 3);
 			Double valueBot = (graphAVGWeightPot3 * nodeDegree * (nodeDegree - 1)) / 2;
 			Double leftArgument = 1d / valueBot;
 			CwValueOfNode = leftArgument * weightProduct;
+
+			// Shows result for the node in the console
 			System.out.println(String.format("CwValueOfNode=%4f|weightProduct=%4f", CwValueOfNode, weightProduct));
 			System.out.println("Prime " + namePrime + " weight:" + CwValueOfNode);
 
@@ -189,8 +217,11 @@ public class NetworkMatrix {
 					}
 				}
 			}
+			// calc the cw-value for the whole cluster.
 			cwValueForCluster += CwValueOfNode;
 			System.out.println("CW: " + cwValueForCluster);
+
+			// Generates an new node-entry.
 			HashMap<String, Double> edgeWeights = lookUpAllWeights(namePrime, primeNodesAreContaining);
 			Nodes node = new Nodes(namePrime, CwValueOfNode, edgeWeights);
 			nodesList.add(node);
@@ -200,6 +231,15 @@ public class NetworkMatrix {
 		return nodesList;
 	}
 
+	/**
+	 * Looks up a for a connection between to words.
+	 * 
+	 * @param comp1
+	 *            Word 1
+	 * @param comp2
+	 *            Word 2
+	 * @return Weight of the connection.
+	 */
 	public Double lookUpWeight(String comp1, String comp2) {
 		Double weight = 0d;
 		String var1 = comp1 + "@" + comp2;
@@ -210,36 +250,39 @@ public class NetworkMatrix {
 		else if (networkData.containsKey(var2))
 			weight = networkData.get(var2);
 		else {
-			// SystemMessage.wMessage("Warning:Given weights <" + var1 + " " +
-			// var2 + ">. Return value will be 0.");
+			// Do Nothing
 		}
 		return weight;
 
 	}
 
-	private Double extractNeededWeight(String var1, String var2) {
-		Double weightwij = 0d;
-		if (networkData.containsKey(var1))
-			weightwij = networkData.get(var1);
-		else if (networkData.containsKey(var2))
-			weightwij = networkData.get(var2);
-		else {
-			// SystemMessage.wMessage("Warning:Given weights <" + var1 + " " +
-			// var2 + ">. Return value will be 0.");
-		}
-		return weightwij;
-	}
-
-	public Double calcClusterWeight(ArrayList<Nodes> calcNodesClusterWeight) {
+	/**
+	 * Calcs the cluster-value for a given network.
+	 * 
+	 * @param nodesOfACluster
+	 *            List which contains nodes. All nodes together ->
+	 *            network-cluster -> network-matrix.
+	 * @return The cluster-value of a network-matrix/network-cluster.
+	 */
+	public Double calcClusterWeight(ArrayList<Nodes> nodesOfACluster) {
 		Double clusterWeight = 0d;
-		for (Nodes nodes : calcNodesClusterWeight) {
+		for (Nodes nodes : nodesOfACluster) {
 			clusterWeight += nodes.nodeCwValue;
 		}
-		clusterWeight = (1d / (double) calcNodesClusterWeight.size()) * clusterWeight;
+		clusterWeight = (1d / (double) nodesOfACluster.size()) * clusterWeight;
 		return clusterWeight;
 
 	}
 
+	/**
+	 * Looks up all weights.
+	 * 
+	 * @param nodeName
+	 *            Name of node for examination.
+	 * @param nodeNamesFollowed
+	 *            All nodes which are followers of nodName.
+	 * @return A look up of all weights for nodeName -> follower1,follower2,...
+	 */
 	public HashMap<String, Double> lookUpAllWeights(String nodeName, ArrayList<String> nodeNamesFollowed) {
 		HashMap<String, Double> resultMap = new HashMap<>();
 		for (int i = 0; i < nodeNamesFollowed.size(); i++) {
@@ -251,10 +294,20 @@ public class NetworkMatrix {
 		return resultMap;
 	}
 
+	/**
+	 * Returns the cluster-weight value.
+	 * 
+	 * @return CW-Value
+	 */
 	public Double getCWValue() {
 		return cwValueForCluster;
 	}
 
+	/**
+	 * Returns the avg-Value of the likeli-hood values.
+	 * 
+	 * @return AVG of all likeli-hood values.
+	 */
 	public Double getLikeAVG() {
 		return list.calcAvgWeight(networkData);
 	}

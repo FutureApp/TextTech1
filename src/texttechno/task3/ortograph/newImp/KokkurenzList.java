@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import scala.util.automata.WordBerrySethi;
-
 public class KokkurenzList {
 
 	ArrayList<StringTuple3> tuples;
