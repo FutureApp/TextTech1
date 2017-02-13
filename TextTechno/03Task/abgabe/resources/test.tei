@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title/>
+      </titleStmt>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <s>
+        <p>
+          <w lemma="--" type="XY" xml:id="el_0_1">I</w>
+          <c lemma="--" type="$." xml:id="el_1_2">.</c>
+        </p>
+      </s>
+
+
+<p>
+        <s>
+        <w lemma="als" type="KOUS" xml:id="el_5_8">Als</w> 
+		<w case="nom" gender="masc" lemma="Gregor" number="sg" type="NE" xml:id="el_9_15">Gregor</w> 
+		<w case="nom" gender="masc" lemma="Samsa" number="sg" type="NE" xml:id="el_16_21">Samsa</w> 
+		<w case="gen" gender="neut" lemma="ein" number="sg" type="ART" xml:id="el_22_27">eines</w> 
+		<w case="gen" gender="neut" lemma="Morgen" number="sg" type="NN" xml:id="el_28_35">Morgens</w> 
+		<w lemma="aus" type="APPR" xml:id="el_36_39">aus</w> 
+		<w case="dat" degree="pos" gender="masc" lemma="unruhig" number="pl" type="ADJA" xml:id="el_40_49">unruhigen</w> 
+		<w case="dat" gender="masc" lemma="Traum" number="pl" type="NN" xml:id="el_50_57">Träumen</w> 
+		<w lemma="erwachen" mood="ind" number="sg" person="3" tense="past" type="VVFIN" xml:id="el_58_66">erwachte</w>
+        <c lemma="--" type="$," xml:id="el_66_67">,</c> 
+		<w lemma="finden" mood="ind" number="sg" person="3" tense="past" type="VVFIN" xml:id="el_68_72">fand</w>
+		<w case="nom" gender="masc" lemma="er" number="sg" person="3" type="PPER" xml:id="el_73_75">er</w>
+		<w case="acc" lemma="sich" number="sg" person="3" type="PRF" xml:id="el_76_80">sich</w> 
+		<w lemma="in" type="APPR" xml:id="el_81_83">in</w> <w case="dat" gender="neut" lemma="sein" number="sg" type="PPOSAT" xml:id="el_84_90">seinem</w>
+		<w case="dat" gender="neut" lemma="Bett" number="sg" type="NN" xml:id="el_91_95">Bett</w> <w lemma="zu" type="APPR" xml:id="el_96_98">zu</w>
+		<w case="dat" gender="neut" lemma="ein" number="sg" type="ART" xml:id="el_99_104">einem</w>
+		<w case="dat" degree="pos" gender="neut" lemma="ungeheuer" number="sg" type="ADJA" xml:id="el_105_115">ungeheuren</w> 
+		<w case="dat" gender="neut" lemma="Ungeziefer" number="sg" type="NN" xml:id="el_116_126">Ungeziefer</w> 
+		<w lemma="verwandeln" type="VVPP" xml:id="el_127_137">verwandelt</w>
+        <c lemma="--" type="$." xml:id="el_137_138">.</c>
+        </s> 
+		<s>
+        <w case="nom" gender="masc" lemma="er" number="sg" person="3" type="PPER" xml:id="el_139_141">Er</w> 
+		<w lemma="liegen" mood="ind" number="sg" person="3" tense="past" type="VVFIN" xml:id="el_142_145">lag</w>
+		
+		<w lemma="auf" type="APPR" xml:id="el_146_149">auf</w>
+		<w case="dat" gender="masc" lemma="sein" number="sg" type="PPOSAT" xml:id="el_150_156">seinem</w> 
+		<w degree="pos" lemma="panzerartig" type="ADJD" xml:id="el_157_168">panzerartig</w> 
+		<w case="dat" degree="pos" gender="masc" lemma="hart" number="sg" type="ADJA" xml:id="el_169_175">harten</w> 
+		<w case="dat" gender="masc" lemma="Rücken" number="sg" type="NN" xml:id="el_176_182">Rücken</w> 
+		<w lemma="und" type="KON" xml:id="el_183_186">und</w> 
+		<w lemma="sehen" mood="ind" number="sg" person="1" tense="past" type="VVFIN" xml:id="el_187_190">sah</w>
+        <c lemma="--" type="$," xml:id="el_190_191">,</c> <w lemma="wenn" type="KOUS" xml:id="el_192_196">wenn</w>
+		<w case="nom" gender="masc" lemma="er" number="sg" person="3" type="PPER" xml:id="el_197_199">er</w>
+		<w case="acc" gender="masc" lemma="der" number="sg" type="ART" xml:id="el_200_203">den</w>
+		<w case="acc" gender="masc" lemma="Kopf" number="sg" type="NN" xml:id="el_204_208">Kopf</w> 
+		<w case="*" gender="*" lemma="ein" number="*" type="ART" xml:id="el_209_212">ein</w>
+		<w case="*" gender="*" lemma="wenig" number="*" type="PIS" xml:id="el_213_218">wenig</w>
+		<w lemma="heben" mood="ind" number="sg" person="3" tense="past" type="VVFIN" xml:id="el_219_222">hob</w>
+        <c lemma="--" type="$," xml:id="el_222_223">,</c> 
+		<w case="acc" gender="masc" lemma="sein" number="sg" type="PPOSAT" xml:id="el_224_230">seinen</w>
+		<w case="acc" degree="pos" gender="masc" lemma="gewölbt" number="sg" type="ADJA" xml:id="el_231_240">gewölbten</w>
+        <c lemma="--" type="$," xml:id="el_240_241">,</c> 
+		<w case="acc" degree="pos" gender="masc" lemma="braun" number="sg" type="ADJA" xml:id="el_242_249">braunen</w>
+        <c lemma="--" type="$," xml:id="el_249_250">,</c> 
+		<w lemma="von" type="APPR" xml:id="el_251_254">von</w> 
+		<w case="dat" degree="pos" gender="fem" lemma="bogenförmig" number="pl" type="ADJA" xml:id="el_255_268">bogenförmigen</w>
+		<w case="dat" gender="fem" lemma="Versteifung" number="pl" type="NN" xml:id="el_269_282">Versteifungen</w>
+		<w case="acc" degree="pos" gender="masc" lemma="geteilt" number="sg" type="ADJA" xml:id="el_283_292">geteilten</w> 
+		<w case="acc" gender="masc" lemma="Bauch" number="sg" type="NN" xml:id="el_293_298">Bauch</w>
+        <c lemma="--" type="$," xml:id="el_298_299">,</c>
+		<w lemma="auf" type="APPR" xml:id="el_300_303">auf</w> 
+		<w case="gen" gender="masc" lemma="der" number="sg" type="PRELAT" xml:id="el_304_310">dessen</w> 
+		<w case="dat" gender="fem" lemma="Höhe" number="sg" type="NN" xml:id="el_311_315">Höhe</w> 
+		<w case="dat" lemma="sich" number="sg" person="3" type="PRF" xml:id="el_316_320">sich</w> 
+		<w case="nom" gender="fem" lemma="der" number="sg" type="ART" xml:id="el_321_324">die</w> 
+		<w case="nom" gender="fem" lemma="Bettdecke" number="sg" type="NN" xml:id="el_325_334">Bettdecke</w>
+        <c lemma="--" type="$," xml:id="el_334_335">,</c> 
+		<w case="dat" gender="neut" lemma="zu" number="sg" type="APPRART" xml:id="el_336_339">zum</w> 
+		<w case="dat" degree="pos" gender="fem" lemma="gänzlich" number="pl" type="ADJA" xml:id="el_340_350">gänzlichen</w>
+		<w case="dat" gender="fem" lemma="Niedergleiten" number="pl" type="NN" xml:id="el_351_364">Niedergleiten</w> 
+		<w degree="pos" lemma="bereit" type="ADJD" xml:id="el_365_371">bereit</w>
+        <c lemma="--" type="$," xml:id="el_371_372">,</c> 
+		<w lemma="kaum" type="ADV" xml:id="el_373_377">kaum</w> 
+		<w lemma="noch" type="ADV" xml:id="el_378_382">noch</w> 
+		<w lemma="erhalten" type="VVINF" xml:id="el_383_391">erhalten</w> 
+		<w lemma="können" mood="ind" number="sg" person="3" tense="past" type="VMFIN" xml:id="el_392_398">konnte</w>
+        <c lemma="--" type="$." xml:id="el_398_399">.</c>
+        </s> <s>
+        <w case="nom" gender="masc" lemma="sein" number="pl" type="PPOSAT" xml:id="el_400_405">Seine</w>
+		<w case="nom" gender="masc" lemma="vieler" number="pl" type="PIAT" xml:id="el_406_412">vielen</w>
+        <c lemma="--" type="$," xml:id="el_412_413">,</c> 
+		<w case="dat" gender="masc" lemma="in" number="sg" type="APPRART" xml:id="el_414_416">im</w>
+		<w case="dat" gender="masc" lemma="Vergleich" number="sg" type="NN" xml:id="el_417_426">Vergleich</w> 
+		<w lemma="zu" type="APPR" xml:id="el_427_429">zu</w> 
+		<w case="dat" gender="masc" lemma="sein" number="sg" type="PPOSAT" xml:id="el_430_436">seinem</w>
+		<w case="dat" degree="pos" gender="masc" lemma="sonstig" number="sg" type="ADJA" xml:id="el_437_446">sonstigen</w>
+		<w case="dat" gender="masc" lemma="Umfang" number="sg" type="NN" xml:id="el_447_453">Umfang</w> 
+		<w degree="pos" lemma="kläglich" type="ADJD" xml:id="el_454_462">kläglich</w> 
+		<w case="nom" degree="pos" gender="neut" lemma="dünn" number="pl" type="ADJA" xml:id="el_463_469">dünnen</w>
+		<w case="nom" gender="neut" lemma="Bein" number="pl" type="NN" xml:id="el_470_475">Beine</w> 
+		<w lemma="flimmern" mood="ind" number="pl" person="3" tense="past" type="VVFIN" xml:id="el_476_486">flimmerten</w>
+		<w case="dat" gender="*" lemma="ihm" number="sg" person="3" type="PPER" xml:id="el_487_490">ihm</w>
+		<w degree="pos" lemma="hilflos" type="ADJD" xml:id="el_491_498">hilflos</w> 
+		<w lemma="vor" type="APPR" xml:id="el_499_502">vor</w> 
+		<w case="dat" gender="neut" lemma="der" number="pl" type="ART" xml:id="el_503_506">den</w> 
+		<w case="dat" gender="neut" lemma="Auge" number="pl" type="NN" xml:id="el_507_512">Augen</w>
+         <c lemma="--" type="$." xml:id="el_512_513">.</c>
+        </s>
+      </p>
+
+
+ </body>
+  </text>
+</TEI>

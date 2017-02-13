@@ -1,0 +1,18 @@
+<graph>
+<node name='Samsa' size='20px' cw='2.2653037806642677' color='0x4682b4ff' />
+<node name='hilflos' size='20px' cw='2.2653037806642673' color='0x4682b4ff' />
+<node name='Morgen' size='10px' cw='1.446406476791839' color='0x4682b4ff' />
+<node name='flimmern' size='10px' cw='1.446406476791839' color='0x000000ff' />
+<node name='Auge' size='40px' cw='3.6625340037986853' color='0x4682b4ff' />
+<node name='Gregor' size='40px' cw='3.6625340037986858' color='0x4682b4ff' />
+<edge id='8c2c0c28-d925-43dc-a60b-fd60c5945d32' from='Morgen' to='Gregor' size='1px' log-value='5.906562347881085' color='0xffdab9ff' />
+<edge id='305cbd5a-6f2c-4559-9954-d9568f304ce4' from='Samsa' to='Gregor' size='1px' log-value='6.609603889491049' color='0xffdab9ff' />
+<edge id='b32c4170-7915-48a2-aebf-03e7ceb0fc32' from='hilflos' to='Auge' size='1px' log-value='6.609603889491048' color='0xffdab9ff' />
+<edge id='dcbb2054-7d57-43d7-9cf5-5de9a34dbb8d' from='Gregor' to='Morgen' size='1px' log-value='5.906562347881085' color='0xffdab9ff' />
+<edge id='360f3afc-92ec-4853-8945-48e8bdf0cb9a' from='Auge' to='hilflos' size='1px' log-value='6.609603889491048' color='0xffdab9ff' />
+<edge id='e908d183-6840-4a85-913e-b492ee026d3e' from='Morgen' to='Samsa' size='1px' log-value='4.978243549575319' color='0xffdab9ff' />
+<edge id='16d035eb-2ac3-4e07-8509-01eeea30c84a' from='Gregor' to='Samsa' size='1px' log-value='6.609603889491049' color='0xffdab9ff' />
+<edge id='f2da0529-c207-4520-9ed8-aa7f9502aa47' from='Samsa' to='Morgen' size='1px' log-value='4.978243549575319' color='0xffdab9ff' />
+<edge id='f0bb2ee1-690c-45c3-80e4-60cceb8b4bcb' from='Auge' to='flimmern' size='1px' log-value='5.906562347881085' color='0xffdab9ff' />
+<edge id='c806650e-778b-4dcb-a938-5a944f3ba039' from='hilflos' to='flimmern' size='1px' log-value='4.978243549575319' color='0xffdab9ff' />
+</graph>

@@ -1,0 +1,270 @@
+<graph>
+<node name='können' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Rücken' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='unruhig' size='10px' cw='0.9654311766198812' color='0x4682b4ff' />
+<node name='ungeheuer' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Versteifung' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='flimmern' size='10px' cw='1.446406476791839' color='0x4682b4ff' />
+<node name='heben' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='erhalten' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='liegen' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Niedergleiten' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='sonstig' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Ungeziefer' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='hart' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='verwandeln' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Traum' size='10px' cw='0.6431368225736104' color='0x4682b4ff' />
+<node name='Gregor' size='40px' cw='3.6625340037986858' color='0x4682b4ff' />
+<node name='Vergleich' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Höhe' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='geteilt' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='gänzlich' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='panzerartig' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Bauch' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Morgen' size='10px' cw='1.446406476791839' color='0x4682b4ff' />
+<node name='Bein' size='10px' cw='0.9654311766198812' color='0x4682b4ff' />
+<node name='Umfang' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='gewölbt' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Kopf' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='bereit' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='hilflos' size='20px' cw='2.2653037806642673' color='0x4682b4ff' />
+<node name='dünn' size='10px' cw='0.6431368225736102' color='0x4682b4ff' />
+<node name='Bettdecke' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='kläglich' size='10px' cw='0.5212523834718585' color='0x4682b4ff' />
+<node name='finden' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Auge' size='40px' cw='3.6625340037986853' color='0x4682b4ff' />
+<node name='braun' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Samsa' size='20px' cw='2.2653037806642677' color='0x4682b4ff' />
+<node name='bogenförmig' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='erwachen' size='10px' cw='0.5212523834718585' color='0x4682b4ff' />
+<node name='sehen' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<node name='Bett' size='0px' cw='0.48451546916320226' color='0x4682b4ff' />
+<edge id='b4a363bb-b1a9-45d5-8b49-8b00f244e6ef' from='sonstig' to='können' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='93bf14d5-6a08-4351-8499-f920cbfca3d2' from='Bettdecke' to='Höhe' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='a7a401d0-9274-4a03-9e95-2936a054b237' from='sehen' to='Rücken' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='af658510-05d1-4e84-bf8c-87d120ab09b9' from='flimmern' to='hilflos' size='1px' log-value='4.978243549575319' color='0xffdab9ff' />
+<edge id='1845162b-ec96-400c-8486-2747fb9c6a84' from='heben' to='gewölbt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='229f2618-55c6-4bfe-994a-269b129d4fa5' from='können' to='Umfang' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='fd973336-74d5-48a7-a1f8-bc9472b9b369' from='Bein' to='Auge' size='1px' log-value='5.351751246366298' color='0xffdab9ff' />
+<edge id='4c8cc722-4e72-4185-8c05-af45c5cdcb71' from='braun' to='Kopf' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='6435261c-b165-4803-81e9-6751905f7412' from='gewölbt' to='Kopf' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='cd457111-7acf-4a1f-9d9d-483feb915bdd' from='Bein' to='dünn' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='4854183b-e550-4b4a-a165-1ea8f47a0a57' from='finden' to='ungeheuer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c73a6aac-5234-45ad-b6c4-7ec42520838f' from='Bauch' to='Höhe' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='89f8a403-e9ae-494a-be79-74c02d4c2d72' from='bereit' to='erhalten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='9d6ee778-89c1-4630-a09b-eb2d078b0187' from='finden' to='unruhig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='7d7bd0a8-435f-42d9-91eb-1182e7b694b5' from='erhalten' to='sonstig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='b1d86d37-0342-4640-8f17-f7fa96bb7e67' from='braun' to='heben' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='a53a75b3-f547-41ef-8389-0dc8ba0f8694' from='Traum' to='Morgen' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='482af1ce-8522-48de-b99b-ca3fafa9997f' from='Bein' to='hilflos' size='1px' log-value='4.4365941902671775' color='0xffdab9ff' />
+<edge id='449f6562-278b-4e0c-b604-84518d5957ae' from='Traum' to='erwachen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='b2330796-ae68-44fe-82ec-c4a9c82286bd' from='ungeheuer' to='liegen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='ccc12033-b2ad-4da5-8846-af40975181f0' from='Niedergleiten' to='können' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='55370964-e0ba-4057-8628-9cf1a5867eaf' from='können' to='Vergleich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='79967a22-d92a-4c82-b258-156ad0ff2daa' from='hart' to='panzerartig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='47dc8088-cce7-4ca2-968d-9d21c79fb945' from='Samsa' to='unruhig' size='1px' log-value='4.4365941902671775' color='0xffdab9ff' />
+<edge id='16735273-565c-4921-916c-644576a951b8' from='braun' to='Versteifung' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='e4221692-c569-45c6-9f59-d9a57e15f1c9' from='dünn' to='sonstig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='913e3dfe-4887-403f-9875-c55b54037f2d' from='bogenförmig' to='braun' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c35bee75-437b-4872-a155-76c81c56e928' from='verwandeln' to='hart' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='2d289922-add6-4a22-8153-3f2416335225' from='finden' to='Traum' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='2a5edf12-a534-40e5-a129-316253b5abb8' from='Bett' to='erwachen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='39b0996f-cdc5-4744-b49a-3ef397d45d94' from='Bettdecke' to='bereit' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='5b9530ee-c7a3-44bd-bd60-0701eaade2fb' from='gewölbt' to='braun' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c2c72fe5-029f-47f7-87c2-bb9865ddc6c8' from='Morgen' to='unruhig' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='652bc9e8-5597-48a0-84da-17bdd935cbcf' from='liegen' to='Ungeziefer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='5a5b48cd-27c1-4e0a-9a2c-af2a60b97329' from='Morgen' to='Gregor' size='1px' log-value='5.906562347881085' color='0xffdab9ff' />
+<edge id='ed5fe492-1734-4f02-9c80-cd592a03f60d' from='Bein' to='kläglich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='5ea5fdc1-51f6-4d40-82b1-ff751672ea6a' from='Rücken' to='sehen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='a7d52b6b-dfb3-4619-851d-f1303846cc33' from='Vergleich' to='sonstig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='99a51ec4-3c2f-4120-b1ef-9a2dda3d29dd' from='Höhe' to='gänzlich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='092ac176-1f60-499c-8b5e-5471bb6e2444' from='liegen' to='panzerartig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='b73ea9d9-aa67-43a5-ae8f-2080eee644a2' from='Morgen' to='Traum' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='0c514ac3-ab27-4bea-bae8-e3419f1bb6b8' from='Bett' to='finden' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='492575d2-7838-4f46-adab-1894226aca99' from='kläglich' to='sonstig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='4c77e0e9-ae99-49f8-a792-fd49489adb79' from='Auge' to='Bein' size='1px' log-value='5.351751246366298' color='0xffdab9ff' />
+<edge id='2d290966-ffac-4993-8948-f7e208d198ac' from='bereit' to='Bettdecke' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='0f1e578f-2ff7-4ef3-abac-031ff55750dc' from='Bettdecke' to='geteilt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='35f89459-a4b7-4f2c-92d4-a64635af0c81' from='Rücken' to='Kopf' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='0ad4d01a-e157-4a96-8fa4-fe7959491212' from='Kopf' to='Rücken' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c8ed60c4-f8a8-454e-94aa-180f7660f8d2' from='finden' to='erwachen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='6c9fbbfb-d8d5-4e6c-8d04-6443c9f72640' from='verwandeln' to='liegen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='deeb89c7-829d-405c-a64b-aeda0f5a626e' from='heben' to='Kopf' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='ea71202a-bb1d-48b9-9be8-d7210abe85d9' from='flimmern' to='dünn' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='b857d850-ccce-4c8b-b3ab-da5b36ed950d' from='erhalten' to='Vergleich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='9fbe684a-1ecf-4863-bd7c-334778a260d5' from='Vergleich' to='Umfang' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='cbfcd128-7d12-4056-bb50-d6620cec52dc' from='dünn' to='hilflos' size='1px' log-value='4.4365941902671775' color='0xffdab9ff' />
+<edge id='62fe82f1-66fb-4e20-9e95-b68cac33fc90' from='bereit' to='gänzlich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='e8c93b2f-c4ca-47ba-b827-708f2f0118dd' from='Traum' to='finden' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='a2df2242-8cd3-4c10-b6b3-fcd714ef2b37' from='bogenförmig' to='heben' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='78d55626-be27-4235-a743-43b0b0a84402' from='Ungeziefer' to='liegen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='5549bcfa-7503-4e20-b63b-602705a52003' from='heben' to='sehen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='980f3c06-3a8a-40bc-9cc0-b76624d38f0d' from='hilflos' to='Bein' size='1px' log-value='4.4365941902671775' color='0xffdab9ff' />
+<edge id='5a67787b-506c-4cf9-867e-4e0e7b449fad' from='Morgen' to='Samsa' size='1px' log-value='4.978243549575319' color='0xffdab9ff' />
+<edge id='fabe090f-b7ed-49f8-9212-13bf9a8058e8' from='Bauch' to='Versteifung' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='59786804-8cb8-48f2-b56d-1a8f79b982c2' from='sehen' to='gewölbt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='0b39e973-15a6-4931-9fe5-32b3f1bd6151' from='erwachen' to='Traum' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='e04e3c0c-4c15-4b55-a853-997e703b3c40' from='Umfang' to='Vergleich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='4037e145-6964-46d5-b2bd-f81b6dc7b117' from='Auge' to='hilflos' size='1px' log-value='6.609603889491048' color='0xffdab9ff' />
+<edge id='41f34e4d-0e8b-4128-b3d8-c4cd64c88c78' from='dünn' to='kläglich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='905cb5ca-0f9a-4302-85e0-d11b1c0e8bbc' from='Versteifung' to='geteilt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='ecd0ff96-1772-495b-91ea-d70f6e874e18' from='erhalten' to='Niedergleiten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='f1ada8d8-a94a-44e7-946d-5f4c7c359db6' from='Kopf' to='braun' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='6c57e241-9a66-47e2-9c70-fc37a89e582f' from='Versteifung' to='bogenförmig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='71712836-512a-45ca-af89-20774e8bf0ab' from='sehen' to='panzerartig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='55a2fa07-80f1-41a1-9689-4f63843dc4cf' from='panzerartig' to='liegen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='d8a990b7-237f-45ec-b420-e3ce0eee3f7a' from='sonstig' to='Umfang' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='bfbc049a-a081-4a5e-a552-daf044c1c03f' from='unruhig' to='finden' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c29a4cc5-462d-438a-8144-cd7623582420' from='Traum' to='Bett' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='bcad369e-555e-49ee-a4de-c8e570da8195' from='ungeheuer' to='verwandeln' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='3298da6f-6df9-4e77-87a0-f7468c0a0a09' from='Kopf' to='heben' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='b125904f-437f-4ff4-a3d4-d3b53f67f6b1' from='Niedergleiten' to='Höhe' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='82d2daf6-fa25-4bf7-b738-20838a3d4a06' from='können' to='erhalten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='3b9273e5-f6d1-4077-b5fb-07722c6c7b74' from='gewölbt' to='sehen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='a19e03a8-68f9-4253-875b-ecb4f57a4106' from='geteilt' to='braun' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='a193d006-bd2c-4ef8-9da6-3cb74f288824' from='Versteifung' to='braun' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='473a668c-d44f-4524-b54f-d033d2ec0513' from='Ungeziefer' to='finden' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='703c0454-b04c-4ce6-aece-718f5598f101' from='sehen' to='Kopf' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='244aac9f-6e90-43ed-bf07-31e564d01cec' from='sehen' to='hart' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='6fc67bf1-9a40-405f-a2ce-f573cfbf8fb8' from='dünn' to='Umfang' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='3a59d7fc-d01b-4e8e-a308-0a4374d20734' from='erwachen' to='ungeheuer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='d7110715-ae41-4268-821f-370f8e5490ce' from='unruhig' to='Samsa' size='1px' log-value='4.4365941902671775' color='0xffdab9ff' />
+<edge id='14c57204-fb5a-4ef0-a8d4-368ebb280b79' from='Traum' to='Samsa' size='1px' log-value='4.4365941902671775' color='0xffdab9ff' />
+<edge id='55e5d603-20f5-43ef-8ee5-a21b85f99fc6' from='ungeheuer' to='Ungeziefer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='0c0a5a9a-042b-477a-a670-fddf2a8476bb' from='sehen' to='heben' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='5a66685c-5d5d-4509-ba79-c982ca653b7c' from='erwachen' to='Morgen' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='80411aff-13bb-4ee6-b96b-f55d024e8b43' from='hilflos' to='flimmern' size='1px' log-value='4.978243549575319' color='0xffdab9ff' />
+<edge id='09947341-cf91-44a4-8bbc-97fbae4dc9ed' from='Ungeziefer' to='panzerartig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='457db8f5-9492-4e44-8e56-be36f0e525f9' from='sonstig' to='erhalten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='079ada48-1550-48a3-a7a7-4236f15e5bef' from='Niedergleiten' to='gänzlich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='edb17ffd-acd8-4149-b29f-a1d52f17f0d2' from='Bett' to='ungeheuer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='921ef714-bc39-4182-bb92-28ac68666a13' from='hilflos' to='dünn' size='1px' log-value='4.4365941902671775' color='0xffdab9ff' />
+<edge id='f02b12a3-9f5e-4c15-b5af-ac2e49902074' from='erwachen' to='finden' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='1003451f-e4fd-4030-be6f-cbed9eee8844' from='liegen' to='verwandeln' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='a813fd8c-ac92-49ec-876b-14f9f3f9e641' from='ungeheuer' to='erwachen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='42baf164-b5c5-47f8-8ce6-675abd826a33' from='Niedergleiten' to='bereit' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='2ceeb9e9-56b2-4af9-9bc8-c25fb1005ba8' from='geteilt' to='Höhe' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='a298e6f9-ba1b-4ecb-b053-a88c2152e875' from='Höhe' to='Niedergleiten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='f6ea25f3-b5f0-4a5e-9fa6-e0f0ef0a317e' from='gänzlich' to='Höhe' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='27b1f7c0-42b8-4856-a806-8ed1018daa91' from='Kopf' to='hart' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='ad273c5d-4a23-4508-9571-f91268a23e7b' from='heben' to='bogenförmig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='ccfa1081-fc42-43c6-88aa-62b5c2d3cc7d' from='Umfang' to='sonstig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='58eaca10-559a-49fc-8096-039158ffa00f' from='gänzlich' to='erhalten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='b1d189ee-fd2d-4249-aa95-593f2a89a3c8' from='sonstig' to='kläglich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='0e70528e-6c0d-4d29-aea4-7bde4fa68f7a' from='Bauch' to='Bettdecke' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='b1b20f6d-44ff-4484-a92e-03d2b3b12ff2' from='braun' to='geteilt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='567a2e42-fa1f-4eaf-961d-a6637bd9ff9c' from='Kopf' to='sehen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c75938f1-703d-485b-accd-2e1efe4367cc' from='Vergleich' to='kläglich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='f377e762-2fad-41f1-9e17-1fabf2f474c6' from='Rücken' to='heben' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='f8b02b4c-2751-4ff2-a8a6-a18daf6f3f3b' from='ungeheuer' to='finden' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='982fe0e4-dfcf-45f3-aa74-c644c136ef13' from='Umfang' to='Bein' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='99c000e2-e4ff-40ec-a365-9d0ac1e0a45a' from='Umfang' to='dünn' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='f3685f13-3813-4e42-86ca-5ef4b4c675f7' from='liegen' to='ungeheuer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='0bf6afc6-db97-412a-b41b-54d02b593149' from='Bettdecke' to='gänzlich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='5883c81b-ee3c-4d6a-b0de-14c3ad738176' from='hart' to='Kopf' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='abc67319-333d-43e1-b17a-95f4dee2629d' from='unruhig' to='Traum' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='558bd3ee-02f9-407c-90cb-2d13015c3143' from='Umfang' to='kläglich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='e20d8835-a388-46b2-afea-0e320d88c245' from='Auge' to='flimmern' size='1px' log-value='5.906562347881085' color='0xffdab9ff' />
+<edge id='dd8b6536-c4b4-41b3-a393-19fb75a6bde9' from='verwandeln' to='Bett' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='d76a838d-81a6-4ccc-b93a-8fae7d861546' from='flimmern' to='kläglich' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='e8fa5b34-446f-49bc-b91b-88efd8b43b00' from='hart' to='liegen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='56350067-2614-407c-8639-429bd670f6b4' from='bogenförmig' to='Bauch' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='fb76dfb1-e977-4053-8b1f-0f7dfd47b323' from='kläglich' to='flimmern' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='b5ce6966-8bd3-4ca8-ab14-ad252932a23b' from='panzerartig' to='verwandeln' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='e3305b8c-c4f6-4ed5-9dc5-3d27152c9e1f' from='Höhe' to='Versteifung' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='9690712a-20c6-4190-9364-7663dae229cc' from='verwandeln' to='panzerartig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='711595b9-471f-4164-8e38-ca20426eec0e' from='Versteifung' to='Bauch' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='65469cc5-39d9-4a92-a0cb-63a149ab70f7' from='panzerartig' to='Ungeziefer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='66e6b232-aba7-4d55-9823-7c8f6dea55a9' from='Kopf' to='gewölbt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='3d260ab0-5a79-469d-9164-1fc6106e7f29' from='Morgen' to='erwachen' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='3602156f-b937-4e12-b321-1f5055afa351' from='ungeheuer' to='Bett' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='bef9c411-23a3-4c92-ba90-c7e56a1f9392' from='Gregor' to='unruhig' size='1px' log-value='5.351751246366298' color='0xffdab9ff' />
+<edge id='cc1e5305-1c5c-4678-ad31-de0d0b68dd8d' from='braun' to='bogenförmig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='7ff0f3af-685b-4073-bdca-c2b58918a88d' from='bereit' to='Niedergleiten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='2d767765-3ea9-494f-9e68-b7170e4d1b59' from='Höhe' to='Bettdecke' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='6e5ba15f-da8e-4f35-943a-0f89a144de3c' from='unruhig' to='erwachen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='d916b8a9-4aac-4024-9e80-ce1230f07a3d' from='sonstig' to='Vergleich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='9f6a5de2-b7a4-4d3c-a670-e8c1c5c86bda' from='Samsa' to='Traum' size='1px' log-value='4.4365941902671775' color='0xffdab9ff' />
+<edge id='94a2273d-e5b3-4c08-b892-910069b246d5' from='hilflos' to='Auge' size='1px' log-value='6.609603889491048' color='0xffdab9ff' />
+<edge id='cf052553-f524-4ede-9860-34bf869bca36' from='Bauch' to='bogenförmig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c7ead2fc-ec9e-49e1-8a4d-839ac83ec2eb' from='Bauch' to='gänzlich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='e3de727d-fb62-4a04-a7e0-26205b0e4be9' from='Bauch' to='geteilt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='9711fc9d-530f-4556-bc21-a7ee2db41b6a' from='Samsa' to='Gregor' size='1px' log-value='6.609603889491049' color='0xffdab9ff' />
+<edge id='ae419409-46f3-42b9-8b96-880291723188' from='finden' to='Ungeziefer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='0349a1b7-31e2-4978-a3db-09c5d896974e' from='können' to='Niedergleiten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='b4fc7d09-e09d-45fc-98fd-66d9fae5340d' from='Höhe' to='Bauch' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='429bb354-7243-4065-95a9-df7008432e03' from='gänzlich' to='bereit' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c7fb6de8-508d-4117-b7cb-dce4f9eeab19' from='flimmern' to='Auge' size='1px' log-value='5.906562347881085' color='0xffdab9ff' />
+<edge id='46ec998d-e02d-426a-9da4-17c40e45927c' from='erwachen' to='Bett' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='ca2111f0-1cac-4e2e-84ed-06015c5e3f7a' from='geteilt' to='Versteifung' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='62b6bf24-9cab-4c63-980d-d56ff16f87e7' from='können' to='bereit' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='1a9cab5e-5166-4f55-8b7b-4e8998607b3f' from='Bett' to='Ungeziefer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='4e76cf74-4806-4ea5-ad2b-adafa9a177db' from='erhalten' to='bereit' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='7f939359-0540-4d32-a3c4-8c58e4ae70f0' from='Höhe' to='geteilt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='415465f7-317d-4ed9-9cf8-7aef763018c2' from='gänzlich' to='Bettdecke' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c94e25c3-1246-4cee-8254-22fc991f7065' from='Samsa' to='Morgen' size='1px' log-value='4.978243549575319' color='0xffdab9ff' />
+<edge id='4ca3541f-7ddd-4da7-8307-551e3333b6ff' from='liegen' to='Rücken' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='2c09ebf3-de7f-4666-bc51-377264363299' from='gänzlich' to='Niedergleiten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='2ac9d8b0-e3d1-438b-9716-7cbe84da2bbd' from='Bettdecke' to='Niedergleiten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='439c23de-13dd-4cba-a438-7d988f3e2bfb' from='Versteifung' to='gewölbt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='36dcefd6-68f5-4e84-b07a-42e37936204a' from='liegen' to='hart' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='e8091711-ca25-45e3-a91c-fb88e40ca453' from='hart' to='verwandeln' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='1d5fb77c-9a44-4e3f-bc0d-a1cba2af0dcb' from='Rücken' to='hart' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='72623879-7054-4581-87e9-8e0a49317089' from='Bein' to='Umfang' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='31f3365e-b9c1-4e85-b32c-caaf0a170c6c' from='Ungeziefer' to='ungeheuer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='d3db66ea-073a-4493-aa2d-7fb963084745' from='Rücken' to='liegen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c17bfa23-599a-497e-a56b-b76712f5c170' from='Vergleich' to='bereit' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='ea2b6ec7-d261-488d-9517-6f67ac0e5764' from='hart' to='Rücken' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='e7b8dc49-3061-4f64-bf40-67a4b18b55de' from='gewölbt' to='bogenförmig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='25371c86-df4b-48dc-8452-cd8dff0530d9' from='sonstig' to='dünn' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='2762429b-83c5-4090-b7a0-ceda3c509f85' from='dünn' to='Bein' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='c973788a-edb8-4492-8a29-2494af531331' from='Versteifung' to='Höhe' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='eaefc05e-1042-420c-b082-7ff88a197816' from='finden' to='Bett' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='4e77e746-eb72-4571-af78-29f0d89d7f69' from='Bettdecke' to='Bauch' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='2fb602f1-946a-40a3-b78a-88e10ac3975f' from='Ungeziefer' to='Bett' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='f78150f6-1ec3-4517-afa5-68d8c07e00c4' from='gänzlich' to='Bauch' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='86104d17-3d56-400c-8990-c3ceeb92b484' from='Niedergleiten' to='Bettdecke' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='36986ff4-e531-4e9f-a6dd-4138d04bb68a' from='gewölbt' to='heben' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='b060524e-55a8-4930-b052-3cfec0137999' from='Bein' to='flimmern' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='3cd0fd7b-ca9d-41e3-80a9-ff7a6e3e17d7' from='gewölbt' to='Versteifung' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='225012cb-e386-41a5-9cfa-431e02772ecf' from='geteilt' to='Bauch' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='60bb3b06-4d61-4775-aac8-c2e290feeec9' from='verwandeln' to='ungeheuer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='10cfd130-1b4e-4202-bfd1-e31d9f0ad220' from='können' to='sonstig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='5e22f77d-d5ce-4e91-97f7-c2dd165c69cf' from='unruhig' to='Morgen' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='bd5d23a3-b9f8-4d09-b1ca-cce91b366e37' from='heben' to='Rücken' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='8e5c0fa6-0ff5-4aaa-b12b-40bbf738c3b4' from='kläglich' to='Bein' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='b83f6637-3f3f-4d27-96b0-02133ada7159' from='Rücken' to='panzerartig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='9400880b-be3f-4d4c-8f6c-fac5ab1d6362' from='erhalten' to='können' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='4e4ba924-1ea5-4fec-9d96-a42fd1c0778b' from='unruhig' to='Gregor' size='1px' log-value='5.351751246366298' color='0xffdab9ff' />
+<edge id='5e0a8937-177d-4ce7-a72d-d981ca11ede9' from='erwachen' to='unruhig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='93ad9df2-17d0-42ce-9a87-ed8cc7ba2bb6' from='Traum' to='unruhig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='261b337b-a410-4e4f-920d-3ba44bf95371' from='panzerartig' to='hart' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='6bc2f442-56c3-4310-ab76-7f74fba95a4c' from='braun' to='gewölbt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='dbe1f96b-da55-4733-a40b-e2f71cda1d29' from='dünn' to='flimmern' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='5ce1e35a-9182-4c01-b0ae-3243614b5bf7' from='Gregor' to='Samsa' size='1px' log-value='6.609603889491049' color='0xffdab9ff' />
+<edge id='fadb3381-50f7-4661-9e1c-b7771b415c67' from='erhalten' to='gänzlich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='32fb6984-5a94-4c3c-a451-80a0ac3f9007' from='Niedergleiten' to='erhalten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='a4126c7f-4a6b-42b2-8cd3-1b39f0872ee5' from='kläglich' to='Vergleich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='aac8ded6-a118-4ba1-949a-1d9395219f80' from='Bett' to='verwandeln' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='3b064657-ad3f-445e-9c6c-1fea3e418bc5' from='flimmern' to='Bein' size='1px' log-value='3.7731293750848716' color='0xffdab9ff' />
+<edge id='3154afe7-3d93-4854-a963-505f40c43268' from='verwandeln' to='Ungeziefer' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='dc5f19f1-618c-4d3f-8012-0a008a2019b4' from='bogenförmig' to='geteilt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='80dc8294-6e5d-401b-baa9-64ce98428aea' from='geteilt' to='bogenförmig' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='42bead07-5187-47d7-b744-ebabb5c99501' from='Gregor' to='Morgen' size='1px' log-value='5.906562347881085' color='0xffdab9ff' />
+<edge id='a5874232-b362-4cc7-9331-18e12f773b19' from='bogenförmig' to='gewölbt' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='3d98b05f-5427-4ec7-aa52-c02af8c9fe32' from='bereit' to='können' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='8a6fe909-bec5-41dd-baab-1ad77048c964' from='kläglich' to='dünn' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='de96f64f-a947-49b2-93e6-0cf0883da7c2' from='bereit' to='Vergleich' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='1fd49db8-6b0a-4c54-87a1-7a679446acaf' from='Bett' to='Traum' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='23e4867c-4285-4824-a899-7ca1022f27d2' from='panzerartig' to='sehen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='963ff96e-bee3-45fe-8afe-0391d47cf339' from='Ungeziefer' to='verwandeln' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='32055e8a-e0ee-4d2f-97cc-6999603a7568' from='hart' to='sehen' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='06152926-9537-4d80-9b0d-6c23c19d7df3' from='geteilt' to='Bettdecke' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='dc783c2e-6213-4b42-93eb-4865a36662b7' from='Vergleich' to='können' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='7ff67910-7617-4b68-8e17-6c4b14c97fe6' from='bogenförmig' to='Versteifung' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='bd47377b-c60c-4548-a485-a767bae638a4' from='Vergleich' to='erhalten' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='f5cd6297-3aff-4e94-a1b4-ac892235b56d' from='heben' to='braun' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='88cc32d3-4151-441d-826e-22209a0571f8' from='kläglich' to='Umfang' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='dc480c82-2cbb-4749-81a5-ab2586ed7b46' from='panzerartig' to='Rücken' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+<edge id='871057d1-04c0-462f-a66b-fe0495dbe30b' from='Umfang' to='können' size='1px' log-value='3.2580302534117145' color='0xffdab9ff' />
+</graph>

@@ -1,0 +1,83 @@
+<graph>
+<node name='beschmiert' size='86px' cw='86.41170547122799' color='0x4682b4ff' />
+<node name='Mistkäfer' size='10px' cw='10.337472523785003' color='0x4682b4ff' />
+<node name='sein' size='0px' cw='8.934689346106778E-4' color='0x000000ff' />
+<node name='aufgebunden' size='4px' cw='3.543836683076493' color='0x000000ff' />
+<node name='Fortschreiten' size='8px' cw='7.629096909775972' color='0x4682b4ff' />
+<node name='Brot' size='33px' cw='32.62204470542998' color='0x4682b4ff' />
+<node name='Schlage' size='7px' cw='7.019574783433535' color='0x4682b4ff' />
+<node name='Drehung' size='10px' cw='10.070165674937073' color='0x4682b4ff' />
+<node name='Weihnachten' size='9px' cw='8.792446854885506' color='0x4682b4ff' />
+<node name='gesalzen' size='22px' cw='22.093369796417146' color='0x4682b4ff' />
+<node name='umtanzen' size='4px' cw='4.123125780768255' color='0x000000ff' />
+<node name='Seht' size='2px' cw='2.0924744865288036' color='0x000000ff' />
+<node name='wollen' size='0px' cw='0.00974445246505395' color='0x000000ff' />
+<node name='Uhr' size='0px' cw='0.12725217613135661' color='0x000000ff' />
+<node name='besinnungslos' size='3px' cw='3.154337190426837' color='0x000000ff' />
+<node name='Schlüssel' size='0px' cw='0.2389897666718776' color='0x000000ff' />
+<node name='Direktion' size='10px' cw='9.90122601499337' color='0x4682b4ff' />
+<node name='glitten' size='9px' cw='8.904975392248009' color='0x4682b4ff' />
+<node name='Butter' size='84px' cw='84.33357517124138' color='0x4682b4ff' />
+<node name='neuerlich' size='5px' cw='5.293273222716018' color='0x000000ff' />
+<node name='ununterscheidbar' size='5px' cw='5.1031946451591175' color='0x000000ff' />
+<node name='alt' size='0px' cw='0.11862405783612666' color='0x000000ff' />
+<node name='Nebel' size='2px' cw='2.394605334307155' color='0x000000ff' />
+<node name='stolpernd' size='9px' cw='8.520994005212689' color='0x4682b4ff' />
+<node name='vergangen' size='2px' cw='2.329259173914819' color='0x000000ff' />
+<node name='lohnen' size='9px' cw='8.506149174289813' color='0x4682b4ff' />
+<node name='Röcke' size='2px' cw='1.6603106216031616' color='0x000000ff' />
+<node name='Erde' size='3px' cw='2.8560704941032444' color='0x000000ff' />
+<node name='grau' size='17px' cw='17.285955155622073' color='0x4682b4ff' />
+<node name='Samsa' size='0px' cw='0.2350807496691176' color='0x000000ff' />
+<node name='eindrang' size='3px' cw='3.450323616122425' color='0x000000ff' />
+<node name='Spiel' size='0px' cw='0.11474094135113012' color='0x000000ff' />
+<node name='Einöde' size='4px' cw='3.925242000921552' color='0x000000ff' />
+<node name='Entschuldigungsbrief' size='3px' cw='2.5105608254510274' color='0x000000ff' />
+<node name='Auftraggeber' size='3px' cw='2.8303756954834425' color='0x000000ff' />
+<node name='Himmel' size='14px' cw='14.06744766961614' color='0x4682b4ff' />
+<edge id='8cacec55-61aa-4f37-9084-f0df63d1fc92' from='Brot' to='beschmiert' size='17px' log-value='71.11219447932952' color='0xffdab9ff' />
+<edge id='e983ff45-a614-44bd-93c7-0031dac51a21' from='lohnen' to='Spiel' size='6px' log-value='25.54438311250552' color='0xffdab9ff' />
+<edge id='72bdd9e3-18cb-4b34-8401-2b247afc1789' from='beschmiert' to='beschmiert' size='8px' log-value='33.12947576952913' color='0xffdab9ff' />
+<edge id='96c5eb05-10c3-4050-924f-ca859d6e9190' from='Schlage' to='Uhr' size='7px' log-value='28.633899662596917' color='0xffdab9ff' />
+<edge id='7947cb3f-7a93-4591-b58f-6bd308140f13' from='Butter' to='beschmiert' size='13px' log-value='54.04211354961046' color='0xffdab9ff' />
+<edge id='d3fa9961-8c86-4fe7-9e54-afa7094d1770' from='gesalzen' to='Butter' size='4px' log-value='16.439405645950018' color='0xffdab9ff' />
+<edge id='5e9dab24-5dc7-43c5-aa03-17156e995445' from='Drehung' to='umtanzen' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='6068293f-c671-4f4a-9596-84f4c22eb264' from='Brot' to='Butter' size='17px' log-value='71.11219447932953' color='0xffdab9ff' />
+<edge id='39d3000c-c5a4-4ace-8a31-a1d8e842077c' from='Drehung' to='besinnungslos' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='bb6b5ae6-c5ce-4e16-8cb1-562de75fb792' from='Himmel' to='Einöde' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='ad8f3da3-b7c4-462d-b517-f20fef4897d1' from='stolpernd' to='glitten' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='1e74a870-b0f5-4f25-b57f-ed7d7fdcbad2' from='Weihnachten' to='sein' size='3px' log-value='14.391356019672665' color='0xffdab9ff' />
+<edge id='7e4cbd0d-fff6-4ec5-a709-63fba19f0c68' from='Brot' to='gesalzen' size='8px' log-value='35.20090294206776' color='0xffdab9ff' />
+<edge id='d7027444-e684-4215-a37c-90c9c967120e' from='Mistkäfer' to='Seht' size='8px' log-value='33.12947576952913' color='0xffdab9ff' />
+<edge id='9a734f60-8838-4494-8f4e-695e4012fea6' from='lohnen' to='wollen' size='6px' log-value='24.064322774212904' color='0xffdab9ff' />
+<edge id='4c8e4fe3-ff1c-47e5-93b8-0ada30318ec5' from='beschmiert' to='Butter' size='13px' log-value='54.04211354961046' color='0xffdab9ff' />
+<edge id='a600e6e3-8cab-47f9-8e27-be4f788d9bee' from='grau' to='Erde' size='8px' log-value='33.12947576952913' color='0xffdab9ff' />
+<edge id='d5a27dee-3974-42dd-b278-be7f2fde4508' from='gesalzen' to='beschmiert' size='4px' log-value='16.439405645950018' color='0xffdab9ff' />
+<edge id='cc7b8d4f-1f55-461d-a273-0bf17ee9a42f' from='Fortschreiten' to='umtanzen' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='123d36ff-f729-45af-ac3e-eaa3a30590a8' from='Himmel' to='grau' size='9px' log-value='37.70300149533581' color='0xffdab9ff' />
+<edge id='376f7442-b93f-46a9-8add-96b431323be9' from='Mistkäfer' to='Mistkäfer' size='8px' log-value='33.12947576952913' color='0xffdab9ff' />
+<edge id='4ce1149e-7fe3-41f7-bee2-9c33db5b0793' from='Direktion' to='Auftraggeber' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='9584fedf-7e01-4c09-961c-36914cf0d14f' from='Weihnachten' to='vergangen' size='9px' log-value='37.70300149533581' color='0xffdab9ff' />
+<edge id='aaf6c085-a9b7-422b-b227-d50a47ee2d30' from='stolpernd' to='Röcke' size='8px' log-value='35.20090294206776' color='0xffdab9ff' />
+<edge id='2c903764-a4e6-4967-b73c-cd522451c793' from='Schlage' to='neuerlich' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='ba234f91-cce2-4f47-b309-ea5afd08054f' from='beschmiert' to='Brot' size='17px' log-value='71.11219447932952' color='0xffdab9ff' />
+<edge id='44ea3366-6fab-4baf-aeed-d0fda72421ed' from='Weihnachten' to='Weihnachten' size='8px' log-value='33.12947576952913' color='0xffdab9ff' />
+<edge id='592c951f-4dee-4496-b50e-de8a5fe97a61' from='Butter' to='Butter' size='8px' log-value='33.12947576952913' color='0xffdab9ff' />
+<edge id='16804f2f-cc33-4ad4-af52-8a4564408cea' from='glitten' to='Röcke' size='8px' log-value='35.20090294206776' color='0xffdab9ff' />
+<edge id='023003a7-213c-4a5f-bc5a-c626b70ae9e3' from='Fortschreiten' to='Schlüssel' size='6px' log-value='26.956614408098073' color='0xffdab9ff' />
+<edge id='51235d5b-154a-430c-a7d2-321c12309067' from='glitten' to='aufgebunden' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='d780ea82-fb05-4089-9e36-e9e4e62fb608' from='stolpernd' to='eindrang' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='7219e94f-2f8c-4035-98bf-574156bf2492' from='glitten' to='stolpernd' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='929d65a7-7dd3-44af-bbae-67dd5579c5c9' from='gesalzen' to='Brot' size='8px' log-value='35.20090294206776' color='0xffdab9ff' />
+<edge id='5ddf3645-5c40-4d55-a847-e77e18cc8c14' from='Drehung' to='Schlüssel' size='6px' log-value='26.956614408098073' color='0xffdab9ff' />
+<edge id='ecda5a20-c8dc-4b3f-ae87-628cd3e22224' from='Butter' to='Brot' size='17px' log-value='71.11219447932953' color='0xffdab9ff' />
+<edge id='4b614375-216a-41bc-8b8f-552c3c6f1227' from='grau' to='grau' size='8px' log-value='33.12947576952913' color='0xffdab9ff' />
+<edge id='0d812b41-ce23-4217-87a9-7f058c09bfdf' from='Himmel' to='ununterscheidbar' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='0b091382-34ee-41ea-b8a5-79e9765fe09d' from='Fortschreiten' to='besinnungslos' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='fa2cb4ad-d84c-4f59-9563-8317249f2658' from='grau' to='Himmel' size='9px' log-value='37.70300149533581' color='0xffdab9ff' />
+<edge id='3bcb756a-7594-406d-90d9-06e1744136d6' from='Schlage' to='Nebel' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='0b22bdd5-92cc-4dae-90c2-ba213e3e3ad5' from='Mistkäfer' to='alt' size='9px' log-value='35.59747472881634' color='0xffdab9ff' />
+<edge id='486b849a-8004-4348-8e64-6a27cd8ec92f' from='Direktion' to='Entschuldigungsbrief' size='4px' log-value='18.567009923835265' color='0xffdab9ff' />
+<edge id='6db1ae32-54d4-4298-8990-5ff3a9f5f4f3' from='Direktion' to='Samsa' size='5px' log-value='21.15121476597711' color='0xffdab9ff' />
+<edge id='c910a231-619d-41c9-ab28-78d81af03a2e' from='lohnen' to='lohnen' size='8px' log-value='33.12947576952913' color='0xffdab9ff' />
+</graph>

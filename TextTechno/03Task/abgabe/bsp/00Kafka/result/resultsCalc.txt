@@ -1,0 +1,2 @@
+CW-Value cluster : 1.5219083818762138
+AVG-Value log-likelihood : 7.941357754305265
