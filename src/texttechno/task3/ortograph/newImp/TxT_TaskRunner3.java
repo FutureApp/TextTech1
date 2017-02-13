@@ -15,7 +15,7 @@ public class TxT_TaskRunner3 {
 
 	static String[] arg;
 	static String encoding = Encoding.getDefaultEncoding();
-	static String resultDir = "txt/result";
+	public static String resultDir = "result";
 	static String articleName;
 
 	/**
@@ -70,8 +70,8 @@ public class TxT_TaskRunner3 {
 		Writer.delAndWrite(new File("log/IdentData.txt"), showTuples);
 		Writer.delAndWrite(new File("log/RateSignature.txt"), calcRateSignatureForAllWords);
 		Writer.delAndWriteHash(new File("log/LogLike.txt"), calcLogLikelihoodValues);
-		Writer.delAndWriteNodeList(new File("log/ClusterNodes.txt"), nodes);
-		Writer.saveResult(new File("results.txt"), matrix);
+		Writer.delAndWriteNodeList(new File(resultDir+"/ClusterNodes.txt"), nodes);
+		Writer.saveResult(new File(resultDir + "/resultsCalc.txt"), matrix);
 
 		/*
 		 * ------------------ Viz. of results --------------------
@@ -80,9 +80,8 @@ public class TxT_TaskRunner3 {
 		System.out.println("--- Visualisation-Phase ---");
 		NodeFilter nodeFilter = new NodeFilter(nodes);
 		ArrayList<Nodes> filteredNodes = nodeFilter.filter(Integer.parseInt(arg[0]), Integer.parseInt(arg[1]));
-		VizResults viz = new VizResults(filteredNodes, new File("resultGraph"), nodes);
+		VizResults viz = new VizResults(filteredNodes, new File(resultDir + "/resultGraph"), nodes);
 		viz.startViz();
-
 		printFinish();
 	}
 

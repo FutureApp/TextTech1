@@ -1,12 +1,11 @@
 package texttechno.task3.ortograph.newImp;
 
-import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.UUID;
 import java.util.Map.Entry;
+import java.util.UUID;
 
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.MultiGraph;
@@ -17,20 +16,29 @@ import org.graphstream.stream.file.FileSinkImages.Quality;
 import org.graphstream.stream.file.FileSinkImages.Resolutions;
 
 import xgeneral.modules.MyMathLib;
+import xgeneral.modules.Writer;
 
 public class VizResults {
 
 	private ArrayList<Nodes> filteredNodes;
 	private File location;
 
-	String RED = Color.red.toString();
-	String BLACK = Color.BLACK.toString();
+	String RED = javafx.scene.paint.Color.RED.toString();
+	String BLACK = javafx.scene.paint.Color.BLACK.toString();
 	String STEELBLUE = javafx.scene.paint.Color.STEELBLUE.toString();
 	String BLANCHEDALMOND = javafx.scene.paint.Color.BLANCHEDALMOND.toString();
 	String PEACHPUFF = javafx.scene.paint.Color.PEACHPUFF.toString();
+	
 	private ArrayList<Nodes> orginialNodes;
 	private Integer highestCW_Value;
 	private Integer highestLogLike;
+	
+	
+	private HashMap<String, String> resultNodesInfoForExport = new HashMap<>();
+	private HashMap<String, String> resultEdgesInfoForExport = new HashMap<>();
+	
+	String holderNode = "<node name='%s' size='%spx' cw='%s' color='%s' />";
+	String holderEdge = "<edge id='%s' from='%s' to='%s' size='%spx' log-value='%s' color='%s' />" ;
 
 	/**
 	 * The visualizer-class
@@ -94,7 +102,6 @@ public class VizResults {
 				Double cwValue = cwValueOfNode(nameOfNode2);
 
 				// If node is new, then add node to graph.
-
 				if (!nodeTouched.containsKey(nameOfNode2)) {
 					String secondNodeName = nameOfNode2;
 					Integer nodeSize = getLightSize("node", cwValue);
@@ -104,6 +111,8 @@ public class VizResults {
 					graph.addNode(secondNodeName).addAttribute("label",
 							String.format("%s[%.3f]", secondNodeName, cwValue));
 					graph.getNode(secondNodeName).addAttribute(style, secondNodeStyle);
+					//For export.
+					resultNodesInfoForExport.put(secondNodeName, String.format("%s %s %s %s", secondNodeName,nodeSize,cwValue,BLACK));
 				}
 
 				// Edge-style definition
@@ -120,6 +129,7 @@ public class VizResults {
 				graph.getEdge(edgeID).setAttribute("label", String.format("%.3f", logLikiValue));
 				// Adds styles to the edge.
 				graph.getEdge(edgeID).setAttribute(style, edgeStyle);
+				resultEdgesInfoForExport.put(edgeID, String.format("%s %s %s %s %s %s", edgeID, nodeName,nameOfNode2,numberEdgeSize,logLikiValue,PEACHPUFF));
 			}
 		}
 
@@ -132,10 +142,17 @@ public class VizResults {
 			String colorStyle = String.format("fill-color: '%s';", STEELBLUE);
 			String styleo = sizeStyle + colorStyle;
 			graph.getNode(nodeName).addAttribute(style, styleo);
+			resultNodesInfoForExport.put(nodeName, String.format("%s %s %s %s", nodeName,nodeSize,node.nodeCwValue+"",STEELBLUE));
 
 		}
 
 		// show graph or not.
+		new Thread(new  Runnable() {
+			public void run() {
+				System.out.println("Visualisation of Graph");
+				exportGraph(TxT_TaskRunner3.resultDir+"/graphComponents.xml");
+			}
+		}).start();
 		graph.display(true);
 
 		// Saving graph.
@@ -228,5 +245,46 @@ public class VizResults {
 		}
 		return value;
 	}
+	
+	
 
+	/**
+	 * Starts to export node and edge informations. Output file will have a format like xml.
+	 * @param locationAbsolute Absolute location.
+	 */
+	public void exportGraph(String locationAbsolute) {
+		File location = new File(locationAbsolute);
+		if(location.exists()) location.delete();
+		System.out.println("Export .> nodes");
+		Writer.write(location, "<graph>");
+		for (Entry<String, String> nodeInfo : resultNodesInfoForExport.entrySet()) {
+			Writer.write(location, nodeAsString(nodeInfo.getValue()));
+		}
+		System.out.println("Export .> edges");
+		for (Entry<String, String> nodeInfo : resultEdgesInfoForExport.entrySet()) {
+			Writer.write(location, edgeAsString(nodeInfo.getValue()));
+		}
+		Writer.write(location, "</graph>");
+		System.out.println("Export finished.");
+	}
+	
+	/**
+	* Constructs a String containing a node-info.
+	 * @param nodeInfo The informations of a node.
+	 * @return String containing the node-info. Format: XML-Like
+	 */
+	public String nodeAsString(String nodeInfo) {
+		String[] split = nodeInfo.split(" ");
+		return String.format(holderNode, split[0],split[1],split[2],split[3]);
+		
+	}
+	/**
+	 * Constructs a String containing a edge-info.
+	 * @param edgeInfo The informations of an edge.
+	 * @return String containing the edge-info. Format: XML-Like
+	 */
+	public String edgeAsString(String edgeInfo) {
+		String[] split = edgeInfo.split(" ");
+		return String.format(holderEdge, split[0],split[1],split[2],split[3],split[4],split[5]);
+	}
 }
